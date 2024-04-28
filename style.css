@@ -244,7 +244,79 @@ input[type="checkbox"] {
 }
 /* <!-- Aquí termina el slide --> */
 /* <!-- Aquí empieza el código del contenido --> */
+#ResumenTematico {
+  /*background-color: darkolivegreen;*/
+  width: 90%;
+  height: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 10%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  top: 10%;
 
+}
+
+#MenuLateral {
+  /*background-color: yellow;*/
+  height: fit-content;
+  padding: 2% 2% 2% 2%;
+  top: 14%;
+  left: 1%;
+  position: sticky;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#MenuLateral a div {
+  background-color: brown;
+  width: 150px;
+  height: 50px;
+  border-radius: 30px;
+  /*box-shadow: [horizontal offset] [vertical offset] [blur radius] [spread radius] [color];*/
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+}
+
+#MenuLateral a div:hover {
+  /*border-right: 4px solid white;*/
+  /*box-shadow: 10px 0px 0px 0px lightblue;*/
+  box-shadow: -4px -4px 10px 0px rgba(0, 0, 0, 0.5), 4px -4px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+#MenuLateral a div:active {
+  /*border-right: 4px solid white;*/
+  /*box-shadow: 10px 0px 0px 0px lightblue;*/
+  box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.8);
+}
+
+#ContenidoResumido {
+  /*background-color: yellowgreen;*/
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  
+
+
+
+}
+
+#ContenidoResumido section {
+  /*background-color: slategray;*/
+  width: 80%;
+  justify-items: center;
+  float: right;
+  align-content: center;
+  
+}
 /* <!-- Aquí termina el código del contenido --> */
 /* <!-- Aquí empieza el footer --> */
 .caja-principal {
