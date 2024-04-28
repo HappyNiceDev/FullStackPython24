@@ -5,3 +5,102 @@
     box-sizing: border-box;
     font-family: Poppins;
   }
+
+  body{
+    background: #D5D1C5;
+  }
+
+  /* <!-- Termina CSS GENERALES --> */
+/* <!-- Aquí empieza el nav --> */
+a{
+    text-decoration: none;
+    }
+    
+    li{
+    list-style: none;
+    }
+    
+    .navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    background-color: #D4C5AE;
+    color: #242A20;
+    z-index: 10000;
+    }
+    
+    .nav-links a{
+    color: #242A20;
+    }
+    
+    .logo{
+      display: flex;
+    }
+    
+    .logo h1{
+      margin-left: 5px;
+      padding: 10px;
+    }
+    
+    .logo img{
+    width:3em;
+    }
+    
+    .menu{
+    display: flex;
+    gap: 1em;
+    font-size: 1.3em;
+    }
+    .menu li:hover{
+    background-color: #D5D1C5;
+    border-radius: 5px;
+    transition: 0.3s ease;
+    }
+    .menu li{
+    padding: 5px 14px;
+    }
+    
+    .secciones{
+    position: relative;
+    z-index: 10000;
+    }
+    .desplegable{
+    background-color: #D4C5AE;
+    padding: 1em 0;
+    position: absolute;
+    display: none;
+    border-radius: 8px;
+    top: 35px;
+    }
+    .desplegable li + li{
+    margin-top: 10px;
+    }
+    .desplegable li{
+    padding: 0.5em 1em;
+    width: 8em;
+    text-align: center;
+    }
+    .desplegable li:hover{
+    background-color: #D5D1C5;
+    }
+    .secciones:hover .desplegable{
+    display: block;
+    }
+    
+    .flecha{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid #000;
+    border-right: 2px solid #000;
+    border-color: #242A20;
+    margin-left: 3px;
+    margin-bottom: 2px;
+    }
+
+    .flecha-abajo{
+    transform: rotate(135deg);
+    }
+
+    
