@@ -103,4 +103,52 @@ a{
     transform: rotate(135deg);
     }
 
+    /* <!-- Sección responsiva del nav --> */
+    input[type="checkbox"]{
+        display: none;
+        }
+        .hamburguesa{
+        display: none;
+        font-size: 24px;
+        user-select: none;
+        }
+        
+        @media (max-width: 768px){
+        .menu{
+          display: none;
+          position: absolute;
+          background-color: #D4C5AE;
+          right: 0;
+          left: 0;
+          text-align: center;
+          padding: 16px 0;
+          z-index: 10000;
+          margin-top: 12px;
+        }
+        .menu li:hover{
+          display: inline-block;
+          background-color: #D5D1C5;
+          transition: 0.3s ease;
+        }
+        .menu li + li{
+          margin-top: 12px;
+          width: 100%;
+        }
+        input[type="checkbox"]:checked ~ .menu{
+          display: block;
+        }
+        .hamburguesa{
+          display: block;
+        }
+        .desplegable{
+          left: 50%;
+          top: 30px;
+          transform: translateX(35%);
+        }
+        .desplegable li:hover{
+          background-color: #D5D1C5;
+        }
+        }
+    /* <!-- Aquí termina el nav --> */
+
     
