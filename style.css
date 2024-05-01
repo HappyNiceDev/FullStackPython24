@@ -12,10 +12,15 @@ html {
 
 body {
   background: #d5d1c5;
+  display: flex;
+  flex-direction: column;
 }
 
 /* <!-- Termina CSS GENERALES --> */
 /* <!-- Aquí empieza el nav --> */
+header {
+  height: 100vh;
+}
 a {
   text-decoration: none;
 }
@@ -228,7 +233,7 @@ input[type="checkbox"] {
   background: var(--img);
   background-size: cover;
   clip-path: circle(0% at 0% 50%);
-  transition: 1.5s;
+  transition: 550ms; /*original 1500ms*/
   transition-delay: 0s;
   background-position: left;
   display: flex;
@@ -238,6 +243,7 @@ input[type="checkbox"] {
 
 .container .slider .slide:nth-child(even) {
   clip-path: circle(0% at 100% 50%);
+ 
   background-position: right;
 }
 
@@ -247,7 +253,7 @@ input[type="checkbox"] {
 .container input:nth-child(4):checked~.slider .slide:nth-child(4),
 .container input:nth-child(5):checked~.slider .slide:nth-child(5) {
   clip-path: circle(150% at 50% 50%);
-  transition-delay: 1s;
+  transition-delay: 300ms; /*original 1000ms*/
   background-position: center;
 }
 
@@ -273,7 +279,7 @@ input[type="checkbox"] {
 }
 
 /* <!-- Aquí termina el slide --> */
-/* <!-- Aquí empieza el código del contenido --> */
+/* <!-- Aquí empieza el contenido resumidoo --> */
 .ResumenTematico {
   background-color: darkolivegreen;
   width: fit-content;
@@ -286,7 +292,7 @@ input[type="checkbox"] {
   
   justify-content: flex-start;
   
-  align-items: center;
+  align-items: flex-start;
   
 }
 
@@ -295,10 +301,9 @@ input[type="checkbox"] {
   
   top: 0;
   /*padding: 2% 2% 0% 2%;*/
-  position: relative;
+  position: sticky;
   display: flex;
   flex-direction: column;
-  
   color: white;
 }
 
@@ -356,7 +361,7 @@ input[type="checkbox"] {
   background-color: #18c784;
 }
 
-/* <!-- Aquí termina el código del contenido --> */
+/* <!-- Aquí termina el contenido resumido --> */
 /* <!-- Aquí empieza el footer --> */
 .caja-principal {
   .caja {
