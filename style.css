@@ -274,78 +274,86 @@ input[type="checkbox"] {
 
 /* <!-- Aquí termina el slide --> */
 /* <!-- Aquí empieza el código del contenido --> */
-#ResumenTematico {
+.ResumenTematico {
   background-color: darkolivegreen;
-  width: 90%;
-  height: fit-content;
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 10%;
+  width: fit-content;
+  height: 100%;
+  padding-top: 2%;
+  top: 0;
   position: relative;
   display: flex;
   flex-direction: row;
-  top: 10%;
-
-}
-
-#MenuLateral {
-  background-color: yellow;
-  height: fit-content;
-  padding: 2% 2% 2% 2%;
-  top: 14%;
-  left: 1%;
-  position: sticky;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-#MenuLateral a div {
-
-  width: 150px;
-  height: 50px;
-  border-radius: 30px;
-  /*box-shadow: [horizontal offset] [vertical offset] [blur radius] [spread radius] [color];*/
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
-  text-align: center;
-  display: flex;
+  
+  justify-content: flex-start;
+  
   align-items: center;
-  justify-content: center;
-
-
+  
 }
 
-#MenuLateral a div:hover {
-  /*border-right: 4px solid white;*/
-  /*box-shadow: 10px 0px 0px 0px lightblue;*/
-  box-shadow: -4px -4px 10px 0px rgba(0, 0, 0, 0.5), 4px -4px 10px 0px rgba(0, 0, 0, 0.5);
-}
-
-#MenuLateral a div:active {
-  /*border-right: 4px solid white;*/
-  /*box-shadow: 10px 0px 0px 0px lightblue;*/
-  box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.8);
-}
-
-#ContenidoResumido {
-  /*background-color: yellowgreen;*/
+.MenuLateral {
+  background-color: rgb(107, 107, 107);
+  
+  top: 0;
+  /*padding: 2% 2% 0% 2%;*/
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 16px;
-
-
-
-
+  
+  color: white;
 }
 
-#ContenidoResumido section {
-  background-color: slategray;
-  width: 80%;
-  padding: 4% 0% 4% 0%;
-  justify-items: center;
-  align-content: center;
+.TituloMenu {
+  background: #14df3a;
+  font-size: larger;
+  text-align: center;
+  
+}
 
+.MenuLateral ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.MenuLateral li {
+  padding: 10px;
+}
+
+.MenuLateral a {
+  width: 240px;
+  height: 40px;
+  margin: 0%;
+  padding: 0% 0% 0% 10%;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.ContenidoResumido {
+  background: #000;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  gap: 10%;
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+
+.ContenidoResumido section {
+  background-color: slategray;
+  width: 90%;
+  padding: 2% 2% 20% 2%;
+}
+
+.highlight {
+  background-color: #18c784;
 }
 
 /* <!-- Aquí termina el código del contenido --> */
