@@ -5,6 +5,11 @@
   box-sizing: border-box;
   font-family: Poppins;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: #d5d1c5;
 }
@@ -51,11 +56,13 @@ li {
   gap: 1em;
   font-size: 1.3em;
 }
+
 .menu li:hover {
   background-color: #d5d1c5;
   border-radius: 5px;
   transition: 0.3s ease;
 }
+
 .menu li {
   padding: 5px 14px;
 }
@@ -64,6 +71,7 @@ li {
   position: relative;
   z-index: 10000;
 }
+
 .desplegable {
   background-color: #d4c5ae;
   padding: 1em 0;
@@ -72,17 +80,21 @@ li {
   border-radius: 8px;
   top: 35px;
 }
-.desplegable li + li {
+
+.desplegable li+li {
   margin-top: 10px;
 }
+
 .desplegable li {
   padding: 0.5em 1em;
   width: 8em;
   text-align: center;
 }
+
 .desplegable li:hover {
   background-color: #d5d1c5;
 }
+
 .secciones:hover .desplegable {
   display: block;
 }
@@ -106,6 +118,7 @@ li {
 input[type="checkbox"] {
   display: none;
 }
+
 .hamburguesa {
   display: none;
   font-size: 24px;
@@ -124,26 +137,32 @@ input[type="checkbox"] {
     z-index: 10000;
     margin-top: 12px;
   }
+
   .menu li:hover {
     display: inline-block;
     background-color: #d5d1c5;
     transition: 0.3s ease;
   }
-  .menu li + li {
+
+  .menu li+li {
     margin-top: 12px;
     width: 100%;
   }
-  input[type="checkbox"]:checked ~ .menu {
+
+  input[type="checkbox"]:checked~.menu {
     display: block;
   }
+
   .hamburguesa {
     display: block;
   }
+
   .desplegable {
     left: 50%;
     top: 30px;
     transform: translateX(35%);
   }
+
   .desplegable li:hover {
     background-color: #d5d1c5;
   }
@@ -161,9 +180,11 @@ input[type="checkbox"] {
   width: 100%;
   background-color: #d5d1c5;
 }
+
 .container input {
   appearance: none;
 }
+
 .container .puntos {
   position: absolute;
   bottom: 70px;
@@ -171,6 +192,7 @@ input[type="checkbox"] {
   display: flex;
   gap: 6px;
 }
+
 .container .puntos label {
   width: 20px;
   height: 20px;
@@ -180,13 +202,15 @@ input[type="checkbox"] {
   opacity: 0.5;
   border: 2px solid #222;
 }
-.container input:nth-child(1):checked ~ .puntos label:nth-child(1),
-.container input:nth-child(2):checked ~ .puntos label:nth-child(2),
-.container input:nth-child(3):checked ~ .puntos label:nth-child(3),
-.container input:nth-child(4):checked ~ .puntos label:nth-child(4),
-.container input:nth-child(5):checked ~ .puntos label:nth-child(5) {
+
+.container input:nth-child(1):checked~.puntos label:nth-child(1),
+.container input:nth-child(2):checked~.puntos label:nth-child(2),
+.container input:nth-child(3):checked~.puntos label:nth-child(3),
+.container input:nth-child(4):checked~.puntos label:nth-child(4),
+.container input:nth-child(5):checked~.puntos label:nth-child(5) {
   opacity: 1;
 }
+
 .container .slider {
   position: absolute;
   top: 0;
@@ -194,6 +218,7 @@ input[type="checkbox"] {
   width: 100%;
   height: 100%;
 }
+
 .container .slider .slide {
   position: absolute;
   top: 0;
@@ -210,19 +235,22 @@ input[type="checkbox"] {
   justify-content: start;
   align-items: flex-end;
 }
+
 .container .slider .slide:nth-child(even) {
   clip-path: circle(0% at 100% 50%);
   background-position: right;
 }
-.container input:nth-child(1):checked ~ .slider .slide:nth-child(1),
-.container input:nth-child(2):checked ~ .slider .slide:nth-child(2),
-.container input:nth-child(3):checked ~ .slider .slide:nth-child(3),
-.container input:nth-child(4):checked ~ .slider .slide:nth-child(4),
-.container input:nth-child(5):checked ~ .slider .slide:nth-child(5) {
+
+.container input:nth-child(1):checked~.slider .slide:nth-child(1),
+.container input:nth-child(2):checked~.slider .slide:nth-child(2),
+.container input:nth-child(3):checked~.slider .slide:nth-child(3),
+.container input:nth-child(4):checked~.slider .slide:nth-child(4),
+.container input:nth-child(5):checked~.slider .slide:nth-child(5) {
   clip-path: circle(150% at 50% 50%);
   transition-delay: 1s;
   background-position: center;
 }
+
 .contenido {
   position: relative;
   padding: 5% 5% 5% 5%;
@@ -236,16 +264,18 @@ input[type="checkbox"] {
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: #fff;
 }
+
 .contenido p {
   font-family: sans-serif;
   color: #fff;
   -webkit-text-stroke-width: 0.5px;
   -webkit-text-stroke-color: #242a20;
 }
+
 /* <!-- Aquí termina el slide --> */
 /* <!-- Aquí empieza el código del contenido --> */
 #ResumenTematico {
-  /*background-color: darkolivegreen;*/
+  background-color: darkolivegreen;
   width: 90%;
   height: fit-content;
   margin-left: auto;
@@ -259,7 +289,7 @@ input[type="checkbox"] {
 }
 
 #MenuLateral {
-  /*background-color: yellow;*/
+  background-color: yellow;
   height: fit-content;
   padding: 2% 2% 2% 2%;
   top: 14%;
@@ -271,7 +301,7 @@ input[type="checkbox"] {
 }
 
 #MenuLateral a div {
-  background-color: brown;
+
   width: 150px;
   height: 50px;
   border-radius: 30px;
@@ -303,20 +333,21 @@ input[type="checkbox"] {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  
+
 
 
 
 }
 
 #ContenidoResumido section {
-  /*background-color: slategray;*/
+  background-color: slategray;
   width: 80%;
+  padding: 4% 0% 4% 0%;
   justify-items: center;
-  float: right;
   align-content: center;
-  
+
 }
+
 /* <!-- Aquí termina el código del contenido --> */
 /* <!-- Aquí empieza el footer --> */
 .caja-principal {
@@ -363,8 +394,7 @@ input[type="checkbox"] {
           -webkit-border-radius: 50%;
           -moz-border-radius: 50%;
           border-radius: 50%;
-          -webkit-animation: load 0.6s cubic-bezier(0.74, 0.06, 0.4, 0.92)
-            forwards;
+          -webkit-animation: load 0.6s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
           animation: popIn 0.8s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
           animation-delay: 2s;
           margin-left: 5px;
@@ -414,10 +444,12 @@ input[type="checkbox"] {
     width: 0%;
     left: 0;
   }
+
   50% {
     width: 100%;
     left: 0;
   }
+
   100% {
     width: 0;
     left: 100%;
@@ -429,10 +461,12 @@ input[type="checkbox"] {
     width: 0%;
     left: 0;
   }
+
   50% {
     width: 100%;
     left: 0;
   }
+
   100% {
     width: 0;
     left: 100%;
@@ -443,6 +477,7 @@ input[type="checkbox"] {
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
@@ -456,6 +491,7 @@ input[type="checkbox"] {
     border: 0px solid #ddd;
     opacity: 0;
   }
+
   50% {
     width: 10px;
     height: 10px;
@@ -463,17 +499,20 @@ input[type="checkbox"] {
     opacity: 1;
     bottom: 45px;
   }
+
   65% {
     width: 7px;
     height: 7px;
     bottom: 0px;
     width: 15px;
   }
+
   80% {
     width: 10px;
     height: 10px;
     bottom: 20px;
   }
+
   100% {
     width: 7px;
     height: 7px;
@@ -487,6 +526,7 @@ input[type="checkbox"] {
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 0.5;
   }
