@@ -19,7 +19,7 @@ body {
 /* <!-- Termina CSS GENERALES --> */
 /* <!-- Aquí empieza el nav --> */
 header {
-  height: 100vh;
+  height: 100%;
 }
 a {
   text-decoration: none;
@@ -289,16 +289,12 @@ input[type="checkbox"] {
   position: relative;
   display: flex;
   flex-direction: row;
-  
   justify-content: flex-start;
-  
   align-items: flex-start;
-  
 }
 
 .MenuLateral {
   background-color: rgb(107, 107, 107);
-  
   top: 0;
   /*padding: 2% 2% 0% 2%;*/
   position: sticky;
@@ -347,7 +343,7 @@ input[type="checkbox"] {
   align-items: center;
   
   gap: 10%;
-  overflow-y: scroll;
+  
   scrollbar-width: none;
 }
 
