@@ -11,31 +11,45 @@
 <body>
   <header>
     <!-- Aquí empieza el nav -->
-    <nav class="navbar">
-      <div class="logo">
-        <img src="img/pez-koi-sol-naciente.png" alt="" />
-        <h1>Turismo en Japón</h1>
+    <div class="navigation">
+      <div class="nav-container">
+        <nav>
+          <div class="img-y-logo">
+              <img class="img-logo" src="img/pez-koi-sol-naciente.png" alt="Logo" />
+              <div class="caja-principal">
+                  <div class="caja">
+                    <div class="titulo">
+                      <span class="bloque"></span>
+                      <h1>Turismo en Japón <span></span></h1>
+                    </div>
+                    <div class="sub-titulo">
+                      <div class="bloque"></div>
+                      <p>Organiza tu viaje</p>
+                    </div>
+                  </div>
+                </div>
+          </div>
+          <div class="nav-mobile">
+            <a id="nav-toggle" href="#!"><span></span></a>
+          </div>
+          <ul class="nav-list">
+            <li><a href="#!">INICIO</a></li>
+            <li class="dropdown">
+              <a href="#!">SECCIONES</a>
+              <ul class="nav-dropdown">
+                <li><a href="#">Puntos Turísticos</a></li>
+                <li><a href="#">Religión</a></li>
+                <li><a href="#">Arquitectura</a></li>
+                <li><a href="#">Gastronomía</a></li>
+                <li><a href="#">Paisajes y Jardines</a></li>
+                <li><a href="#">Mitos y Leyendas</a></li>
+              </ul>
+            </li>
+            <li><a href="#!">CONTACTO</a></li>
+          </ul>
+        </nav>
       </div>
-      <ul class="nav-links">
-        <input type="checkbox" id="checkbox_toggle" />
-        <label for="checkbox_toggle" class="hamburguesa">&#9776;</label>
-        <div class="menu">
-          <li><a href="/">Inicio</a></li>
-          <li class="secciones">
-            <a href="/">Información <span class="flecha flecha-abajo"></span></a>
-            <ul class="desplegable">
-              <li><a href="/">Puntos de Interés</a></li>
-              <li><a href="/">Religión</a></li>
-              <li><a href="/">Paisajes y Jardines</a></li>
-              <li><a href="/">Arquitectura</a></li>
-              <li><a href="/">Gastronomía</a></li>
-              <li><a href="/">Mitos y Leyendas</a></li>
-            </ul>
-          </li>
-          <li><a href="/">Contacto</a></li>
-        </div>
-      </ul>
-    </nav>
+    </div>
     <!-- Aquí termina el nav -->
     <!-- Aquí empieza el slide -->
     <div class="container">
@@ -113,7 +127,6 @@
   </header>
   <!-- Aquí empieza el contenido resumido -->
   <div class="ResumenTematico">
-
 
     <div class="MenuLateral">
       <div class="TituloMenu">Tematicas existentes para <br> seleccionar</div>
@@ -418,6 +431,7 @@
     </div>
   </footer>
   <!-- Aquí termina el footer -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="js/main.js"></script>
 </body>
 

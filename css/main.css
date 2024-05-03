@@ -1,4 +1,4 @@
-/* <!-- CSS GENERALES --> */
+/* <-- CSS GENERALES --> */
 * {
   margin: 0;
   padding: 0;
@@ -18,159 +18,224 @@ body {
 
 /* <!-- Termina CSS GENERALES --> */
 /* <!-- Aquí empieza el nav --> */
-header {
-  height: 100%;
+.img-logo {
+  width: 4em;
+  margin: 5px;
 }
-a {
-  text-decoration: none;
+.img-y-logo {
+  display: flex;
 }
 
-li {
+nav {
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  background: #d4c5ae;
+}
+.navigation {
+  height: 70px;
+  position: fixed;
+  top: 0;
+  z-index: 100000;
+}
+
+.nav-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.brand {
+  float: left;
+  line-height: 70px;
+  font-size: 1.4em;
+  padding-left: 20px;
+}
+
+.brand a {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
   list-style: none;
 }
 
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 5px;
-  background-color: #d4c5ae;
-  color: #242a20;
-  z-index: 10000;
-}
-
-.nav-links a {
-  color: #242a20;
-}
-
-.logo {
-  display: flex;
-}
-
-.logo h1 {
-  margin-left: 5px;
-  padding: 10px;
-}
-
-.logo img {
-  width: 3em;
-}
-
-.menu {
-  display: flex;
-  gap: 1em;
-  font-size: 1.3em;
-}
-
-.menu li:hover {
-  background-color: #d5d1c5;
-  border-radius: 5px;
-  transition: 0.3s ease;
-}
-
-.menu li {
-  padding: 5px 14px;
-}
-
-.secciones {
+nav ul li {
+  float: left;
   position: relative;
-  z-index: 10000;
 }
 
-.desplegable {
-  background-color: #d4c5ae;
-  padding: 1em 0;
-  position: absolute;
-  display: none;
-  border-radius: 8px;
-  top: 35px;
-}
-
-.desplegable li+li {
-  margin-top: 10px;
-}
-
-.desplegable li {
-  padding: 0.5em 1em;
-  width: 8em;
-  text-align: center;
-}
-
-.desplegable li:hover {
-  background-color: #d5d1c5;
-}
-
-.secciones:hover .desplegable {
+nav ul li a {
   display: block;
+  color: #fff;
+  padding: 0 20px;
+  text-decoration: none;
+  line-height: 70px;
+  font-size: 1.2em;
 }
 
-.flecha {
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  border-top: 2px solid #000;
-  border-right: 2px solid #000;
-  border-color: #242a20;
-  margin-left: 3px;
-  margin-bottom: 2px;
+nav ul li a:hover {
+  background: #808366;
+  color: #ffffff;
+  transition: 0.4s;
 }
 
-.flecha-abajo {
-  transform: rotate(135deg);
+nav ul li a:not(:only-child):after {
+  padding-left: 4px;
+  content: " ▾";
 }
 
-/* <!-- Sección responsiva del nav --> */
-input[type="checkbox"] {
+nav ul li ul li {
+  min-width: 60vw;
+}
+
+nav ul li ul li a {
+  padding: 15px;
+  line-height: 20px;
+  background-color: #b4a58f;
+}
+
+.nav-dropdown {
+  position: absolute;
+  z-index: 10000;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
   display: none;
 }
 
-.hamburguesa {
+/* Menu hamburguesa */
+.nav-mobile {
   display: none;
-  font-size: 24px;
-  user-select: none;
+  height: 60px;
+  width: 60px;
+  position: absolute;
+  top: 0;
+  right: 10px;
+  background-color: #d4c5ae;
+  z-index: 9050;
 }
 
-@media (max-width: 768px) {
-  .menu {
-    display: none;
-    position: absolute;
-    background-color: #d4c5ae;
-    right: 0;
-    left: 0;
-    text-align: center;
-    padding: 16px 0;
-    z-index: 10000;
-    margin-top: 12px;
+/* Media Query */
+@media only screen and (max-width: 800px) {
+  .img-logo {
+    height: 4em;
+    margin: 5px;
   }
-
-  .menu li:hover {
-    display: inline-block;
-    background-color: #d5d1c5;
-    transition: 0.3s ease;
-  }
-
-  .menu li+li {
-    margin-top: 12px;
+  .img-y-logo {
     width: 100%;
   }
+  /*---Animacion turismo en japón modo mobile---*/
+  .img-y-logo .caja-principal {
+    margin-top:25px;
+    
+    .caja {
+      width: 100%;
+      height: 1em;
 
-  input[type="checkbox"]:checked~.menu {
+      .titulo {
+        height: 30px;
+
+        h1 {
+          font-size: 1.2em;
+        }
+      }
+      .sub-titulo {
+        height: 1.5em;
+        margin-top: 5px;
+
+        p {
+          font-size: 0.6em;
+          letter-spacing: 2px;
+          margin-top: 2px;
+        }
+      }
+    }
+  }
+  /*---Animacion turismo en japón modo mobile---*/
+  .nav-mobile {
     display: block;
   }
 
-  .hamburguesa {
+  nav {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 70px;
+  }
+
+  nav ul {
+    display: none;
+    margin-top: -5px;
+  }
+
+  nav ul li {
+    float: right;
+    width: 70vw;
+  }
+
+  nav ul li a {
+    padding: 15px;
+    line-height: 20px;
+    background-color: #d4c5ae;
+  }
+
+  nav ul li ul li a {
+    padding-left: 20px;
+    background-color: #b4a58f;
+  }
+
+  .nav-dropdown {
+    position: static;
+    margin: 0px;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .nav-list {
     display: block;
   }
+}
 
-  .desplegable {
-    left: 50%;
-    top: 30px;
-    transform: translateX(35%);
-  }
-
-  .desplegable li:hover {
-    background-color: #d5d1c5;
-  }
+#nav-toggle {
+  position: absolute;
+  left: 18px;
+  top: 22px;
+  cursor: pointer;
+  padding: 10px 35px 16px 0;
+}
+#nav-toggle span,
+#nav-toggle span:before,
+#nav-toggle span:after {
+  cursor: pointer;
+  border-radius: 1px;
+  height: 4px;
+  width: 30px;
+  background: #808366;
+  position: absolute;
+  display: block;
+  content: "";
+  transition: all 300ms ease-in-out;
+}
+#nav-toggle span:before {
+  top: -10px;
+}
+#nav-toggle span:after {
+  bottom: -10px;
+}
+#nav-toggle.active span {
+  background-color: transparent;
+}
+#nav-toggle.active span:before,
+#nav-toggle.active span:after {
+  top: 0;
+}
+#nav-toggle.active span:before {
+  transform: rotate(45deg);
+}
+#nav-toggle.active span:after {
+  transform: rotate(-45deg);
 }
 
 /* <!-- Aquí termina el nav --> */
@@ -362,7 +427,7 @@ input[type="checkbox"] {
 .caja-principal {
   .caja {
     width: 260px;
-    height: 20%;
+    
     position: relative;
     display: flex;
     justify-content: center;
