@@ -242,7 +242,7 @@ nav ul li ul li a {
 .container .puntos {
   position: absolute;
   bottom: 70px;
-  z-index: 9000;
+  z-index: 500;
   display: flex;
   gap: 6px;
 }
