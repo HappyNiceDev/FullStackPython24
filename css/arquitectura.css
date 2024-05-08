@@ -256,7 +256,11 @@ nav ul li ul li a {
 /* <!-- Aquí empieza el contenido resumidoo --> */
 
 
-
+main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
 
 /* Aquí empieza las cards */
 .cards {
@@ -273,87 +277,30 @@ nav ul li ul li a {
   width: 100px;
   height: 100px;
 }
+
 /* Aquí termina las card */
 
+/* Aquí empieza las cards2 */
+.cards2 {
+  
+  
+  background-color: #222;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 600px));
+  gap: 60px;
+}
+
+.cards2 div {
+  background-color: #d4c5ae;
+  text-align: center;
+}
+
+/* Aquí termina las card2 */
 
 /* Aquí empieza el totem */
 
-#Totem {
-  width: 80%;
-  max-width: 350px;
-  height: 1000px;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: #f3141d;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: start;
-  overflow: hidden;
-}
-
-#Totem div {
-  background: hsl(0, 0%, 0%);
-  width: 100%;
-  max-width: 250px;
-  height: 100%;
-  max-height: 180px;
-  position: relative;
-  background-image: var(--img);
-  background-size: cover;
-  background-position: center;
-  border-radius: 20px;
-  cursor: pointer;
-}
-
-#Totem #Img1 {
-  top: 0%;
-  left: 0%;
-  z-index: 1;
-}
-
-#Totem #Img2 {
-  top: -60px;
-  left: 25%;
-  z-index: 1;
-}
-
-#Totem #Img3 {
-  top: -120px;
-  left: 0%;
-  z-index: 1;
-}
-
-#Totem #Img4 {
-  top: -180px;
-  left: 25%;
-  z-index: 1;
-}
-
-#Totem #Img5 {
-  top: -240px;
-  left: 0%;
-  z-index: 1;
-}
-
-#Totem #Img6 {
-  top: -300px;
-  left: 25%;
-  z-index: 1;
-}
-#Totem div:hover {
-  background-size: 150%;
-  
-  z-index: 2;
-}
-
-/* Aquí termina el totem */
-/* Aquí empieza el totem2 */
-
-
-#Totem2 { 
-  
+.Totem {
   margin-left: auto;
   margin-right: auto;
   background-color: #2714f3;
@@ -363,7 +310,7 @@ nav ul li ul li a {
   grid-template-rows: repeat(13, 1fr);
 }
 
-#Totem2 div {
+.Totem div {
   background: red;
   min-width: 250px;
   min-height: 180px;
@@ -380,44 +327,44 @@ nav ul li ul li a {
   align-content: center;
 }
 
-#Totem2 #Img1 {
-grid-column-start: 1;
-grid-column-end: 3;
-grid-row-start: 1;
-grid-row-end: 4;
+.Img1 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 4;
 
   z-index: 1;
 }
 
-#Totem2 #Img2 {
-grid-column-start: 2;
-grid-column-end: 4;
-grid-row-start: 3;
-grid-row-end: 6;
- 
-  z-index: 1;
-}
-
-#Totem2 #Img3 {
-grid-column-start: 1;
-grid-column-end: 3;
-grid-row-start: 5;
-grid-row-end: 8;
-
- 
-  z-index: 1;
-}
-
-#Totem2 #Img4 {
+.Img2 {
   grid-column-start: 2;
-grid-column-end: 4;
-grid-row-start: 7;
-grid-row-end: 10;
+  grid-column-end: 4;
+  grid-row-start: 3;
+  grid-row-end: 6;
 
   z-index: 1;
 }
 
-#Totem2 #Img5 {
+.Img3 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 5;
+  grid-row-end: 8;
+
+
+  z-index: 1;
+}
+
+.Img4 {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 7;
+  grid-row-end: 10;
+
+  z-index: 1;
+}
+
+.Img5 {
   grid-column-start: 1;
   grid-column-end: 3;
   grid-row-start: 9;
@@ -426,7 +373,7 @@ grid-row-end: 10;
   z-index: 1;
 }
 
-#Totem2 #Img6 {
+.Img6 {
   grid-column-start: 2;
   grid-column-end: 4;
   grid-row-start: 11;
@@ -434,20 +381,14 @@ grid-row-end: 10;
 
   z-index: 1;
 }
-#Totem2 div:hover {
+
+.Totem div:hover {
   background-size: 150%;
-  
+
   z-index: 2;
 }
 
-
-
-
-
-
-
-
-/* Aquí termina el totem2 */
+/* Aquí termina el totem */
 
 
 /* <!-- Aquí termina el contenido resumido --> */
