@@ -263,44 +263,34 @@ main {
 }
 
 /* Aquí empieza las cards */
-.cards {
-  margin: 10%;
+.Cards {
   background-color: #222;
-  position: relative;
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
-
-.cards div {
-  background-color: #dc0202;
-  width: 100px;
-  height: 100px;
-}
-
-/* Aquí termina las card */
-
-/* Aquí empieza las cards2 */
-.cards2 {
-  
-  
-  background-color: #222;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
   position: relative;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 600px));
+  grid-template-columns: repeat(3, 1fr);
   gap: 60px;
 }
 
-.cards2 div {
+.Cards div {
+  width: 300px;
+  height: 300px;
   background-color: #d4c5ae;
   text-align: center;
 }
+/* Aquí termina las cards */
 
-/* Aquí termina las card2 */
+.ContenedorPrincipal{
+  display: flex;
+  flex-direction: row;
+}
+
 
 /* Aquí empieza el totem */
-
 .Totem {
+  width: fit-content;
   margin-left: auto;
   margin-right: auto;
   background-color: #2714f3;
@@ -390,6 +380,9 @@ main {
 
 /* Aquí termina el totem */
 
+.Contenido{
+  width: 60%;
+}
 
 /* <!-- Aquí termina el contenido resumido --> */
 /* <!-- Aquí empieza el footer --> */

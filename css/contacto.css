@@ -22,6 +22,7 @@ body {
   width: 4em;
   margin: 5px;
 }
+
 .img-y-logo {
   display: flex;
 }
@@ -32,6 +33,7 @@ nav {
   width: 100vw;
   background: #d4c5ae;
 }
+
 .navigation {
   height: 70px;
   position: fixed;
@@ -117,87 +119,6 @@ nav ul li ul li a {
   z-index: 9050;
 }
 
-/* Media Query */
-@media only screen and (max-width: 800px) {
-  .img-logo {
-    height: 4em;
-    margin: 5px;
-  }
-  .img-y-logo {
-    width: 100%;
-  }
-  /*---Animacion turismo en japón modo mobile---*/
-  .img-y-logo .caja-principal {
-    margin-top:25px;
-    
-    .caja {
-      width: 100%;
-      height: 1em;
-
-      .titulo {
-        height: 30px;
-
-        h1 {
-          font-size: 1.2em;
-        }
-      }
-      .sub-titulo {
-        height: 1.5em;
-        margin-top: 5px;
-
-        p {
-          font-size: 0.6em;
-          letter-spacing: 2px;
-          margin-top: 2px;
-        }
-      }
-    }
-  }
-  /*---Animacion turismo en japón modo mobile---*/
-  .nav-mobile {
-    display: block;
-  }
-
-  nav {
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
-    height: 70px;
-  }
-
-  nav ul {
-    display: none;
-    margin-top: -5px;
-  }
-
-  nav ul li {
-    float: right;
-    width: 70vw;
-  }
-
-  nav ul li a {
-    padding: 15px;
-    line-height: 20px;
-    background-color: #d4c5ae;
-  }
-
-  nav ul li ul li a {
-    padding-left: 20px;
-    background-color: #b4a58f;
-  }
-
-  .nav-dropdown {
-    position: static;
-    margin: 0px;
-  }
-}
-
-@media screen and (min-width: 800px) {
-  .nav-list {
-    display: block;
-  }
-}
-
 #nav-toggle {
   position: absolute;
   left: 18px;
@@ -205,6 +126,7 @@ nav ul li ul li a {
   cursor: pointer;
   padding: 10px 35px 16px 0;
 }
+
 #nav-toggle span,
 #nav-toggle span:before,
 #nav-toggle span:after {
@@ -218,22 +140,28 @@ nav ul li ul li a {
   content: "";
   transition: all 300ms ease-in-out;
 }
+
 #nav-toggle span:before {
   top: -10px;
 }
+
 #nav-toggle span:after {
   bottom: -10px;
 }
+
 #nav-toggle.active span {
   background-color: transparent;
 }
+
 #nav-toggle.active span:before,
 #nav-toggle.active span:after {
   top: 0;
 }
+
 #nav-toggle.active span:before {
   transform: rotate(45deg);
 }
+
 #nav-toggle.active span:after {
   transform: rotate(-45deg);
 }
@@ -242,28 +170,35 @@ nav ul li ul li a {
 
 /* <!-- Aquí empieza el formulario --> */
 
-.container-form{
-  width: 100%;
-  max-width: 1100px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: repeat(2,1fr);
-  grid-gap: 50px;
+.container-form {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
   margin-top: 90px;
 }
 
-.container-form h2{
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+}
+
+.container-form h2 {
   margin-bottom: 15px;
   font-size: 35px
 }
 
-.container-form p{
+.container-form p {
   font-size: 17px;
   line-height: 1.6;
   margin-bottom: 30px;
 }
 
-.container-form a{
+.container-form a {
   font-size: 17px;
   display: inline-block;
   text-decoration: none;
@@ -273,12 +208,12 @@ nav ul li ul li a {
   font-weight: 700;
 }
 
-.container-form a i{
+.container-form a i {
   color: rgb(240, 51, 18);
   margin-right: 10px;
 }
 
-.container-form form .campo, textarea{
+.container-form form .campo {
   width: 100%;
   padding: 15px 10px;
   font-size: 16px;
@@ -288,14 +223,9 @@ nav ul li ul li a {
   outline: 0px;
 }
 
-.container-form form textarea{
-  max-width: 530px;
-  min-width: 530px;
-  min-height: 140px;
-  max-height: 150px;
-}
 
-.container-form .btn-enviar{
+
+.container-form .btn-enviar {
   padding: 15px;
   font-size: 16px;
   border: none;
@@ -307,7 +237,7 @@ nav ul li ul li a {
   transition: all 300ms ease;
 }
 
-.container-form .btn-enviar:hover{
+.container-form .btn-enviar:hover {
   background: #295c11;
 }
 
@@ -316,7 +246,7 @@ nav ul li ul li a {
 .caja-principal {
   .caja {
     width: 260px;
-    
+
     position: relative;
     display: flex;
     justify-content: center;
@@ -506,3 +436,96 @@ footer {
 }
 
 /* <!-- Aquí termina el footer --> */
+
+/* <!-- Aquí empieza los MEDIA QUERY --> */
+
+@media screen and (max-width: 800px) {
+  .img-logo {
+    height: 4em;
+    margin: 5px;
+  }
+
+  .img-y-logo {
+    width: 100%;
+  }
+
+  /*---Animacion turismo en japón modo mobile---*/
+  .img-y-logo .caja-principal {
+    margin-top: 25px;
+
+    .caja {
+      width: 100%;
+      height: 1em;
+
+      .titulo {
+        height: 30px;
+
+        h1 {
+          font-size: 1.2em;
+        }
+      }
+
+      .sub-titulo {
+        height: 1.5em;
+        margin-top: 5px;
+
+        p {
+          font-size: 0.6em;
+          letter-spacing: 2px;
+          margin-top: 2px;
+        }
+      }
+    }
+  }
+
+  /*---Animacion turismo en japón modo mobile---*/
+  .nav-mobile {
+    display: block;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 70px;
+  }
+
+  nav ul {
+    display: none;
+    margin-top: -5px;
+  }
+
+  nav ul li {
+    float: right;
+    width: 70vw;
+  }
+
+  nav ul li a {
+    padding: 15px;
+    line-height: 20px;
+    background-color: #d4c5ae;
+  }
+
+  nav ul li ul li a {
+    padding-left: 20px;
+    background-color: #b4a58f;
+  }
+
+  .nav-dropdown {
+    position: static;
+    margin: 0px;
+  }
+
+  /*--- Corte del formulario ---*/
+  .container-form {
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .nav-list {
+    display: block;
+  }
+}
+
+/* <!-- Aquí termina los MEDIA QUERY --> */

@@ -19,52 +19,32 @@ $("#nav-toggle").click(function () {
 //AQUÍ TERMINA EL JS DEL NAV BAR
 
 
-document.addEventListener("DOMContentLoaded", function () { //Espera que cargue todo el html
-const dd = document.documentElement;
 
 
+// Obtener todas las imágenes del totem
+const imagenesTotem = document.querySelectorAll('.Totem > div');
 
-  // Manejar clics en enlaces del menú
-  var menuLinks = dd.querySelectorAll(".MenuLateral a");
-  menuLinks.forEach(function (link) {
-    link.addEventListener("click", function (event) {
-      event.preventDefault();
+// Obtener el contenedor principal del contenido
+const contenedorContenido = document.querySelector('.Contenido');
 
-      // Obtener el ID de la sección objetivo del enlace
-      const sectionId = this.getAttribute('href').substring(1);
+// Función para manejar el clic en una imagen del totem
+function handleClickImagen(event) {
+  // Obtener el índice de la imagen clicada
+  const indice = Array.from(imagenesTotem).indexOf(event.target);
 
-      // Obtener la sección objetivo del DOM
-      const targetSection = dd.querySelector('.ContenidoResumido section#' + sectionId);
+  // Obtener todos los elementos de contenido
+  const elementosContenido = contenedorContenido.querySelectorAll('div');
 
-      // Desplazar el contenedor scrollable hasta la sección objetivo
-      if (targetSection) {
-        targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-
-    });
+  // Ocultar todos los elementos de contenido
+  elementosContenido.forEach(elemento => {
+    elemento.style.display = 'none';
   });
 
+  // Mostrar el elemento de contenido correspondiente al índice de la imagen clicada
+  elementosContenido[indice].style.display = 'block';
+}
 
-  // Resaltar el elemento del menú cuando se desplaza por el contenido
-  window.addEventListener("scroll", function () {
-
-    dd.querySelectorAll(".ResumenTematico section").forEach(function (section) {
-      var sectionTop = section.getBoundingClientRect().top;
-    
-      if (sectionTop <= 150) {
-        var sectionId = section.getAttribute("id");
-        var menuLink = document.querySelector('.MenuLateral a[href="#' + sectionId + '"]');
-
-        document.querySelectorAll(".MenuLateral a.highlight").forEach(function (link) {
-          link.classList.remove("highlight");
-        });
-
-        menuLink.classList.add("highlight");
-      }
-
-    });
-
-  });
-
-
+// Agregar un evento click a cada imagen del totem
+imagenesTotem.forEach(imagen => {
+  imagen.addEventListener('click', handleClickImagen);
 });
