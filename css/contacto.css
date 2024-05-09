@@ -22,7 +22,6 @@ body {
   width: 4em;
   margin: 5px;
 }
-
 .img-y-logo {
   display: flex;
 }
@@ -30,44 +29,23 @@ body {
 nav {
   display: flex;
   justify-content: space-between;
-  width: 100vw;
   background: #d4c5ae;
 }
-
 .navigation {
-  height: 70px;
-  position: fixed;
+  position: sticky;
   top: 0;
-  z-index: 100000;
-}
-
-.nav-container {
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.brand {
-  float: left;
-  line-height: 70px;
-  font-size: 1.4em;
-  padding-left: 20px;
-}
-
-.brand a {
-  color: white;
-  text-decoration: none;
-  text-transform: uppercase;
+  z-index: 1000;
+  width: 100%;
 }
 
 nav ul {
-  margin: 0;
-  padding: 0;
   list-style: none;
 }
 
 nav ul li {
   float: left;
-  position: relative;
+  /*position: relative;*/
+  margin-top: -2px
 }
 
 nav ul li a {
@@ -75,7 +53,7 @@ nav ul li a {
   color: #fff;
   padding: 0 20px;
   text-decoration: none;
-  line-height: 70px;
+  line-height: 78px;
   font-size: 1.2em;
 }
 
@@ -86,12 +64,12 @@ nav ul li a:hover {
 }
 
 nav ul li a:not(:only-child):after {
-  padding-left: 4px;
-  content: " ▾";
+  padding-left: 2px;
+  content: "▾";
 }
 
 nav ul li ul li {
-  min-width: 60vw;
+  min-width: 200px;
 }
 
 nav ul li ul li a {
@@ -110,13 +88,98 @@ nav ul li ul li a {
 /* Menu hamburguesa */
 .nav-mobile {
   display: none;
-  height: 60px;
-  width: 60px;
+  width: 40px;
   position: absolute;
   top: 0;
-  right: 10px;
+  right: 20px;
   background-color: #d4c5ae;
   z-index: 9050;
+}
+
+/* Media Query */@media only screen and (max-width: 800px) 
+{
+  .img-logo {
+    height: 4em;
+    margin: 5px;
+  }
+  .img-y-logo {
+    width: 100%;
+  }
+  /*---Animacion turismo en japón modo mobile---*/
+  .img-y-logo .caja-principal {
+    margin-top:25px;
+    
+    .caja {
+      width: 100%;
+      height: 1em;
+
+      .titulo {
+        height: 30px;
+
+        h1 {
+          font-size: 1.2em;
+        }
+      }
+      .sub-titulo {
+        height: 1.5em;
+        margin-top: 5px;
+
+        p {
+          font-size: 0.6em;
+          letter-spacing: 2px;
+          margin-top: 2px;
+        }
+      }
+    }
+  }
+  /*---Animacion turismo en japón modo mobile---*/
+  .nav-mobile {
+    display: block;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 70px;
+  }
+
+  nav ul {
+    display: none;
+    margin-top: -5px;
+  }
+
+  nav ul li {
+    float: right;
+    width: 70vw;
+    margin-top: -2px
+  }
+
+  nav ul li a {
+    padding: 15px;
+    width: 200px;
+    float: right;
+    line-height: 20px;
+    background-color: #d4c5ae;
+    
+  }
+
+  nav ul li ul li a {
+    padding-left: 20px;
+    background-color: #b4a58f;
+  }
+
+  .nav-dropdown {
+    position: static;
+    margin: 0px;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  
+  .nav-list {
+    display: block;
+  }
 }
 
 #nav-toggle {
@@ -126,7 +189,6 @@ nav ul li ul li a {
   cursor: pointer;
   padding: 10px 35px 16px 0;
 }
-
 #nav-toggle span,
 #nav-toggle span:before,
 #nav-toggle span:after {
@@ -140,28 +202,22 @@ nav ul li ul li a {
   content: "";
   transition: all 300ms ease-in-out;
 }
-
 #nav-toggle span:before {
   top: -10px;
 }
-
 #nav-toggle span:after {
   bottom: -10px;
 }
-
 #nav-toggle.active span {
   background-color: transparent;
 }
-
 #nav-toggle.active span:before,
 #nav-toggle.active span:after {
   top: 0;
 }
-
 #nav-toggle.active span:before {
   transform: rotate(45deg);
 }
-
 #nav-toggle.active span:after {
   transform: rotate(-45deg);
 }
