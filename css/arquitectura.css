@@ -119,6 +119,91 @@ nav ul li ul li a {
   z-index: 9050;
 }
 
+/* Media Query */
+@media only screen and (max-width: 800px) {
+  .img-logo {
+    height: 4em;
+    margin: 5px;
+  }
+
+  .img-y-logo {
+    width: 100%;
+  }
+
+  /*---Animacion turismo en japón modo mobile---*/
+  .img-y-logo .caja-principal {
+    margin-top: 25px;
+
+    .caja {
+      width: 100%;
+      height: 1em;
+
+      .titulo {
+        height: 30px;
+
+        h1 {
+          font-size: 1.2em;
+        }
+      }
+
+      .sub-titulo {
+        height: 1.5em;
+        margin-top: 5px;
+
+        p {
+          font-size: 0.6em;
+          letter-spacing: 2px;
+          margin-top: 2px;
+        }
+      }
+    }
+  }
+
+  /*---Animacion turismo en japón modo mobile---*/
+  .nav-mobile {
+    display: block;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 70px;
+  }
+
+  nav ul {
+    display: none;
+    margin-top: -5px;
+  }
+
+  nav ul li {
+    float: right;
+    width: 70vw;
+  }
+
+  nav ul li a {
+    padding: 15px;
+    line-height: 20px;
+    background-color: #d4c5ae;
+  }
+
+  nav ul li ul li a {
+    padding-left: 20px;
+    background-color: #b4a58f;
+  }
+
+  .nav-dropdown {
+    position: static;
+    margin: 0px;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .nav-list {
+    display: block;
+  }
+}
+
 #nav-toggle {
   position: absolute;
   left: 18px;
@@ -168,80 +253,138 @@ nav ul li ul li a {
 
 /* <!-- Aquí termina el nav --> */
 
-/* <!-- Aquí empieza el formulario --> */
+/* <!-- Aquí empieza el contenido resumidoo --> */
 
-.container-form {
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
+
+main {
   position: relative;
-  display: flex;
-  flex-direction: row;
-  gap: 50px;
-  margin-top: 90px;
-}
-
-
-.formulario {
   display: flex;
   flex-direction: column;
 }
 
-.container-form h2 {
-  margin-bottom: 15px;
-  font-size: 35px
+/* Aquí empieza las cards */
+.Cards {
+  background-color: #222;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px;
 }
 
-.container-form p {
-  font-size: 17px;
-  line-height: 1.6;
-  margin-bottom: 30px;
+.Cards div {
+  width: 300px;
+  height: 300px;
+  background-color: #d4c5ae;
+  text-align: center;
 }
+/* Aquí termina las cards */
 
-.container-form a {
-  font-size: 17px;
-  display: inline-block;
-  text-decoration: none;
-  width: 100%;
-  margin-bottom: 15px;
-  color: black;
-  font-weight: 700;
-}
-
-.container-form a i {
-  color: rgb(240, 51, 18);
-  margin-right: 10px;
-}
-
-.container-form form .campo {
-  width: 100%;
-  padding: 15px 10px;
-  font-size: 16px;
-  border: 1px solid #dbdbdb;
-  margin-bottom: 20px;
-  border-radius: 3px;
-  outline: 0px;
+.ContenedorPrincipal{
+  display: flex;
+  flex-direction: row;
 }
 
 
+/* Aquí empieza el totem */
+.Totem {
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #2714f3;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(13, 1fr);
+}
 
-.container-form .btn-enviar {
-  padding: 15px;
-  font-size: 16px;
-  border: none;
-  outline: 0px;
-  background: rgb(240, 51, 18);
-  color: white;
-  border-radius: 3px;
+.Totem div {
+  background: red;
+  min-width: 250px;
+  min-height: 180px;
+
+  width: 250px;
+  height: 180px;
+
+  background-image: var(--img);
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
   cursor: pointer;
-  transition: all 300ms ease;
+  justify-content: center;
+  align-content: center;
 }
 
-.container-form .btn-enviar:hover {
-  background: #295c11;
+.Img1 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 4;
+
+  z-index: 1;
 }
 
-/* <!-- Aquí termina el formulario --> */
+.Img2 {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 3;
+  grid-row-end: 6;
+
+  z-index: 1;
+}
+
+.Img3 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 5;
+  grid-row-end: 8;
+
+
+  z-index: 1;
+}
+
+.Img4 {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 7;
+  grid-row-end: 10;
+
+  z-index: 1;
+}
+
+.Img5 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 9;
+  grid-row-end: 12;
+
+  z-index: 1;
+}
+
+.Img6 {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 11;
+  grid-row-end: 14;
+
+  z-index: 1;
+}
+
+.Totem div:hover {
+  background-size: 150%;
+
+  z-index: 2;
+}
+
+/* Aquí termina el totem */
+
+.Contenido{
+  width: 60%;
+}
+
+/* <!-- Aquí termina el contenido resumido --> */
 /* <!-- Aquí empieza el footer --> */
 .caja-principal {
   .caja {
@@ -436,96 +579,3 @@ footer {
 }
 
 /* <!-- Aquí termina el footer --> */
-
-/* <!-- Aquí empieza los MEDIA QUERY --> */
-
-@media screen and (max-width: 800px) {
-  .img-logo {
-    height: 4em;
-    margin: 5px;
-  }
-
-  .img-y-logo {
-    width: 100%;
-  }
-
-  /*---Animacion turismo en japón modo mobile---*/
-  .img-y-logo .caja-principal {
-    margin-top: 25px;
-
-    .caja {
-      width: 100%;
-      height: 1em;
-
-      .titulo {
-        height: 30px;
-
-        h1 {
-          font-size: 1.2em;
-        }
-      }
-
-      .sub-titulo {
-        height: 1.5em;
-        margin-top: 5px;
-
-        p {
-          font-size: 0.6em;
-          letter-spacing: 2px;
-          margin-top: 2px;
-        }
-      }
-    }
-  }
-
-  /*---Animacion turismo en japón modo mobile---*/
-  .nav-mobile {
-    display: block;
-  }
-
-  nav {
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
-    height: 70px;
-  }
-
-  nav ul {
-    display: none;
-    margin-top: -5px;
-  }
-
-  nav ul li {
-    float: right;
-    width: 70vw;
-  }
-
-  nav ul li a {
-    padding: 15px;
-    line-height: 20px;
-    background-color: #d4c5ae;
-  }
-
-  nav ul li ul li a {
-    padding-left: 20px;
-    background-color: #b4a58f;
-  }
-
-  .nav-dropdown {
-    position: static;
-    margin: 0px;
-  }
-
-  /*--- Corte del formulario ---*/
-  .container-form {
-    flex-direction: column;
-  }
-}
-
-@media screen and (min-width: 800px) {
-  .nav-list {
-    display: block;
-  }
-}
-
-/* <!-- Aquí termina los MEDIA QUERY --> */
