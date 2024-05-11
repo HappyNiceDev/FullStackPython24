@@ -16,6 +16,9 @@ $("#nav-toggle").click(function () {
   $("nav ul").toggle();
 });
 
+document.addEventListener("DOMContentLoaded", function () { //Espera que cargue todo el html
+  
+});
 //AQUÍ TERMINA EL JS DEL NAV BAR
 
 
@@ -29,6 +32,7 @@ const contenedorContenido = document.querySelector('.Contenido');
 
 // Función para manejar el clic en una imagen del totem
 function handleClickImagen(event) {
+  console.log(event);
   // Obtener el índice de la imagen clicada
   const indice = Array.from(imagenesTotem).indexOf(event.target);
 
@@ -39,7 +43,8 @@ function handleClickImagen(event) {
   elementosContenido.forEach(elemento => {
     elemento.style.display = 'none';
   });
-
+  
+  contenedorContenido.style.display = 'block';
   // Mostrar el elemento de contenido correspondiente al índice de la imagen clicada
   elementosContenido[indice].style.display = 'block';
 }

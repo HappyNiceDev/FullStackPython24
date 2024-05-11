@@ -14,6 +14,7 @@ body {
   background: #d5d1c5;
   display: flex;
   flex-direction: column;
+  font-size: 1.5em;
 }
 
 /* <!-- Termina CSS GENERALES --> */
@@ -94,7 +95,8 @@ nav ul li ul li a {
   z-index: 9050;
 }
 
-/* Media Query */@media only screen and (max-width: 800px) 
+/* Media Query */
+@media only screen and (max-width: 800px) 
 {
   .img-logo {
     height: 4em;
@@ -266,15 +268,15 @@ main {
   position: relative;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(13, 1fr);
+  grid-template-rows: repeat(17, 1fr);
 }
 
 .Totem div {
   background: red;
-  min-width: 250px;
+  min-width: 320px;
   min-height: 180px;
 
-  width: 250px;
+  width: 320px;
   height: 180px;
 
   background-image: var(--img);
@@ -340,6 +342,22 @@ main {
 
   z-index: 1;
 }
+.Img7 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 13;
+  grid-row-end: 16;
+
+  z-index: 1;
+}
+.Img8 {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 15;
+  grid-row-end: 18;
+
+  z-index: 1;
+}
 
 .Totem div:hover {
   background-size: 150%;
@@ -351,6 +369,11 @@ main {
 
 .Contenido{
   width: 60%;
+  display: none;
+}
+.Contenido div {
+  top: 0;
+  position: sticky;
 }
 
 /* <!-- Aquí termina el contenido resumido --> */
