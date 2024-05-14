@@ -76,6 +76,9 @@ nav ul li ul li a {
   line-height: 20px;
   background-color: #b4a58f;
 }
+.dropdown{
+  display: none;
+}
 
 .nav-dropdown {
   position: absolute;
