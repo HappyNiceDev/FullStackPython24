@@ -324,6 +324,7 @@ nav ul li ul li a {
 .contenido p {
   font-family: sans-serif;
   color: #fff;
+  font-size: 1.1em;
   -webkit-text-stroke-width: 0.5px;
   -webkit-text-stroke-color: #242a20;
 }
