@@ -16,40 +16,52 @@ $("#nav-toggle").click(function () {
   $("nav ul").toggle();
 });
 
-document.addEventListener("DOMContentLoaded", function () { //Espera que cargue todo el html
-  
-});
-//AQUÍ TERMINA EL JS DEL NAV BAR
-
-
-
-
-// Obtener todas las imágenes del totem
-const imagenesTotem = document.querySelectorAll('.Totem > div');
 
 // Obtener el contenedor principal del contenido
 const contenedorContenido = document.querySelector('.Contenido');
+// Obtener todos los elementos de contenido
+const elementosContenido = contenedorContenido.querySelectorAll('div');
+
+
+// Agregar un evento click a cada imagen del totem
+document.querySelectorAll('.Totem > div').forEach((imagen, index) => {
+
+  imagen.addEventListener('click', function (event) {
+
+    handleClickImagen(event, index);
+
+  });
+
+});
 
 // Función para manejar el clic en una imagen del totem
-function handleClickImagen(event) {
-  console.log(event);
-  // Obtener el índice de la imagen clicada
-  const indice = Array.from(imagenesTotem).indexOf(event.target);
-
-  // Obtener todos los elementos de contenido
-  const elementosContenido = contenedorContenido.querySelectorAll('div');
+function handleClickImagen(event, index) {
 
   // Ocultar todos los elementos de contenido
   elementosContenido.forEach(elemento => {
+
     elemento.style.display = 'none';
+
   });
-  
+
   contenedorContenido.style.display = 'block';
+
   // Mostrar el elemento de contenido correspondiente al índice de la imagen clicada
-  elementosContenido[indice].style.display = 'block';
+  elementosContenido[index].style.display = 'block';
 }
 
-// Agregar un evento click a cada imagen del totem
-imagenesTotem.forEach(imagen => {
-  imagen.addEventListener('click', handleClickImagen);
+
+
+const heartIcon = document.querySelectorAll(".like-button .heart-icon");
+
+heartIcon.forEach(x => {
+
+  x.addEventListener("click", () => {
+
+    let valor = x.getAttribute('id');
+    console.log(valor);
+    x.classList.toggle("liked");
+
+  });
+
 });
