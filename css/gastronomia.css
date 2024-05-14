@@ -233,164 +233,6 @@ main {
   flex-direction: column;
 }
 
-/* Aquí empieza las cards */
-.Cards {
-  background-color: #222;
-  height: 100%;
-  margin-top: 2%;
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 60px;
-}
-
-.Cards>div {
-  width: 300px;
-  height: 300px;
-  background-color: #d4c5ae;
-  text-align: center;
-  position: relative;
-}
-
-.card1 {
-  
-  background-image: url("../img/gas_img/RAMEN-topgastronomico.es.webp");
-  background-size: cover;
-  background-position: center;
-}
-/* Aquí termina las cards */
-
-.ContenedorPrincipal{
-  display: flex;
-  flex-direction: row;
-}
-
-
-/* Aquí empieza el totem */
-.Totem {
-  width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: #2714f3;
-  position: relative;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(17, 1fr);
-}
-
-.Totem>div {
-  min-width: 320px;
-  min-height: 180px;
-  width: 320px;
-  height: 180px;
-  position: relative;
-  display: flex;
-  align-items: start;
-  
-  background-size: cover;
-  background-position: center;
-  border-radius: 20px;
-  cursor: pointer;
-}
-
-.Img1 {
-  background-image: url("../img/gas_img/SUSHI-wallhere.com.webp");
-
-  grid-column-start: 1;
-  grid-column-end: 3;
-  grid-row-start: 1;
-  grid-row-end: 4;
-
-  z-index: 1;
-}
-
-.Img2 {
-  background-image: url('../img/gas_img/RAMEN-topgastronomico.es.webp');
-
-  grid-column-start: 2;
-  grid-column-end: 4;
-  grid-row-start: 3;
-  grid-row-end: 6;
-
-  z-index: 1;
-}
-
-.Img3 {
-  background-image: url('../img/gas_img/TAKOYAKI-muyjapones.com.webp');
-
-  grid-column-start: 1;
-  grid-column-end: 3;
-  grid-row-start: 5;
-  grid-row-end: 8;
-
-
-  z-index: 1;
-}
-
-.Img4 {
-  background-image: url('../img/gas_img/GYUDON-thewoksoflife.com.webp');
-
-  grid-column-start: 2;
-  grid-column-end: 4;
-  grid-row-start: 7;
-  grid-row-end: 10;
-
-  z-index: 1;
-}
-
-.Img5 {
-  background-image: url('../img/gas_img/OKONOMIYAKI-bonviveur.es.webp');
-
-  grid-column-start: 1;
-  grid-column-end: 3;
-  grid-row-start: 9;
-  grid-row-end: 12;
-
-  z-index: 1;
-}
-
-.Img6 {
-  background-image: url('../img/gas_img/MOCHI-milenio.com.webp');
-
-  grid-column-start: 2;
-  grid-column-end: 4;
-  grid-row-start: 11;
-  grid-row-end: 14;
-
-  z-index: 1;
-}
-
-.Img7 {
-  background-image: url('../img/gas_img/DORAYAKI-diariovasco.com.webp');
-
-  grid-column-start: 1;
-  grid-column-end: 3;
-  grid-row-start: 13;
-  grid-row-end: 16;
-
-  z-index: 1;
-}
-
-.Img8 {
-  background-image: url('../img/gas_img/TAIYAKI-japonalternativo.com.webp');
-
-  grid-column-start: 2;
-  grid-column-end: 4;
-  grid-row-start: 15;
-  grid-row-end: 18;
-
-  z-index: 1;
-}
-
-.Totem>div:hover {
-  background-size: 150%;
-
-  z-index: 2;
-}
-/* Aquí termina el totem */
-
 /* Comienza icono corazon */
 .like-button {
 
@@ -444,9 +286,190 @@ main {
 }
 /* Terina icono corazon */
 
+.ContenedorPrincipal{
+  display: flex;
+  flex-direction: row;
+}
+
+/* Aquí empieza el totem */
+.TotemCentrado {
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #2714f3;
+  position: relative;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(3, 1fr);
+  animation: TotemCentradoEntrada 1s ease-in-out forwards;
+}
+
+.TotemCentrado>div {
+  min-width: 480px;
+  min-height: 270px;
+  width: 480px;
+  height: 270px;
+  position: relative;
+  display: flex;
+  align-items: start;
+  
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.Img1 {
+  background-image: url("../img/gas_img/SUSHI-wallhere.com.webp");
+}
+
+.Img2 {
+  background-image: url('../img/gas_img/RAMEN-topgastronomico.es.webp');
+}
+
+.Img3 {
+  background-image: url('../img/gas_img/TAKOYAKI-muyjapones.com.webp');
+}
+
+.Img4 {
+  background-image: url('../img/gas_img/GYUDON-thewoksoflife.com.webp');
+}
+
+.Img5 {
+  background-image: url('../img/gas_img/OKONOMIYAKI-bonviveur.es.webp');
+}
+
+.Img6 {
+  background-image: url('../img/gas_img/MOCHI-milenio.com.webp');
+}
+
+.Img7 {
+  background-image: url('../img/gas_img/DORAYAKI-diariovasco.com.webp');
+}
+
+.Img8 {
+  background-image: url('../img/gas_img/TAIYAKI-japonalternativo.com.webp');
+}
+@keyframes TotemCentradoEntrada {
+  0% {
+    
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes TotemCentradoSalida {
+  0% {
+    
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    
+    opacity: 0;
+    transform: scale(0.5);
+  }
+}
+/*---------------------------------------------------------------*/
+
+.Totem_lateral {
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #2714f3;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(17, 1fr);
+  animation: Ani_2_Totem 1s ease-in-out forwards;
+}
+
+.Totem_lateral>div {
+  min-width: 320px;
+  min-height: 180px;
+  width: 320px;
+  height: 180px;
+  position: relative;
+  display: flex;
+  align-items: start;
+  
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.Img1_lateral {
+  grid-area: 1 / 1 / 4 / 3;
+  z-index: 1;
+}
+
+.Img2_lateral {
+  grid-area: 3 / 2 / 6 / 4;
+  z-index: 1;
+}
+
+.Img3_lateral {
+  grid-area: 5 / 1 / 8 / 3;
+  z-index: 1;
+}
+
+.Img4_lateral {
+  grid-area: 7 / 2 / 10 / 4;
+  z-index: 1;
+}
+
+.Img5_lateral {
+  grid-area: 9 / 1 / 12 / 3;
+  z-index: 1;
+}
+
+.Img6_lateral {
+  grid-area: 11 / 2 / 14 / 4;
+  z-index: 1;
+}
+
+.Img7_lateral {
+  grid-area: 13 / 1 / 16 / 3;
+  z-index: 1;
+}
+
+.Img8_lateral {
+  grid-area: 15 / 2 / 18 / 4;
+  z-index: 1;
+}
+
+.Totem_lateral>div:hover {
+  background-size: 150%;
+
+  z-index: 2;
+}
+
+@keyframes Ani_2_Totem {
+  0% {
+    
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Aquí termina el totem */
+
 .Contenido{
   width: 60%;
+  display: none;
 }
+
 .Contenido div {
   top: 0;
   padding-top: 4%;
