@@ -259,7 +259,7 @@ main {
 }
 
 .like-button .heart-bg:hover {
-  background: rgba(255, 192, 200, 0.7);
+  background: rgba(255, 255, 255, 0.7);
   
 }
 
@@ -283,7 +283,7 @@ main {
     background-position: right;
   }
 }
-/* Terina icono corazon */
+/* Termina icono corazon */
 
 .ContenedorPrincipal{
   display: flex;
