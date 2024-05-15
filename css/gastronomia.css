@@ -380,7 +380,6 @@ main {
   width: fit-content;
   margin-left: auto;
   margin-right: auto;
-  background-color: #2714f3;
   position: relative;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -396,11 +395,12 @@ main {
   position: relative;
   display: flex;
   align-items: start;
-  
   background-size: cover;
   background-position: center;
   border-radius: 20px;
   cursor: pointer;
+  margin: 1.5em;/*cosas nuevas*/
+  border: solid 3px #fff;/*cosas nuevas*/
 }
 
 .Img1_lateral {
@@ -467,13 +467,36 @@ main {
 .Contenido{
   width: 60%;
   display: none;
+  margin: 1.5em;/*cosas nuevas*/
+  background-color: #fff;/*cosas nuevas*/
+  border: solid 3px #d4c5ae;/*cosas nuevas*/
+  border-radius: 20px;/*cosas nuevas*/
+  padding: 2em;/*cosas nuevas*/
+  color: #242A20;/*cosas nuevas*/
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);/*cosas nuevas*/
 }
 
 .Contenido div {
   top: 0;
-  padding-top: 4%;
+  /*padding-top: 4%;*/
   position: sticky;
   display: none;
+}
+
+/*Cosas nuevas*/
+.Contenido h1{
+  text-align: center;
+  font-style: italic;
+  letter-spacing: 3px;
+  text-decoration: underline;
+}
+.Contenido p{
+  margin: 2em;
+  font-size: 1.5em;
+}
+.Contenido ul li{
+  margin: 2em;
+  font-size: 1.2em;
 }
 /* <!-- Aquí termina el contenido resumido --> */
 
