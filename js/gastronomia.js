@@ -62,13 +62,13 @@ function handleClickImagen(event, index) {
 //Se detecta click sobre alguna imagen del totem y se desencadena el cambio de las clases.
 function CambioClases() {
 
-  elementoTotem.classList.replace('TotemCentrado', 'Totem_lateral');
-  elementoTotem.classList.replace('TotemCentrado', 'Totem_lateral');
+  elementoTotem.classList.replace('TotemCentrado', 'TotemLateral');
+  elementoTotem.classList.replace('TotemCentrado', 'TotemLateral');
   elementoTotem.style.animation = 'TotemCentradoSalida 1s ease-in-out forwards;';
 
   document.querySelectorAll('#Totem > div').forEach((imagen, index) => {
 
-    let NomClass = 'Img' + (index + 1) + '_lateral';
+    let NomClass = 'Img' + (index + 1) + 'Lateral';
     imagen.classList.add(NomClass);
     
   });

@@ -227,6 +227,7 @@ nav ul li ul li a {
 
 
 main {
+  margin: 2% auto 2% auto;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -293,12 +294,10 @@ main {
 /* Aquí empieza el totem */
 .TotemCentrado {
   width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: #2714f3;
+  margin: 2% auto 2% auto;
   position: relative;
   display: grid;
-  gap: 16px;
+  gap: 2%;
   grid-template-columns: repeat(3, 1fr);
   animation: TotemCentradoEntrada 1s ease-in-out forwards;
 }
@@ -309,13 +308,12 @@ main {
   width: 480px;
   height: 270px;
   position: relative;
-  display: flex;
-  align-items: start;
-  
   background-size: cover;
   background-position: center;
   border-radius: 20px;
   cursor: pointer;
+  border: solid 3px #fff;/*cosas nuevas*/
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .Img1 {
@@ -351,12 +349,11 @@ main {
 }
 @keyframes TotemCentradoEntrada {
   0% {
-    
     opacity: 0;
     transform: scale(0.5);
+    gap: 0%;
   }
   100% {
-    
     opacity: 1;
     transform: scale(1);
   }
@@ -376,7 +373,7 @@ main {
 }
 /*---------------------------------------------------------------*/
 
-.Totem_lateral {
+.TotemLateral {
   width: fit-content;
   margin-left: auto;
   margin-right: auto;
@@ -384,81 +381,104 @@ main {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(17, 1fr);
-  animation: Ani_2_Totem 1s ease-in-out forwards;
+  animation: TotemLateralEntrada 1.5s ease-in-out forwards;
 }
 
-.Totem_lateral>div {
+.TotemLateral>div {
   min-width: 320px;
   min-height: 180px;
   width: 320px;
   height: 180px;
   position: relative;
-  display: flex;
-  align-items: start;
   background-size: cover;
   background-position: center;
   border-radius: 20px;
   cursor: pointer;
   margin: 1.5em;/*cosas nuevas*/
   border: solid 3px #fff;/*cosas nuevas*/
+  animation: HoverSalida 600ms ease-in-out forwards;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.Img1_lateral {
+.Img1Lateral {
   grid-area: 1 / 1 / 4 / 3;
   z-index: 1;
 }
 
-.Img2_lateral {
+.Img2Lateral {
   grid-area: 3 / 2 / 6 / 4;
   z-index: 1;
 }
 
-.Img3_lateral {
+.Img3Lateral {
   grid-area: 5 / 1 / 8 / 3;
   z-index: 1;
 }
 
-.Img4_lateral {
+.Img4Lateral {
   grid-area: 7 / 2 / 10 / 4;
   z-index: 1;
 }
 
-.Img5_lateral {
+.Img5Lateral {
   grid-area: 9 / 1 / 12 / 3;
   z-index: 1;
 }
 
-.Img6_lateral {
+.Img6Lateral {
   grid-area: 11 / 2 / 14 / 4;
   z-index: 1;
 }
 
-.Img7_lateral {
+.Img7Lateral {
   grid-area: 13 / 1 / 16 / 3;
   z-index: 1;
 }
 
-.Img8_lateral {
+.Img8Lateral {
   grid-area: 15 / 2 / 18 / 4;
   z-index: 1;
 }
 
-.Totem_lateral>div:hover {
-  background-size: 150%;
-
+.TotemLateral>div:hover {
   z-index: 2;
+  animation: HoverEntrada 600ms ease-in-out forwards;
+  
 }
 
-@keyframes Ani_2_Totem {
-  0% {
+@keyframes HoverSalida {
+  from{
+    background-size: 120%;
+    transform: scale(1.2, 1.2);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.38);
     
+  }
+  to {
+    background-size: 100%;
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes HoverEntrada {
+  from {
+    background-size: 100%;
+    transform: scale(1, 1);
+  }
+  to {
+    background-size: 120%;
+    transform: scale(1.2, 1.2);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.38);
+  }
+}
+
+@keyframes TotemLateralEntrada {
+  0% {
     opacity: 0;
-    transform: scale(0.5);
+    transform: scale(0.2, 0.2);
   }
   100% {
-    
     opacity: 1;
-    transform: scale(1);
+    transform: scale(1, 1);
   }
 }
 
@@ -478,7 +498,7 @@ main {
 
 .Contenido div {
   top: 0;
-  /*padding-top: 4%;*/
+  padding-top: 4%;
   position: sticky;
   display: none;
 }
