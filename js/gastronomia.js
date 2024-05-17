@@ -25,19 +25,15 @@ const elementosContenido = contenedorContenido.querySelectorAll('div');
 const elementoTotem = document.getElementById('Totem');
 
 
-
-
 // Agregar un evento click a cada imagen del totem
 document.querySelectorAll('#Totem > div').forEach((imagen, index) => {
 
   imagen.addEventListener('click', function (event) {
 
     CambioClases();
-
     handleClickImagen(event, index);
 
   });
-
 });
 
 // Función para manejar el clic en una imagen del totem
