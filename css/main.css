@@ -334,7 +334,7 @@ nav ul li ul li a {
 /* <!-- Aquí termina el slide --> */
 /* <!-- Aquí empieza el contenido resumidoo --> */
 .ResumenTematico {
-  background-color: darkolivegreen;
+  background-color: #d5d1c5;
   width: fit-content;
   height: 100%;
   padding-top: 2%;
@@ -347,7 +347,6 @@ nav ul li ul li a {
 }
 
 .MenuLateral {
-  background-color: rgb(107, 107, 107);
   top: 0;
   /*padding: 2% 2% 0% 2%;*/
   position: sticky;
@@ -357,9 +356,13 @@ nav ul li ul li a {
 }
 
 .TituloMenu {
-  background: #14df3a;
+  background: #808366;
   font-size: larger;
   text-align: center;
+  border-radius: 10px;
+  height: 30px;
+  align-content: center;
+  margin-top: 10px;
   
 }
 
@@ -369,7 +372,9 @@ nav ul li ul li a {
 }
 
 .MenuLateral li {
-  padding: 10px;
+  margin: 10px;
+  border-radius: 20px;
+  background-color: #969a78;
 }
 
 .MenuLateral a {
@@ -378,38 +383,138 @@ nav ul li ul li a {
   margin: 0%;
   padding: 0% 0% 0% 10%;
   border-radius: 20px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
   text-decoration: none;
   color: inherit;
   cursor: pointer;
   display: flex;
   align-items: center;
   overflow: hidden;
+  font-size: 1.3em;
+  
 }
 
 .ContenidoResumido {
-  background: #000;
   height: 100%;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  
   gap: 10%;
-  
   scrollbar-width: none;
 }
 
 .ContenidoResumido section {
-  background-color: slategray;
+  background-color: #fff;
+  border: solid 3px #d4c5ae;
+  border-radius: 20px;
+  color: #242A20;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
   width: 90%;
-  padding: 2% 2% 20% 2%;
+  padding: 2% 2% 2% 2%;
+  margin-bottom: 7px;
 }
 
 .highlight {
-  background-color: #18c784;
+  background-color: #3c4635;
 }
 
+section h2{
+  text-align: center;
+  font-style: italic;
+  letter-spacing: 3px;
+  text-decoration: underline;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+p{
+  font-size: 1.5em;
+}
+
+.ContenidoImg img{
+  width: 35vw;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+}
+
+.ContenidoImg{
+  float: left;
+  margin: 15px;
+  
+}
+/*Botón Leer más*/
+.frame {
+  width: 90%;
+  margin: 40px auto;
+  text-align: center;
+}
+button {
+  margin: 20px;
+}
+.custom-btn {
+  width: 130px;
+  height: 40px;
+  color: #fff;
+  font-size: 1.2em;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+}
+.btn-read {
+  width: 130px;
+  height: 40px;
+  line-height: 42px;
+  padding: 0;
+  border: none;
+  background: #d4c5ae;
+  background: linear-gradient(0deg, #57664c 40%, #d4c5ae 100%);
+}
+.btn-read:hover {
+  color: #242a20;
+  background: transparent;
+  box-shadow:none;
+}
+.btn-read:before,
+.btn-read:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:4px;
+  width:0;
+  background: #d4c5ae;
+  box-shadow:
+   -1px -1px 5px 0px #fff,
+   7px 7px 20px 0px #0003,
+   4px 4px 5px 0px #0002;
+  transition:400ms ease all;
+}
+.btn-read:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+.btn-read:hover:before,
+.btn-read:hover:after{
+  width:100%;
+  transition:800ms ease all;
+}
+button a{
+  text-decoration: none; 
+  color: inherit;
+}
 /* <!-- Aquí termina el contenido resumido --> */
 /* <!-- Aquí empieza el footer --> */
 .caja-principal .caja {
