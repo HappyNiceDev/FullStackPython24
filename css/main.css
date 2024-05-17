@@ -14,6 +14,7 @@ body {
   background: #d5d1c5;
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
 }
 
 /* <!-- Termina CSS GENERALES --> */
@@ -30,6 +31,7 @@ nav {
   display: flex;
   justify-content: space-between;
   background: #d4c5ae;
+  width: 100%;
 }
 .navigation {
   position: sticky;
@@ -75,6 +77,9 @@ nav ul li ul li a {
   padding: 15px;
   line-height: 20px;
   background-color: #b4a58f;
+}
+.dropdown{
+  display: none;
 }
 
 .nav-dropdown {
@@ -321,6 +326,7 @@ nav ul li ul li a {
 .contenido p {
   font-family: sans-serif;
   color: #fff;
+  font-size: 1.1em;
   -webkit-text-stroke-width: 0.5px;
   -webkit-text-stroke-color: #242a20;
 }
@@ -328,7 +334,7 @@ nav ul li ul li a {
 /* <!-- Aquí termina el slide --> */
 /* <!-- Aquí empieza el contenido resumidoo --> */
 .ResumenTematico {
-  background-color: darkolivegreen;
+  background-color: #d5d1c5;
   width: fit-content;
   height: 100%;
   padding-top: 2%;
@@ -341,7 +347,6 @@ nav ul li ul li a {
 }
 
 .MenuLateral {
-  background-color: rgb(107, 107, 107);
   top: 0;
   /*padding: 2% 2% 0% 2%;*/
   position: sticky;
@@ -351,9 +356,13 @@ nav ul li ul li a {
 }
 
 .TituloMenu {
-  background: #14df3a;
+  background: #808366;
   font-size: larger;
   text-align: center;
+  border-radius: 10px;
+  height: 30px;
+  align-content: center;
+  margin-top: 10px;
   
 }
 
@@ -363,7 +372,9 @@ nav ul li ul li a {
 }
 
 .MenuLateral li {
-  padding: 10px;
+  margin: 10px;
+  border-radius: 20px;
+  background-color: #969a78;
 }
 
 .MenuLateral a {
@@ -372,173 +383,254 @@ nav ul li ul li a {
   margin: 0%;
   padding: 0% 0% 0% 10%;
   border-radius: 20px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
   text-decoration: none;
   color: inherit;
   cursor: pointer;
   display: flex;
   align-items: center;
   overflow: hidden;
+  font-size: 1.3em;
+  
 }
 
 .ContenidoResumido {
-  background: #000;
   height: 100%;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  
   gap: 10%;
-  
   scrollbar-width: none;
 }
 
 .ContenidoResumido section {
-  background-color: slategray;
+  background-color: #fff;
+  border: solid 3px #d4c5ae;
+  border-radius: 20px;
+  color: #242A20;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
   width: 90%;
-  padding: 2% 2% 20% 2%;
+  padding: 2% 2% 2% 2%;
+  margin-bottom: 7px;
 }
 
 .highlight {
-  background-color: #18c784;
+  background-color: #3c4635;
 }
 
+section h2{
+  text-align: center;
+  font-style: italic;
+  letter-spacing: 3px;
+  text-decoration: underline;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+p{
+  font-size: 1.5em;
+}
+
+.ContenidoImg img{
+  width: 35vw;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+}
+
+.ContenidoImg{
+  float: left;
+  margin: 15px;
+  
+}
+/*Botón Leer más*/
+.frame {
+  width: 90%;
+  margin: 40px auto;
+  text-align: center;
+}
+button {
+  margin: 20px;
+}
+.custom-btn {
+  width: 130px;
+  height: 40px;
+  color: #fff;
+  font-size: 1.2em;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+}
+.btn-read {
+  width: 130px;
+  height: 40px;
+  line-height: 42px;
+  padding: 0;
+  border: none;
+  background: #d4c5ae;
+  background: linear-gradient(0deg, #57664c 40%, #d4c5ae 100%);
+}
+.btn-read:hover {
+  color: #242a20;
+  background: transparent;
+  box-shadow:none;
+}
+.btn-read:before,
+.btn-read:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:4px;
+  width:0;
+  background: #d4c5ae;
+  box-shadow:
+   -1px -1px 5px 0px #fff,
+   7px 7px 20px 0px #0003,
+   4px 4px 5px 0px #0002;
+  transition:400ms ease all;
+}
+.btn-read:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+.btn-read:hover:before,
+.btn-read:hover:after{
+  width:100%;
+  transition:800ms ease all;
+}
+button a{
+  text-decoration: none; 
+  color: inherit;
+}
 /* <!-- Aquí termina el contenido resumido --> */
 /* <!-- Aquí empieza el footer --> */
-.caja-principal {
-  .caja {
-    width: 260px;
-    
-    position: relative;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-
-    .titulo {
-      width: 100%;
-      position: relative;
-      display: flex;
-      align-items: center;
-      height: 50px;
-
-      .bloque {
-        width: 0%;
-        height: inherit;
-        background: #524e31;
-        position: absolute;
-        animation: mainBlock 2s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
-        display: flex;
-      }
-
-      h1 {
-        font-family: "Poppins";
-        color: #242a20;
-        font-size: 32px;
-        -webkit-animation: mainFadeIn 2s forwards;
-        -o-animation: mainFadeIn 2s forwards;
-        animation: mainFadeIn 2s forwards;
-        animation-delay: 1.6s;
-        opacity: 0;
-        display: flex;
-        align-items: baseline;
-        position: relative;
-
-        span {
-          width: 0px;
-          height: 0px;
-          -webkit-border-radius: 50%;
-          -moz-border-radius: 50%;
-          border-radius: 50%;
-          -webkit-animation: load 0.6s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
-          animation: popIn 0.8s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
-          animation-delay: 2s;
-          margin-left: 5px;
-          margin-top: -10px;
-          position: absolute;
-          bottom: 13px;
-          right: -12px;
-        }
-      }
-    }
-
-    .sub-titulo {
-      width: 100%;
-      position: relative;
-      display: flex;
-      align-items: center;
-      height: 30px;
-      margin-top: -10px;
-
-      .bloque {
-        width: 0%;
-        height: inherit;
-        background: #808366;
-        position: absolute;
-        animation: secBloque 2s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
-        animation-delay: 2s;
-        display: flex;
-      }
-
-      p {
-        animation: secFadeIn 2s forwards;
-        animation-delay: 3.2s;
-        opacity: 0;
-        font-weight: 400;
-        font-family: "Lato";
-        color: #242a20;
-        font-size: 12px;
-        text-transform: uppercase;
-        letter-spacing: 5px;
-      }
-    }
-  }
+.caja-principal .caja {
+  width: 260px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
-
+.caja-principal .caja .titulo {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 50px;
+}
+.caja-principal .caja .titulo .bloque {
+  width: 0%;
+  height: inherit;
+  background: #524e31;
+  position: absolute;
+  animation: mainBlock 2s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
+  display: flex;
+}
+.caja-principal .caja .titulo h1 {
+  font-family: "Poppins";
+  color: #242a20;
+  font-size: 32px;
+  -webkit-animation: mainFadeIn 2s forwards;
+  -o-animation: mainFadeIn 2s forwards;
+  animation: mainFadeIn 2s forwards;
+  animation-delay: 1.6s;
+  opacity: 0;
+  display: flex;
+  align-items: baseline;
+  position: relative;
+}
+.caja-principal .caja .titulo h1 span {
+  width: 0px;
+  height: 0px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  -webkit-animation: load 0.6s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
+  animation: popIn 0.8s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
+  animation-delay: 2s;
+  margin-left: 5px;
+  margin-top: -10px;
+  position: absolute;
+  bottom: 13px;
+  right: -12px;
+}
+.caja-principal .caja .sub-titulo {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 30px;
+  margin-top: -10px;
+}
+.caja-principal .caja .sub-titulo .bloque {
+  width: 0%;
+  height: inherit;
+  background: #808366;
+  position: absolute;
+  animation: secBloque 2s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
+  animation-delay: 2s;
+  display: flex;
+}
+.caja-principal .caja .sub-titulo p {
+  animation: secFadeIn 2s forwards;
+  animation-delay: 3.2s;
+  opacity: 0;
+  font-weight: 400;
+  font-family: "Lato";
+  color: #242a20;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
 @keyframes mainBlock {
   0% {
     width: 0%;
     left: 0;
   }
-
   50% {
     width: 100%;
     left: 0;
   }
-
   100% {
     width: 0;
     left: 100%;
   }
 }
-
 @keyframes secBloque {
   0% {
     width: 0%;
     left: 0;
   }
-
   50% {
     width: 100%;
     left: 0;
   }
-
   100% {
     width: 0;
     left: 100%;
   }
 }
-
 @keyframes mainFadeIn {
   0% {
     opacity: 0;
   }
-
   100% {
     opacity: 1;
   }
 }
-
 @keyframes popIn {
   0% {
     width: 0px;
@@ -547,7 +639,6 @@ nav ul li ul li a {
     border: 0px solid #ddd;
     opacity: 0;
   }
-
   50% {
     width: 10px;
     height: 10px;
@@ -555,20 +646,17 @@ nav ul li ul li a {
     opacity: 1;
     bottom: 45px;
   }
-
   65% {
     width: 7px;
     height: 7px;
     bottom: 0px;
     width: 15px;
   }
-
   80% {
     width: 10px;
     height: 10px;
     bottom: 20px;
   }
-
   100% {
     width: 7px;
     height: 7px;
@@ -577,25 +665,21 @@ nav ul li ul li a {
     bottom: 13px;
   }
 }
-
 @keyframes secFadeIn {
   0% {
     opacity: 0;
   }
-
   100% {
     opacity: 0.5;
   }
 }
-
 footer {
+  bottom: 0;
   width: 100%;
-  height: 20vh;
+  height: 15vh;
   background: #d4c5ae;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: auto;
 }
-
 /* <!-- Aquí termina el footer --> */
