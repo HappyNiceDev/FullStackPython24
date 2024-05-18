@@ -640,6 +640,36 @@ footer {
 /* <!-- Aquí termina el footer --> */
 
 /* Media Query */
+@media screen and (max-width: 1280px) {
+  .TotemCentrado {
+    grid-template-columns: repeat(2, 320px);
+  }
+
+  .TotemLateral {
+    grid-template-columns: repeat(3, 80px);
+    grid-template-rows: repeat(17, 30px);
+  }
+
+  .Contenido p {
+    margin: 2em;
+    font-size: 1.2em;
+  }
+
+  .Contenido ul li {
+    margin: 2em;
+    font-size: 1em;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .TotemCentrado {
+    grid-template-columns: repeat(2, 320px);
+    grid-auto-rows: 180px;
+    gap: 20px;
+
+  }
+}
+
 @media only screen and (max-width: 800px) {
   .img-logo {
     height: 4em;
@@ -722,43 +752,6 @@ footer {
   }
 }
 
-@media screen and (min-width: 800px) {
-
-  .nav-list {
-    display: block;
-  }
-}
-
-@media screen and (max-width: 1280px) {
-  .TotemCentrado {
-    grid-template-columns: repeat(2, 320px);
-  }
-
-  .TotemLateral {
-    grid-template-columns: repeat(3, 80px);
-    grid-template-rows: repeat(17, 30px);
-  }
-
-  .Contenido p {
-    margin: 2em;
-    font-size: 1.2em;
-  }
-
-  .Contenido ul li {
-    margin: 2em;
-    font-size: 1em;
-  }
-}
-
-@media screen and (max-width: 1024px) {
-  .TotemCentrado {
-    grid-template-columns: repeat(2, 320px);
-    grid-auto-rows: 180px;
-    gap: 20px;
-
-  }
-}
-
 @media screen and (max-width: 768px) {
   .TotemCentrado {
     grid-template-columns: repeat(3, 160px);
@@ -802,5 +795,12 @@ footer {
 
   .TotemLateral {
     display: none;
+  }
+}
+
+@media screen and (min-width: 800px) {
+
+  .nav-list {
+    display: block;
   }
 }
