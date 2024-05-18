@@ -16,6 +16,21 @@ body {
   flex-direction: column;
   min-height: 100vh;
 }
+body{
+  width: 100%;
+}
+head{
+  width: 100%;
+}
+header{
+  width: 100%;
+}
+main{
+  width: 100%;
+}
+footer{
+  width: 100%;
+}
 
 /* <!-- Termina CSS GENERALES --> */
 /* <!-- Aquí empieza el nav --> */
@@ -97,92 +112,6 @@ nav ul li ul li a {
   right: 20px;
   background-color: #d4c5ae;
   z-index: 9050;
-}
-
-/* Media Query */@media only screen and (max-width: 800px) 
-{
-  .img-logo {
-    height: 4em;
-    margin: 5px;
-  }
-  .img-y-logo {
-    width: 100%;
-  }
-  /*---Animacion turismo en japón modo mobile---*/
-  .img-y-logo .caja-principal {
-    margin-top:25px;
-    
-    .caja {
-      width: 100%;
-      height: 1em;
-
-      .titulo {
-        height: 30px;
-
-        h1 {
-          font-size: 1.2em;
-        }
-      }
-      .sub-titulo {
-        height: 1.5em;
-        margin-top: 5px;
-
-        p {
-          font-size: 0.6em;
-          letter-spacing: 2px;
-          margin-top: 2px;
-        }
-      }
-    }
-  }
-  /*---Animacion turismo en japón modo mobile---*/
-  .nav-mobile {
-    display: block;
-  }
-
-  nav {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 70px;
-  }
-
-  nav ul {
-    display: none;
-    margin-top: -5px;
-  }
-
-  nav ul li {
-    float: right;
-    width: 70vw;
-    margin-top: -2px
-  }
-
-  nav ul li a {
-    padding: 15px;
-    width: 200px;
-    float: right;
-    line-height: 20px;
-    background-color: #d4c5ae;
-    
-  }
-
-  nav ul li ul li a {
-    padding-left: 20px;
-    background-color: #b4a58f;
-  }
-
-  .nav-dropdown {
-    position: static;
-    margin: 0px;
-  }
-}
-
-@media screen and (min-width: 800px) {
-  
-  .nav-list {
-    display: block;
-  }
 }
 
 #nav-toggle {
@@ -347,7 +276,7 @@ nav ul li ul li a {
 }
 
 .MenuLateral {
-  top: 0;
+  top: 0px;
   /*padding: 2% 2% 0% 2%;*/
   position: sticky;
   display: flex;
@@ -433,7 +362,7 @@ p{
 }
 
 .ContenidoImg img{
-  width: 35vw;
+  width: 40vw;
   box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
   border-radius: 20px;
 }
@@ -441,7 +370,6 @@ p{
 .ContenidoImg{
   float: left;
   margin: 15px;
-  
 }
 /*Botón Leer más*/
 .frame {
@@ -683,3 +611,177 @@ footer {
   align-items: center;
 }
 /* <!-- Aquí termina el footer --> */
+
+
+/* Media Query */
+
+@media only screen and (max-width: 285px){
+
+  nav .caja-principal{
+  display: none;
+}
+
+}
+@media only screen and (max-width: 480px) {
+  .img-logo {
+    height: 4em;
+    margin: 5px;
+  }
+  .img-y-logo {
+    width: 100%;
+  }
+  
+  .nav-mobile {
+    display: block;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 70px;
+  }
+
+  nav ul {
+    display: none;
+    margin-top: -5px;
+  }
+
+  nav ul li {
+    float: right;
+    width: 70vw;
+    margin-top: -2px
+  }
+
+  nav ul li a {
+    padding: 15px;
+    width: 200px;
+    float: right;
+    line-height: 20px;
+    background-color: #d4c5ae;
+    
+  }
+
+  nav ul li ul li a {
+    padding-left: 20px;
+    background-color: #b4a58f;
+  }
+
+  .nav-dropdown {
+    position: static;
+    margin: 0px;
+  }
+
+  .btn-read{
+    position: static;
+  }
+
+}
+
+@media only screen and (max-width: 600px){
+  .MenuLateral a {
+    display: none;
+  }
+  .MenuLateral ul{
+    display: none;
+  }
+  .ResumenTematico{
+    flex-direction: column;
+    align-items: center;
+  }
+  .MenuLateral{
+    width: 95%;
+    margin-bottom: 5px;
+  }
+  .ContenidoResumido{
+    position: static;
+  }
+  .TituloMenu{
+    margin:0;
+  }
+  .btn-read{
+    position: static;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  
+  .nav-list {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 1024px){
+
+/*---Animacion turismo en japón modo mobile---*/
+.img-y-logo .caja-principal {
+  margin-top: 25px;
+}
+
+.img-y-logo .caja-principal .caja {
+  width: 100%;
+  height: 1em;
+}
+
+.img-y-logo .caja-principal .caja .titulo {
+  height: 30px;
+}
+
+.img-y-logo .caja-principal .caja .titulo h1 {
+  font-size: 1.2em;
+}
+
+.img-y-logo .caja-principal .caja .sub-titulo {
+  height: 1.5em;
+  margin-top: 5px;
+}
+
+.img-y-logo .caja-principal .caja .sub-titulo p {
+  font-size: 0.6em;
+  letter-spacing: 2px;
+  margin-top: 2px;
+}
+
+/*---Contenido resumido---*/
+.ContenidoImg{
+  float: none;
+  display: flex;
+  justify-content: center;
+}
+
+.ContenidoImg img{
+  width: 60vw;
+}
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1280px){
+
+/*---Contenido resumido---*/
+
+.ResumenTematico {
+  flex-direction: column;
+  align-items: center;
+}
+
+.TituloMenu{
+  margin-top: 0;
+}
+.MenuLateral ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #d5d1c5;
+  border-radius: 20px;
+}
+
+.MenuLateral a {
+  width: 180px;
+}
+
+.ContenidoResumido{
+  position: static;
+}
+.btn-read {
+ position: static;
+ }
+}
