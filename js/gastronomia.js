@@ -20,7 +20,7 @@ $("#nav-toggle").click(function () {
 // Obtener el contenedor principal del contenido
 const contenedorContenido = document.querySelector('.Contenido');
 // Obtener todos los elementos de contenido
-const elementosContenido = contenedorContenido.querySelectorAll('div');
+const elementosContenido = document.querySelectorAll('.Contenido > div');
 
 const elementoTotem = document.getElementById('Totem');
 
@@ -49,7 +49,7 @@ function handleClickImagen(event, index) {
   contenedorContenido.style.display = 'block';
 
   // Mostrar el elemento de contenido correspondiente al índice de la imagen clicada
-  elementosContenido[index].style.display = 'block';
+  elementosContenido[index].style.display = 'flex';
 
 }
 
@@ -58,15 +58,10 @@ function handleClickImagen(event, index) {
 //Se detecta click sobre alguna imagen del totem y se desencadena el cambio de las clases.
 function CambioClases() {
 
-  
   elementoTotem.classList.replace('TotemCentrado', 'TotemLateral');
   elementoTotem.classList.replace('TotemCentrado', 'TotemLateral');
   elementoTotem.style.animation = 'TotemCentradoSalida 1s ease-in-out forwards;';
   
-  document.querySelectorAll('#like').forEach((ElementoLikes) => {
-    ElementoLikes.style.display = 'flex';
-  });
- 
   document.querySelectorAll('#Totem > div').forEach((imagen, index) => {
 
     let NomClass = 'Img' + (index + 1) + 'Lateral';

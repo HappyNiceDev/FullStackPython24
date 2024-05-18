@@ -15,8 +15,8 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
-  
-  
+
+
 }
 
 /* <!-- Termina CSS GENERALES --> */
@@ -159,62 +159,6 @@ main {
   align-content: center;
 }
 
-/* Comienza icono corazon */
-.like-button {
-
-  /*background-color: #dc0202;*/
-  width: 100px;
-  height: 100px;
-  top: 0;
-  position: relative;
-  display: none;
-  align-items: center;
-  justify-content: center;
-
-}
-
-.like-button .heart-bg {
-  background: rgba(255, 192, 200, 0);
-  border-radius: 50%;
-  height: 60px;
-  width: 60px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 200ms ease;
-}
-
-.like-button .heart-bg:hover {
-  background: rgba(255, 255, 255, 0.7);
-
-}
-
-.like-button .heart-icon {
-
-  height: 100px;
-  width: 100px;
-  background: url("../img/heart.png");
-  background-position: left;
-  cursor: pointer;
-  position: absolute;
-
-}
-
-.like-button .heart-icon.liked {
-  animation: like-anim 0.7s steps(28) forwards;
-}
-
-@keyframes like-anim {
-  to {
-    background-position: right;
-  }
-}
-
-/* Termina icono corazon */
-
-
-
 /* Aquí empieza el totem */
 .TotemCentrado {
   display: grid;
@@ -302,7 +246,7 @@ main {
 .TotemLateral {
   margin: 1.5em 3% 1.5em 6%;
   justify-content: center;
-  
+
   display: grid;
   grid-template-columns: repeat(3, 160px);
   grid-template-rows: repeat(17, 60px);
@@ -371,7 +315,7 @@ main {
 @keyframes HoverSalida {
   from {
     background-size: 120%;
-    transform: scale(1.2, 1.2);
+    transform: scale(1.1, 1.1);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.38);
 
   }
@@ -390,7 +334,7 @@ main {
 
   to {
     background-size: 120%;
-    transform: scale(1.2, 1.2);
+    transform: scale(1.1, 1.1);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.38);
   }
 }
@@ -408,12 +352,11 @@ main {
 }
 
 /* Aquí termina el totem */
-
 .Contenido {
   width: 60%;
   display: none;
   margin: 1.5em;
-  
+
   background-color: #fff;
   border: solid 3px #d4c5ae;
   border-radius: 20px;
@@ -422,32 +365,87 @@ main {
   box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
 }
 
-.Contenido div {
+.Contenido>div {
   top: 0;
   padding-top: 4%;
   position: sticky;
   display: none;
+  flex-direction: column;
+  align-items: center;
+
 }
 
 
-.Contenido h1 {
-  text-align: center;
+.Contenido div h1 {
   font-style: italic;
   letter-spacing: 3px;
   text-decoration: underline;
 }
 
-.Contenido p {
+.Contenido div p {
   margin: 2em;
   font-size: 1.5em;
 }
 
-.Contenido ul li {
+.Contenido div ul li {
   margin: 2em;
   font-size: 1.2em;
 }
 
 /* <!-- Aquí termina el contenido resumido --> */
+
+/* Comienza icono corazon */
+.like-button {
+
+  /*background-color: #dc0202;*/
+  width: 100px;
+  height: 100px;
+  align-self: flex-end;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.like-button .heart-bg {
+  background: rgba(255, 192, 200, 0);
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 200ms ease;
+}
+
+.like-button .heart-bg:hover {
+  background: rgba(255, 255, 255, 0.7);
+
+}
+
+.like-button .heart-icon {
+
+  height: 100px;
+  width: 100px;
+  background: url("../img/heart.png");
+  background-position: left;
+  cursor: pointer;
+  position: absolute;
+
+}
+
+.like-button .heart-icon.liked {
+  animation: like-anim 0.7s steps(28) forwards;
+}
+
+@keyframes like-anim {
+  to {
+    background-position: right;
+  }
+}
+
+/* Termina icono corazon */
 
 /* <!-- Aquí empieza el footer --> */
 .caja-principal .caja {
@@ -457,6 +455,7 @@ main {
   justify-content: center;
   flex-direction: column;
 }
+
 .caja-principal .caja .titulo {
   width: 100%;
   position: relative;
@@ -464,6 +463,7 @@ main {
   align-items: center;
   height: 50px;
 }
+
 .caja-principal .caja .titulo .bloque {
   width: 0%;
   height: inherit;
@@ -472,6 +472,7 @@ main {
   animation: mainBlock 2s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
   display: flex;
 }
+
 .caja-principal .caja .titulo h1 {
   font-family: "Poppins";
   color: #242a20;
@@ -485,6 +486,7 @@ main {
   align-items: baseline;
   position: relative;
 }
+
 .caja-principal .caja .titulo h1 span {
   width: 0px;
   height: 0px;
@@ -500,6 +502,7 @@ main {
   bottom: 13px;
   right: -12px;
 }
+
 .caja-principal .caja .sub-titulo {
   width: 100%;
   position: relative;
@@ -508,6 +511,7 @@ main {
   height: 30px;
   margin-top: -10px;
 }
+
 .caja-principal .caja .sub-titulo .bloque {
   width: 0%;
   height: inherit;
@@ -517,6 +521,7 @@ main {
   animation-delay: 2s;
   display: flex;
 }
+
 .caja-principal .caja .sub-titulo p {
   animation: secFadeIn 2s forwards;
   animation-delay: 3.2s;
@@ -528,42 +533,51 @@ main {
   text-transform: uppercase;
   letter-spacing: 5px;
 }
+
 @keyframes mainBlock {
   0% {
     width: 0%;
     left: 0;
   }
+
   50% {
     width: 100%;
     left: 0;
   }
+
   100% {
     width: 0;
     left: 100%;
   }
 }
+
 @keyframes secBloque {
   0% {
     width: 0%;
     left: 0;
   }
+
   50% {
     width: 100%;
     left: 0;
   }
+
   100% {
     width: 0;
     left: 100%;
   }
 }
+
 @keyframes mainFadeIn {
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
 }
+
 @keyframes popIn {
   0% {
     width: 0px;
@@ -572,6 +586,7 @@ main {
     border: 0px solid #ddd;
     opacity: 0;
   }
+
   50% {
     width: 10px;
     height: 10px;
@@ -579,17 +594,20 @@ main {
     opacity: 1;
     bottom: 45px;
   }
+
   65% {
     width: 7px;
     height: 7px;
     bottom: 0px;
     width: 15px;
   }
+
   80% {
     width: 10px;
     height: 10px;
     bottom: 20px;
   }
+
   100% {
     width: 7px;
     height: 7px;
@@ -598,14 +616,17 @@ main {
     bottom: 13px;
   }
 }
+
 @keyframes secFadeIn {
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 0.5;
   }
 }
+
 footer {
   bottom: 0;
   width: 100%;
@@ -712,14 +733,17 @@ footer {
   .TotemCentrado {
     grid-template-columns: repeat(2, 320px);
   }
+
   .TotemLateral {
     grid-template-columns: repeat(3, 80px);
     grid-template-rows: repeat(17, 30px);
   }
+
   .Contenido p {
     margin: 2em;
     font-size: 1.2em;
   }
+
   .Contenido ul li {
     margin: 2em;
     font-size: 1em;
@@ -731,40 +755,43 @@ footer {
     grid-template-columns: repeat(2, 320px);
     grid-auto-rows: 180px;
     gap: 20px;
-  
+
   }
 }
 
 @media screen and (max-width: 768px) {
   .TotemCentrado {
     grid-template-columns: repeat(3, 160px);
-  grid-auto-rows: 90px;
-  gap: 6px;
-    }
-    .Contenido p {
-      margin: 2em;
-      font-size: 1em;
-    }
-    
-    .Contenido ul li {
-      margin: 2em;
-      font-size: 0.7em;
-    }
+    grid-auto-rows: 90px;
+    gap: 6px;
+  }
+
+  .Contenido p {
+    margin: 2em;
+    font-size: 1em;
+  }
+
+  .Contenido ul li {
+    margin: 2em;
+    font-size: 0.7em;
+  }
 }
 
 @media screen and (max-width: 550px) {
   .TotemCentrado {
     grid-template-columns: repeat(2, 160px);
     grid-auto-rows: 90px;
-    gap: 10px;   
+    gap: 10px;
   }
 }
+
 @media screen and (max-width: 480px) {
   .TotemCentrado {
     grid-template-columns: repeat(1, 320px);
     grid-auto-rows: 180px;
-    gap: 10px;   
+    gap: 10px;
   }
+
   main {
     margin: 2% 0 2% 0;
     display: flex;
@@ -772,6 +799,7 @@ footer {
     justify-content: center;
     align-content: center;
   }
+
   .TotemLateral {
     display: none;
   }
