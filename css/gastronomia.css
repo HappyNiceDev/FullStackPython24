@@ -169,7 +169,7 @@ main {
   grid-auto-rows: 180px;
   justify-content: center;
   align-content: center;
-  
+
   animation: TotemCentradoEntrada 1s ease-in-out forwards;
 }
 
@@ -355,22 +355,13 @@ main {
 
 /* Aquí termina el totem */
 .Contenido {
+  background-color: #524e31;
+  align-self: stretch;
   margin: 1.5em;
+  position: relative;
   display: none;
   flex-direction: column;
   justify-items: center;
-  align-items: flex-start;
-  justify-content: center;
-  align-content: start;
-}
-
-.Resumen {
-  top: 0;
-  padding-top: 1%;
-  position: sticky;
-  display: none;
-  flex-direction: column;
-  align-items: center;
   background-color: #fff;
   border: solid 3px #d4c5ae;
   border-radius: 20px;
@@ -379,23 +370,43 @@ main {
   box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
 }
 
+.Resumen {
+  top: 0;
+  position: sticky;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 600ms ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    scale: 0.8;
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
 .Visible {
   display: flex;
 }
 
 
-.Contenido div h1 {
+.Resumen h1 {
   font-style: italic;
   letter-spacing: 3px;
   text-decoration: underline;
 }
 
-.Contenido div p {
+.Resumen p {
   margin: 2em;
   font-size: 1.5em;
 }
 
-.Contenido div ul li {
+.Resumen ul li {
   margin: 2em;
   font-size: 1.2em;
 }
@@ -455,9 +466,14 @@ main {
 
 /* Termina icono corazon */
 /* Imagen dentro del Resumen */
-.Resumen > div:last-child {
-  width: 320px;
-  height: 180px;
+.Resumen > [class^="Img"] {
+  width: 160px;
+  height: 90px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  border-radius: 20px;
+  border: solid 3px #fff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   background-size: cover;
   background-position: center;
   display: none;
@@ -774,20 +790,21 @@ footer {
     flex-direction: column;
     justify-content: center;
   }
+
   .TotemCentrado {
     grid-template-columns: repeat(3, 160px);
     grid-auto-rows: 90px;
     gap: 6px;
   }
 
-  .Contenido p {
+  .Resumen p {
     margin: 2em;
-    font-size: 1em;
+    font-size: 1.4em;
   }
 
-  .Contenido ul li {
+  .Resumen ul li {
     margin: 2em;
-    font-size: 0.7em;
+    font-size: 1em;
   }
 }
 
@@ -796,6 +813,16 @@ footer {
     grid-template-columns: repeat(2, 160px);
     grid-auto-rows: 90px;
     gap: 10px;
+  }
+
+  .Resumen p {
+    margin: 1.5em;
+    font-size: 1em;
+  }
+
+  .Resumen ul li {
+    margin: 1.5em;
+    font-size: 0.8em;
   }
 }
 
@@ -807,23 +834,50 @@ footer {
     justify-content: center;
     align-content: center;
   }
+
   .TotemCentrado {
     display: none;
   }
+
   .TotemLateral {
     display: none;
   }
+
   .Contenido {
     position: relative;
     display: flex;
     gap: 10px;
+    background-color: #ffffff00;
+    border: solid 0px #d4c5ae00;
+    border-radius: 0px;
+    padding: 0em;
+    color: #242a2000;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
   }
+
   .Resumen {
-  top: auto;
-  display: flex;
+    position: relative;
+    display: flex;
+    background-color: #fff;
+    border: solid 3px #d4c5ae;
+    border-radius: 20px;
+    padding: 2em;
+    color: #242A20;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
   }
-  .Resumen > div:last-child {
+
+  .Resumen > [class^="Img"] {
     display: block;
+  }
+
+  .Resumen p {
+    margin: 0.5em;
+    font-size: 1em;
+  }
+
+  .Resumen ul li {
+    margin: 0.5em;
+    font-size: 0.8em;
   }
 }
 

@@ -18,31 +18,31 @@ $("#nav-toggle").click(function () {
 
 
 
- /* 
-    document.querySelectorAll('.dropdown').forEach(function(dropdown) {
-      dropdown.addEventListener('click', function(e) {
-        e.stopPropagation();
-        document.querySelectorAll('.nav-dropdown').forEach(function(navDropdown) {
-          navDropdown.style.display = (navDropdown.style.display === 'none') ? 'block' : 'none';
-        });
-      });
-    });
-    
-    document.querySelector('html').addEventListener('click', function() {
-      document.querySelectorAll('.nav-dropdown').forEach(function(navDropdown) {
-        navDropdown.style.display = 'none';
-      });
-    });
-    
-    document.getElementById('nav-toggle').addEventListener('click', function() {
-      this.classList.toggle('active');
-    });
-    
-    document.getElementById('nav-toggle').addEventListener('click', function() {
-      document.querySelector('nav ul').style.display = (document.querySelector('nav ul').style.display === 'none') ? 'block' : 'none';
-    });
-  */
-    
+/* 
+   document.querySelectorAll('.dropdown').forEach(function(dropdown) {
+     dropdown.addEventListener('click', function(e) {
+       e.stopPropagation();
+       document.querySelectorAll('.nav-dropdown').forEach(function(navDropdown) {
+         navDropdown.style.display = (navDropdown.style.display === 'none') ? 'block' : 'none';
+       });
+     });
+   });
+   
+   document.querySelector('html').addEventListener('click', function() {
+     document.querySelectorAll('.nav-dropdown').forEach(function(navDropdown) {
+       navDropdown.style.display = 'none';
+     });
+   });
+   
+   document.getElementById('nav-toggle').addEventListener('click', function() {
+     this.classList.toggle('active');
+   });
+   
+   document.getElementById('nav-toggle').addEventListener('click', function() {
+     document.querySelector('nav ul').style.display = (document.querySelector('nav ul').style.display === 'none') ? 'block' : 'none';
+   });
+ */
+
 
 
 //-------------- Espera que carga todo el DOM --------------//
@@ -61,7 +61,7 @@ window.onload = function () {
   //-------------- Aplica un evento click a todos los div hijos del totem --------------//
   document.querySelectorAll('#Totem > div').forEach((imagen, index) => {
     imagen.addEventListener('click', function () {
-      if(Portada){
+      if (Portada) {
         CambioClases();
         Portada = false
       }
