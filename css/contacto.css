@@ -17,11 +17,13 @@ body {
 }
 
 /* <!-- Termina CSS GENERALES --> */
+
 /* <!-- Aquí empieza el nav --> */
 .img-logo {
   width: 4em;
   margin: 5px;
 }
+
 .img-y-logo {
   display: flex;
 }
@@ -30,7 +32,9 @@ nav {
   display: flex;
   justify-content: space-between;
   background: #d4c5ae;
+  width: 100%;
 }
+
 .navigation {
   position: sticky;
   top: 0;
@@ -77,6 +81,10 @@ nav ul li ul li a {
   background-color: #b4a58f;
 }
 
+.dropdown {
+  display: none;
+}
+
 .nav-dropdown {
   position: absolute;
   z-index: 10000;
@@ -94,92 +102,6 @@ nav ul li ul li a {
   z-index: 9050;
 }
 
-/* Media Query */@media only screen and (max-width: 800px) 
-{
-  .img-logo {
-    height: 4em;
-    margin: 5px;
-  }
-  .img-y-logo {
-    width: 100%;
-  }
-  /*---Animacion turismo en japón modo mobile---*/
-  .img-y-logo .caja-principal {
-    margin-top:25px;
-    
-    .caja {
-      width: 100%;
-      height: 1em;
-
-      .titulo {
-        height: 30px;
-
-        h1 {
-          font-size: 1.2em;
-        }
-      }
-      .sub-titulo {
-        height: 1.5em;
-        margin-top: 5px;
-
-        p {
-          font-size: 0.6em;
-          letter-spacing: 2px;
-          margin-top: 2px;
-        }
-      }
-    }
-  }
-  /*---Animacion turismo en japón modo mobile---*/
-  .nav-mobile {
-    display: block;
-  }
-
-  nav {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 70px;
-  }
-
-  nav ul {
-    display: none;
-    margin-top: -5px;
-  }
-
-  nav ul li {
-    float: right;
-    width: 70vw;
-    margin-top: -2px
-  }
-
-  nav ul li a {
-    padding: 15px;
-    width: 200px;
-    float: right;
-    line-height: 20px;
-    background-color: #d4c5ae;
-    
-  }
-
-  nav ul li ul li a {
-    padding-left: 20px;
-    background-color: #b4a58f;
-  }
-
-  .nav-dropdown {
-    position: static;
-    margin: 0px;
-  }
-}
-
-@media screen and (min-width: 800px) {
-  
-  .nav-list {
-    display: block;
-  }
-}
-
 #nav-toggle {
   position: absolute;
   left: 18px;
@@ -187,6 +109,7 @@ nav ul li ul li a {
   cursor: pointer;
   padding: 10px 35px 16px 0;
 }
+
 #nav-toggle span,
 #nav-toggle span:before,
 #nav-toggle span:after {
@@ -200,22 +123,28 @@ nav ul li ul li a {
   content: "";
   transition: all 300ms ease-in-out;
 }
+
 #nav-toggle span:before {
   top: -10px;
 }
+
 #nav-toggle span:after {
   bottom: -10px;
 }
+
 #nav-toggle.active span {
   background-color: transparent;
 }
+
 #nav-toggle.active span:before,
 #nav-toggle.active span:after {
   top: 0;
 }
+
 #nav-toggle.active span:before {
   transform: rotate(45deg);
 }
+
 #nav-toggle.active span:after {
   transform: rotate(-45deg);
 }
@@ -223,7 +152,6 @@ nav ul li ul li a {
 /* <!-- Aquí termina el nav --> */
 
 /* <!-- Aquí empieza el formulario --> */
-
 .container-form {
   width: 80%;
   margin-left: auto;
@@ -296,94 +224,92 @@ nav ul li ul li a {
 }
 
 /* <!-- Aquí termina el formulario --> */
+
 /* <!-- Aquí empieza el footer --> */
-.caja-principal {
-  .caja {
-    width: 260px;
+.caja-principal .caja {
+  width: 260px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
 
-    position: relative;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+.caja-principal .caja .titulo {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 50px;
+}
 
-    .titulo {
-      width: 100%;
-      position: relative;
-      display: flex;
-      align-items: center;
-      height: 50px;
+.caja-principal .caja .titulo .bloque {
+  width: 0%;
+  height: inherit;
+  background: #524e31;
+  position: absolute;
+  animation: mainBlock 2s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
+  display: flex;
+}
 
-      .bloque {
-        width: 0%;
-        height: inherit;
-        background: #524e31;
-        position: absolute;
-        animation: mainBlock 2s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
-        display: flex;
-      }
+.caja-principal .caja .titulo h1 {
+  font-family: "Poppins";
+  color: #242a20;
+  font-size: 32px;
+  -webkit-animation: mainFadeIn 2s forwards;
+  -o-animation: mainFadeIn 2s forwards;
+  animation: mainFadeIn 2s forwards;
+  animation-delay: 1.6s;
+  opacity: 0;
+  display: flex;
+  align-items: baseline;
+  position: relative;
+}
 
-      h1 {
-        font-family: "Poppins";
-        color: #242a20;
-        font-size: 32px;
-        -webkit-animation: mainFadeIn 2s forwards;
-        -o-animation: mainFadeIn 2s forwards;
-        animation: mainFadeIn 2s forwards;
-        animation-delay: 1.6s;
-        opacity: 0;
-        display: flex;
-        align-items: baseline;
-        position: relative;
+.caja-principal .caja .titulo h1 span {
+  width: 0px;
+  height: 0px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  -webkit-animation: load 0.6s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
+  animation: popIn 0.8s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
+  animation-delay: 2s;
+  margin-left: 5px;
+  margin-top: -10px;
+  position: absolute;
+  bottom: 13px;
+  right: -12px;
+}
 
-        span {
-          width: 0px;
-          height: 0px;
-          -webkit-border-radius: 50%;
-          -moz-border-radius: 50%;
-          border-radius: 50%;
-          -webkit-animation: load 0.6s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
-          animation: popIn 0.8s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
-          animation-delay: 2s;
-          margin-left: 5px;
-          margin-top: -10px;
-          position: absolute;
-          bottom: 13px;
-          right: -12px;
-        }
-      }
-    }
+.caja-principal .caja .sub-titulo {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 30px;
+  margin-top: -10px;
+}
 
-    .sub-titulo {
-      width: 100%;
-      position: relative;
-      display: flex;
-      align-items: center;
-      height: 30px;
-      margin-top: -10px;
+.caja-principal .caja .sub-titulo .bloque {
+  width: 0%;
+  height: inherit;
+  background: #808366;
+  position: absolute;
+  animation: secBloque 2s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
+  animation-delay: 2s;
+  display: flex;
+}
 
-      .bloque {
-        width: 0%;
-        height: inherit;
-        background: #808366;
-        position: absolute;
-        animation: secBloque 2s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
-        animation-delay: 2s;
-        display: flex;
-      }
-
-      p {
-        animation: secFadeIn 2s forwards;
-        animation-delay: 3.2s;
-        opacity: 0;
-        font-weight: 400;
-        font-family: "Lato";
-        color: #242a20;
-        font-size: 12px;
-        text-transform: uppercase;
-        letter-spacing: 5px;
-      }
-    }
-  }
+.caja-principal .caja .sub-titulo p {
+  animation: secFadeIn 2s forwards;
+  animation-delay: 3.2s;
+  opacity: 0;
+  font-weight: 400;
+  font-family: "Lato";
+  color: #242a20;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
 }
 
 @keyframes mainBlock {
@@ -480,20 +406,82 @@ nav ul li ul li a {
 }
 
 footer {
+  bottom: 0;
   width: 100%;
-  height: 20vh;
+  height: 15vh;
   background: #d4c5ae;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: auto;
 }
 
 /* <!-- Aquí termina el footer --> */
 
 /* <!-- Aquí empieza los MEDIA QUERY --> */
+@media only screen and (max-width: 285px) {
+  nav .caja-principal {
+    display: none;
+  }
+}
 
-@media screen and (max-width: 800px) {
+@media only screen and (max-width: 480px) {
+  .img-logo {
+    height: 4em;
+    margin: 5px;
+  }
+
+  .img-y-logo {
+    width: 100%;
+  }
+
+  .nav-mobile {
+    display: block;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 70px;
+  }
+
+  nav ul {
+    display: none;
+    margin-top: -5px;
+  }
+
+  nav ul li {
+    float: right;
+    width: 70vw;
+    margin-top: -2px
+  }
+
+  nav ul li a {
+    padding: 15px;
+    width: 200px;
+    float: right;
+    line-height: 20px;
+    background-color: #d4c5ae;
+
+  }
+
+  nav ul li ul li a {
+    padding-left: 20px;
+    background-color: #b4a58f;
+  }
+
+  .nav-dropdown {
+    position: static;
+    margin: 0px;
+  }
+
+  .btn-read {
+    position: static;
+  }
+
+}
+
+@media only screen and (max-width: 800px) {
   .img-logo {
     height: 4em;
     margin: 5px;
@@ -540,7 +528,7 @@ footer {
   nav {
     display: flex;
     flex-direction: column;
-    width: 100vw;
+    width: 100%;
     height: 70px;
   }
 
@@ -552,12 +540,16 @@ footer {
   nav ul li {
     float: right;
     width: 70vw;
+    margin-top: -2px
   }
 
   nav ul li a {
     padding: 15px;
+    width: 200px;
+    float: right;
     line-height: 20px;
     background-color: #d4c5ae;
+
   }
 
   nav ul li ul li a {
@@ -576,10 +568,44 @@ footer {
   }
 }
 
+@media only screen and (max-width: 1024px) {
+
+  /*---Animacion turismo en japón modo mobile---*/
+  .img-y-logo .caja-principal {
+    margin-top: 25px;
+  }
+
+  .img-y-logo .caja-principal .caja {
+    width: 100%;
+    height: 1em;
+  }
+
+  .img-y-logo .caja-principal .caja .titulo {
+    height: 30px;
+  }
+
+  .img-y-logo .caja-principal .caja .titulo h1 {
+    font-size: 1.2em;
+  }
+
+  .img-y-logo .caja-principal .caja .sub-titulo {
+    height: 1.5em;
+    margin-top: 5px;
+  }
+
+  .img-y-logo .caja-principal .caja .sub-titulo p {
+    font-size: 0.6em;
+    letter-spacing: 2px;
+    margin-top: 2px;
+  }
+}
+
 @media screen and (min-width: 800px) {
+
   .nav-list {
     display: block;
   }
 }
+
 
 /* <!-- Aquí termina los MEDIA QUERY --> */
