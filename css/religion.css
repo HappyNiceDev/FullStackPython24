@@ -179,35 +179,35 @@ main {
 }
 
 .Img1 {
-  background-image: url("../img/gas_img/SUSHI-wallhere.com.webp");
+  background-image: url("../img/rel_img/shinto.webp");
 }
 
 .Img2 {
-  background-image: url('../img/gas_img/RAMEN-topgastronomico.es.webp');
-}
+  background-image: url('../img/rel_img/budismo.webp')
+  }
 
 .Img3 {
-  background-image: url('../img/gas_img/TAKOYAKI-muyjapones.com.webp');
+  background-image: url('../img/rel_img/shinto.webp');
 }
 
 .Img4 {
-  background-image: url('../img/gas_img/GYUDON-thewoksoflife.com.webp');
+  background-image: url('../img/rel_img/shinto.webp');
 }
 
 .Img5 {
-  background-image: url('../img/gas_img/OKONOMIYAKI-bonviveur.es.webp');
+  background-image: url('../img/rel_img/shinto.webp');
 }
 
 .Img6 {
-  background-image: url('../img/gas_img/MOCHI-milenio.com.webp');
+  background-image: url('../img/rel_img/shinto.webp');
 }
 
 .Img7 {
-  background-image: url('../img/gas_img/DORAYAKI-diariovasco.com.webp');
+  background-image: url('../img/rel_img/shinto.webp');
 }
 
 .Img8 {
-  background-image: url('../img/gas_img/TAIYAKI-japonalternativo.com.webp');
+  background-image: url('../img/rel_img/shinto.webp');
 }
 
 @keyframes TotemCentradoEntrada {
