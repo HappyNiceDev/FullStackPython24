@@ -183,7 +183,7 @@ main {
 }
 
 .Img2 {
-  background-image: url('../img/mit_img/tripadvisor.webp');
+  background-image: url('../img/mit_img/sesolibre.webp');
 }
 
 .Img3 {
@@ -203,11 +203,11 @@ main {
 }
 
 .Img7 {
-  background-image: url('../img/gas_img/DORAYAKI-diariovasco.com.webp');
+  background-image: url('../img/mit_img/tripadvisor.webp');
 }
 
 .Img8 {
-  background-image: url('../img/gas_img/TAIYAKI-japonalternativo.com.webp');
+  background-image: url('../img/mit_img/neox.webp');
 }
 
 @keyframes TotemCentradoEntrada {
