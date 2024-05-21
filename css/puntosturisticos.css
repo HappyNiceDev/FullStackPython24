@@ -179,35 +179,35 @@ main {
 }
 
 .Img1 {
-  background-image: url("../img/int_img/tokyo.webp");
+  background-image: url("../img/int_img/Torre-Tokyo.webp");
 }
 
 .Img2 {
-  background-image: url('../../img/int_img/osaka.webp');
+  background-image: url('../img/int_img/Monte-Fuji.webp');
 }
 
 .Img3 {
-  background-image: url('../img/int_img/kioto.webp');
+  background-image: url('../img/int_img/Santuario-Itsukushima.webp');
 }
 
 .Img4 {
-  background-image: url('../img/int_img/ueno.webp');
+  background-image: url('../img/int_img/osaka.webp');
 }
 
 .Img5 {
-  background-image: url('../img/int_img/shibuya.webp');
+  background-image: url('../img/int_img/PalacioImperialdeKioto.webp');
 }
 
 .Img6 {
-  background-image: url('../img/int_img/hiroshima.webp');
+  background-image: url('../img/int_img/Parque-Ueno.webp');
 }
 
 .Img7 {
-  background-image: url('../img/int_img/ginza.webp');
+  background-image: url('../img/int_img/shibuya.webp');
 }
 
 .Img8 {
-  background-image: url('../img/int_img/hokkaido.webp');
+  background-image: url('../img/int_img/Zao-Fox-Village.webp');
 }
 
 @keyframes TotemCentradoEntrada {
