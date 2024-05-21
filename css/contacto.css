@@ -140,74 +140,152 @@ nav ul li ul li a {
 
 /* <!-- Aquí empieza el formulario --> */
 .container-form {
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
   display: flex;
-  flex-direction: row;
-  gap: 50px;
-  margin-top: 90px;
+  margin:2em 2em 2em 2em;
+  justify-content: center;
   flex: 1; /* Esto hace que la sección de contenido ocupe todo el espacio restante */
 }
 
-
-.formulario {
+.info-form{
+  width: 50%;
+  margin-right: 2em;
   display: flex;
   flex-direction: column;
+}
+.formulario {
+  width: 40%;
+  background-color: #fff;
+  padding:1em 1em 1em 1em;
+  border-radius: 20px;
+  border:3px solid #b4a58f;
 }
 
 .container-form h2 {
   margin-bottom: 15px;
-  font-size: 35px
+  font-size: 2.3em;
+  background-color: #808366;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  color:#fff;
+  
 }
 
 .container-form p {
-  font-size: 17px;
+  font-size: 1.5em;
   line-height: 1.6;
   margin-bottom: 30px;
+  color:#242A20;
 }
 
 .container-form a {
-  font-size: 17px;
+  font-size: 1.5em;
+  margin-bottom: 15px;
   display: inline-block;
   text-decoration: none;
-  width: 100%;
-  margin-bottom: 15px;
-  color: black;
-  font-weight: 700;
+  color: #242A20;
+}
+
+.container-form button a{
+  color: #fff;
+}
+
+.container-form button a:hover{
+  color: #242A20;
 }
 
 .container-form a i {
-  color: rgb(240, 51, 18);
+  color: #808366;
   margin-right: 10px;
 }
 
-.container-form form .campo {
+.container-form .campo {
   width: 100%;
   padding: 15px 10px;
   font-size: 16px;
-  border: 1px solid #dbdbdb;
+  border: 2px solid #b4a58f;
   margin-bottom: 20px;
   border-radius: 3px;
   outline: 0px;
+  resize: none;
 }
 
-.container-form .btn-enviar {
-  padding: 15px;
-  font-size: 16px;
-  border: none;
-  outline: 0px;
-  background: rgb(240, 51, 18);
-  color: white;
-  border-radius: 3px;
+label{
+  font-size: 1.2em;
+}
+
+/*Botón Enviar*/
+.frame {
+  width: 100%;
+  text-align: center;
+}
+button {
+  margin: 20px;
+}
+.custom-btn {
+  width: 130px;
+  height: 40px;
+  color: #fff;
+  font-size: 1.2em;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
   cursor: pointer;
-  transition: all 300ms ease;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+}
+.btn-read {
+  width: 130px;
+  height: 40px;
+  line-height: 42px;
+  padding: 0;
+  border: none;
+  background: #d4c5ae;
+  background: linear-gradient(0deg, #57664c 40%, #d4c5ae 100%);
+}
+.btn-read:hover {
+  color: #242a20;
+  background: transparent;
+  box-shadow:none;
+}
+.btn-read:before,
+.btn-read:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:4px;
+  width:0;
+  background: #d4c5ae;
+  box-shadow:
+   -1px -1px 5px 0px #fff,
+   7px 7px 20px 0px #0003,
+   4px 4px 5px 0px #0002;
+  transition:400ms ease all;
+}
+.btn-read:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+.btn-read:hover:before,
+.btn-read:hover:after{
+  width:100%;
+  transition:800ms ease all;
+}
+button a{
+  text-decoration: none; 
+  color: inherit;
 }
 
-.container-form .btn-enviar:hover {
-  background: #295c11;
-}
 /* <!-- Aquí termina el formulario --> */
 
 /* <!-- Aquí empieza el footer --> */
@@ -450,11 +528,12 @@ footer {
   .nav-list {
     display: block;
   }
+
 }
 
 @media only screen and (max-width: 1024px){
 
-/*nav*/
+  /*nav*/
   /*---Animacion turismo en japón modo mobile---*/
   .img-y-logo .caja-principal {
     margin-top: 25px;
@@ -484,8 +563,26 @@ footer {
     margin-top: 2px;
   }
     /*termina nav*/
-
-}
+    /*formulario*/
+  .container-form{
+  margin-top: 2em;
+  flex-direction: column;
+  align-items: center;
+  }
+  .info-form{
+  width: 80%;
+  margin-right: 2em;
+  display: flex;
+  flex-direction: column;
+  }
+  .formulario {
+  width: 85%;
+  background-color: #fff;
+  padding:1em 1em 1em 1em;
+  border-radius: 20px;
+  border:2px solid #b4a58f;
+  }
+  }
 
 @media only screen and (min-width: 600px) and (max-width: 1280px){
 
