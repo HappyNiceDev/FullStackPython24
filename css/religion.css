@@ -187,28 +187,29 @@ main {
   }
 
 .Img3 {
-  background-image: url('../img/rel_img/shinto.webp');
+  background-image: url('../img/rel_img/taoismo.webp');
 }
 
 .Img4 {
-  background-image: url('../img/rel_img/shinto.webp');
+  background-image: url('../img/rel_img/confucio.webp');
 }
-
+/*
 .Img5 {
-  background-image: url('../img/rel_img/shinto.webp');
+  background-image: url('../img/rel_img/');
 }
 
 .Img6 {
-  background-image: url('../img/rel_img/shinto.webp');
+  background-image: url('../img/rel_img/');
 }
 
 .Img7 {
-  background-image: url('../img/rel_img/shinto.webp');
+  background-image: url('../img/rel_img/');
 }
 
 .Img8 {
-  background-image: url('../img/rel_img/shinto.webp');
+  background-image: url('../img/rel_img/');
 }
+*/
 
 @keyframes TotemCentradoEntrada {
   0% {
@@ -280,7 +281,7 @@ main {
   grid-area: 7 / 2 / 10 / 4;
   z-index: 1;
 }
-
+/*
 .Img5Lateral {
   grid-area: 9 / 1 / 12 / 3;
   z-index: 1;
@@ -300,7 +301,7 @@ main {
   grid-area: 15 / 2 / 18 / 4;
   z-index: 1;
 }
-
+*/
 .TotemLateral>div:hover {
   z-index: 2;
   animation: HoverEntrada 600ms ease-in-out forwards;
