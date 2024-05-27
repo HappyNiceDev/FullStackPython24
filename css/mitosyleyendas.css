@@ -193,8 +193,14 @@ main {
   text-shadow: 
   3px 3px 3px #000000,
   -2px -2px 2px #c5c5c5;
+  opacity: 1;
+  transition: opacity 0.3s;
 }
 
+.TotemCentrado div:hover h2{
+  opacity: 0.5;
+  transition-timing-function: ease-out;
+}
 
 .Img1 {
   background-image: url("../img/mit_img/hablemosdemanga.webp");
@@ -291,8 +297,15 @@ main {
   text-shadow: 
   3px 3px 3px #000000,
   -2px -2px 2px #c5c5c5;
+  opacity: 1;
+  transition: opacity 0.3s;
+
 }
 
+.TotemLateral div:hover h2{
+  opacity: 0.5;
+  transition-timing-function: ease-out;
+}
 
 .Img1Lateral {
   grid-area: 1 / 1 / 4 / 3;

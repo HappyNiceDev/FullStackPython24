@@ -192,6 +192,13 @@ main {
   text-shadow: 
   3px 3px 3px #000000,
   -2px -2px 2px #c5c5c5;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.TotemCentrado div:hover h2{
+  opacity: 0.5;
+  transition-timing-function: ease-out;
 }
 
 .Img1 {
@@ -275,7 +282,6 @@ main {
   border: solid 3px #fff;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   animation: HoverSalida 600ms ease-in-out forwards;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -288,7 +294,15 @@ main {
   text-shadow: 
   3px 3px 3px #000000,
   -2px -2px 2px #c5c5c5;
+  opacity: 1;
+  transition: opacity 0.3s;
 }
+
+.TotemLateral div:hover h2{
+  opacity: 0.5;
+  transition-timing-function: ease-out;
+}
+
 
 .Img1Lateral {
   grid-area: 1 / 1 / 4 / 3;
