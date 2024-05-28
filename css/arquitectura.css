@@ -176,6 +176,29 @@ main {
   border: solid 4px #fff;
   /*cosas nuevas*/
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.TotemCentrado>div:hover {
+  border: solid 5px #d2c0a5;
+}
+
+.TotemCentrado div h2{
+  font-style:italic;
+  color: #ffffff;
+  font-size: 2.2rem;
+  text-shadow: 
+  3px 3px 3px #000000,
+  -2px -2px 2px #c5c5c5;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.TotemCentrado div:hover h2{
+  opacity: 0.5;
+  transition-timing-function: ease-out;
 }
 
 .Img1 {
@@ -285,6 +308,25 @@ main {
   border: solid 3px #fff;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   animation: HoverSalida 600ms ease-in-out forwards;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.TotemLateral div h2{
+  font-style:italic;
+  color: #ffffff;
+  font-size: 2.2rem;
+  text-shadow: 
+  3px 3px 3px #000000,
+  -2px -2px 2px #c5c5c5;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.TotemLateral div:hover h2{
+  opacity: 0.5;
+  transition-timing-function: ease-out;
 }
 
 .Img1Lateral {
@@ -360,7 +402,7 @@ main {
 .TotemLateral>div:hover {
   z-index: 2;
   animation: HoverEntrada 600ms ease-in-out forwards;
-
+  border: solid 5px #D4C5AE;
 }
 
 @keyframes HoverSalida {
@@ -718,6 +760,10 @@ footer {
     margin: 2em;
     font-size: 1em;
   }
+  .TotemLateral div h2{
+    font-size: 1.2rem;
+  }
+
 }
 
 @media screen and (max-width: 1024px) {
@@ -757,6 +803,10 @@ footer {
     gap: 20px;
 
   }
+  .TotemLateral div h2{
+    font-size: 1.2rem;
+  }
+
 }
 
 @media only screen and (max-width: 800px) {
@@ -783,6 +833,9 @@ footer {
   .Resumen ul li {
     margin: 2em;
     font-size: 1em;
+  }
+  .TotemCentrado div h2{
+    font-size: 1.1rem;
   }
 }
 
