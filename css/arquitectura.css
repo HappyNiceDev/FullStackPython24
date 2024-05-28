@@ -179,35 +179,59 @@ main {
 }
 
 .Img1 {
-  background-image: url("../img/gas_img/SUSHI-wallhere.com.webp");
+  background-image: url("../img/arq_img/Jomon1.webp");
 }
 
 .Img2 {
-  background-image: url('../img/gas_img/RAMEN-topgastronomico.es.webp');
+  background-image: url('../img/arq_img/Yayoi1.webp');
 }
 
 .Img3 {
-  background-image: url('../img/gas_img/TAKOYAKI-muyjapones.com.webp');
+  background-image: url('../img/arq_img/Kofun1.webp');
 }
 
 .Img4 {
-  background-image: url('../img/gas_img/GYUDON-thewoksoflife.com.webp');
+  background-image: url('../img/arq_img/Asuka1.webp');
 }
 
 .Img5 {
-  background-image: url('../img/gas_img/OKONOMIYAKI-bonviveur.es.webp');
+  background-image: url('../img/arq_img/Nara1.webp');
 }
 
 .Img6 {
-  background-image: url('../img/gas_img/MOCHI-milenio.com.webp');
+  background-image: url('../img/arq_img/Heian1.webp');
 }
 
 .Img7 {
-  background-image: url('../img/gas_img/DORAYAKI-diariovasco.com.webp');
+  background-image: url('../img/arq_img/Kamakura1.webp');
 }
 
 .Img8 {
-  background-image: url('../img/gas_img/TAIYAKI-japonalternativo.com.webp');
+  background-image: url('../img/arq_img/Muromachi1.webp');
+}
+
+.Img9 {
+  background-image: url('../img/arq_img/Azuchi-Momoyama1.webp');
+}
+
+.Img10 {
+  background-image: url('../img/arq_img/Edo1.webp');
+}
+
+.Img11 {
+  background-image: url('../img/arq_img/Meiji1.webp');
+}
+
+.Img12 {
+  background-image: url('../img/arq_img/Taisho1.webp');
+}
+
+.Img13 {
+  background-image: url('../img/arq_img/Showa1.webp');
+}
+
+.Img14 {
+  background-image: url('../img/arq_img/contemporaneo1.webp');
 }
 
 @keyframes TotemCentradoEntrada {
@@ -242,9 +266,11 @@ main {
 .TotemLateral {
   margin: 1.5em 3% 1.5em 6%;
   justify-content: center;
+  top: 0;
+  position: sticky;
   display: grid;
   grid-template-columns: repeat(3, 160px);
-  grid-template-rows: repeat(17, 60px);
+  grid-template-rows: repeat(29, 60px);
   animation: TotemLateralEntrada 1.5s ease-in-out forwards;
 }
 
@@ -298,6 +324,36 @@ main {
 
 .Img8Lateral {
   grid-area: 15 / 2 / 18 / 4;
+  z-index: 1;
+}
+
+.Img9Lateral {
+  grid-area: 17 / 1 / 20 / 3;
+  z-index: 1;
+}
+
+.Img10Lateral {
+  grid-area: 19 / 2 / 22 / 4;
+  z-index: 1;
+}
+
+.Img11Lateral {
+  grid-area: 21 / 1 / 24 / 3;
+  z-index: 1;
+}
+
+.Img12Lateral {
+  grid-area: 23 / 2 / 26 / 4;
+  z-index: 1;
+}
+
+.Img13Lateral {
+  grid-area: 25 / 1 / 28 / 3;
+  z-index: 1;
+}
+
+.Img14Lateral {
+  grid-area: 27 / 2 / 30 / 4;
   z-index: 1;
 }
 
@@ -392,6 +448,7 @@ main {
   font-style: italic;
   letter-spacing: 3px;
   text-decoration: underline;
+  text-align: center;
 }
 
 .Resumen p {
@@ -649,7 +706,7 @@ footer {
 
   .TotemLateral {
     grid-template-columns: repeat(3, 80px);
-    grid-template-rows: repeat(17, 30px);
+    grid-template-rows: repeat(29, 30px);
   }
 
   .Resumen p {
