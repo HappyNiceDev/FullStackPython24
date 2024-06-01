@@ -186,7 +186,6 @@ nav ul li ul li a {
   margin-bottom: 15px;
   display: inline-block;
   text-decoration: none;
-  color: #242A20;
 }
 
 .container-form button a{
@@ -225,10 +224,11 @@ nav ul li ul li a {
 
 /*Botón Enviar*/
 .frame {
-  width: 100%;
+  width: 90%;
+  margin: 40px auto;
   text-align: center;
 }
-button {
+.button-btn {
   margin: 20px;
   text-decoration: none; 
   color: inherit;
@@ -260,6 +260,7 @@ button {
   border: none;
   background: #d4c5ae;
   background: linear-gradient(0deg, #57664c 40%, #d4c5ae 100%);
+  font-family: "Lato";
 }
 .btn-read:hover {
   color: #242a20;

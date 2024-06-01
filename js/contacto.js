@@ -104,6 +104,7 @@ document.querySelector('form').addEventListener("submit", function (event) {
   } else {
     var formData = new FormData(this);
     console.log(formData)
+    alert("¡Formulario enviado!");
   }
 
 });
