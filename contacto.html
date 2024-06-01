@@ -69,25 +69,30 @@
     </div>
     <div class="formulario">
         <form action="#" autocomplete="off">
-        <input type="text" name="nombre" placeholder="Tu Nombre" class="campo">
-        <input type="text" name="apellido" placeholder="Tu Apellido" class="campo">
+        <input type="text" name="nombre" placeholder="Tu Nombre *" class="campo">
+        <div class="error">Debe ingresar un nombre valido sin espacio y sin numeros.</div>
+        <input type="text" name="apellido" placeholder="Tu Apellido *" class="campo">
+        <div class="error">Debe ingresar un apellido valido sin espacio y sin numeros.</div>
         <input type="text" name="telefono" placeholder="Numero de Telefono" class="campo">
-        <input type="email" name="email" placeholder="Tu Email" class="campo">
+        <input type="email" name="email" placeholder="Tu Email *" class="campo">
+        <div class="error">Debe ingresar correctamente un mail.</div>
         <label for="categoria">Asunto:</label>
-        <select id="categoria" name="categoria" required>
+        <select name="categoria">
             <option value="">Seleccione una categoría</option>
             <option value="consulta">Consulta</option>
             <option value="reclamo">Reclamo</option>
             <option value="sugerencia">Sugerencia</option>
             <option value="otros">Otros</option>
-        </select><br><br>
-        <textarea name="mensaje" placeholder="Tu Mensaje..." class="campo"></textarea>
-        <input type="file" id="foto" name="foto" accept=".jpg, .jpeg, .png" class="img-up"><br><br>
+        </select>
+        <div class="error">Debe seleccionar alguna opcion para continuar.</div>
+        <textarea name="mensaje" placeholder="Tu Mensaje... *" class="campo"></textarea>
+        <input type="file" id="foto" name="foto" accept=".jpg, .jpeg, .png"><br><br>
         <label for="terminos" title="Sus datos serán utilizados solo con fines estadísticos.">
-            <input type="checkbox" id="terminos" name="terminos" required>
-            Acepto los términos y condiciones
+            <input type="checkbox" id="terminos" name="terminos">
+            Acepto los términos y condiciones *
+            <span class="error"> Debe seleccionar para continuar</span>
         </label>
-        <div class="frame"><button class="custom-btn btn-read"><a href="#">Enviar</a></button></div>
+        <div class="frame"><button class="custom-btn btn-read">Enviar</button></div>
       </form>
     </div>
   </div>

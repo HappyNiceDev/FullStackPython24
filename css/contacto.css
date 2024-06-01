@@ -156,6 +156,9 @@ nav ul li ul li a {
   width: 40%;
   background-color: #fff;
   padding:1em 1em 1em 1em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   border-radius: 20px;
   border:3px solid #b4a58f;
 }
@@ -199,19 +202,25 @@ nav ul li ul li a {
   margin-right: 10px;
 }
 
-.container-form .campo {
+.formulario .campo {
   width: 100%;
   padding: 15px 10px;
   font-size: 16px;
   border: 2px solid #b4a58f;
-  margin-bottom: 20px;
+  margin-top: 20px;
   border-radius: 3px;
   outline: 0px;
   resize: none;
 }
 
-label{
+.formulario label{
   font-size: 1.2em;
+}
+.formulario select{
+  margin-top: 20px;
+}
+.formulario select, .formulario input[type="file"]{
+  margin-top: 20px;
 }
 
 /*Botón Enviar*/
@@ -221,6 +230,8 @@ label{
 }
 button {
   margin: 20px;
+  text-decoration: none; 
+  color: inherit;
 }
 .custom-btn {
   width: 130px;
@@ -281,10 +292,19 @@ button {
   width:100%;
   transition:800ms ease all;
 }
-button a{
-  text-decoration: none; 
-  color: inherit;
+
+/*--------- Validacion del contnido ingresado en el formulario ---------*/
+.container-form .errorBorde{
+  border: 1px solid #ff0000;
 }
+.container-form .error{
+  display: none;
+  color: #ff0000;
+}
+.container-form .errorAct{
+  display: block;
+}
+
 
 /* <!-- Aquí termina el formulario --> */
 
