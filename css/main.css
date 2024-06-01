@@ -362,7 +362,7 @@ p{
   margin: 40px auto;
   text-align: center;
 }
-button {
+.button-btn {
   margin: 20px;
 }
 .custom-btn {
@@ -392,6 +392,7 @@ button {
   border: none;
   background: #d4c5ae;
   background: linear-gradient(0deg, #57664c 40%, #d4c5ae 100%);
+  font-family: "Lato";
 }
 .btn-read:hover {
   color: #242a20;
@@ -424,7 +425,7 @@ button {
   width:100%;
   transition:800ms ease all;
 }
-button a{
+a{
   text-decoration: none; 
   color: inherit;
 }
