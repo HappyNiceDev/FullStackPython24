@@ -431,14 +431,20 @@ main {
 
 
 .Resumen h1 {
-  font-style: italic;
   letter-spacing: 3px;
   text-decoration: underline;
+  font-family: "Bona Nova", serif;
+  font-weight: 700;
+  font-style: italic;
 }
 
 .Resumen p {
   margin: 2em;
   font-size: 1.5em;
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
 }
 
 .Resumen ul li {
