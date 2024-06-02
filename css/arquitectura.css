@@ -559,8 +559,8 @@ main {
 /* Termina icono corazon */
 /* Imagen dentro del Resumen */
 .Resumen > [class^="Img"] {
-  width: 160px;
-  height: 90px;
+  width: 280px;
+  height: 140px;
   margin-top: 8px;
   margin-bottom: 8px;
   border-radius: 20px;
@@ -834,6 +834,7 @@ footer {
     margin: 2em;
     font-size: 1em;
   }
+
   .TotemCentrado div h2{
     font-size: 1.1rem;
   }
@@ -863,6 +864,7 @@ footer {
     height: 4em;
     margin: 5px;
   }
+
   .img-y-logo {
     width: 100%;
   }
