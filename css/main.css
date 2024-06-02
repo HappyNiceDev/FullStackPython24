@@ -340,10 +340,17 @@ section h2{
   text-decoration: underline;
   font-size: 2em;
   margin-bottom: 20px;
+  font-family: "Bona Nova", serif;
+  font-weight: 700;
+  font-style: italic;
 }
 
 p{
   font-size: 1.5em;
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
 }
 
 .ContenidoImg img{
@@ -361,6 +368,13 @@ p{
   width: 90%;
   margin: 40px auto;
   text-align: center;
+}
+
+.frame a{
+  font-family: "Bona Nova", serif;
+  font-weight: 500;
+  font-style: italic;
+
 }
 .button-btn {
   margin: 20px;
@@ -428,6 +442,7 @@ p{
 a{
   text-decoration: none; 
   color: inherit;
+  
 }
 /* <!-- Aquí termina el contenido resumido --> */
 /* <!-- Aquí empieza el footer --> */
