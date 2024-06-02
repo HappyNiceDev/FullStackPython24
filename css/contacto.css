@@ -186,6 +186,7 @@ nav ul li ul li a {
   margin-bottom: 15px;
   display: inline-block;
   text-decoration: none;
+  color: #242A20;
 }
 
 .container-form button a{
@@ -535,7 +536,9 @@ footer {
     position: static;
     margin: 0px;
   }
-
+ .container-form{
+  margin:1em;
+ }
 }
 
 @media only screen and (max-width: 630px){
@@ -597,7 +600,7 @@ footer {
   flex-direction: column;
   }
   .formulario {
-  width: 85%;
+  width: 100%;
   background-color: #fff;
   padding:1em 1em 1em 1em;
   border-radius: 20px;

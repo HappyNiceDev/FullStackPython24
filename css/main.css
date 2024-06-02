@@ -340,10 +340,17 @@ section h2{
   text-decoration: underline;
   font-size: 2em;
   margin-bottom: 20px;
+  font-family: "Bona Nova", serif;
+  font-weight: 700;
+  font-style: italic;
 }
 
 p{
   font-size: 1.5em;
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
 }
 
 .ContenidoImg img{
