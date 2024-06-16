@@ -211,6 +211,9 @@ nav ul li ul li a {
   width: 150px;
   height: 150px;
   margin: 1.5em;
+  clip-path: circle(50% at 50% 50%);
+  border: 5px solid #d4c5ae;
+  border-radius: 50%;
 }
 
 .foto-descripcion {
