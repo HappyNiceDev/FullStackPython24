@@ -27,7 +27,25 @@ body {
 .img-y-logo {
   display: flex;
 }
+/*--------------*/
 
+.img_login{
+  width: 70px;
+  height:70px;
+  margin: 5px;
+  background-image: url('../img/login.webp');
+  background-size: cover;
+  transition: background-image 2s ease;
+}
+.img_login:hover{
+  background-image: url('../img/login-hover.webp');
+
+}
+.nav-rigth{
+  display: flex;
+}
+
+/*--------------*/
 nav {
   display: flex;
   justify-content: space-between;
@@ -624,6 +642,17 @@ footer {
 
 }
 @media only screen and (max-width: 480px) {
+
+  .btn-read{
+    position: static;
+  }
+
+  p{
+    font-size: 1em;
+  }
+}
+
+@media only screen and (max-width: 600px){
   .img-logo {
     height: 4em;
     margin: 5px;
@@ -672,17 +701,12 @@ footer {
     position: static;
     margin: 0px;
   }
-
-  .btn-read{
-    position: static;
+  .img_login{
+    background-color: #d4c5ae;
+    margin:0;
+    float:right;
   }
-
-  p{
-    font-size: 1em;
-  }
-}
-
-@media only screen and (max-width: 600px){
+  
   .MenuLateral a {
     display: none;
   }
