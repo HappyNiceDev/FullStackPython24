@@ -32,7 +32,33 @@ body {
 .img-y-logo {
   display: flex;
 }
+/*--------------*/
 
+.img_login{
+  width: 65px;
+  height:65px;
+  margin: 5px;
+  background-image: url('../img/usoarquitectura.com.webp');
+  background-size: cover;
+  clip-path: circle(50% at 50% 50%);
+  border: 4px solid #c3b299;
+  border-radius: 50%;
+  transition: 2s ease;
+}
+.img_login:hover{
+  border: 4px solid #808366;
+
+}
+
+.nav-rigth-ppal{
+  display: flex;
+}
+
+.nav-rigth{
+  display: flex;
+}
+
+/*--------------*/
 nav {
   display: flex;
   justify-content: space-between;
@@ -52,7 +78,7 @@ nav ul {
 
 nav ul li {
   float: left;
-  margin-top: -2px;
+  margin-top: -2px
 }
 
 nav ul li a {
@@ -83,9 +109,6 @@ nav ul li ul li a {
   padding: 15px;
   line-height: 20px;
   background-color: #b4a58f;
-}
-.dropdown {
-  display: none;
 }
 
 .nav-dropdown {
@@ -577,7 +600,6 @@ iframe {
   margin: 1em 1em 1em 1em;
 }
 
-
 .download-text-area{
   width: 30vw;
   overflow: auto;
@@ -590,6 +612,40 @@ iframe {
 
 .download-text-area p{
   font-size: 1em;
+}
+
+/*Mis Comentarios*/
+.mis-comentarios-titulo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mis-comentarios h2 {
+  color: #242a20;
+  letter-spacing: 3px;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  font-family: "Playball", cursive;
+  font-weight: 400;
+  font-style: normal;
+  text-decoration: underline;
+}
+
+.mis-comentarios p{
+  color: #242a20;
+  font-size: 1.5em;
+  margin-bottom: 25px;
+  font-family: "Playfair Display", serif;
+}
+
+.caja-comentario{
+  width: 68vw;
+  height: 280px;
+  background-color: #f1f1f1;
+  border: solid 2px #dddad1;
+  border-radius: 10px;
+  margin: 2em 2em 2em 2em;
 }
 
 /*<!-- Aquí termina contenido de configuraciones de cuenta --> */
@@ -760,23 +816,23 @@ footer {
   align-items: center;
 }
 /* <!-- Aquí termina el footer --> */
-
 /* Media Query */
-
-@media only screen and (max-width: 285px) {
+@media only screen and (max-width: 710px) {
   nav .caja-principal {
     display: none;
   }
 }
 @media only screen and (max-width: 480px) {
+  /*nav*/
   .img-logo {
     height: 4em;
     margin: 5px;
   }
+
   .img-y-logo {
     width: 100%;
   }
-
+  
   .nav-mobile {
     display: block;
   }
@@ -796,7 +852,7 @@ footer {
   nav ul li {
     float: right;
     width: 70vw;
-    margin-top: -2px;
+    margin-top: -2px
   }
 
   nav ul li a {
@@ -805,6 +861,67 @@ footer {
     float: right;
     line-height: 20px;
     background-color: #d4c5ae;
+    
+  }
+
+  nav ul li ul li a {
+    padding-left: 20px;
+    background-color: #b4a58f;
+  }
+
+  .nav-dropdown {
+    position: static;
+    margin: 0px;
+  }
+  /* Termina Nav */
+
+  .btn-read {
+    position: static;
+  }
+
+  p {
+    font-size: 1em;
+  }
+}
+
+@media only screen and (max-width: 600px){
+  .img-logo {
+    height: 4em;
+    margin: 5px;
+  }
+  .img-y-logo {
+    width: 100%;
+  }
+  
+  .nav-mobile {
+    display: block;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 70px;
+  }
+
+  nav ul {
+    display: none;
+    margin-top: -5px;
+  }
+
+  nav ul li {
+    float: right;
+    width: 70vw;
+    margin-top: -2px
+  }
+
+  nav ul li a {
+    padding: 15px;
+    width: 200px;
+    float: right;
+    line-height: 20px;
+    background-color: #d4c5ae;
+    
   }
 
   nav ul li ul li a {
@@ -817,17 +934,21 @@ footer {
     margin: 0px;
   }
 
-  .btn-read {
-    position: static;
+  #nav-toggle{
+    left: -50px;
   }
-
-  p {
-    font-size: 1em;
+  
+  .img_login{
+    background-color: #d4c5ae;
+    margin:0;
+    width: 58px;
+    height: 58px;
+    position: absolute;
+    right: 5px;
+    top:6px;
   }
 }
 
-@media only screen and (max-width: 600px) {
-}
 
 @media screen and (min-width: 800px) {
   .nav-list {
@@ -836,34 +957,37 @@ footer {
 }
 
 @media only screen and (max-width: 1024px) {
+  /*nav*/
   /*---Animacion turismo en japón modo mobile---*/
-  .img-y-logo .caja-principal {
-    margin-top: 25px;
-  }
+.img-y-logo .caja-principal {
+  margin-top: 25px;
+}
 
-  .img-y-logo .caja-principal .caja {
-    width: 100%;
-    height: 1em;
-  }
+.img-y-logo .caja-principal .caja {
+  width: 100%;
+  height: 1em;
+}
 
-  .img-y-logo .caja-principal .caja .titulo {
-    height: 30px;
-  }
+.img-y-logo .caja-principal .caja .titulo {
+  height: 30px;
+}
 
-  .img-y-logo .caja-principal .caja .titulo h1 {
-    font-size: 1.2em;
-  }
+.img-y-logo .caja-principal .caja .titulo h1 {
+  font-size: 1.2em;
+}
 
-  .img-y-logo .caja-principal .caja .sub-titulo {
-    height: 1.5em;
-    margin-top: 5px;
-  }
+.img-y-logo .caja-principal .caja .sub-titulo {
+  height: 1.5em;
+  margin-top: 5px;
+}
 
-  .img-y-logo .caja-principal .caja .sub-titulo p {
-    font-size: 0.6em;
-    letter-spacing: 2px;
-    margin-top: 2px;
-  }
+.img-y-logo .caja-principal .caja .sub-titulo p {
+  font-size: 0.6em;
+  letter-spacing: 2px;
+  margin-top: 2px;
+}
+  /*termina nav*/
+
 }
 
 @media only screen and (min-width: 600px) and (max-width: 1280px) {
