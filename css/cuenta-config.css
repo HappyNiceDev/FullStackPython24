@@ -614,40 +614,6 @@ iframe {
   font-size: 1em;
 }
 
-/*Mis Comentarios*/
-.mis-comentarios-titulo{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.mis-comentarios h2 {
-  color: #242a20;
-  letter-spacing: 3px;
-  font-size: 2.5em;
-  margin-bottom: 20px;
-  font-family: "Playball", cursive;
-  font-weight: 400;
-  font-style: normal;
-  text-decoration: underline;
-}
-
-.mis-comentarios p{
-  color: #242a20;
-  font-size: 1.5em;
-  margin-bottom: 25px;
-  font-family: "Playfair Display", serif;
-}
-
-.caja-comentario{
-  width: 68vw;
-  height: 280px;
-  background-color: #f1f1f1;
-  border: solid 2px #dddad1;
-  border-radius: 10px;
-  margin: 2em 2em 2em 2em;
-}
-
 /*<!-- Aquí termina contenido de configuraciones de cuenta --> */
 /* <!-- Aquí empieza el footer --> */
 .caja-principal .caja {

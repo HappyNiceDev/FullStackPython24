@@ -106,3 +106,22 @@ window.onload = function () {
     });
   });
 };
+
+//-------------- Caja de comentarios --------------//
+
+function mostrarComentarios(comida) {
+  // Mostrar el título de los comentarios
+  document.querySelector('.titulo-comentario').style.display = 'block';
+
+  // Ocultar todas las cajas de comentarios
+  var comentarios = document.querySelectorAll('.caja-comentario');
+  comentarios.forEach(function(caja) {
+    caja.style.display = 'none';
+  });
+
+  // Mostrar la caja de comentarios correspondiente
+  var cajaMostrar = document.getElementById('comentarios-' + comida);
+  if (cajaMostrar) {
+    cajaMostrar.style.display = 'block';
+  }
+}
