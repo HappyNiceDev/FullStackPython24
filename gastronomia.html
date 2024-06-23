@@ -12,48 +12,55 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bona+Nova:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playball&display=swap" rel="stylesheet">
   <title>Turismo en Japón</title>
 </head>
-
 <body>
   <header>
      <!-- Aquí empieza el nav -->
-     <div class="navigation">
+    <div class="navigation">
       <div class="nav-container">
         <nav>
           <div class="img-y-logo">
-              <img class="img-logo" src="img/pez-koi-sol-naciente.webp" alt="Logo" />
-              <div class="caja-principal">
-                  <div class="caja">
-                    <div class="titulo">
-                      <span class="bloque"></span>
-                      <h1>Turismo en Japón <span></span></h1>
-                    </div>
-                    <div class="sub-titulo">
-                      <div class="bloque"></div>
-                      <p>Organiza tu viaje</p>
-                    </div>
-                  </div>
+            <img class="img-logo" src="img/pez-koi-sol-naciente.webp" alt="Logo" />
+            <div class="caja-principal">
+              <div class="caja">
+                <div class="titulo">
+                  <span class="bloque"></span>
+                  <h1>Turismo en Japón <span></span></h1>
                 </div>
+                <div class="sub-titulo">
+                  <div class="bloque"></div>
+                  <p>Organiza tu viaje</p>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="nav-mobile">
             <a id="nav-toggle" href="#!"><span></span></a>
           </div>
-          <ul class="nav-list">
+          <div class="nav-rigth-ppal">
+            <div class="nav-rigth">
+            <ul class="nav-list">
             <li><a href="index.html">INICIO</a></li>
             <li class="dropdown">
               <a href="#!">SECCIONES</a>
               <ul class="nav-dropdown">
-                <li><a href="puntosturisticos.html">Puntos Turísticos</a></li>
-                <li><a href="religion.html">Religión</a></li>
                 <li><a href="arquitectura.html">Arquitectura</a></li>
                 <li><a href="gastronomia.html">Gastronomía</a></li>
-                <li><a href="paisajesyjardines.html">Paisajes y Jardines</a></li>
                 <li><a href="mitosyleyendas.html">Mitos y Leyendas</a></li>
+                <li><a href="paisajesyjardines.html">Paisajes y Jardines</a></li>
+                <li><a href="puntosturisticos.html">Puntos Turísticos</a></li>
+                <li><a href="religion.html">Religión</a></li>
               </ul>
             </li>
             <li><a href="contacto.html">CONTACTO</a></li>
           </ul>
+          </div>
+          <div class="img_login"></div>
+          </div>
         </nav>
       </div>
     </div>
@@ -63,14 +70,14 @@
   <main>
     <!-- Aquí empieza el totem -->
     <div id="Totem" class="TotemCentrado">
-      <div class="Img1" title="Sushi"><h2>SUSHI</h2></div>
-      <div class="Img2" title="Ramen"><h2>RAMEN</h2></div>
-      <div class="Img3" title="Takoyaki"><h2>TAKOYAKI</h2></div>
-      <div class="Img4" title="Gyudon"><h2>GYUDON</h2></div>
-      <div class="Img5" title="Okonomiyaki"><h2>OKONOMIYAKI</h2></div>
-      <div class="Img6" title="Mochi"><h2>MOCHI</h2></div>
-      <div class="Img7" title="Dorayaki"><h2>DORAYAKI</h2></div>
-      <div class="Img8" title="Taiyaki"><h2>TAIYAKI</h2></div>
+      <div class="Img1" title="Sushi" onclick="mostrarComentarios('sushi')"><h2>SUSHI</h2></div>
+      <div class="Img2" title="Ramen" onclick="mostrarComentarios('ramen')"><h2>RAMEN</h2></div>
+      <div class="Img3" title="Takoyaki" onclick="mostrarComentarios('takoyaki')"><h2>TAKOYAKI</h2></div>
+      <div class="Img4" title="Gyudon" onclick="mostrarComentarios('gyudon')"><h2>GYUDON</h2></div>
+      <div class="Img5" title="Okonomiyaki" onclick="mostrarComentarios('okonomiyaki')"><h2>OKONOMIYAKI</h2></div>
+      <div class="Img6" title="Mochi" onclick="mostrarComentarios('mochi')"><h2>MOCHI</h2></div>
+      <div class="Img7" title="Dorayaki" onclick="mostrarComentarios('dorayaki')"><h2>DORAYAKI</h2></div>
+      <div class="Img8" title="Taiyaki" onclick="mostrarComentarios('taiyaki')"><h2>TAIYAKI</h2></div>
     </div>
     <!-- Aquí termina el totem -->
     <!-- Aquí empieza el contenido de cada imagen del totem -->
@@ -371,6 +378,42 @@
     <!-- Aquí termina el contenido de cada imagen del totem -->
   </main>
   <!-- Aquí termina el contenido -->
+  <!-- Aquí Empiezan los comentarios -->
+    <div class="titulo-comentario">
+      <img src="img/barra-blanca.png" alt="barra">
+      <h2>Comentarios</h2>
+    </div> 
+  
+   <div class="caja-ppla-comentario">
+    <div class="caja-comentario caja-comentario-sushi" id="comentarios-sushi">
+      <div class="img_login"></div>
+      <p>Este es un ejemplo de comentario que el usuario escribió. Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias provident illo libero, eaque aliquam beatae assumenda debitis dolor sunt ut perspiciatis obcaecati nisi ea distinctio veritatis. Magni nobis culpa vero!</p>
+    </div>
+    <div class="caja-comentario caja-comentario-ramen" id="comentarios-ramen">
+      <p>Comentarios sobre Ramen</p>
+    </div>
+    <div class="caja-comentario caja-comentario-takoyaki" id="comentarios-takoyaki">
+      <p>Comentarios sobre Takoyaki</p>
+    </div>
+    <div class="caja-comentario caja-comentario-gyudon" id="comentarios-gyudon">
+      <p>Comentarios sobre Gyudon</p>
+    </div>
+    <div class="caja-comentario caja-comentario-okonomiyaki" id="comentarios-okonomiyaki">
+      <p>Comentarios sobre Okonomiyaki</p>
+    </div>
+    <div class="caja-comentario caja-comentario-mochi" id="comentarios-mochi">
+      <p>Comentarios sobre Mochi</p>
+    </div>
+    <div class="caja-comentario caja-comentario-dorayaki" id="comentarios-dorayaki">
+      <p>Comentarios sobre Dorayaki</p>
+    </div>
+    <div class="caja-comentario caja-comentario-taiyaki" id="comentarios-taiyaki">
+      <p>Comentarios sobre Taiyaki</p>
+    </div>
+   </div>
+  
+  
+  <!-- Aquí Terminan los comentarios -->
    <!-- Aquí empieza el footer -->
    <footer>
     <div class="caja-principal">

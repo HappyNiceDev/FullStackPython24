@@ -27,7 +27,33 @@ body {
 .img-y-logo {
   display: flex;
 }
+/*--------------*/
 
+.img_login{
+  width: 65px;
+  height:65px;
+  margin: 5px;
+  background-image: url('../img/usoarquitectura.com.webp');
+  background-size: cover;
+  clip-path: circle(50% at 50% 50%);
+  border: 4px solid #c3b299;
+  border-radius: 50%;
+  transition: 2s ease;
+}
+.img_login:hover{
+  border: 4px solid #808366;
+
+}
+
+.nav-rigth-ppal{
+  display: flex;
+}
+
+.nav-rigth{
+  display: flex;
+}
+
+/*--------------*/
 nav {
   display: flex;
   justify-content: space-between;
@@ -78,9 +104,6 @@ nav ul li ul li a {
   padding: 15px;
   line-height: 20px;
   background-color: #b4a58f;
-}
-.dropdown{
-  display: none;
 }
 
 .nav-dropdown {
@@ -613,17 +636,20 @@ footer {
 }
 /* <!-- Aquí termina el footer --> */
 
-
 /* Media Query */
 
-@media only screen and (max-width: 285px){
-
-  nav .caja-principal{
-  display: none;
-}
-
-}
 @media only screen and (max-width: 480px) {
+
+  .btn-read{
+    position: static;
+  }
+
+  p{
+    font-size: 1em;
+  }
+}
+
+@media only screen and (max-width: 600px){
   .img-logo {
     height: 4em;
     margin: 5px;
@@ -673,16 +699,20 @@ footer {
     margin: 0px;
   }
 
-  .btn-read{
-    position: static;
+  #nav-toggle{
+    left: -50px;
   }
-
-  p{
-    font-size: 1em;
+  
+  .img_login{
+    background-color: #d4c5ae;
+    margin:0;
+    width: 58px;
+    height: 58px;
+    position: absolute;
+    right: 5px;
+    top:6px;
   }
-}
-
-@media only screen and (max-width: 600px){
+  
   .MenuLateral a {
     display: none;
   }
@@ -708,12 +738,20 @@ footer {
   }
 }
 
+@media only screen and (max-width: 710px){
+
+  nav .caja-principal{
+  display: none;
+}
+}
+
 @media screen and (min-width: 800px) {
   
   .nav-list {
     display: block;
   }
 }
+
 
 @media only screen and (max-width: 1024px){
 
