@@ -431,6 +431,7 @@ iframe {
 .rutas-icon {
   display: flex;
   flex-direction: column-reverse;
+  align-items: flex-end;
 }
 
 .fa-solid {
@@ -438,6 +439,16 @@ iframe {
   margin-top: 20px;
   color: #beb19d;
   cursor: pointer;
+}
+
+.fecha-ruta{
+  margin-top: 20px;
+}
+
+.rutas-icon p{
+  color: #242a20;
+  font-size: 0.9em;
+  font-family: "Playfair Display", serif;
 }
 
 /*Planificacion de viaje*/
@@ -468,12 +479,27 @@ iframe {
   text-decoration: underline;
 }
 
-.planificacion p{
+.plani-user{
   color: #242a20;
   font-size: 1.5em;
   margin-bottom: 25px;
   font-family: "Playfair Display", serif;
 }
+
+.plan-ico{
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-end;
+  height: 200px;
+  justify-content: space-between;
+}
+
+.p-fecha{
+  color: #242a20;
+  font-size: 0.9em;
+  font-family: "Playfair Display", serif;
+}
+
 
 #draggable-aside {
   width: 20vw;
