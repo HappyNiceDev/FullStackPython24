@@ -1,0 +1,127 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="{% static 'css/contacto.css' %}" />
+  <link rel="shortcut icon" type="image/x-icon" href="img/bandera.ico">
+  <title>Turismo en Japón</title>
+</head>
+
+<body>
+  <header>
+    <!-- Aquí empieza el nav -->
+    <div class="navigation">
+      <div class="nav-container">
+        <nav>
+          <div class="img-y-logo">
+            <img class="img-logo" src="{% static 'img/pez-koi-sol-naciente.webp' %}" alt="Logo" />
+            <div class="caja-principal">
+              <div class="caja">
+                <div class="titulo">
+                  <span class="bloque"></span>
+                  <h1>Turismo en Japón <span></span></h1>
+                </div>
+                <div class="sub-titulo">
+                  <div class="bloque"></div>
+                  <p>Organiza tu viaje</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="nav-mobile">
+            <a id="nav-toggle" href="#!"><span></span></a>
+          </div>
+          <div class="nav-rigth-ppal">
+            <div class="nav-rigth">
+            <ul class="nav-list">
+            <li><a href="{% url 'index' %}">INICIO</a></li>
+            <li class="dropdown">
+              <a href="#!">SECCIONES</a>
+              <ul class="nav-dropdown">
+                <li><a href="{% url 'arquitectura' %}">Arquitectura</a></li>
+                <li><a href="{% url 'gastronomia' %}">Gastronomía</a></li>
+                <li><a href="{% url 'mitosyleyendas' %}">Mitos y Leyendas</a></li>
+                <li><a href="{% url 'paisajesyjardines' %}">Paisajes y Jardines</a></li>
+                <li><a href="{% url 'puntosturisticos' %}">Puntos Turísticos</a></li>
+                <li><a href="{% url 'religion' %}">Religión</a></li>
+              </ul>
+            </li>
+            <li><a href="{% url 'contacto' %}">CONTACTO</a></li>
+          </ul>
+          </div>
+          <div class="img_login"></div>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <!-- Aquí termina el nav -->
+  </header>
+  <!-- Aquí empieza el formulario -->
+
+  <div class="container-form">
+    <div class="info-form">
+      <h2>Contactanos</h2>
+      <p>¡Hola viajero! ¿Listo para explorar Japón?.<br>
+        Estamos aquí para ayudarte a hacer de tu viaje una experiencia inolvidable. Ya sea que 
+        necesites consejos, planificación personalizada o simplemente quieras compartir tu emoción, ¡contáctanos hoy mismo y comencemos 
+        esta aventura juntos!</p>
+      <a href="#"><i class="fa fa-phone"></i>15-xxxx-xxxx</a>
+      <a href="#"><i class="fa fa-envelope"></i>info.turismoenjapon@gmail.com</a>
+      <a href="#"><i class="fa fa-map-marked"></i>Buenos Aires, CABA</a>
+    </div>
+    <div class="formulario">
+        <form action="#" autocomplete="off">
+        <input type="text" name="nombre" placeholder="Tu Nombre *" class="campo">
+        <div class="error">Debe ingresar un nombre valido sin espacio y sin numeros.</div>
+        <input type="text" name="apellido" placeholder="Tu Apellido *" class="campo">
+        <div class="error">Debe ingresar un apellido valido sin espacio y sin numeros.</div>
+        <input type="text" name="telefono" placeholder="Numero de Telefono" class="campo">
+        <input type="email" name="email" placeholder="Tu Email *" class="campo">
+        <div class="error">Debe ingresar correctamente un mail.</div>
+        <label for="categoria">Asunto:</label>
+        <select name="categoria">
+            <option value="">Seleccione una categoría</option>
+            <option value="consulta">Consulta</option>
+            <option value="reclamo">Reclamo</option>
+            <option value="sugerencia">Sugerencia</option>
+            <option value="otros">Otros</option>
+        </select>
+        <div class="error">Debe seleccionar alguna opcion para continuar.</div>
+        <textarea name="mensaje" placeholder="Tu Mensaje... *" class="campo"></textarea>
+        <input type="file" id="foto" name="foto" accept=".jpg, .jpeg, .png"><br><br>
+        <label for="terminos" title="Sus datos serán utilizados solo con fines estadísticos.">
+            <input type="checkbox" id="terminos" name="terminos">
+            Acepto los términos y condiciones *
+            <span class="error"> Debe seleccionar para continuar</span>
+        </label>
+        <div class="frame"><button class="custom-btn btn-read">Enviar</button></div>
+      </form>
+    </div>
+  </div>
+  <!-- Aquí termina el formulario -->
+  <!-- Aquí empieza el footer -->
+  <footer>
+    <div class="caja-principal">
+      <div class="caja">
+        <div class="titulo">
+          <span class="bloque"></span>
+          <h1>Turismo en Japón <span></span></h1>
+        </div>
+
+        <div class="sub-titulo">
+          <div class="bloque"></div>
+          <p>Organiza tu viaje</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Aquí termina el footer -->
+  <script src="https://kit.fontawesome.com/eb496ab1a0.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="{% static 'js/contacto.js' %}"></script>
+</body>
+
+</html>

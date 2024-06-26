@@ -1,0 +1,419 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/cuenta-config.css' %}" />
+    <link rel="shortcut icon" type="image/x-icon" href="img/bandera.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bona+Nova:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel=" hoja de estilo"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bona+Nova:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playball&display=swap" rel="stylesheet">
+    <title>Turismo en Japón</title>
+  </head>
+  <body>
+    <header>
+      <!-- Aquí empieza el nav -->
+    <div class="navigation">
+      <div class="nav-container">
+        <nav>
+          <div class="img-y-logo">
+            <img class="img-logo" src="{% static 'img/pez-koi-sol-naciente.webp' %}" alt="Logo" />
+            <div class="caja-principal">
+              <div class="caja">
+                <div class="titulo">
+                  <span class="bloque"></span>
+                  <h1>Turismo en Japón <span></span></h1>
+                </div>
+                <div class="sub-titulo">
+                  <div class="bloque"></div>
+                  <p>Organiza tu viaje</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="nav-mobile">
+            <a id="nav-toggle" href="#!"><span></span></a>
+          </div>
+          <div class="nav-rigth-ppal">
+            <div class="nav-rigth">
+            <ul class="nav-list">
+            <li><a href="{% url 'index' %}">INICIO</a></li>
+            <li class="dropdown">
+              <a href="#!">SECCIONES</a>
+              <ul class="nav-dropdown">
+                <li><a href="{% url 'arquitectura' %}">Arquitectura</a></li>
+                <li><a href="{% url 'gastronomia' %}">Gastronomía</a></li>
+                <li><a href="{% url 'mitosyleyendas' %}">Mitos y Leyendas</a></li>
+                <li><a href="{% url 'paisajesyjardines' %}">Paisajes y Jardines</a></li>
+                <li><a href="{% url 'puntosturisticos' %}">Puntos Turísticos</a></li>
+                <li><a href="{% url 'religion' %}">Religión</a></li>
+              </ul>
+            </li>
+            <li><a href="{% url 'contacto' %}">CONTACTO</a></li>
+          </ul>
+          </div>
+          <div class="img_login"></div>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <!-- Aquí termina el nav -->
+    </header>
+    <main>
+
+  
+    <!-- Aquí empieza contenido de configuraciones de cuenta -->
+    <div id="Config" class="all-content">
+      <div class="secciones-cuenta">
+        <div><li>Mi cuenta</li></div>
+        <div><li>Favoritos</li></div>
+        <div><li>Rutas guardadas</li></div>
+        <div><li>Planificación de viaje</li></div>
+      </div>
+      <!-- Contenido de Mi Cuenta -->
+      <div class="informacion">
+        <div class="contenido-config mi-cuenta Visible">
+          <div class="info-foto">
+            <img class="FotoPerfil" src="{% static 'img/login.png' %}" alt="foto de perfil" />
+            <div class="foto-descripcion">
+              <h3>Personaliza tu foto</h3>
+              <p>
+                Tu foto de perfil será visible para todos cuando hagas
+                comentarios en las secciones.
+              </p>
+              <div class="btn-foto">Cambiar foto</div>
+            </div>
+          </div>
+          <div class="info-perfil">
+            <div class="info-edit">
+              <h3>Informacion de Perfil</h3>
+              <div class="btn-foto">Editar perfil</div>
+            </div>
+            <div class="caja-info">
+              <div class="tabla-config">
+                <div><p>Usuario</p></div>
+                <div><p>Nombre</p></div>
+              </div>
+              <div class="tabla-config">
+                <div><p>Fecha de Nacimiento</p></div>
+                <div><p>00/00/00</p></div>
+              </div>
+              <div class="tabla-config">
+                <div><p>Nacionalidad</p></div>
+                <div><p>Su nacionalidad</p></div>
+              </div>
+              <div class="tabla-config">
+                <div><p>Género</p></div>
+                <div><p>Masculino/Femenino</p></div>
+              </div>
+            </div>
+          </div>
+          <div class="info-cuenta">
+            <div class="info-edit">
+              <h3>Informacion de Cuenta</h3>
+              <div class="btn-foto">Editar cuenta</div>
+            </div>
+            <div class="caja-info">
+              <div class="tabla-config">
+                <div><p>Correo electrónico</p></div>
+                <div><p>sucorreo@correo.com</p></div>
+              </div>
+              <div class="tabla-config">
+                <div><p>Número de teléfono</p></div>
+                <div><p>01-2345-6789</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Contenido de Favoritos -->
+        <div class="contenido-config favoritos">
+          <div class="Fav-contenido">
+            <h2>Favoritos</h2>
+            <p>
+              Aquí encontrarás todos los lugares que guardaste en favoritos y
+              deseas visitar. Con ellos podrás
+              <b>armar tus propias rutas de viaje!</b>.<br />
+              Para armar una ruta de viaje solo tienes que seleccionar los
+              destinos que deseas que formen parte de tu ruta y, si estas
+              conforme con ella, podrás guardarla para poder verla más tarde y
+              <b>planificar tu viaje</b>.<br />
+              Te recomendamos que organices tu viaje por días, puedes guardar
+              varias rutas pequeñas para planificar cuál seguirás cada día.<br />
+              ¡Es hora de organizárnos!
+            </p>
+            <br /><br /><br />
+            <p>
+              Ejemplo de lo que vería una persona que guardó algo en
+              favoritos...
+            </p>
+            <img class="PRUEBA-IMG" src="img/ejemplo-favoritos.png" />
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3946985.6781465844!2d133.15295613157946!3d35.67166086790123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34674e0fd77f192f%3A0xf54275d47c665244!2zSmFww7Nu!5e0!3m2!1ses-419!2sar!4v1718327532972!5m2!1ses-419!2sar"
+              width="800"
+              height="450"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+            <div class="btn-foto btn-ruta">Guardar Ruta</div>
+            <p>
+              Cuando una persona guarda una ruta tendría que permitirle
+              guardarla con un nombre designado por el usuario para
+              identificarla más tarde
+            </p>
+          </div>
+        </div>
+        <!-- Contenido de Rutas Guardadas -->
+        <div class="contenido-config">
+          <div class="rutas-guardadas">
+            <h2>Rutas Guardadas</h2>
+            <p>
+              Aquí podrás administrar las rutas de viaje que tienes guardadas
+              actualmente. Podrás verlas desde el apartado
+              <b>Planificación de viaje</b> donde, si lo deseas, puedes
+              adjuntarle notas, aclaraciones, recordatorios etc.
+            </p>
+            <br />
+            <p>Ejemplo de lo que vería una persona que guardó rutas:</p>
+          </div>
+          <div class="adm-rutas">
+            <div class="container-rut">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d25922.558068921975!2d139.77235131092695!3d35.693748157132255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e3!4m5!1s0x60188ed0d12f9adf%3A0x7d1d4fb31f43f72a!2sTokyo%20Skytree%2C%201%20Chome-1-2%20Oshiage%2C%20Sumida%20City%2C%20Tokyo%20131-0045%2C%20Jap%C3%B3n!3m2!1d35.7100627!2d139.8107004!4m5!1s0x60188c0d02d8064d%3A0xd11a5f0b379e6db7!2zS8WNa3lvIOeah-WxhQ!3m2!1d35.685175!2d139.75279949999998!5e0!3m2!1ses-419!2sar!4v1718333232478!5m2!1ses-419!2sar"
+                width="400"
+                height="250"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+              <div class="rut-guar-info">
+                <h2>Ruta que seguiré el 27/07/24</h2>
+                <h3>Los puntos que incluyen esta ruta son:</h3>
+                <ul>
+                  <li>Tokyo Street</li>
+                  <li>Kōkyo Castle</li>
+                </ul>
+              </div>
+            </div>
+            <div class="rutas-icon">
+              <p class="fecha-ruta">Fecha de creación 23/06/24</p>
+              <i class="fa-solid fa-trash"></i>
+              <i class="fa-solid fa-pen-to-square"></i>                
+            </div>
+          </div>
+          <div class="adm-rutas">
+            <div class="container-rut">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m27!1m12!1m3!1d22422.77621774419!2d135.4950741711281!3d34.68634443575815!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m12!3e3!4m5!1s0x6000e0cd5c283afd%3A0xf01d07d5ca11e41!2sOsaka%20Castle%2C%201-1%20Osakajo%2C%20Ch%C5%AB%C5%8D-ku%2C%20Osaka%2C%20Prefectura%20de%20Osaka%2C%20Jap%C3%B3n!3m2!1d34.6872571!2d135.5258546!4m4!1s0x6000e6fbf92d61a9%3A0xd2bea0c31e851e8c!3m2!1d34.685196!2d135.4938226!5e0!3m2!1ses-419!2sar!4v1718336895483!5m2!1ses-419!2sar"
+                width="400"
+                height="250"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+              <div class="rut-guar-info">
+                <h2>Ruta que seguiré el 28/07/24</h2>
+                <h3>Los puntos que incluyen esta ruta son:</h3>
+                <ul>
+                  <li>Osaka Castle</li>
+                  <li>Parque Utsubo</li>
+                </ul>
+              </div>
+            </div>
+            <div class="rutas-icon">
+              <p class="fecha-ruta">Fecha de creación 23/06/24</p>
+              <i class="fa-solid fa-trash"></i>
+              <i class="fa-solid fa-pen-to-square"></i>
+            </div>
+          </div>
+          <div class="adm-rutas">
+            <div class="container-rut">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d52312.91094263808!2d135.73945261715622!3d34.96771210034342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e3!4m5!1s0x600108652e05500d%3A0xaaaf9eec1f34bbf5!2sKyoto%20Imperial%20Palace%2C%20Kyotogyoen%2C%20Kamigy%C5%8D-ku%2C%20Kioto%2C%20Prefectura%20de%20Kioto%2C%20Jap%C3%B3n!3m2!1d35.0259202!2d135.7616454!4m5!1s0x600108d385dcfb07%3A0x62af658650c434ba!2zS2l5b21penUtZGVyYSDmuIXmsLTlr7o!3m2!1d34.9946662!2d135.784661!5e0!3m2!1ses-419!2sar!4v1718337120219!5m2!1ses-419!2sar"
+                width="400"
+                height="250"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+              <div class="rut-guar-info">
+                <h2>Ruta que seguiré el 29/07/24</h2>
+                <h3>Los puntos que incluyen esta ruta son:</h3>
+                <ul>
+                  <li>Palacio Imperial</li>
+                  <li>Kiyomizu-dera Templo Budista</li>
+                </ul>
+              </div>
+            </div>
+            <div class="rutas-icon">
+              <p class="fecha-ruta">Fecha de creación 23/06/24</p>
+              <i class="fa-solid fa-trash"></i>
+              <i class="fa-solid fa-pen-to-square"></i>
+            </div>
+          </div>
+        </div>
+        <!-- Contenido de Planificación de viaje -->
+        <div class="contenido-config planificacion">
+          <div class="titulo-intro">
+            <h2>Planificación del viaje</h2>
+            <p>
+              Hora de planificar tu viaje al detalle! Tenemos tus rutas
+              guardadas preparadas para ti!, puedes seleccionarlas y escribir
+              tus propias notas referentes a lo que harás el día que recorras
+              esa ruta para que no te olvides de nada! Cuando termines de
+              editarla, <b>no te olvides de guardarla</b> así podrás chequear tu
+              planificación en el momento que lo necesites!
+            </p>
+          </div>
+          <div class="principal-planificacion">
+            <div id="main-content">
+              <div id="drop-area">Arrastra tus rutas hasta aquí!</div>
+              <div id="notes-area">
+                <div id="editor"></div>
+                <div class="btn-foto btn-ruta">Guardar Planificación</div>
+              </div>
+            </div>
+            <div>
+              <aside id="draggable-aside">
+                <div class="draggable" draggable="true">
+                  <div class="map-container">
+                    <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m27!1m12!1m3!1d22422.77621774419!2d135.4950741711281!3d34.68634443575815!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m12!3e3!4m5!1s0x6000e0cd5c283afd%3A0xf01d07d5ca11e41!2sOsaka%20Castle%2C%201-1%20Osakajo%2C%20Ch%C5%AB%C5%8D-ku%2C%20Osaka%2C%20Prefectura%20de%20Osaka%2C%20Jap%C3%B3n!3m2!1d34.6872571!2d135.5258546!4m4!1s0x6000e6fbf92d61a9%3A0xd2bea0c31e851e8c!3m2!1d34.685196!2d135.4938226!5e0!3m2!1ses-419!2sar!4v1718336895483!5m2!1ses-419!2sar"
+                    width="100%"
+                    height="250"
+                    style="border: 0"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                     ></iframe>
+                    <div class="overlay"></div>
+                  </div>
+                </div>
+                <div class="draggable" draggable="true">
+                  <div class="map-container">
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d52312.91094263808!2d135.73945261715622!3d34.
+                96771210034342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e3!4m5!1s0x600108652e05500d%3A0xaaaf9eec1f34bbf5!2sKyoto
+                %20Imperial%20Palace%2C%20Kyotogyoen%2C%20Kamigy%C5%8D-ku%2C%20Kioto%2C%20Prefectura%20de%20Kioto%2C%20Jap%C3%B3n!3m2!
+                1d35.0259202!2d135.7616454!4m5!1s0x600108d385dcfb07%3A0x62af658650c434ba!2zS2l5b21penUtZGVyYSDmuIXmsLTlr7o!3m2!1d34.994
+                6662!2d135.784661!5e0!3m2!1ses-419!2sar!4v1718337120219!5m2!1ses-419!2sar"
+                      width="100%"
+                      height="200px"
+                    ></iframe>
+                    <div class="overlay"></div>
+                  </div>
+                </div>
+                <div class="draggable" draggable="true">
+                  <div class="map-container">
+                    <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d25922.558068921975!2d139.77235131092695!3d35.693748157132255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e3!4m5!1s0x60188ed0d12f9adf%3A0x7d1d4fb31f43f72a!2sTokyo%20Skytree%2C%201%20Chome-1-2%20Oshiage%2C%20Sumida%20City%2C%20Tokyo%20131-0045%2C%20Jap%C3%B3n!3m2!1d35.7100627!2d139.8107004!4m5!1s0x60188c0d02d8064d%3A0xd11a5f0b379e6db7!2zS8WNa3lvIOeah-WxhQ!3m2!1d35.685175!2d139.75279949999998!5e0!3m2!1ses-419!2sar!4v1718333232478!5m2!1ses-419!2sar"
+                    width="100%"
+                    height="250"
+                    style="border: 0"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    ></iframe>
+                    <div class="overlay"></div>
+                  </div>
+                </div>
+                <!-- Agrega más contenedores de mapas según sea necesario -->
+              </aside>
+            </div>
+          </div>
+          <div class="planificacion-save">
+            <img class="barra" src="{% static 'img/barra.png' %}">
+            <h2>Planificaciones guardadas</h2>
+            <div class="resultado-planificacion">
+              <div class="download-planificacion">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d25922.558068921975!2d139.77235131092695!3d35.693748157132255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e3!4m5!1s0x60188ed0d12f9adf%3A0x7d1d4fb31f43f72a!2sTokyo%20Skytree%2C%201%20Chome-1-2%20Oshiage%2C%20Sumida%20City%2C%20Tokyo%20131-0045%2C%20Jap%C3%B3n!3m2!1d35.7100627!2d139.8107004!4m5!1s0x60188c0d02d8064d%3A0xd11a5f0b379e6db7!2zS8WNa3lvIOeah-WxhQ!3m2!1d35.685175!2d139.75279949999998!5e0!3m2!1ses-419!2sar!4v1718333232478!5m2!1ses-419!2sar"
+                    width="100%"
+                    height="220"
+                    style="border: 0"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    ></iframe>
+              </div>
+              <div class="download-text-area">
+                <h3>Ruta que voy a seguir el 27/07/24 <br>(nombre que se indicó al guardar la ruta)</h3>
+                <p class="plani-user">Ejemplo de lo que escribe el usuario en el text área.<br>
+                  En este día vamos a ir con maría a visitar el Palacio Imperial, pero previo a eso tenemos que pasar
+                  a buscar a Martín por la estación de tokyo a las 14:30 hs. Luego de eso..
+                </p>
+              </div>
+              <div class="plan-ico">
+                <i class="fa-solid fa-file-pdf" title="Descarga PDF"></i>
+                <p class="p-fecha">Fecha:<br> 23/06/24</p>
+              </div>
+            </div>
+            <div class="resultado-planificacion">
+              <div class="download-planificacion">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m27!1m12!1m3!1d22422.77621774419!2d135.4950741711281!3d34.68634443575815!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m12!3e3!4m5!1s0x6000e0cd5c283afd%3A0xf01d07d5ca11e41!2sOsaka%20Castle%2C%201-1%20Osakajo%2C%20Ch%C5%AB%C5%8D-ku%2C%20Osaka%2C%20Prefectura%20de%20Osaka%2C%20Jap%C3%B3n!3m2!1d34.6872571!2d135.5258546!4m4!1s0x6000e6fbf92d61a9%3A0xd2bea0c31e851e8c!3m2!1d34.685196!2d135.4938226!5e0!3m2!1ses-419!2sar!4v1718336895483!5m2!1ses-419!2sar"
+                    width="100%"
+                    height="220"
+                    style="border: 0"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                     ></iframe>
+              </div>
+              <div class="download-text-area">
+                <h3>Ruta que voy a seguir el 28/07/24</h3>
+                <p class="plani-user">Ejemplo de lo que escribe el usuario en el text área.<br>
+                  En este día vamos a ir con maría a visitar el Palacio Imperial, pero previo a eso tenemos que pasar
+                  a buscar a Martín por la estación de tokyo a las 14:30 hs. Luego de eso..
+                </p>
+              </div>
+              <div class="plan-ico">
+                <i class="fa-solid fa-file-pdf" title="Descarga PDF"></i>
+                <p class="p-fecha">Fecha:<br> 23/06/24</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    <!-- Aquí termina contenido de configuraciones de cuenta -->
+  </main>
+    <!-- Aquí empieza el footer -->
+    <footer>
+      <div class="caja-principal">
+        <div class="caja">
+          <div class="titulo">
+            <span class="bloque"></span>
+            <h1>Turismo en Japón <span></span></h1>
+          </div>
+
+          <div class="sub-titulo">
+            <div class="bloque"></div>
+            <p>Organiza tu viaje</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Aquí termina el footer -->
+
+    <script src="https://kit.fontawesome.com/01aa86eea9.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'js/cuenta-config.js' %}"></script>
+  </body>
+</html>
