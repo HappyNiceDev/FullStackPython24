@@ -16,6 +16,13 @@
 ehthumbs.db
 Thumbs.db
 
+# Carpeta específica que comienza con 'virtual'
+Backend/virtual*/
+
+# Archivos de entorno y configuración (ajústalos según sea necesario)
+.env
+.env.*
+
 # OTROS #
 #############
 *~

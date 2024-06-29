@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import os
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,12 +21,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-y^*$021e&*o8+szyqgjiuugt8hd@$(!!w*pvsnqr=xy5#xvzdv'
+SECRET_KEY = config(  'SECRET_KEY' )
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -78,11 +79,11 @@ WSGI_APPLICATION = 'turismo_japon.wsgi.application'
 DATABASES = {
     'default': {
         	'ENGINE': 'django.db.backends.postgresql',
-       		'NAME': 'JapanDB_prueba',
-        	'USER': 'root',
-        	'PASSWORD': 'aun no lo se!',
-       		'HOST': '10.102.0.2', # o la dirección IP de tu servidor de base de datos
-       		'PORT': '5432',       # el puerto predeterminado de PostgreSQL
+       		'NAME': config("DATABASE_NAME"),
+        	'USER': config("DATABASE_USER"),
+        	'PASSWORD': config("DATABASE_PASSWORD"),
+       		'HOST': config("DATABASE_HOST"), # o la dirección IP de tu servidor de base de datos
+       		'PORT': config("DATABASE_PORT"), # el puerto predeterminado de PostgreSQL
 
     }
 }
