@@ -63,44 +63,41 @@
 
   <div class="container-form">
     <div class="info-form">
-      <h2>Contactanos</h2>
-      <p>¡Hola viajero! ¿Listo para explorar Japón?.<br>
-        Estamos aquí para ayudarte a hacer de tu viaje una experiencia inolvidable. Ya sea que 
-        necesites consejos, planificación personalizada o simplemente quieras compartir tu emoción, ¡contáctanos hoy mismo y comencemos 
-        esta aventura juntos!</p>
-      <a href="#"><i class="fa fa-phone"></i>15-xxxx-xxxx</a>
-      <a href="#"><i class="fa fa-envelope"></i>info.turismoenjapon@gmail.com</a>
-      <a href="#"><i class="fa fa-map-marked"></i>Buenos Aires, CABA</a>
+        <h2>Contactanos</h2>
+        <p>¡Hola viajero! ¿Listo para explorar Japón?.<br>
+            Estamos aquí para ayudarte a hacer de tu viaje una experiencia inolvidable. Ya sea que 
+            necesites consejos, planificación personalizada o simplemente quieras compartir tu emoción, ¡contáctanos hoy mismo y comencemos 
+            esta aventura juntos!</p>
+        <a href="#"><i class="fa fa-phone"></i>15-xxxx-xxxx</a>
+        <a href="#"><i class="fa fa-envelope"></i>info.turismoenjapon@gmail.com</a>
+        <a href="#"><i class="fa fa-map-marked"></i>Buenos Aires, CABA</a>
     </div>
     <div class="formulario">
-        <form action="#" autocomplete="off">
-        <input type="text" name="nombre" placeholder="Tu Nombre *" class="campo">
-        <div class="error">Debe ingresar un nombre valido sin espacio y sin numeros.</div>
-        <input type="text" name="apellido" placeholder="Tu Apellido *" class="campo">
-        <div class="error">Debe ingresar un apellido valido sin espacio y sin numeros.</div>
-        <input type="text" name="telefono" placeholder="Numero de Telefono" class="campo">
-        <input type="email" name="email" placeholder="Tu Email *" class="campo">
-        <div class="error">Debe ingresar correctamente un mail.</div>
-        <label for="categoria">Asunto:</label>
-        <select name="categoria">
-            <option value="">Seleccione una categoría</option>
-            <option value="consulta">Consulta</option>
-            <option value="reclamo">Reclamo</option>
-            <option value="sugerencia">Sugerencia</option>
-            <option value="otros">Otros</option>
-        </select>
-        <div class="error">Debe seleccionar alguna opcion para continuar.</div>
-        <textarea name="mensaje" placeholder="Tu Mensaje... *" class="campo"></textarea>
-        <input type="file" id="foto" name="foto" accept=".jpg, .jpeg, .png"><br><br>
-        <label for="terminos" title="Sus datos serán utilizados solo con fines estadísticos.">
-            <input type="checkbox" id="terminos" name="terminos">
-            Acepto los términos y condiciones *
-            <span class="error"> Debe seleccionar para continuar</span>
-        </label>
-        <div class="frame"><button class="custom-btn btn-read">Enviar</button></div>
-      </form>
+        <form action="{% url 'contacto' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="text" name="nombre" placeholder="Tu Nombre *" class="campo">
+            <input type="text" name="apellido" placeholder="Tu Apellido *" class="campo">
+            <input type="text" name="telefono" placeholder="Numero de Telefono" class="campo">
+            <input type="email" name="mail" placeholder="Tu Email *" class="campo">
+            <label for="categoria">Asunto:</label>
+            <select name="asunto">
+                <option value="">Seleccione una categoría</option>
+                <option value="consulta">Consulta</option>
+                <option value="reclamo">Reclamo</option>
+                <option value="sugerencia">Sugerencia</option>
+                <option value="otros">Otros</option>
+            </select>
+            <textarea name="mensaje" placeholder="Tu Mensaje... *" class="campo"></textarea>
+            <input type="file" id="adjunto" name="adjunto" accept=".jpg, .jpeg, .png"><br><br>
+            <label for="terminos" title="Sus datos serán utilizados solo con fines estadísticos.">
+                <input type="checkbox" id="terminos" name="terminos">
+                Acepto los términos y condiciones *
+            </label>
+            <div class="frame"><button type="submit" class="custom-btn btn-read">Enviar</button></div>
+        </form>
     </div>
-  </div>
+</div>
+
   <!-- Aquí termina el formulario -->
   <!-- Aquí empieza el footer -->
   <footer>
