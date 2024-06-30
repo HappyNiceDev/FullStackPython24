@@ -1,0 +1,1078 @@
+/* <-- CSS GENERALES --> */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Poppins;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #d5d1c5;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+}
+
+/* <!-- Termina CSS GENERALES --> */
+/* <!-- Aquí empieza el nav --> */
+.img-logo {
+  width: 4em;
+  margin: 5px;
+}
+.img-y-logo {
+  display: flex;
+}
+/*--------------*/
+
+.img_login{
+  width: 65px;
+  height:65px;
+  margin: 5px;
+  background-image: url('../img/usoarquitectura.com.webp');
+  background-size: cover;
+  clip-path: circle(50% at 50% 50%);
+  border: 4px solid #c3b299;
+  border-radius: 50%;
+  transition: 2s ease;
+}
+.img_login:hover{
+  border: 4px solid #808366;
+
+}
+
+.nav-rigth-ppal{
+  display: flex;
+}
+
+.nav-rigth{
+  display: flex;
+}
+
+/*--------------*/
+nav {
+  display: flex;
+  justify-content: space-between;
+  background: #d4c5ae;
+  width: 100%;
+}
+.navigation {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav ul li {
+  float: left;
+  margin-top: -2px
+}
+
+nav ul li a {
+  display: block;
+  color: #fff;
+  padding: 0 20px;
+  text-decoration: none;
+  line-height: 78px;
+  font-size: 1.2em;
+}
+
+nav ul li a:hover {
+  background: #808366;
+  color: #ffffff;
+  transition: 0.4s;
+}
+
+nav ul li a:not(:only-child):after {
+  padding-left: 2px;
+  content: "▾";
+}
+
+nav ul li ul li {
+  min-width: 200px;
+}
+
+nav ul li ul li a {
+  padding: 15px;
+  line-height: 20px;
+  background-color: #b4a58f;
+}
+
+.nav-dropdown {
+  position: absolute;
+  z-index: 10000;
+  display: none;
+}
+
+/* Menu hamburguesa */
+.nav-mobile {
+  display: none;
+  width: 40px;
+  position: absolute;
+  top: 0;
+  right: 20px;
+  background-color: #d4c5ae;
+  z-index: 9050;
+}
+
+#nav-toggle {
+  position: absolute;
+  left: 18px;
+  top: 22px;
+  cursor: pointer;
+  padding: 10px 35px 16px 0;
+}
+#nav-toggle span,
+#nav-toggle span:before,
+#nav-toggle span:after {
+  cursor: pointer;
+  border-radius: 1px;
+  height: 4px;
+  width: 30px;
+  background: #808366;
+  position: absolute;
+  display: block;
+  content: "";
+  transition: all 300ms ease-in-out;
+}
+#nav-toggle span:before {
+  top: -10px;
+}
+#nav-toggle span:after {
+  bottom: -10px;
+}
+#nav-toggle.active span {
+  background-color: transparent;
+}
+#nav-toggle.active span:before,
+#nav-toggle.active span:after {
+  top: 0;
+}
+#nav-toggle.active span:before {
+  transform: rotate(45deg);
+}
+#nav-toggle.active span:after {
+  transform: rotate(-45deg);
+}
+
+/* <!-- Aquí termina el nav --> */
+
+/* <!-- Aquí empieza el contenido resumidoo --> */
+
+
+main {
+  margin: 2% auto 2% auto;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  flex: 1; /* Esto hace que la sección de contenido ocupe todo el espacio restante */
+}
+
+/* Aquí empieza el totem */
+.TotemCentrado {
+  margin: 0 auto 0 auto;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, 320px);
+  grid-auto-rows: 180px;
+  justify-content: center;
+  align-content: center;
+
+  animation: TotemCentradoEntrada 1s ease-in-out forwards;
+}
+
+.TotemCentrado>div {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+  cursor: pointer;
+  border: solid 4px #fff;
+  /*cosas nuevas*/
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.TotemCentrado>div:hover {
+  border: solid 5px #d2c0a5;
+}
+
+.TotemCentrado div h2{
+  font-style:italic;
+  color: #ffffff;
+  font-size: 2.2rem;
+  text-shadow: 
+  3px 3px 3px #000000,
+  -2px -2px 2px #c5c5c5;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.TotemCentrado div:hover h2{
+  opacity: 0.5;
+  transition-timing-function: ease-out;
+}
+
+.Img1 {
+  background-image: url("../img/arq_img/Jomon1.webp");
+}
+
+.Img2 {
+  background-image: url('../img/arq_img/Yayoi1.webp');
+}
+
+.Img3 {
+  background-image: url('../img/arq_img/Kofun1.webp');
+}
+
+.Img4 {
+  background-image: url('../img/arq_img/Asuka1.webp');
+}
+
+.Img5 {
+  background-image: url('../img/arq_img/Nara1.webp');
+}
+
+.Img6 {
+  background-image: url('../img/arq_img/Heian1.webp');
+}
+
+.Img7 {
+  background-image: url('../img/arq_img/Kamakura1.webp');
+}
+
+.Img8 {
+  background-image: url('../img/arq_img/Muromachi1.webp');
+}
+
+.Img9 {
+  background-image: url('../img/arq_img/Azuchi-Momoyama1.webp');
+}
+
+.Img10 {
+  background-image: url('../img/arq_img/Edo1.webp');
+}
+
+.Img11 {
+  background-image: url('../img/arq_img/Meiji1.webp');
+}
+
+.Img12 {
+  background-image: url('../img/arq_img/Taisho1.webp');
+}
+
+.Img13 {
+  background-image: url('../img/arq_img/Showa1.webp');
+}
+
+.Img14 {
+  background-image: url('../img/arq_img/contemporaneo1.webp');
+}
+
+@keyframes TotemCentradoEntrada {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+    gap: 0%;
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes TotemCentradoSalida {
+  0% {
+
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  100% {
+
+    opacity: 0;
+    transform: scale(0.5);
+  }
+}
+
+/*---------------------------------------------------------------*/
+
+.TotemLateral {
+  margin: 1.5em 3% 1.5em 6%;
+  justify-content: center;
+  top: 0;
+  position: sticky;
+  display: grid;
+  grid-template-columns: repeat(3, 160px);
+  grid-template-rows: repeat(29, 60px);
+  animation: TotemLateralEntrada 1.5s ease-in-out forwards;
+}
+
+.TotemLateral>div {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+  cursor: pointer;
+  border: solid 3px #fff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  animation: HoverSalida 600ms ease-in-out forwards;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.TotemLateral div h2{
+  font-style:italic;
+  color: #ffffff;
+  font-size: 2.2rem;
+  text-shadow: 
+  3px 3px 3px #000000,
+  -2px -2px 2px #c5c5c5;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.TotemLateral div:hover h2{
+  opacity: 0.5;
+  transition-timing-function: ease-out;
+}
+
+.Img1Lateral {
+  grid-area: 1 / 1 / 4 / 3;
+  z-index: 1;
+}
+
+.Img2Lateral {
+  grid-area: 3 / 2 / 6 / 4;
+  z-index: 1;
+}
+
+.Img3Lateral {
+  grid-area: 5 / 1 / 8 / 3;
+  z-index: 1;
+}
+
+.Img4Lateral {
+  grid-area: 7 / 2 / 10 / 4;
+  z-index: 1;
+}
+
+.Img5Lateral {
+  grid-area: 9 / 1 / 12 / 3;
+  z-index: 1;
+}
+
+.Img6Lateral {
+  grid-area: 11 / 2 / 14 / 4;
+  z-index: 1;
+}
+
+.Img7Lateral {
+  grid-area: 13 / 1 / 16 / 3;
+  z-index: 1;
+}
+
+.Img8Lateral {
+  grid-area: 15 / 2 / 18 / 4;
+  z-index: 1;
+}
+
+.Img9Lateral {
+  grid-area: 17 / 1 / 20 / 3;
+  z-index: 1;
+}
+
+.Img10Lateral {
+  grid-area: 19 / 2 / 22 / 4;
+  z-index: 1;
+}
+
+.Img11Lateral {
+  grid-area: 21 / 1 / 24 / 3;
+  z-index: 1;
+}
+
+.Img12Lateral {
+  grid-area: 23 / 2 / 26 / 4;
+  z-index: 1;
+}
+
+.Img13Lateral {
+  grid-area: 25 / 1 / 28 / 3;
+  z-index: 1;
+}
+
+.Img14Lateral {
+  grid-area: 27 / 2 / 30 / 4;
+  z-index: 1;
+}
+
+.TotemLateral>div:hover {
+  z-index: 2;
+  animation: HoverEntrada 600ms ease-in-out forwards;
+  border: solid 5px #D4C5AE;
+}
+
+@keyframes HoverSalida {
+  from {
+    background-size: 120%;
+    transform: scale(1.1, 1.1);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.38);
+
+  }
+
+  to {
+    background-size: 100%;
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes HoverEntrada {
+  from {
+    background-size: 100%;
+    transform: scale(1, 1);
+  }
+
+  to {
+    background-size: 120%;
+    transform: scale(1.1, 1.1);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.38);
+  }
+}
+
+@keyframes TotemLateralEntrada {
+  0% {
+    opacity: 0;
+    transform: scale(0.2, 0.2);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+}
+
+/* Aquí termina el totem */
+.Contenido {
+  background-color: #524e31;
+  align-self: stretch;
+  margin: 1.5em;
+  position: relative;
+  display: none;
+  flex-direction: column;
+  justify-items: center;
+  background-color: #fff;
+  border: solid 3px #d4c5ae;
+  border-radius: 20px;
+  padding: 2em;
+  color: #242A20;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.Resumen {
+  top: 0;
+  position: sticky;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 600ms ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    scale: 0.8;
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+.Visible {
+  display: flex;
+}
+
+
+.Resumen h1 {
+  letter-spacing: 3px;
+  text-decoration: underline;
+  text-align: center;
+  font-family: "Bona Nova", serif;
+  font-weight: 700;
+  font-style: italic;
+
+}
+
+.Resumen p {
+  margin: 2em;
+  font-size: 1.5em;
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+
+.Resumen ul li {
+  margin: 2em;
+  font-size: 1.2em;
+}
+
+/* <!-- Aquí termina el contenido resumido --> */
+
+/* Comienza icono corazon */
+.like-button {
+
+  /*background-color: #dc0202;*/
+  width: 100px;
+  height: 100px;
+  align-self: flex-end;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.like-button .heart-bg {
+  background: rgba(255, 192, 200, 0);
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 200ms ease;
+}
+
+.like-button .heart-bg:hover {
+  background: rgba(255, 255, 255, 0.7);
+
+}
+
+.like-button .heart-icon {
+
+  height: 100px;
+  width: 100px;
+  background: url("../img/heart.png");
+  background-position: left;
+  cursor: pointer;
+  position: absolute;
+
+}
+
+.like-button .heart-icon.liked {
+  animation: like-anim 0.7s steps(28) forwards;
+}
+
+@keyframes like-anim {
+  to {
+    background-position: right;
+  }
+}
+
+/* Termina icono corazon */
+/* Imagen dentro del Resumen */
+.Resumen > [class^="Img"] {
+  width: 280px;
+  height: 140px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  border-radius: 20px;
+  border: solid 3px #fff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-size: cover;
+  background-position: center;
+  display: none;
+}
+
+/* <!-- Aquí empieza el footer --> */
+.caja-principal .caja {
+  width: 260px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.caja-principal .caja .titulo {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 50px;
+}
+.caja-principal .caja .titulo .bloque {
+  width: 0%;
+  height: inherit;
+  background: #524e31;
+  position: absolute;
+  animation: mainBlock 2s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
+  display: flex;
+}
+.caja-principal .caja .titulo h1 {
+  font-family: "Poppins";
+  color: #242a20;
+  font-size: 32px;
+  -webkit-animation: mainFadeIn 2s forwards;
+  -o-animation: mainFadeIn 2s forwards;
+  animation: mainFadeIn 2s forwards;
+  animation-delay: 1.6s;
+  opacity: 0;
+  display: flex;
+  align-items: baseline;
+  position: relative;
+}
+.caja-principal .caja .titulo h1 span {
+  width: 0px;
+  height: 0px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  -webkit-animation: load 0.6s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
+  animation: popIn 0.8s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
+  animation-delay: 2s;
+  margin-left: 5px;
+  margin-top: -10px;
+  position: absolute;
+  bottom: 13px;
+  right: -12px;
+}
+.caja-principal .caja .sub-titulo {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 30px;
+  margin-top: -10px;
+}
+.caja-principal .caja .sub-titulo .bloque {
+  width: 0%;
+  height: inherit;
+  background: #808366;
+  position: absolute;
+  animation: secBloque 2s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
+  animation-delay: 2s;
+  display: flex;
+}
+.caja-principal .caja .sub-titulo p {
+  animation: secFadeIn 2s forwards;
+  animation-delay: 3.2s;
+  opacity: 0;
+  font-weight: 400;
+  font-family: "Lato";
+  color: #242a20;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+@keyframes mainBlock {
+  0% {
+    width: 0%;
+    left: 0;
+  }
+  50% {
+    width: 100%;
+    left: 0;
+  }
+  100% {
+    width: 0;
+    left: 100%;
+  }
+}
+@keyframes secBloque {
+  0% {
+    width: 0%;
+    left: 0;
+  }
+  50% {
+    width: 100%;
+    left: 0;
+  }
+  100% {
+    width: 0;
+    left: 100%;
+  }
+}
+@keyframes mainFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes popIn {
+  0% {
+    width: 0px;
+    height: 0px;
+    background: #dc0202;
+    border: 0px solid #ddd;
+    opacity: 0;
+  }
+  50% {
+    width: 10px;
+    height: 10px;
+    background: #dc0202;
+    opacity: 1;
+    bottom: 45px;
+  }
+  65% {
+    width: 7px;
+    height: 7px;
+    bottom: 0px;
+    width: 15px;
+  }
+  80% {
+    width: 10px;
+    height: 10px;
+    bottom: 20px;
+  }
+  100% {
+    width: 7px;
+    height: 7px;
+    background: #dc0202;
+    border: 0px solid #222;
+    bottom: 13px;
+  }
+}
+@keyframes secFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+footer {
+  margin-bottom: 0;
+  width: 100%;
+  height: 15vh;
+  background: #d4c5ae;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* <!-- Aquí termina el footer --> */
+
+/* Media Query */
+@media screen and (max-width: 1280px) {
+  .TotemCentrado {
+    grid-template-columns: repeat(2, 320px);
+    grid-auto-rows: 180px;
+  }
+
+  .TotemLateral {
+    grid-template-columns: repeat(3, 80px);
+    grid-template-rows: repeat(29, 30px);
+  }
+
+  .Resumen p {
+    margin: 2em;
+    font-size: 1.2em;
+  }
+
+  .Resumen ul li {
+    margin: 2em;
+    font-size: 1em;
+  }
+  .TotemLateral div h2{
+    font-size: 1.2rem;
+  }
+
+}
+
+@media screen and (max-width: 1024px) {
+  /*nav*/
+  /*---Animacion turismo en japón modo mobile---*/
+.img-y-logo .caja-principal {
+  margin-top: 25px;
+}
+
+.img-y-logo .caja-principal .caja {
+  width: 100%;
+  height: 1em;
+}
+
+.img-y-logo .caja-principal .caja .titulo {
+  height: 30px;
+}
+
+.img-y-logo .caja-principal .caja .titulo h1 {
+  font-size: 1.2em;
+}
+
+.img-y-logo .caja-principal .caja .sub-titulo {
+  height: 1.5em;
+  margin-top: 5px;
+}
+
+.img-y-logo .caja-principal .caja .sub-titulo p {
+  font-size: 0.6em;
+  letter-spacing: 2px;
+  margin-top: 2px;
+}
+  /*termina nav*/
+  .TotemCentrado {
+    grid-template-columns: repeat(2, 320px);
+    grid-auto-rows: 180px;
+    gap: 20px;
+
+  }
+  .TotemLateral div h2{
+    font-size: 1.2rem;
+  }
+
+}
+
+@media only screen and (max-width: 600px){
+  .img-logo {
+    height: 4em;
+    margin: 5px;
+  }
+  .img-y-logo {
+    width: 100%;
+  }
+  
+  .nav-mobile {
+    display: block;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 70px;
+  }
+
+  nav ul {
+    display: none;
+    margin-top: -5px;
+  }
+
+  nav ul li {
+    float: right;
+    width: 70vw;
+    margin-top: -2px
+  }
+
+  nav ul li a {
+    padding: 15px;
+    width: 200px;
+    float: right;
+    line-height: 20px;
+    background-color: #d4c5ae;
+    
+  }
+
+  nav ul li ul li a {
+    padding-left: 20px;
+    background-color: #b4a58f;
+  }
+
+  .nav-dropdown {
+    position: static;
+    margin: 0px;
+  }
+
+  #nav-toggle{
+    left: -50px;
+  }
+  
+  .img_login{
+    background-color: #d4c5ae;
+    margin:0;
+    width: 58px;
+    height: 58px;
+    position: absolute;
+    right: 5px;
+    top:6px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .TotemCentrado {
+    grid-template-columns: repeat(3, 160px);
+    grid-auto-rows: 90px;
+    gap: 6px;
+  }
+
+  .Resumen p {
+    margin: 2em;
+    font-size: 1.4em;
+  }
+
+  .Resumen ul li {
+    margin: 2em;
+    font-size: 1em;
+  }
+
+  .TotemCentrado div h2{
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .TotemCentrado {
+    grid-template-columns: repeat(2, 160px);
+    grid-auto-rows: 90px;
+    gap: 10px;
+  }
+
+  .Resumen p {
+    margin: 1.5em;
+    font-size: 1em;
+  }
+
+  .Resumen ul li {
+    margin: 1.5em;
+    font-size: 0.8em;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /*nav*/
+  .img-logo {
+    height: 4em;
+    margin: 5px;
+  }
+
+  .img-y-logo {
+    width: 100%;
+  }
+  
+  .nav-mobile {
+    display: block;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 70px;
+  }
+
+  nav ul {
+    display: none;
+    margin-top: -5px;
+  }
+
+  nav ul li {
+    float: right;
+    width: 70vw;
+    margin-top: -2px
+  }
+
+  nav ul li a {
+    padding: 15px;
+    width: 200px;
+    float: right;
+    line-height: 20px;
+    background-color: #d4c5ae;
+    
+  }
+
+  nav ul li ul li a {
+    padding-left: 20px;
+    background-color: #b4a58f;
+  }
+
+  .nav-dropdown {
+    position: static;
+    margin: 0px;
+  }
+
+  /*termina nav*/
+  
+  .btn-read{
+    position: static;
+  }
+
+  main {
+    margin: 2% 0 2% 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+  }
+
+  .TotemCentrado {
+    display: none;
+  }
+
+  .TotemLateral {
+    display: none;
+  }
+
+  .Contenido {
+    position: relative;
+    display: flex;
+    gap: 10px;
+    background-color: #ffffff00;
+    border: solid 0px #d4c5ae00;
+    border-radius: 0px;
+    padding: 0em;
+    color: #242a2000;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+  }
+
+  .Resumen {
+    position: relative;
+    display: flex;
+    background-color: #fff;
+    border: solid 3px #d4c5ae;
+    border-radius: 20px;
+    padding: 2em;
+    color: #242A20;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+  }
+
+  .Resumen > [class^="Img"] {
+    display: block;
+  }
+
+  .Resumen p {
+    margin: 0.5em;
+    font-size: 1em;
+  }
+
+  .Resumen ul li {
+    margin: 0.5em;
+    font-size: 0.8em;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .nav-list {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 710px){
+
+  nav .caja-principal{
+  display: none;
+}
+}
