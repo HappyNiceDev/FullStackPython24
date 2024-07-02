@@ -1,66 +1,8 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="{% static 'css/contacto.css' %}" />
-  <link rel="shortcut icon" type="image/x-icon" href="img/bandera.ico">
-  <title>Turismo en Japón</title>
-</head>
-
-<body>
-  <header>
-    <!-- Aquí empieza el nav -->
-    <div class="navigation">
-      <div class="nav-container">
-        <nav>
-          <div class="img-y-logo">
-            <img class="img-logo" src="{% static 'img/pez-koi-sol-naciente.webp' %}" alt="Logo" />
-            <div class="caja-principal">
-              <div class="caja">
-                <div class="titulo">
-                  <span class="bloque"></span>
-                  <h1>Turismo en Japón <span></span></h1>
-                </div>
-                <div class="sub-titulo">
-                  <div class="bloque"></div>
-                  <p>Organiza tu viaje</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="nav-mobile">
-            <a id="nav-toggle" href="#!"><span></span></a>
-          </div>
-          <div class="nav-rigth-ppal">
-            <div class="nav-rigth">
-            <ul class="nav-list">
-            <li><a href="{% url 'index' %}">INICIO</a></li>
-            <li class="dropdown">
-              <a href="#!">SECCIONES</a>
-              <ul class="nav-dropdown">
-                <li><a href="{% url 'arquitectura' %}">Arquitectura</a></li>
-                <li><a href="{% url 'gastronomia' %}">Gastronomía</a></li>
-                <li><a href="{% url 'mitosyleyendas' %}">Mitos y Leyendas</a></li>
-                <li><a href="{% url 'paisajesyjardines' %}">Paisajes y Jardines</a></li>
-                <li><a href="{% url 'puntosturisticos' %}">Puntos Turísticos</a></li>
-                <li><a href="{% url 'religion' %}">Religión</a></li>
-              </ul>
-            </li>
-            <li><a href="{% url 'contacto' %}">CONTACTO</a></li>
-          </ul>
-          </div>
-          <div class="img_login"></div>
-          </div>
-        </nav>
-      </div>
-    </div>
-    <!-- Aquí termina el nav -->
-  </header>
+{% block css %}<link rel="stylesheet" href="{% static 'css/contacto.css' %}">{% endblock %}
+{% block contenido %}
   <!-- Aquí empieza el formulario -->
-
   <div class="container-form">
     <div class="info-form">
         <h2>Contactanos</h2>
@@ -97,28 +39,8 @@
         </form>
     </div>
 </div>
-
   <!-- Aquí termina el formulario -->
-  <!-- Aquí empieza el footer -->
-  <footer>
-    <div class="caja-principal">
-      <div class="caja">
-        <div class="titulo">
-          <span class="bloque"></span>
-          <h1>Turismo en Japón <span></span></h1>
-        </div>
-
-        <div class="sub-titulo">
-          <div class="bloque"></div>
-          <p>Organiza tu viaje</p>
-        </div>
-      </div>
-    </div>
-  </footer>
-  <!-- Aquí termina el footer -->
   <script src="https://kit.fontawesome.com/eb496ab1a0.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="{% static 'js/contacto.js' %}"></script>
-</body>
-
-</html>
+  {% endblock %}
+  {% block js %}<script src="{% static 'js/contacto.js' %}"></script>{% endblock %}

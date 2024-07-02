@@ -1,23 +1,3 @@
-//AQUÍ EMPIEZA EL JS DEL NAV BAR
-$('.dropdown').click(function (e) {
-  e.stopPropagation();
-  $('.nav-dropdown').toggle();
-});
-
-$('html').click(function () {
-  $('.nav-dropdown').hide();
-})
-
-$('#nav-toggle').on('click', function () {
-  this.classList.toggle('active');
-});
-
-$("#nav-toggle").click(function () {
-  $("nav ul").toggle();
-});
-
-
-
 /* 
    document.querySelectorAll('.dropdown').forEach(function(dropdown) {
      dropdown.addEventListener('click', function(e) {
@@ -42,8 +22,6 @@ $("#nav-toggle").click(function () {
      document.querySelector('nav ul').style.display = (document.querySelector('nav ul').style.display === 'none') ? 'block' : 'none';
    });
  */
-
-
 
 //-------------- Espera que carga todo el DOM --------------//
 window.onload = function () {
