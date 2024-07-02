@@ -3,7 +3,7 @@ from django.http import HttpResponseRedirect
 from .models import Contacto
 # Create your views here.
 def index(request):
-    return render(request, 'index.html')
+    return render(request, 'general/index.html')
 
 def contacto(request):
     #Contactos form
@@ -28,7 +28,7 @@ def contacto(request):
         nuevo_contacto.save()
     # Renderizar el formulario en caso de GET o errores
     #return render(request, 'tu_template.html')
-    return render(request, 'contacto.html')
+    return render(request, 'general/contacto.html')
 
 def cuentaconfig(request):
-    return render(request, 'cuenta-config.html')
+    return render(request, 'general/cuenta-config.html')
