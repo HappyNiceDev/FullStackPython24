@@ -184,6 +184,7 @@ nav ul li ul li a {
   border: solid 3px #d4c5ae;
   background-color: #fff;
   width: 20%;
+  height: 900px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -430,7 +431,6 @@ iframe {
 .rutas-icon {
   display: flex;
   flex-direction: column-reverse;
-  align-items: flex-end;
 }
 
 .fa-solid {
@@ -438,16 +438,6 @@ iframe {
   margin-top: 20px;
   color: #beb19d;
   cursor: pointer;
-}
-
-.fecha-ruta{
-  margin-top: 20px;
-}
-
-.rutas-icon p{
-  color: #242a20;
-  font-size: 0.9em;
-  font-family: "Playfair Display", serif;
 }
 
 /*Planificacion de viaje*/
@@ -478,27 +468,12 @@ iframe {
   text-decoration: underline;
 }
 
-.plani-user{
+.planificacion p{
   color: #242a20;
   font-size: 1.5em;
   margin-bottom: 25px;
   font-family: "Playfair Display", serif;
 }
-
-.plan-ico{
-  display: flex;
-  flex-direction: column-reverse;
-  align-items: flex-end;
-  height: 200px;
-  justify-content: space-between;
-}
-
-.p-fecha{
-  color: #242a20;
-  font-size: 0.9em;
-  font-family: "Playfair Display", serif;
-}
-
 
 #draggable-aside {
   width: 20vw;
@@ -875,17 +850,6 @@ footer {
   }
 }
 
-@media only screen and (max-width: 500px) {
-
-  .secciones-cuenta {
-   
-  }
-
-  .secciones-cuenta li{
-    font-size: 1em;
-  }
-}
-
 @media only screen and (max-width: 600px){
   .img-logo {
     height: 4em;
@@ -949,7 +913,6 @@ footer {
     right: 5px;
     top:6px;
   }
-
 }
 
 
@@ -957,7 +920,6 @@ footer {
   .nav-list {
     display: block;
   }
-
 }
 
 @media only screen and (max-width: 1024px) {
@@ -990,32 +952,9 @@ footer {
   letter-spacing: 2px;
   margin-top: 2px;
 }
+  /*termina nav*/
+
 }
 
-@media only screen and (max-width: 1000px) {
-  /*empieza contenido config*/
-  .all-content{
-    flex-direction: column;
-    align-items: center;
-  }
-    
-  .secciones-cuenta {
-    width: 97%;
-    margin: 1em;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-  }
-
-   .secciones-cuenta li{
-    width: 180px;
-    font-size: 1em;
-  }
-
-  .informacion{
-    width: 97%;
-    margin:0;
-  }
-   /*termina contenido config*/
+@media only screen and (min-width: 600px) and (max-width: 1280px) {
 }

@@ -1,11 +1,10 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+  <link rel="stylesheet" href="css/main.css" />
   <link rel="shortcut icon" type="image/x-icon" href="img/bandera.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,7 +26,7 @@
       <div class="nav-container">
         <nav>
           <div class="img-y-logo">
-            <img class="img-logo" src="{% static 'img/pez-koi-sol-naciente.webp' %}" alt="Logo" />
+            <img class="img-logo" src="img/pez-koi-sol-naciente.webp" alt="Logo" />
             <div class="caja-principal">
               <div class="caja">
                 <div class="titulo">
@@ -47,19 +46,19 @@
           <div class="nav-rigth-ppal">
             <div class="nav-rigth">
             <ul class="nav-list">
-            <li><a href="{% url 'index' %}">INICIO</a></li>
+            <li><a href="index.html">INICIO</a></li>
             <li class="dropdown">
               <a href="#!">SECCIONES</a>
               <ul class="nav-dropdown">
-                <li><a href="{% url 'arquitectura' %}">Arquitectura</a></li>
-                <li><a href="{% url 'gastronomia' %}">Gastronomía</a></li>
-                <li><a href="{% url 'mitosyleyendas' %}">Mitos y Leyendas</a></li>
-                <li><a href="{% url 'paisajesyjardines' %}">Paisajes y Jardines</a></li>
-                <li><a href="{% url 'puntosturisticos' %}">Puntos Turísticos</a></li>
-                <li><a href="{% url 'religion' %}">Religión</a></li>
+                <li><a href="arquitectura.html">Arquitectura</a></li>
+                <li><a href="gastronomia.html">Gastronomía</a></li>
+                <li><a href="mitosyleyendas.html">Mitos y Leyendas</a></li>
+                <li><a href="paisajesyjardines.html">Paisajes y Jardines</a></li>
+                <li><a href="puntosturisticos.html">Puntos Turísticos</a></li>
+                <li><a href="religion.html">Religión</a></li>
               </ul>
             </li>
-            <li><a href="{% url 'contacto' %}">CONTACTO</a></li>
+            <li><a href="contacto.html">CONTACTO</a></li>
           </ul>
           </div>
           <div class="img_login"></div>
@@ -169,7 +168,7 @@
       <section id="Arq">
         <h2>Arquitectura</h2>
         <div class="ContenidoImg">
-          <img alt="arquitectura" src="{% static 'img\usoarquitectura.com.webp' %}">
+          <img alt="arquitectura" src="img/usoarquitectura.com.webp">
         </div>
         <p>La arquitectura japonesa es una manifestación sorprendente de la rica historia, la espiritualidad y la
           ingeniería avanzada de este país.
