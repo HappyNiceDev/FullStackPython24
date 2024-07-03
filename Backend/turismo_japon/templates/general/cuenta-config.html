@@ -1,83 +1,7 @@
-<<<<<<<< HEAD:BackUp/BackUp Frontend/cuenta-config.html
-<!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/cuenta-config.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="img/bandera.ico" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bona+Nova:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
-      rel=" hoja de estilo"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bona+Nova:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playball&display=swap" rel="stylesheet">
-    <title>Turismo en Japón</title>
-  </head>
-  <body>
-    <header>
-      <!-- Aquí empieza el nav -->
-    <div class="navigation">
-      <div class="nav-container">
-        <nav>
-          <div class="img-y-logo">
-            <img class="img-logo" src="img/pez-koi-sol-naciente.webp" alt="Logo" />
-            <div class="caja-principal">
-              <div class="caja">
-                <div class="titulo">
-                  <span class="bloque"></span>
-                  <h1>Turismo en Japón <span></span></h1>
-                </div>
-                <div class="sub-titulo">
-                  <div class="bloque"></div>
-                  <p>Organiza tu viaje</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="nav-mobile">
-            <a id="nav-toggle" href="#!"><span></span></a>
-          </div>
-          <div class="nav-rigth-ppal">
-            <div class="nav-rigth">
-            <ul class="nav-list">
-            <li><a href="index.html">INICIO</a></li>
-            <li class="dropdown">
-              <a href="#!">SECCIONES</a>
-              <ul class="nav-dropdown">
-                <li><a href="arquitectura.html">Arquitectura</a></li>
-                <li><a href="gastronomia.html">Gastronomía</a></li>
-                <li><a href="mitosyleyendas.html">Mitos y Leyendas</a></li>
-                <li><a href="paisajesyjardines.html">Paisajes y Jardines</a></li>
-                <li><a href="puntosturisticos.html">Puntos Turísticos</a></li>
-                <li><a href="religion.html">Religión</a></li>
-              </ul>
-            </li>
-            <li><a href="contacto.html">CONTACTO</a></li>
-          </ul>
-          </div>
-          <div class="img_login"></div>
-          </div>
-        </nav>
-      </div>
-    </div>
-    <!-- Aquí termina el nav -->
-    </header>
-========
 {% extends 'base.html' %}
 {% load static %}
 {% block css %}<link rel="stylesheet" href="{% static 'css/cuenta-config.css' %}">{% endblock %}
 {% block contenido %}
->>>>>>>> Naty:Backend/turismo_japon/templates/general/cuenta-config.html
     <!-- Aquí empieza contenido de configuraciones de cuenta -->
     <div id="Config" class="all-content">
       <div class="secciones-cuenta">
@@ -90,7 +14,7 @@
       <div class="informacion">
         <div class="contenido-config mi-cuenta Visible">
           <div class="info-foto">
-              <img class="FotoPerfil" src="img/usoarquitectura.com.webp" alt="foto de perfil" />
+            <img class="FotoPerfil" src="{% static 'img/usoarquitectura.com.webp' %}" alt="foto de perfil" />
             <div class="foto-descripcion">
               <h3>Personaliza tu foto</h3>
               <p>
@@ -162,7 +86,7 @@
               Ejemplo de lo que vería una persona que guardó algo en
               favoritos...
             </p>
-            <img class="PRUEBA-IMG" src="img/ejemplo-favoritos.png" />
+            <img class="PRUEBA-IMG" src="{% static 'img/ejemplo-favoritos.png' %}" />
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3946985.6781465844!2d133.15295613157946!3d35.67166086790123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34674e0fd77f192f%3A0xf54275d47c665244!2zSmFww7Nu!5e0!3m2!1ses-419!2sar!4v1718327532972!5m2!1ses-419!2sar"
               width="800"
@@ -214,8 +138,9 @@
               </div>
             </div>
             <div class="rutas-icon">
+              <p class="fecha-ruta">Fecha de creación 23/06/24</p>
               <i class="fa-solid fa-trash"></i>
-              <i class="fa-solid fa-pen-to-square"></i>
+              <i class="fa-solid fa-pen-to-square"></i>                
             </div>
           </div>
           <div class="adm-rutas">
@@ -239,6 +164,7 @@
               </div>
             </div>
             <div class="rutas-icon">
+              <p class="fecha-ruta">Fecha de creación 23/06/24</p>
               <i class="fa-solid fa-trash"></i>
               <i class="fa-solid fa-pen-to-square"></i>
             </div>
@@ -264,6 +190,7 @@
               </div>
             </div>
             <div class="rutas-icon">
+              <p class="fecha-ruta">Fecha de creación 23/06/24</p>
               <i class="fa-solid fa-trash"></i>
               <i class="fa-solid fa-pen-to-square"></i>
             </div>
@@ -339,7 +266,7 @@
             </div>
           </div>
           <div class="planificacion-save">
-            <img class="barra" src="img/barra.png">
+            <img class="barra" src="{% static 'img/barra.png' %}">
             <h2>Planificaciones guardadas</h2>
             <div class="resultado-planificacion">
               <div class="download-planificacion">
@@ -355,13 +282,14 @@
               </div>
               <div class="download-text-area">
                 <h3>Ruta que voy a seguir el 27/07/24 <br>(nombre que se indicó al guardar la ruta)</h3>
-                <p>Ejemplo de lo que escribe el usuario en el text área.<br>
+                <p class="plani-user">Ejemplo de lo que escribe el usuario en el text área.<br>
                   En este día vamos a ir con maría a visitar el Palacio Imperial, pero previo a eso tenemos que pasar
                   a buscar a Martín por la estación de tokyo a las 14:30 hs. Luego de eso..
                 </p>
               </div>
-              <div>
+              <div class="plan-ico">
                 <i class="fa-solid fa-file-pdf" title="Descarga PDF"></i>
+                <p class="p-fecha">Fecha:<br> 23/06/24</p>
               </div>
             </div>
             <div class="resultado-planificacion">
@@ -378,48 +306,22 @@
               </div>
               <div class="download-text-area">
                 <h3>Ruta que voy a seguir el 28/07/24</h3>
-                <p>Ejemplo de lo que escribe el usuario en el text área.<br>
+                <p class="plani-user">Ejemplo de lo que escribe el usuario en el text área.<br>
                   En este día vamos a ir con maría a visitar el Palacio Imperial, pero previo a eso tenemos que pasar
                   a buscar a Martín por la estación de tokyo a las 14:30 hs. Luego de eso..
                 </p>
               </div>
-              <div>
+              <div class="plan-ico">
                 <i class="fa-solid fa-file-pdf" title="Descarga PDF"></i>
+                <p class="p-fecha">Fecha:<br> 23/06/24</p>
               </div>
             </div>
           </div>
         </div>
     <!-- Aquí termina contenido de configuraciones de cuenta -->
-<<<<<<<< HEAD:BackUp/BackUp Frontend/cuenta-config.html
-    <!-- Aquí empieza el footer -->
-    <footer>
-      <div class="caja-principal">
-        <div class="caja">
-          <div class="titulo">
-            <span class="bloque"></span>
-            <h1>Turismo en Japón <span></span></h1>
-          </div>
-
-          <div class="sub-titulo">
-            <div class="bloque"></div>
-            <p>Organiza tu viaje</p>
-          </div>
-        </div>
-      </div>
-    </footer>
-    <!-- Aquí termina el footer -->
-
-    <script src="https://kit.fontawesome.com/01aa86eea9.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="js/cuenta-config.js"></script>
-  </body>
-</html>
-========
   </main>
 {% endblock %}
     <script src="https://kit.fontawesome.com/01aa86eea9.js" crossorigin="anonymous"></script>
     <script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 {% block js %}<script src="{% static 'js/cuenta-config.js' %}"></script>{% endblock %}    
->>>>>>>> Naty:Backend/turismo_japon/templates/general/cuenta-config.html

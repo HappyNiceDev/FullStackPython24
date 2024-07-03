@@ -420,14 +420,13 @@ main {
 .caja-comentario{
   width: 75vw;
   height: 170px;
+  padding: 0.5em;
   background-color: #eae8e0;
   border: solid 2px #bcb6a6;
   border-radius: 10px;
   margin: 1em 2em 1em 2em;
 }
 
-<<<<<<< HEAD:BackUp/BackUp Frontend/css/gastronomia.css
-=======
 .comentario-datos{
   display: flex;
   justify-content: space-between;
@@ -449,7 +448,6 @@ main {
   justify-content: space-around;
   align-items: center;
 }
->>>>>>> Naty:Backend/turismo_japon/static/css/gastronomia.css
 /* <!-- Aquí Terminan los comentarios --> */
 /* Media Query */
 @media screen and (max-width: 1280px) {

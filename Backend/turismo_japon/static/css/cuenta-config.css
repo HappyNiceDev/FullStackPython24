@@ -15,7 +15,6 @@
   border: solid 3px #d4c5ae;
   background-color: #fff;
   width: 20%;
-  height: 900px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -262,6 +261,7 @@ iframe {
 .rutas-icon {
   display: flex;
   flex-direction: column-reverse;
+  align-items: flex-end;
 }
 
 .fa-solid {
@@ -269,6 +269,16 @@ iframe {
   margin-top: 20px;
   color: #beb19d;
   cursor: pointer;
+}
+
+.fecha-ruta{
+  margin-top: 20px;
+}
+
+.rutas-icon p{
+  color: #242a20;
+  font-size: 0.9em;
+  font-family: "Playfair Display", serif;
 }
 
 /*Planificacion de viaje*/
@@ -299,12 +309,27 @@ iframe {
   text-decoration: underline;
 }
 
-.planificacion p{
+.plani-user{
   color: #242a20;
   font-size: 1.5em;
   margin-bottom: 25px;
   font-family: "Playfair Display", serif;
 }
+
+.plan-ico{
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-end;
+  height: 200px;
+  justify-content: space-between;
+}
+
+.p-fecha{
+  color: #242a20;
+  font-size: 0.9em;
+  font-family: "Playfair Display", serif;
+}
+
 
 #draggable-aside {
   width: 20vw;
@@ -459,120 +484,51 @@ iframe {
   }
 }
 
+@media only screen and (max-width: 500px) {
+
+  .secciones-cuenta {
+   
+  }
+
+  .secciones-cuenta li{
+    font-size: 1em;
+  }
+}
+
 @media only screen and (max-width: 600px){
-<<<<<<< HEAD:BackUp/BackUp Frontend/css/cuenta-config.css
-  .img-logo {
-    height: 4em;
-    margin: 5px;
-  }
-  .img-y-logo {
-    width: 100%;
-  }
-  
-  .nav-mobile {
-    display: block;
-  }
-
-  nav {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 70px;
-  }
-
-  nav ul {
-    display: none;
-    margin-top: -5px;
-  }
-
-  nav ul li {
-    float: right;
-    width: 70vw;
-    margin-top: -2px
-  }
-
-  nav ul li a {
-    padding: 15px;
-    width: 200px;
-    float: right;
-    line-height: 20px;
-    background-color: #d4c5ae;
-    
-  }
-
-  nav ul li ul li a {
-    padding-left: 20px;
-    background-color: #b4a58f;
-  }
-
-  .nav-dropdown {
-    position: static;
-    margin: 0px;
-  }
-
-  #nav-toggle{
-    left: -50px;
-  }
-  
-  .img_login{
-    background-color: #d4c5ae;
-    margin:0;
-    width: 58px;
-    height: 58px;
-    position: absolute;
-    right: 5px;
-    top:6px;
-  }
-=======
->>>>>>> Naty:Backend/turismo_japon/static/css/cuenta-config.css
 }
 
 
 @media screen and (min-width: 800px) {
-<<<<<<< HEAD:BackUp/BackUp Frontend/css/cuenta-config.css
-  .nav-list {
-    display: block;
+}
+
+@media only screen and (max-width: 1024px) {
+}
+
+@media only screen and (max-width: 1000px) {
+  /*empieza contenido config*/
+  .all-content{
+    flex-direction: column;
+    align-items: center;
   }
-}
+    
+  .secciones-cuenta {
+    width: 97%;
+    margin: 1em;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
 
-@media only screen and (max-width: 1024px) {
-  /*nav*/
-  /*---Animacion turismo en japón modo mobile---*/
-.img-y-logo .caja-principal {
-  margin-top: 25px;
-}
+   .secciones-cuenta li{
+    width: 180px;
+    font-size: 1em;
+  }
 
-.img-y-logo .caja-principal .caja {
-  width: 100%;
-  height: 1em;
-}
-
-.img-y-logo .caja-principal .caja .titulo {
-  height: 30px;
-}
-
-.img-y-logo .caja-principal .caja .titulo h1 {
-  font-size: 1.2em;
-}
-
-.img-y-logo .caja-principal .caja .sub-titulo {
-  height: 1.5em;
-  margin-top: 5px;
-}
-
-.img-y-logo .caja-principal .caja .sub-titulo p {
-  font-size: 0.6em;
-  letter-spacing: 2px;
-  margin-top: 2px;
-}
-  /*termina nav*/
-
-=======
-}
-
-@media only screen and (max-width: 1024px) {
->>>>>>> Naty:Backend/turismo_japon/static/css/cuenta-config.css
-}
-
-@media only screen and (min-width: 600px) and (max-width: 1280px) {
+  .informacion{
+    width: 97%;
+    margin:0;
+  }
+   /*termina contenido config*/
 }
