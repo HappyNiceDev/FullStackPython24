@@ -7,7 +7,6 @@
 # Feel free to rename the models, but don't rename db_table values or field names.
 from django.db import models
 
-
 class BlogSaved(models.Model):
     comentario_id = models.AutoField(primary_key=True)
     user = models.ForeignKey('Persona', models.DO_NOTHING)
@@ -91,7 +90,7 @@ class RoutesSaved(models.Model):
         db_table = 'routes_saved'
         db_table_comment = 'Tabla que me indica las rutas guardadas por el usuario'
 
-#Se comenta porque esta generando errores
+#Se comenta porque esta generando errores y no permitía migrar, no se permiten 2 autofield
 # class RutasDestino(models.Model):
 #    ruta_id = models.AutoField()
 #    destino_id = models.AutoField()

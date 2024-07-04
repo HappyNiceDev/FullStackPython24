@@ -1,6 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect
 from .models import Contacto
+from django.contrib.auth import login
+from django.contrib.auth.models import User
+from .forms import RegisterForm
+from django.db import IntegrityError
+
 # Create your views here.
 def index(request):
     return render(request, 'general/index.html')
@@ -32,3 +37,24 @@ def contacto(request):
 
 def cuentaconfig(request):
     return render(request, 'general/cuenta-config.html')
+
+def custom_login(request):
+    return render(request, 'general/login.html')
+#---login---
+def register(request):
+    if request.method == 'POST':
+        form = RegisterForm(request.POST)
+        if form.is_valid():
+            try:
+                new_user = form.save(commit=False)
+                new_user.set_password(form.cleaned_data['password'])
+                new_user.save()
+                login(request, new_user)
+                return redirect('index')  # Redirige a la página principal o a donde desees
+            except IntegrityError:
+                form.add_error(None, "El nombre de usuario ya existe.")
+            except Exception as e:
+                form.add_error(None, "Ocurrió un error al crear el usuario. Por favor, inténtalo de nuevo.")
+    else:
+        form = RegisterForm()
+    return render(request, 'general/login-temp.html', {'form': form})
