@@ -71,6 +71,25 @@
     </div>
     <!-- Aquí termina el slide -->
   </header>
+  {% if user.is_authenticated %}
+  <p>Bienvenido, {{ user.username }}!</p>
+  <p>Podrás ver este mensaje solo si estas debidamente logueado</p>
+  {% else %}
+          <p>Bienvenido, visitante!</p>
+          <p>Por favor <a href="{% url 'login' %}">inicia sesión</a> o <a href="{% url 'register' %}">regístrate</a>.</p>
+      {% endif %}
+
+      {% if user.is_authenticated %}
+      <li>
+        <form id="logout-form" method="post" action="{% url 'logout' %}" style="display:inline;">
+            {% csrf_token %}
+            <button type="submit">Cerrar Sesión</button>
+        </form>
+    </li>
+  {% else %}
+      <li><a href="{% url 'login' %}">Iniciar Sesión</a></li>
+      <li><a href="{% url 'register' %}">Registrarse</a></li>
+      {% endif %}
   <!-- Aquí empieza el contenido resumido -->
   <div class="ResumenTematico">
 

@@ -23,5 +23,7 @@ urlpatterns = [
     path('',include('general.urls')),
     path('secciones/',include('secciones.urls')),
     path('register/', views.register, name='register'),
-    path('login/', auth_views.LoginView.as_view(template_name='registration/login.html'), name='login'),  # URL para el inicio de sesión
+    path('login/', auth_views.LoginView.as_view(template_name='general/login-temp.html'), name='login'),
+    path('logout/', auth_views.LogoutView.as_view(next_page='index'), name='logout'),
+
 ]

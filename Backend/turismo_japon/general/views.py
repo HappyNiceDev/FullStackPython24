@@ -7,8 +7,6 @@ from .forms import RegisterForm
 from django.db import IntegrityError
 
 # Create your views here.
-def index(request):
-    return render(request, 'general/index.html')
 
 def contacto(request):
     #Contactos form
@@ -37,10 +35,19 @@ def contacto(request):
 
 def cuentaconfig(request):
     return render(request, 'general/cuenta-config.html')
-
-def custom_login(request):
-    return render(request, 'general/login.html')
 #---login---
+def login(request):
+    return render(request, 'general/login-temp.html')
+
+def logout(request):
+    return render(request, 'general/logout.html')
+
+def index(request):
+    context = {}
+    if request.user.is_authenticated:
+        context['user'] = request.user
+    return render(request, 'general/index.html', context)
+
 def register(request):
     if request.method == 'POST':
         form = RegisterForm(request.POST)
@@ -50,11 +57,11 @@ def register(request):
                 new_user.set_password(form.cleaned_data['password'])
                 new_user.save()
                 login(request, new_user)
-                return redirect('index')  # Redirige a la página principal o a donde desees
+                return redirect('index')
             except IntegrityError:
                 form.add_error(None, "El nombre de usuario ya existe.")
             except Exception as e:
                 form.add_error(None, "Ocurrió un error al crear el usuario. Por favor, inténtalo de nuevo.")
     else:
         form = RegisterForm()
-    return render(request, 'general/login-temp.html', {'form': form})
+    return render(request, 'general/register.html', {'form': form})

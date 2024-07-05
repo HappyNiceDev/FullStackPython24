@@ -119,6 +119,21 @@ USE_I18N = True
 
 USE_TZ = True
 
+# Define la URL donde se redirigen las solicitudes para iniciar sesión
+LOGIN_URL = 'login'
+
+# Define la URL donde se redirigen las solicitudes después de iniciar sesión
+LOGIN_REDIRECT_URL = 'index'
+
+# Define la URL donde se redirigen las solicitudes después de cerrar sesión
+LOGOUT_REDIRECT_URL = 'index'
+
+SESSION_COOKIE_AGE = 1209600  # Dos semanas en segundos
+
+SESSION_SAVE_EVERY_REQUEST = True
+
+SESSION_COOKIE_SECURE = False  # Para entorno de desarrollo local
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
