@@ -1,10 +1,12 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect
 from .models import Contacto
-from django.contrib.auth import login
+from django.contrib.auth import login as auth_login
 from django.contrib.auth.models import User
 from .forms import RegisterForm
 from django.db import IntegrityError
+from django.contrib.auth import login
+
 
 # Create your views here.
 
@@ -36,7 +38,7 @@ def contacto(request):
 def cuentaconfig(request):
     return render(request, 'general/cuenta-config.html')
 #---login---
-def login(request):
+def custom_login(request):
     return render(request, 'general/login-temp.html')
 
 def logout(request):
@@ -48,6 +50,24 @@ def index(request):
         context['user'] = request.user
     return render(request, 'general/index.html', context)
 
+#def register(request):
+#    if request.method == 'POST':
+#        form = RegisterForm(request.POST)
+#        if form.is_valid():
+#            try:
+#                new_user = form.save(commit=False)
+#                new_user.set_password(form.cleaned_data['password'])
+#                new_user.save()
+#                auth_login(request, new_user)
+#                return redirect('index')
+#            except IntegrityError:
+#                form.add_error(None, "El nombre de usuario ya existe.")
+#            except Exception as e:
+#                form.add_error(None, "Ocurrió un error al crear el usuario. Por favor, inténtalo de nuevo.")
+#    else:
+#        form = RegisterForm()
+#    return render(request, 'general/register.html', {'form': form})
+
 def register(request):
     if request.method == 'POST':
         form = RegisterForm(request.POST)
@@ -57,7 +77,7 @@ def register(request):
                 new_user.set_password(form.cleaned_data['password'])
                 new_user.save()
                 login(request, new_user)
-                return redirect('index')
+                return redirect('cuentaconfig')  # Redirige a la página de configuración
             except IntegrityError:
                 form.add_error(None, "El nombre de usuario ya existe.")
             except Exception as e:
