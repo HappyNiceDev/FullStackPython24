@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.models import User
-from .models import Persona
+from .models import UserProfile
 
 class RegisterForm(forms.ModelForm):
     password = forms.CharField(widget=forms.PasswordInput)
@@ -23,7 +23,7 @@ class RegisterForm(forms.ModelForm):
         user.set_password(self.cleaned_data['password'])
         if commit:
             user.save()
-            persona = Persona.objects.create(
+            UserProfile = UserProfile.objects.create(
                 user=user,
                 usuario='',  # Agrega el valor adecuado si es necesario
                 mail=user.email,

@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect
-from .models import Contacto
+from .models import Contact
 from django.contrib.auth import login as auth_login
 from django.contrib.auth.models import User
 from .forms import RegisterForm
@@ -28,7 +28,7 @@ def contacto(request):
         terminos_condiciones = request.POST.get('terminos') == 'on'
 
         # Guardar en la base de datos
-        nuevo_contacto = Contacto(nombre=nombre, apellido=apellido, telefono=telefono, mail=mail,
+        nuevo_contacto = Contact(nombre=nombre, apellido=apellido, telefono=telefono, mail=mail,
                                 asunto=asunto, mensaje=mensaje, adjunto=adjunto_binario, terminos_condiciones=terminos_condiciones)
         nuevo_contacto.save()
     # Renderizar el formulario en caso de GET o errores
