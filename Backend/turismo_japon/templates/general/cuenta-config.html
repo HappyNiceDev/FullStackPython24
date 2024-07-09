@@ -14,57 +14,89 @@
       <div class="informacion">
         <div class="contenido-config mi-cuenta Visible">
           <div class="info-foto">
-            <img class="FotoPerfil" src="{% static 'img/usoarquitectura.com.webp' %}" alt="foto de perfil" />
-            <div class="foto-descripcion">
-              <h3>Personaliza tu foto</h3>
-              <p>
-                Tu foto de perfil será visible para todos cuando hagas
-                comentarios en las secciones.
-              </p>
-              <div class="btn-foto">Cambiar foto</div>
-            </div>
+              <img class="FotoPerfil" src="{% static 'img/usoarquitectura.com.webp' %}" alt="foto de perfil" />
+              <div class="foto-descripcion">
+                  <h3>Personaliza tu foto</h3>
+                  <p>Tu foto de perfil será visible para todos cuando hagas comentarios en las secciones.</p>
+                  <div class="btn-foto">Cambiar foto</div>
+              </div>
           </div>
           <div class="info-perfil">
             <div class="info-edit">
-              <h3>Informacion de Perfil</h3>
-              <div class="btn-foto">Editar perfil</div>
+                <h3>Información de Perfil</h3>
+                <!-- Botón para alternar entre modo de lectura y modo de edición -->
+                <div id="edit_button" type="button" id="btn-editar-perfil" class="btn-foto">Editar perfil</div>
+             
             </div>
             <div class="caja-info">
-              <div class="tabla-config">
-                <div><p>Usuario</p></div>
-                <div><p>Nombre</p></div>
-              </div>
-              <div class="tabla-config">
-                <div><p>Fecha de Nacimiento</p></div>
-                <div><p>00/00/00</p></div>
-              </div>
-              <div class="tabla-config">
-                <div><p>Nacionalidad</p></div>
-                <div><p>Su nacionalidad</p></div>
-              </div>
-              <div class="tabla-config">
-                <div><p>Género</p></div>
-                <div><p>Masculino/Femenino</p></div>
-              </div>
+              <form id="perfil_form" method="POST">
+                {% csrf_token %}
+            
+                <div class="tabla-config">
+                    <label for="id_usuario"><p>Usuario</p></label>
+                    <!-- Contenedor para mostrar el valor actual del campo usuario -->
+                    <div id="usuario_value" class="editable-field">
+                        <p class="value-display">{{ form.usuario.value }}</p>
+                        <!-- Input para editar, inicialmente oculto -->
+                        <input type="text" id="id_usuario_input" name="usuario" value="{{ user_profile.usuario }}" style="display: none;">
+                    </div>
+                </div>
+            
+                <div class="tabla-config">
+                    <label for="id_fech_nac"><p>Fecha de Nacimiento</p></label>
+                    <!-- Contenedor para mostrar el valor actual del campo -->
+                    <div id="fech_nac_value" class="editable-field">
+                        <p class="value-display">{{ form.fech_nac.value }}</p>
+                        <!-- Input para editar, inicialmente oculto -->
+                        <input type="date" id="id_fech_nac_input" name="fech_nac" value="{{ user_profile.fech_nac }}" style="display: none;">
+                    </div>
+                </div>
+            
+                <div class="tabla-config">
+                    <label for="id_pais"><p>Nacionalidad</p></label>
+                    <!-- Contenedor para mostrar el valor actual del campo -->
+                    <div id="pais_value" class="editable-field">
+                        <p class="value-display">{{ form.pais.value }}</p>
+                        <!-- Input para editar, inicialmente oculto -->
+                        <input type="text" id="id_pais_input" name="pais" value="{{ user_profile.pais }}" style="display: none;">
+                    </div>
+                </div>
+            
+                <div class="tabla-config">
+                    <label for="id_genero"><p>Género</p></label>
+                    <!-- Contenedor para mostrar el valor actual del campo -->
+                    <div id="genero_value" class="editable-field">
+                        <p class="value-display">{{ form.genero.value }}</p>
+                        <!-- Input para editar, inicialmente oculto -->
+                        <select id="id_genero_input" name="genero" style="display: none;">
+                            <option value="Masculino" {% if user_profile.genero == 'Masculino' %} selected {% endif %}>Masculino</option>
+                            <option value="Femenino" {% if user_profile.genero == 'Femenino' %} selected {% endif %}>Femenino</option>
+                            <option value="Otro" {% if user_profile.genero == 'Otro' %} selected {% endif %}>Otro</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div type="submit" id="save_button" class="save-button guardar-cambios" style="display: none;">Guardar</div>
+            </form>
             </div>
-          </div>
-          <div class="info-cuenta">
-            <div class="info-edit">
-              <h3>Informacion de Cuenta</h3>
-              <div class="btn-foto">Editar cuenta</div>
-            </div>
-            <div class="caja-info">
-              <div class="tabla-config">
-                <div><p>Correo electrónico</p></div>
-                <div><p>sucorreo@correo.com</p></div>
-              </div>
-              <div class="tabla-config">
-                <div><p>Número de teléfono</p></div>
-                <div><p>01-2345-6789</p></div>
-              </div>
-            </div>
-          </div>
         </div>
+        <div class="info-cuenta">
+            <div class="info-edit">
+                <h3>Información de Cuenta</h3>
+                <div class="btn-foto">Editar cuenta</div>
+            </div>
+            <div class="caja-info">
+                <div class="tabla-config">
+                    <div><p>Correo electrónico</p></div>
+                    <div><p>{{ form.mail.value }}</p></div>
+                </div>
+                <div class="tabla-config">
+                    <div><p>Número de teléfono</p></div>
+                    <div><p>{{ form.telefono.value }}</p></div>
+                </div>
+            </div>
+        </div>
+      </div>
         <!-- Contenido de Favoritos -->
         <div class="contenido-config favoritos">
           <div class="Fav-contenido">
@@ -320,6 +352,48 @@
         </div>
     <!-- Aquí termina contenido de configuraciones de cuenta -->
   </main>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const editButton = document.getElementById('edit_button');
+        const saveButton = document.getElementById('save_button');
+
+        // Contenedores y campos para todos los campos editables
+        const fields = [
+            {
+                display: document.querySelector('#usuario_value .value-display'),
+                input: document.getElementById('id_usuario_input')
+            },
+            {
+                display: document.querySelector('#fech_nac_value .value-display'),
+                input: document.getElementById('id_fech_nac_input')
+            },
+            {
+                display: document.querySelector('#pais_value .value-display'),
+                input: document.getElementById('id_pais_input')
+            },
+            {
+                display: document.querySelector('#genero_value .value-display'),
+                input: document.getElementById('id_genero_input')
+            },
+        ];
+
+        editButton.addEventListener('click', function() {
+            fields.forEach(field => {
+                field.display.style.display = 'none';
+                field.input.style.display = 'block';
+            });
+
+            editButton.style.display = 'none';
+            saveButton.style.display = 'inline-block';
+        });
+
+        // Manejar el clic en el div "Guardar cambios"
+        saveButton.addEventListener('click', function() {
+          document.getElementById('perfil_form').submit(); // Envía el formulario
+      });
+    });
+</script>
+    
 {% endblock %}
     <script src="https://kit.fontawesome.com/01aa86eea9.js" crossorigin="anonymous"></script>
     <script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>

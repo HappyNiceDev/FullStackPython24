@@ -6,7 +6,9 @@ from django.contrib.auth.models import User
 from .forms import RegisterForm
 from django.db import IntegrityError
 from django.contrib.auth import login
-
+from .forms import UserProfileForm
+from .models import UserProfile
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -85,3 +87,20 @@ def register(request):
     else:
         form = RegisterForm()
     return render(request, 'general/register.html', {'form': form})
+
+
+
+
+@login_required
+def cuentaconfig(request):
+    user_profile, created = UserProfile.objects.get_or_create(user=request.user)
+
+    if request.method == 'POST':
+        form = UserProfileForm(request.POST, instance=user_profile)
+        if form.is_valid():
+            form.save()
+            return redirect('cuentaconfig')  # Redirige a la misma página para mostrar los cambios
+    else:
+        form = UserProfileForm(instance=user_profile)
+
+    return render(request, 'general/cuenta-config.html', {'form': form})

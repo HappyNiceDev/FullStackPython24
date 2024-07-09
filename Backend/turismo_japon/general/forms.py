@@ -17,20 +17,14 @@ class RegisterForm(forms.ModelForm):
         if cd['password'] != cd['password2']:
             raise forms.ValidationError('Las contraseñas no coinciden.')
         return cd['password2']
-
-    def save(self, commit=True):
-        user = super(RegisterForm, self).save(commit=False)
-        user.set_password(self.cleaned_data['password'])
-        if commit:
-            user.save()
-            UserProfile = UserProfile.objects.create(
-                user=user,
-                usuario='',  # Agrega el valor adecuado si es necesario
-                mail=user.email,
-                telefono=None,  # Agrega el valor adecuado si es necesario
-                genero='',  # Agrega el valor adecuado si es necesario
-                fech_nac=None,  # Agrega el valor adecuado si es necesario
-                pais='',  # Agrega el valor adecuado si es necesario
-                avatar=None  # Agrega el valor adecuado si es necesario
-            )
         return user
+    
+    
+    
+    
+    
+class UserProfileForm(forms.ModelForm):
+    class Meta:
+        model = UserProfile
+        fields = ['usuario', 'mail', 'telefono', 'genero', 'fech_nac', 'pais']
+        Exception = ['avatar']

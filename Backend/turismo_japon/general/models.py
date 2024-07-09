@@ -6,7 +6,7 @@
 #   * Remove `managed = False` lines if you wish to allow Django to create, modify, and delete the table
 # Feel free to rename the models, but don't rename db_table values or field names.
 from django.db import models
-
+from django.contrib.auth.models import User
 
 class Comments(models.Model):
     comentario_id = models.AutoField(primary_key=True)
@@ -99,19 +99,19 @@ class TematicSaved(models.Model):
 
 
 class UserProfile(models.Model):
-    user = models.OneToOneField('AuthUser', models.DO_NOTHING, primary_key=True)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
     usuario = models.TextField(blank=True, null=True)
     mail = models.TextField(blank=True, null=True)
-    telefono = models.DecimalField(max_digits=65535, decimal_places=65535, blank=True, null=True)
+    telefono = models.DecimalField(max_digits=10, decimal_places=0, blank=True, null=True)
     genero = models.TextField(blank=True, null=True)
     fech_nac = models.DateField(blank=True, null=True)
     pais = models.TextField(blank=True, null=True)
     avatar = models.BinaryField(blank=True, null=True)
 
     class Meta:
-        managed = False
         db_table = '_user_profile'
-        db_table_comment = 'Tabla que describe los datos de la persona'
+        verbose_name = 'User Profile'
+        verbose_name_plural = 'User Profiles'
 
 
 class AuthGroup(models.Model):
