@@ -2,6 +2,7 @@
 {% load static %}
 {% block css %}<link rel="stylesheet" href="{% static 'css/cuenta-config.css' %}">{% endblock %}
 {% block contenido %}
+<main>
     <!-- Aquí empieza contenido de configuraciones de cuenta -->
     <div id="Config" class="all-content">
       <div class="secciones-cuenta">
@@ -12,6 +13,8 @@
       </div>
       <!-- Contenido de Mi Cuenta -->
       <div class="informacion">
+        <form id="perfil_form" method="POST">
+          {% csrf_token %}
         <div class="contenido-config mi-cuenta Visible">
           <div class="info-foto">
               <img class="FotoPerfil" src="{% static 'img/usoarquitectura.com.webp' %}" alt="foto de perfil" />
@@ -26,12 +29,9 @@
                 <h3>Información de Perfil</h3>
                 <!-- Botón para alternar entre modo de lectura y modo de edición -->
                 <div id="edit_button" type="button" id="btn-editar-perfil" class="btn-foto">Editar perfil</div>
-             
+                <div type="submit" id="save_button" class="btn-foto save-button" style="display: none;">Guardar</div>
             </div>
             <div class="caja-info">
-              <form id="perfil_form" method="POST">
-                {% csrf_token %}
-            
                 <div class="tabla-config">
                     <label for="id_usuario"><p>Usuario</p></label>
                     <!-- Contenedor para mostrar el valor actual del campo usuario -->
@@ -71,33 +71,42 @@
                         <select id="id_genero_input" name="genero" style="display: none;">
                             <option value="Masculino" {% if user_profile.genero == 'Masculino' %} selected {% endif %}>Masculino</option>
                             <option value="Femenino" {% if user_profile.genero == 'Femenino' %} selected {% endif %}>Femenino</option>
-                            <option value="Otro" {% if user_profile.genero == 'Otro' %} selected {% endif %}>Otro</option>
                         </select>
                     </div>
                 </div>
-                
-                <div type="submit" id="save_button" class="save-button guardar-cambios" style="display: none;">Guardar</div>
-            </form>
             </div>
         </div>
         <div class="info-cuenta">
             <div class="info-edit">
                 <h3>Información de Cuenta</h3>
-                <div class="btn-foto">Editar cuenta</div>
             </div>
-            <div class="caja-info">
-                <div class="tabla-config">
-                    <div><p>Correo electrónico</p></div>
-                    <div><p>{{ form.mail.value }}</p></div>
+            <div class="cuenta-campos" >
+                 <div class="tabla-config">
+                  <label for="id_mail"><p>Correo electrónico</p></label>
+                  <!-- Contenedor para mostrar el valor actual del campo -->
+                  <div id="mail_value" class="editable-field">
+                      <p class="value-display">{{ form.mail.value }}</p>
+                      <!-- Input para editar, inicialmente oculto -->
+                      <input type="email" id="id_mail_input" name="mail" value="{{ user_profile.mail }}" style="display: none;">
+                  </div>
                 </div>
                 <div class="tabla-config">
-                    <div><p>Número de teléfono</p></div>
-                    <div><p>{{ form.telefono.value }}</p></div>
+                    <label for="id_telefono"><p>Número de teléfono</p></label>
+                    <!-- Contenedor para mostrar el valor actual del campo -->
+                    <div id="telefono_value" class="editable-field">
+                      <p class="value-display">{{ form.telefono.value }}</p>
+                      <!-- Input para editar, inicialmente oculto -->
+                      <input type="tel" id="id_telefono_input" name="telefono" value="{{ user_profile.telefono }}" style="display: none;">
+                    </div>
                 </div>
-            </div>
+          </div>
         </div>
+        </form>
       </div>
         <!-- Contenido de Favoritos -->
+
+
+
         <div class="contenido-config favoritos">
           <div class="Fav-contenido">
             <h2>Favoritos</h2>
@@ -352,13 +361,15 @@
         </div>
     <!-- Aquí termina contenido de configuraciones de cuenta -->
   </main>
+
   <script>
+    //-----Editar datos de perfil y cuenta-----//
     document.addEventListener('DOMContentLoaded', function() {
         const editButton = document.getElementById('edit_button');
         const saveButton = document.getElementById('save_button');
-
-        // Contenedores y campos para todos los campos editables
-        const fields = [
+    
+        // Contenedores y campos para todos los campos editables del perfil
+        const perfilFields = [
             {
                 display: document.querySelector('#usuario_value .value-display'),
                 input: document.getElementById('id_usuario_input')
@@ -376,26 +387,69 @@
                 input: document.getElementById('id_genero_input')
             },
         ];
-
+  
+        // Contenedores y campos para correo y teléfono de la cuenta
+        const cuentaFields = {
+            mail: {
+                display: document.querySelector('#mail_value .value-display'),
+                input: document.getElementById('id_mail_input')
+            },
+            telefono: {
+                display: document.querySelector('#telefono_value .value-display'),
+                input: document.getElementById('id_telefono_input')
+            }
+        };
+    
         editButton.addEventListener('click', function() {
-            fields.forEach(field => {
+            // Mostrar todos los campos editables del perfil
+            perfilFields.forEach(field => {
                 field.display.style.display = 'none';
                 field.input.style.display = 'block';
             });
-
+  
+            // Mostrar campos editables de la cuenta (correo y teléfono)
+            cuentaFields.mail.display.style.display = 'none';
+            cuentaFields.mail.input.style.display = 'block';
+            cuentaFields.telefono.display.style.display = 'none';
+            cuentaFields.telefono.input.style.display = 'block';
+    
             editButton.style.display = 'none';
             saveButton.style.display = 'inline-block';
         });
-
+    
         // Manejar el clic en el div "Guardar cambios"
         saveButton.addEventListener('click', function() {
-          document.getElementById('perfil_form').submit(); // Envía el formulario
-      });
+            document.getElementById('perfil_form').submit(); // Envía el formulario de perfil
+        });
+  
+        const editCuentaButton = document.getElementById('edit_cuenta_button');
+        const saveCambiosButton = document.getElementById('save_cambios_button');
+  
+        editCuentaButton.addEventListener('click', function() {
+            // Mostrar campos editables de la cuenta (correo y teléfono)
+            cuentaFields.mail.display.style.display = 'none';
+            cuentaFields.mail.input.style.display = 'block';
+            cuentaFields.telefono.display.style.display = 'none';
+            cuentaFields.telefono.input.style.display = 'block';
+  
+            editCuentaButton.style.display = 'none';
+            saveCambiosButton.style.display = 'inline-block';
+        });
+  
+        // Manejar el clic en el div "Guardar cambios" de la cuenta
+        saveCambiosButton.addEventListener('click', function() {
+            document.getElementById('cuenta_form').submit(); // Envía el formulario de cuenta
+        });
     });
-</script>
+  </script>
+  
+  
+
+  
     
 {% endblock %}
     <script src="https://kit.fontawesome.com/01aa86eea9.js" crossorigin="anonymous"></script>
     <script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 {% block js %}<script src="{% static 'js/cuenta-config.js' %}"></script>{% endblock %}    

@@ -91,6 +91,8 @@ def register(request):
 
 
 
+
+
 @login_required
 def cuentaconfig(request):
     user_profile, created = UserProfile.objects.get_or_create(user=request.user)
@@ -104,3 +106,4 @@ def cuentaconfig(request):
         form = UserProfileForm(instance=user_profile)
 
     return render(request, 'general/cuenta-config.html', {'form': form})
+
