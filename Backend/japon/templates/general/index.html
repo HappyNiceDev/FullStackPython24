@@ -1,0 +1,363 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}<link rel="stylesheet" href="{% static 'css/main.css' %}">{% endblock %}
+{% block contenido %}
+    <!-- Aquí empieza el slide -->
+    <div class="container">
+      <input id="slide1" type="radio" name="grupo" checked />
+      <input id="slide2" type="radio" name="grupo" />
+      <input id="slide3" type="radio" name="grupo" />
+      <input id="slide4" type="radio" name="grupo" />
+      <input id="slide5" type="radio" name="grupo" />
+      <div class="puntos">
+        <label for="slide1"></label>
+        <label for="slide2"></label>
+        <label for="slide3"></label>
+        <label for="slide4"></label>
+        <label for="slide5"></label>
+      </div>
+      <div class="slider">
+        <div class="slide" style="--img: url('../img/freepik.webp')">
+          <div class="contenido">
+            <h2>ORGANIZA TU VIAJE A JAPÓN</h2>
+            <p>
+              Organiza tu viaje a Japón para una aventura inolvidable.
+              Planifica destinos con anticipación.
+              Sumérgete en la cultura y disfruta de la belleza única que este país ofrece.
+            </p>
+          </div>
+        </div>
+        <div class="slide" style="--img: url('../img/freepik1.webp')">
+          <div class="contenido">
+            <h2>VISITA LUGARES MARAVILLOSOS</h2>
+            <p>
+              Descubre la magia de Japón al visitar lugares maravillosos.
+              Desde los santuarios ancestrales hasta los bulliciosos mercados callejeros,
+              cada rincón ofrece una experiencia única que te cautivará.
+            </p>
+          </div>
+        </div>
+        <div class="slide" style="--img: url('../img/freepik2.webp')">
+          <div class="contenido">
+            <h2>DESCUBRE Y APRENDE SOBRE CULTURA</h2>
+            <p>
+              Explora Japón y sumérgete en su rica cultura.
+              Desde la ceremonia del té hasta el arte del origami, cada experiencia ofrece
+              una ventana fascinante a la historia y tradiciones milenarias del país.
+            </p>
+          </div>
+        </div>
+        <div class="slide" style="--img: url('../img/freepik3.webp')">
+          <div class="contenido">
+            <h2>ADMIRA LA ARQUITECTURA LEGENDARIA DE JAPÓN</h2>
+            <p>
+              "Embárcate en un viaje fascinante para admirar la arquitectura legendaria de Japón.
+              Desde los templos antiguos hasta los rascacielos modernos, cada estructura cuenta
+              una historia única de ingenio y tradición.
+            </p>
+          </div>
+        </div>
+        <div class="slide" style="--img: url('../img/pxfuel.com.webp')">
+          <div class="contenido">
+            <h2>ADÉNTRATE EN LAS HISTORIAS SAGRADAS DE JAPÓN</h2>
+            <p>
+              Descubre las fascinantes historias sagradas de Japón, donde dioses y espíritus
+              entrelazan la realidad y la mitología. Explora templos ancestrales y santuarios
+              venerados que encierran siglos de tradición y sabiduría espiritual.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Aquí termina el slide -->
+  </header>
+  {% if user.is_authenticated %}
+  <p>Bienvenido, {{ user.username }}!</p>
+  <p>Podrás ver este mensaje solo si estas debidamente logueado</p>
+  {% else %}
+          <p>Bienvenido, visitante!</p>
+          <p>Por favor <a href="{% url 'login' %}">inicia sesión</a> o <a href="{% url 'register' %}">regístrate</a>.</p>
+      {% endif %}
+
+      {% if user.is_authenticated %}
+      <li>
+        <form id="logout-form" method="post" action="{% url 'logout' %}" style="display:inline;">
+            {% csrf_token %}
+            <button type="submit">Cerrar Sesión</button>
+        </form>
+    </li>
+  {% else %}
+      <li><a href="{% url 'login' %}">Iniciar Sesión</a></li>
+      <li><a href="{% url 'register' %}">Registrarse</a></li>
+      {% endif %}
+  <!-- Aquí empieza el contenido resumido -->
+  <div class="ResumenTematico">
+
+    <div class="MenuLateral">
+      <div class="TituloMenu">SECCIONES</div>
+      <ul>
+        <li>
+          <a href="#Arq">Arquitectura</a>
+        </li>
+        <li>
+          <a href="#Gas">Gastronomía</a>
+        </li>
+        <li>
+          <a href="#Mit">Mitos y Leyendas</a>
+        </li>
+        <li>
+          <a href="#Pai">Paisajes/Jardines</a>
+        </li>
+        <li>
+          <a href="#Pun">Puntos turísticos</a>
+        </li>
+        <li>
+          <a href="#Rel">Religión</a>
+        </li>
+      </ul>
+    </div>
+
+
+    <div class="ContenidoResumido">
+      <section id="Arq">
+        <h2>Arquitectura</h2>
+        <div class="ContenidoImg">
+          <img alt="arquitectura" src="{% static 'img\usoarquitectura.com.webp' %}">
+        </div>
+        <p>La arquitectura japonesa es una manifestación sorprendente de la rica historia, la espiritualidad y la
+          ingeniería avanzada de este país.
+          Desde antiguos templos hasta modernos rascacielos, Japón ofrece una amplia gama de estilos arquitectónicos que
+          reflejan su evolución a
+          lo largo de los siglos.
+          Los templos y santuarios son quizás los ejemplos más emblemáticos de la arquitectura tradicional japonesa.
+          Construidos en armonía con la
+          naturaleza circundante, estos lugares sagrados suelen caracterizarse por sus tejados de paja, paredes de
+          madera y elaboradas puertas
+          torii. El Templo de Kinkakuji en Kioto, con su icónico pabellón dorado reflejándose en un estanque, y el
+          Santuario de Itsukushima en
+          Miyajima, conocido por su torii flotante, son solo dos ejemplos destacados.
+          Por otro lado, Japón también es conocido por su innovación arquitectónica contemporánea. En las bulliciosas
+          ciudades como Tokio y Osaka,
+          los rascacielos futuristas dominan el horizonte, mostrando diseños vanguardistas y tecnología de vanguardia.
+          Edificios como la Tokyo
+          Skytree y el Abeno Harukas no solo ofrecen impresionantes vistas panorámicas, sino que también son ejemplos de
+          la audacia arquitectónica
+          japonesa.
+          Además de los templos y rascacielos, Japón alberga una variedad de edificios históricos y tradicionales, como
+          castillos, casas de té y
+          ryokans (posadas tradicionales). Los castillos japoneses, como el Castillo de Himeji y el Castillo de
+          Matsumoto, son famosos por su
+          arquitectura defensiva única y sus elegantes diseños.
+          En resumen, la arquitectura japonesa es una fusión de tradición y modernidad, donde la estética, la
+          funcionalidad y el respeto por la
+          naturaleza se entrelazan para crear espacios inspiradores y significativos. Ya sea explorando los antiguos
+          templos de Kioto,
+          maravillándose con los rascacielos de Tokio o sumergiéndose en la tranquilidad de una posada tradicional, la
+          arquitectura de Japón
+          ofrece una experiencia única y enriquecedora para todos los visitantes.</p>
+        <div class="frame">
+          <a href="{% url 'arquitectura' %}" class="custom-btn btn-read">Leer más...</a>
+        </div>
+      </section>
+      <section id="Gas">
+        <h2>Gastronomía</h2>
+        <div class="ContenidoImg">
+          <img alt="gastronomia" src="{% static 'img/destacada_google.webp' %}">
+        </div>
+        <p>La gastronomía japonesa es una expresión culinaria refinada y diversa que ha cautivado al mundo con su sabor
+          exquisito y su presentación
+          artística. Con una rica historia que se remonta siglos atrás, la cocina japonesa se caracteriza por su énfasis
+          en ingredientes frescos,
+          técnicas de cocción precisas y estética visual.
+          Uno de los elementos más emblemáticos de la gastronomía japonesa es el sushi, que se ha convertido en un plato
+          icónico en todo el mundo.
+          El sushi se prepara con arroz sazonado y pescado crudo fresco, aunque también puede incluir mariscos,
+          vegetales y otros ingredientes.
+          La meticulosa preparación y presentación del sushi reflejan la dedicación japonesa a la excelencia culinaria.
+          Otro plato destacado es el ramen, un popular plato de fideos servido en un caldo sabroso. Originario de China
+          pero adoptado y adaptado
+          por Japón, el ramen varía en sabores y estilos según la región, con opciones que incluyen caldos de cerdo,
+          pollo o pescado, acompañados
+          de fideos y una variedad de ingredientes como huevo, cerdo asado, cebolla verde y alga nori.
+          La cocina japonesa también es conocida por su amplia variedad de platos a la parrilla, como el yakitori
+          (brochetas de pollo), el yakiniku
+          (carne a la parrilla) y el okonomiyaki (una especie de tortilla japonesa). Estos platos reflejan la influencia
+          de la cocina japonesa en
+          la cocina asiática, así como la habilidad japonesa para realzar el sabor natural de los ingredientes.
+          Además de estos platos, Japón también es famoso por su amplia variedad de dulces y postres, como el mochi
+          (pastel de arroz), el dorayaki
+          (pastel relleno de judía dulce) y el wagashi (dulces tradicionales japoneses), que suelen servirse con té
+          verde.
+          En resumen, la gastronomía japonesa es una deliciosa y variada experiencia culinaria que combina tradición,
+          frescura y creatividad en
+          cada bocado. Desde el sushi fresco hasta el reconfortante ramen, la cocina japonesa sigue cautivando a los
+          paladares de todo el mundo
+          con su sabor auténtico y su refinada artesanía culinaria.</p>
+        <div class="frame">
+          <a href="{% url 'gastronomia' %}" class="custom-btn btn-read">Leer más...</a>
+        </div>
+      </section>
+      <section id="Mit">
+        <h2>Mitos y Leyendas</h2>
+        <div class="ContenidoImg">
+          <img alt="mitos-y-leyendas" src="{% static 'img/coleccionescheveres.webp' %}">
+        </div>
+        <p>Los mitos y leyendas de Japón ofrecen un fascinante vistazo a la rica tradición cultural y espiritual del
+          país. Desde antiguas historias
+          sobre dioses y héroes hasta relatos de criaturas míticas y seres sobrenaturales, estas narrativas han
+          capturado la imaginación de generaciones.
+          Uno de los mitos más conocidos es el de Amaterasu, la diosa del sol en la mitología japonesa. Según la
+          leyenda, Amaterasu se escondió en
+          una cueva enfurecida, sumiendo al mundo en la oscuridad. Sin embargo, fue persuadida por otros dioses para
+          salir de la cueva, trayendo
+          consigo la luz y la prosperidad de nuevo al mundo.
+          Otro mito destacado es el de Susanoo, el dios de la tormenta y el mar. Susanoo es conocido por derrotar a un
+          dragón de ocho cabezas
+          y por su papel en la creación de varias divinidades y objetos sagrados. Su historia ilustra la lucha entre el
+          caos y el orden, así
+          como la importancia de la redención y el heroísmo.
+          Además de los mitos sobre dioses y héroes, Japón está lleno de leyendas sobre yokai, criaturas sobrenaturales
+          y espíritus que habitan el
+          mundo natural. Desde el tengu, un ser con forma de pájaro con poderes sobrenaturales, hasta el kappa, un
+          demonio acuático que habita en
+          ríos y lagos, estas criaturas son una parte integral del folclore japonés y han inspirado numerosas historias
+          y tradiciones a lo largo de
+          los siglos.
+          En resumen, los mitos y leyendas de Japón son una ventana fascinante a la rica historia y cultura del país.
+          Estas narrativas no solo
+          entretienen, sino que también transmiten enseñanzas morales, valores culturales y una profunda conexión con la
+          naturaleza y lo sobrenatural.
+          A través de estas historias, se puede apreciar la imaginación creativa y la espiritualidad arraigada en el
+          corazón del pueblo japonés.</p>
+        <div class="frame">
+          <a href="{% url 'mitosyleyendas' %}" class="custom-btn btn-read">Leer más...</a>
+        </div>
+      </section>
+      <section id="Pai">
+        <h2>Paisajes y Jardines</h2>
+        <div class="ContenidoImg">
+          <img alt="paisajes-y-jardines" src="{% static 'img/hola.webp' %}">
+        </div>
+        <p>Los paisajes y jardines de Japón son una expresión sublime de la belleza natural y la armonía estética. Desde
+          las majestuosas montañas
+          hasta los serenos jardines zen, el paisaje japonés ofrece una variedad de escenarios que cautivan los sentidos
+          y elevan el espíritu.
+          Una característica distintiva de los paisajes japoneses es la presencia del Monte Fuji, un icono nacional y un
+          símbolo de la belleza
+          serena y la majestuosidad natural. Esta montaña sagrada, con su cumbre nevada y su forma icónica, ha inspirado
+          a artistas y poetas
+          durante siglos, y su imagen se ha convertido en un emblema de la identidad japonesa.
+          Además del Monte Fuji, Japón cuenta con una variedad de paisajes naturales que incluyen bosques exuberantes,
+          ríos serpenteantes,
+          cascadas impresionantes y costas pintorescas. Lugares como el Valle de Iya en la isla de Shikoku, el Bosque de
+          Bambú de Arashiyama en
+          Kioto y el Parque Nacional de Shiretoko en Hokkaido son solo algunos ejemplos de la diversidad y la belleza de
+          los paisajes japoneses.
+          Los jardines japoneses son otra manifestación notable de la estética japonesa y la conexión con la naturaleza.
+          Estos jardines, diseñados
+          con precisión y cuidado, buscan crear un ambiente de paz, armonía y contemplación. Caracterizados por
+          elementos como estanques serenos,
+          puentes de piedra, senderos sinuosos y árboles cuidadosamente podados, los jardines japoneses invitan a los
+          visitantes a sumergirse en la
+          belleza tranquila y la serenidad del entorno.
+          Los jardines zen, en particular, son conocidos por su minimalismo y su enfoque en la simplicidad y la
+          meditación. Estos jardines, que a
+          menudo consisten en arena cuidadosamente rastrillada y piedras colocadas estratégicamente, son lugares de
+          contemplación y reflexión,
+          donde se busca alcanzar la armonía espiritual y la tranquilidad interior.
+          En resumen, los paisajes y jardines de Japón son una celebración de la belleza natural y la sensibilidad
+          estética del país. Ya sea
+          contemplando la majestuosidad del Monte Fuji o paseando por un jardín zen tranquilo, estos espacios ofrecen
+          una oportunidad para
+          conectar con la naturaleza y encontrar inspiración en la serenidad del entorno.</p>
+        <div class="frame">
+          <a href="{% url 'paisajesyjardines' %}" class="custom-btn btn-read">Leer más...</a>
+        </div>
+      </section>
+      <section id="Pun">
+        <h2>Puntos turísticos</h2>
+        <div class="ContenidoImg">
+          <img alt="turisticos" src="{% static 'img/forumnatura.webp' %}">
+        </div>
+        <p>Japón, un país lleno de contrastes y maravillas, ofrece una amplia gama de puntos turísticos que cautivan a
+          visitantes de todo el mundo.
+          Desde antiguos templos y santuarios hasta modernas metrópolis y pintorescos pueblos, Japón tiene algo para
+          cada tipo de viajero.
+          Tokio, la vibrante capital de Japón, es un destino turístico imprescindible. Aquí, los visitantes pueden
+          explorar la fusión única de lo
+          tradicional y lo moderno en lugares como el Templo Sensoji en Asakusa y el bullicioso barrio de Shibuya,
+          conocido por su famoso cruce
+          peatonal y su animada vida nocturna.
+          Kioto, la antigua capital imperial, es otro punto destacado en el itinerario de cualquier viajero. Con sus
+          templos históricos, jardines
+          zen y calles empedradas, Kioto ofrece un vistazo fascinante a la rica historia y cultura de Japón. Lugares
+          como el Templo Kinkakuji (Pabellón Dorado) y el Bosque de Bambú de Arashiyama son visitas obligadas para los
+          amantes de la belleza natural y la arquitectura tradicional.
+          Además de Tokio y Kioto, Japón alberga una serie de destinos naturales impresionantes que atraen a viajeros
+          ávidos de aventuras al aire
+          libre. El Monte Fuji, el símbolo más icónico de Japón, ofrece la oportunidad de escalar sus majestuosas
+          cumbres o simplemente disfrutar
+          de las impresionantes vistas desde la distancia. El Parque Nacional de Hakone, con sus aguas termales
+          naturales y vistas panorámicas del
+          Monte Fuji, es otro destino popular para los amantes de la naturaleza.
+          Para aquellos interesados en la cultura y la historia japonesa, Hiroshima y Nagasaki son destinos
+          significativos que conmemoran los
+          trágicos eventos de la Segunda Guerra Mundial. El Parque Memorial de la Paz de Hiroshima y el Museo Memorial
+          de la Paz de Nagasaki son
+          lugares conmovedores que ofrecen una oportunidad para reflexionar sobre la devastación causada por la guerra y
+          promover la paz y la
+          reconciliación.
+          En resumen, Japón es un país lleno de puntos turísticos fascinantes que ofrecen una experiencia única y
+          enriquecedora para los viajeros.
+          Ya sea explorando la bulliciosa vida urbana de Tokio, sumergiéndose en la serenidad de los templos antiguos de
+          Kioto o maravillándose
+          con la belleza natural del Monte Fuji, Japón ofrece algo para todos los gustos y preferencias.</p>
+        <div class="frame">
+          <a href="{% url 'puntosturisticos' %}" class="custom-btn btn-read">Leer más...</a>
+        </div>
+      </section>
+      <section id="Rel">
+        <h2>Religión</h2>
+        <div class="ContenidoImg">
+          <img alt="religion" src="{% static 'img/derutaenfamilia.webp' %}">
+        </div>
+        <p>La religión en Japón es una parte integral de la cultura y la identidad nacional, con una mezcla única de
+          tradiciones indígenas y
+          creencias importadas a lo largo de los siglos. Aunque el país no tiene una religión oficial, el shintoísmo y
+          el budismo son las dos
+          principales prácticas espirituales que han moldeado la sociedad japonesa.
+          El shintoísmo, la religión indígena de Japón, se centra en la adoración de los kami, espíritus o deidades que
+          habitan en la naturaleza
+          y en objetos sagrados. Los santuarios shintoístas, marcados por sus torii rojos y blancos, sirven como lugares
+          de culto y rituales para
+          venerar a los kami y buscar su protección y bendiciones. Los rituales shintoístas, como la purificación con
+          agua y las ofrendas de
+          comida y sake, son parte integral de la vida cotidiana y se realizan en ocasiones especiales como festivales y
+          ceremonias familiares.
+          Por otro lado, el budismo llegó a Japón desde la India y China en el siglo VI y se convirtió en otra
+          influencia importante en la
+          espiritualidad japonesa. El budismo japonés incluye varias escuelas y sectas, cada una con sus propias
+          enseñanzas y prácticas.
+          Los templos budistas, con sus imponentes pagodas y estatuas de Buda, sirven como lugares de adoración y
+          meditación para los seguidores
+          de esta fe.
+          Aunque el shintoísmo y el budismo son las principales religiones en Japón, muchas personas practican ambas
+          creencias simultáneamente,
+          en lo que se conoce como sincretismo religioso. Esta dualidad espiritual es evidente en muchas facetas de la
+          vida japonesa, desde las
+          celebraciones de festivales shintoístas hasta las ceremonias de funeral budistas.
+          En resumen, la religión en Japón es una combinación de tradiciones ancestrales y creencias importadas que han
+          moldeado la identidad
+          espiritual del país. A través del shintoísmo y el budismo, los japoneses encuentran una conexión con lo divino
+          y una fuente de
+          significado y consuelo en su vida diaria.
+        </p>
+        <div class="frame">
+          <a href="{% url 'religion' %}" class="custom-btn btn-read">Leer más...</a>
+        </div>
+      </section>
+    </div>
+  </div>
+  <!-- Aquí termina el contenido resumido -->
+{% endblock %}
+{% block js %}<script src="{% static 'js/main.js' %}"></script>{% endblock %}

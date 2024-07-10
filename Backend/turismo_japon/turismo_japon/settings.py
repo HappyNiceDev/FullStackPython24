@@ -139,7 +139,8 @@ SESSION_COOKIE_SECURE = False  # Para entorno de desarrollo local
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS = [ BASE_DIR / 'static',]
+# Ruta base donde se almacenarán los archivos estáticos para producción
+STATIC_ROOT = os.path.join(BASE_DIR, 'Archi')
 
 
 # Default primary key field type
