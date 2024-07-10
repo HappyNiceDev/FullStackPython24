@@ -1,13 +1,8 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponseRedirect
-from .models import Contact
-from django.contrib.auth import login as auth_login
-from django.contrib.auth.models import User
-from .forms import RegisterForm
-from django.db import IntegrityError
+from .models import Contact, UserProfile
 from django.contrib.auth import login
-from .forms import UserProfileForm
-from .models import UserProfile
+from .forms import RegisterForm, UserProfileForm
+from django.db import IntegrityError
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
