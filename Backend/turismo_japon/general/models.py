@@ -27,6 +27,7 @@ class Contact(models.Model):
     nombre = models.TextField(blank=True, null=True)
     apellido = models.TextField(blank=True, null=True)
     telefono = models.DecimalField(max_digits=65535, decimal_places=65535, blank=True, null=True)
+    telefono = models.DecimalField(max_digits=65535, decimal_places=65535, blank=True, null=True)
     mail = models.TextField(blank=True, null=True)
     asunto = models.TextField(blank=True, null=True)
     mensaje = models.TextField(blank=True, null=True)
