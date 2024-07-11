@@ -77,21 +77,25 @@ class AuthUserUserPermissions(models.Model):
         unique_together = (('user', 'permission'),)
 
 
-class BlogSaved(models.Model):
-    coment_id = models.TextField(primary_key=True)  # This field type is a guess.
-    user_id = models.IntegerField(blank=True, null=True)
-    destin_id = models.IntegerField(blank=True, null=True)
+class Comments(models.Model):
+    comentario_id = models.AutoField(primary_key=True)
+    user = models.ForeignKey('UserProfile', models.DO_NOTHING)
+    coment = models.TextField()
+    timestamp = models.DateTimeField()
+    tematic = models.TextField()
+    num_img = models.IntegerField()
 
     class Meta:
         managed = False
-        db_table = 'blog_saved'
+        db_table = 'comments'
+        db_table_comment = 'Tabla de comentarios sobre las imagenes del totem dentro del las tematicas'
 
 
 class Contacto(models.Model):
     contacto_id = models.AutoField(primary_key=True)
     nombre = models.TextField(blank=True, null=True)
     apellido = models.TextField(blank=True, null=True)
-    telefono = models.IntegerField(blank=True, null=True)
+    telefono = models.DecimalField(max_digits=65535, decimal_places=65535, blank=True, null=True)
     mail = models.TextField(blank=True, null=True)
     asunto = models.TextField(blank=True, null=True)
     mensaje = models.TextField(blank=True, null=True)
@@ -103,19 +107,19 @@ class Contacto(models.Model):
         db_table = 'contacto'
 
 
-class DataUser(models.Model):
-    user_id = models.IntegerField(primary_key=True)
-    usuario = models.TextField(blank=True, null=True)  # This field type is a guess.
-    e_mail = models.TextField(db_column='e-mail', blank=True, null=True)  # Field renamed to remove unsuitable characters. This field type is a guess.
-    telefono = models.IntegerField(blank=True, null=True)
-    genero = models.TextField(blank=True, null=True)  # This field type is a guess.
-    fech_nac = models.IntegerField(blank=True, null=True)
-    nacion_user = models.TextField(blank=True, null=True)  # This field type is a guess.
-    img_user = models.BinaryField(blank=True, null=True)
+class Destination(models.Model):
+    destination_id = models.AutoField(primary_key=True)
+    name_destination = models.TextField()
+    full_address = models.TextField()
+    longitude = models.FloatField()
+    latitude = models.FloatField()
+    tematic = models.TextField()
+    num_img = models.IntegerField()
+    weighting = models.IntegerField(blank=True, null=True)
 
     class Meta:
         managed = False
-        db_table = 'data_user'
+        db_table = 'destination'
 
 
 class DjangoAdminLog(models.Model):
@@ -163,44 +167,62 @@ class DjangoSession(models.Model):
         db_table = 'django_session'
 
 
-class ImgTematic(models.Model):
-    user_id = models.IntegerField()
-    tematica = models.TextField(blank=True, null=True)  # This field type is a guess.
-    img_tematica = models.TextField(blank=True, null=True)  # This field type is a guess.
+class RoutesDestination(models.Model):
+    route = models.ForeignKey('RoutesSaved', models.DO_NOTHING)
+    destination = models.ForeignKey(Destination, models.DO_NOTHING)
 
     class Meta:
         managed = False
-        db_table = 'img_tematic'
+        db_table = 'routes_destination'
 
 
 class RoutesSaved(models.Model):
-    route_id = models.IntegerField(primary_key=True)
-    user_id = models.IntegerField(blank=True, null=True)
-    nomb_route = models.TextField(blank=True, null=True)  # This field type is a guess.
-    date_create = models.IntegerField(blank=True, null=True)
-    position_dom = models.IntegerField(blank=True, null=True)
+    route_id = models.AutoField(primary_key=True)
+    user = models.ForeignKey('UserProfile', models.DO_NOTHING)
+    name_route = models.TextField()
+    timestamp = models.DateTimeField()
+    position_dom = models.IntegerField()
 
     class Meta:
         managed = False
         db_table = 'routes_saved'
 
 
-class SecureUser(models.Model):
-    user_id = models.IntegerField()
-    user_pass = models.TextField(blank=True, null=True)  # This field type is a guess.
+class Sesion(models.Model):
+    user = models.ForeignKey('UserProfile', models.DO_NOTHING)
+    token = models.TextField()
+    pc_mac = models.TextField()  # This field type is a guess.
+    ip_public = models.GenericIPAddressField()
+    time_sesion = models.DateTimeField()
 
     class Meta:
         managed = False
-        db_table = 'secure_user'
+        db_table = 'sesion'
+        db_table_comment = 'Datos de la sesion'
 
 
-class UserSesion(models.Model):
-    user_id = models.IntegerField()
-    token_user = models.TextField(blank=True, null=True)  # This field type is a guess.
-    pc_mac = models.TextField(blank=True, null=True)  # This field type is a guess.
-    ip_public = models.IntegerField(blank=True, null=True)
-    hour_sesion = models.TimeField(blank=True, null=True)
+class TematicSaved(models.Model):
+    user = models.ForeignKey('UserProfile', models.DO_NOTHING)
+    tematic = models.TextField()
+    num_img = models.IntegerField()
 
     class Meta:
         managed = False
-        db_table = 'user_sesion'
+        db_table = 'tematic_saved'
+        db_table_comment = 'Tematica del usuario'
+
+
+class UserProfile(models.Model):
+    user_id = models.AutoField(primary_key=True)
+    usuario = models.TextField(blank=True, null=True)
+    mail = models.TextField(blank=True, null=True)
+    telefono = models.DecimalField(max_digits=65535, decimal_places=65535, blank=True, null=True)
+    genero = models.TextField(blank=True, null=True)
+    fech_nac = models.DateField(blank=True, null=True)
+    pais = models.TextField(blank=True, null=True)
+    avatar = models.BinaryField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'user_profile'
+        db_table_comment = 'Tabla que describe los datos de la persona'
