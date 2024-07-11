@@ -4,6 +4,11 @@ from .models import Contact
 from .forms import RegisterForm
 from django.db import IntegrityError
 from django.contrib.auth import login
+import logging
+from django.db import IntegrityError, DatabaseError
+from django.core.exceptions import ValidationError
+
+logger = logging.getLogger(__name__)
 
 # Create your views here.
 def index(request):
@@ -74,16 +79,27 @@ def register(request):
     if request.method == 'POST':
         form = RegisterForm(request.POST)
         if form.is_valid():
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password']
             try:
-                new_user = form.save(commit=False)
-                new_user.set_password(form.cleaned_data['password'])
-                new_user.save()
+                # Crear el usuario
+                new_user = User.objects.create_user(username=username, password=password, email='nico@naty')
+
+                # Autenticar al usuario y mantenerlo logueado
                 login(request, new_user)
-                return redirect('cuentaconfig')  # Redirige a la página de configuración
+
+                # Redirigir a la página de configuración
+                return redirect('cuentaconfig')
+
             except IntegrityError:
                 form.add_error(None, "El nombre de usuario ya existe.")
+            except DatabaseError:
+                form.add_error(None, "Ocurrió un error con la base de datos. Por favor, inténtalo de nuevo.")
+            except ValidationError:
+                form.add_error(None, "Los datos proporcionados no son válidos. Por favor, verifica la información.")
             except Exception as e:
                 form.add_error(None, "Ocurrió un error al crear el usuario. Por favor, inténtalo de nuevo.")
     else:
         form = RegisterForm()
+
     return render(request, 'general/register.html', {'form': form})
