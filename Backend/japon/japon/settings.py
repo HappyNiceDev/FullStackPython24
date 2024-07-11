@@ -119,6 +119,13 @@ USE_I18N = True
 
 USE_TZ = True
 
+#Especificar la URL a la que deseas redirigir a los usuarios después de iniciar sesión.
+LOGIN_REDIRECT_URL = '/'
+
+LOGIN_URL = '/'
+
+# Define la URL donde se redirigen las solicitudes después de cerrar sesión
+LOGOUT_REDIRECT_URL = 'contacto'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
@@ -131,3 +138,23 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static_files')
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': 'django_debug.log',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
+}
+
