@@ -1,0 +1,234 @@
+/* <-- CSS GENERALES --> */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Poppins;
+}
+
+
+body {
+  width: 100%;
+  background: #d5d1c5;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* <!-- Termina CSS GENERALES --> */
+
+
+
+/* <!-- Aquí empieza el formulario --> */
+.container-form {
+  display: flex;
+  margin:2em 2em 2em 2em;
+  justify-content: center;
+  flex: 1; /* Esto hace que la sección de contenido ocupe todo el espacio restante */
+}
+
+.info-form{
+  width: 50%;
+  margin-right: 2em;
+  display: flex;
+  flex-direction: column;
+}
+.formulario {
+  width: 40%;
+  background-color: #fff;
+  padding:1em 1em 1em 1em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-radius: 20px;
+  border:3px solid #b4a58f;
+}
+
+.container-form h2 {
+  margin-bottom: 15px;
+  font-size: 2.3em;
+  background-color: #808366;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  color:#fff;
+  
+}
+
+.container-form p {
+  font-size: 1.5em;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  color:#242A20;
+}
+
+.container-form a {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  display: inline-block;
+  text-decoration: none;
+  color: #242A20;
+}
+
+.container-form button a{
+  color: #fff;
+}
+
+.container-form button a:hover{
+  color: #242A20;
+}
+
+.container-form a i {
+  color: #808366;
+  margin-right: 10px;
+}
+
+.formulario .campo {
+  width: 100%;
+  padding: 15px 10px;
+  font-size: 16px;
+  border: 2px solid #b4a58f;
+  margin-top: 20px;
+  border-radius: 3px;
+  outline: 0px;
+  resize: none;
+}
+
+.formulario label{
+  font-size: 1.2em;
+}
+.formulario select{
+  margin-top: 20px;
+}
+.formulario select, .formulario input[type="file"]{
+  margin-top: 20px;
+}
+
+/*Botón Enviar*/
+.frame {
+  width: 90%;
+  margin: 40px auto;
+  text-align: center;
+}
+.button-btn {
+  margin: 20px;
+  text-decoration: none; 
+  color: inherit;
+}
+.custom-btn {
+  width: 130px;
+  height: 40px;
+  color: #fff;
+  font-size: 1.2em;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+}
+.btn-read {
+  width: 130px;
+  height: 40px;
+  line-height: 42px;
+  padding: 0;
+  border: none;
+  background: #d4c5ae;
+  background: linear-gradient(0deg, #57664c 40%, #d4c5ae 100%);
+  font-family: "Lato";
+}
+.btn-read:hover {
+  color: #242a20;
+  background: transparent;
+  box-shadow:none;
+}
+.btn-read:before,
+.btn-read:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:4px;
+  width:0;
+  background: #d4c5ae;
+  box-shadow:
+   -1px -1px 5px 0px #fff,
+   7px 7px 20px 0px #0003,
+   4px 4px 5px 0px #0002;
+  transition:400ms ease all;
+}
+.btn-read:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+.btn-read:hover:before,
+.btn-read:hover:after{
+  width:100%;
+  transition:800ms ease all;
+}
+
+/*--------- Validacion del contnido ingresado en el formulario ---------*/
+.container-form .errorBorde{
+  border: 1px solid #ff0000;
+}
+.container-form .error{
+  display: none;
+  color: #ff0000;
+}
+.container-form .errorAct{
+  display: block;
+}
+
+
+/* <!-- Aquí termina el formulario --> */
+
+
+/* Media Query */
+@media only screen and (max-width: 480px) {
+
+}
+
+@media only screen and (max-width: 600px){
+  
+}
+
+
+@media only screen and (max-width: 710px){
+ 
+}
+
+@media screen and (min-width: 800px) {
+
+}
+
+@media only screen and (max-width: 1024px){
+  
+    /*formulario*/
+  .container-form{
+  margin-top: 2em;
+  flex-direction: column;
+  align-items: center;
+  }
+  .info-form{
+  width: 80%;
+  margin-right: 2em;
+  display: flex;
+  flex-direction: column;
+  }
+  .formulario {
+  width: 100%;
+  background-color: #fff;
+  padding:1em 1em 1em 1em;
+  border-radius: 20px;
+  border:2px solid #b4a58f;
+  }
+  }

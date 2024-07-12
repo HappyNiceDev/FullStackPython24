@@ -1,12 +1,15 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from .models import Contact
-from .forms import RegisterForm
+from .forms import UserRegisterForm
 from django.db import IntegrityError
 from django.contrib.auth import login
 import logging
 from django.db import IntegrityError, DatabaseError
 from django.core.exceptions import ValidationError
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib import messages
+
 
 logger = logging.getLogger(__name__)
 
@@ -68,12 +71,10 @@ def cuentaconfig(request):
 
 #---login---
 def login(request):
-    return render(request, 'general/login-temp.html')
-
-def logout(request):
-    return render(request, 'general/logout.html')
+    return render(request, 'general/login.html')
 
 
+'''
 
 def register(request):
     if request.method == 'POST':
@@ -103,3 +104,24 @@ def register(request):
         form = RegisterForm()
 
     return render(request, 'general/register.html', {'form': form})
+
+'''
+
+
+#--------------nico----------------------#
+
+
+
+def register(request):
+    if request.method == 'POST':
+        form = UserRegisterForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data['username']
+            messages.success(request, f'Usuario {username} creado correctamente')
+            
+    else:
+        form = UserRegisterForm()
+    
+    context = {'form':form}
+    return render(request, 'general/register.html', context)

@@ -16,10 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from app import views
+from app import views 
 from django.conf import settings
 from django.conf.urls.static import static
-from django.contrib.auth import views as auth_views
+from django.contrib.auth.views import LoginView, LogoutView
+
 
 urlpatterns = [
     #path('admin/', admin.site.urls),
@@ -32,11 +33,14 @@ urlpatterns = [
     path('religion/', views.religion, name='religion'),
     path('contacto/', views.contacto, name='contacto'),
 
-
     path('cuentaconfig/', views.cuentaconfig, name='cuentaconfig'),
+    #path('register/', views.register, name='register'),
+    path('login/', LoginView.as_view(template_name='general/login.html'), name='login'),
+    path('logout/', LogoutView.as_view(), name='logout'),
+
+    #-------------------nico----------------------------#
+
     path('register/', views.register, name='register'),
-    path('login/', auth_views.LoginView.as_view(template_name='general/login-temp.html'), name='login'),
-    path('logout/', auth_views.LogoutView.as_view(next_page='index'), name='logout'),
 
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
