@@ -62,7 +62,11 @@
             </li>
             <li><a href="{% url 'contacto' %}">CONTACTO</a></li>
             <li><a href="{% url 'login' %}">Iniciar sesion</a></li>
-            <li><a href="{% url 'logout' %}">Cerrar sesion</a></li>
+            
+          <li><form method="post" action="{% url 'logout' %}">
+            {% csrf_token %}
+            <button type="submit">Logout</button>
+        </form></li>
           </ul>
           </div>
           <div class="img_login"></div>
