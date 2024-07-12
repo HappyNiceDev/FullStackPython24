@@ -61,16 +61,29 @@
               </ul>
             </li>
             <li><a href="{% url 'contacto' %}">CONTACTO</a></li>
-            <li><a href="{% url 'login' %}">Iniciar sesion</a></li>
-            
-          <li><form method="post" action="{% url 'logout' %}">
-            {% csrf_token %}
-            <button type="submit">Logout</button>
-        </form></li>
+
+            {% if user.is_authenticated %}
+
+            <li>
+              <form method="post" action="{% url 'logout' %}">
+              {% csrf_token %}
+              <button type="submit">LOGOUT</button>
+              </form>
+            </li>
+
+            {% else %}
+
+            <li><a href="{% url 'login' %}">LOGIN</a></li>
+            <li><a href="{% url 'register' %}">REGISTRARCE</a></li>
+
+            {% endif %}
+          
           </ul>
+          {% if user.is_authenticated %}
           </div>
-          <div class="img_login"></div>
+          <a href="{% url 'cuentaconfig' %}"><div class="img_login"></div></a>
           </div>
+          {% endif %}
         </nav>
       </div>
     </div>

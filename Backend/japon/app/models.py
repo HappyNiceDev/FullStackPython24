@@ -100,7 +100,7 @@ class TematicSaved(models.Model):
 
 
 class UserProfile(models.Model):
-    user = models.ForeignKey('AuthUser', models.DO_NOTHING)
+    user = models.ForeignKey('AuthUser', models.CASCADE)
     telefono = models.DecimalField(max_digits=65535, decimal_places=65535, blank=True, null=True)
     genero = models.TextField(blank=True, null=True)
     fech_nac = models.DateField(blank=True, null=True)
@@ -111,6 +111,9 @@ class UserProfile(models.Model):
         managed = False
         db_table = '_user_profile'
         db_table_comment = 'Tabla que describe los datos de la persona'
+
+    def __str__(self):
+        return self.user.email
 
 
 class AuthGroup(models.Model):
@@ -158,6 +161,9 @@ class AuthUser(models.Model):
     class Meta:
         managed = False
         db_table = 'auth_user'
+
+    def __str__(self):
+        return self.email
 
 
 class AuthUserGroups(models.Model):

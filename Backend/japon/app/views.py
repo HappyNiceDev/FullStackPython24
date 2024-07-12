@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
-from .models import Contact
-from .forms import UserRegisterForm
+from .models import *
+from .forms import UserRegisterForm, InfoCuenta
 from django.db import IntegrityError
 from django.contrib.auth import login
 import logging
@@ -9,16 +9,15 @@ from django.db import IntegrityError, DatabaseError
 from django.core.exceptions import ValidationError
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 
 logger = logging.getLogger(__name__)
 
 # Create your views here.
 def index(request):
-    context = {}
-    if request.user.is_authenticated:
-        context['user'] = request.user
-    return render(request, 'general/index.html', context)
+    
+    return render(request, 'general/index.html')
 
 
 def arquitectura(request):
@@ -65,9 +64,18 @@ def contacto(request):
     #return render(request, 'tu_template.html')
     return render(request, 'general/contacto.html')
 
-
+@login_required
 def cuentaconfig(request):
-    return render(request, 'general/cuenta-config.html')
+   
+    if request.method == 'POST':
+        form = InfoCuenta(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('cuentaconfig')  # Redirigir a la página de perfil u otra página
+    else:
+        form = InfoCuenta(user = request.user.username)
+    
+    return render(request, 'general/cuenta-config.html', {'form': form})
 
 #---login---
 def login(request):

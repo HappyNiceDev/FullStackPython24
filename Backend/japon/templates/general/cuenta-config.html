@@ -32,19 +32,19 @@
             <div class="caja-info">
               <div class="tabla-config">
                 <div><p>Usuario</p></div>
-                <div><p>Nombre</p></div>
+                <div><p><input value="{{ user.username }}"></imput></p></div>
               </div>
               <div class="tabla-config">
                 <div><p>Fecha de Nacimiento</p></div>
-                <div><p>00/00/00</p></div>
+                <div><p>.</p></div>
               </div>
               <div class="tabla-config">
                 <div><p>Nacionalidad</p></div>
-                <div><p>Su nacionalidad</p></div>
+                <div><p>.</p></div>
               </div>
               <div class="tabla-config">
                 <div><p>Género</p></div>
-                <div><p>Masculino/Femenino</p></div>
+                <div><p>.</p></div>
               </div>
             </div>
           </div>
@@ -61,6 +61,11 @@
               <div class="tabla-config">
                 <div><p>Número de teléfono</p></div>
                 <div><p>01-2345-6789</p></div>
+                <form method="post">
+                  {% csrf_token %}
+                  {{ form.as_p }}
+                  <button type="submit">Save changes</button>
+              </form>
               </div>
             </div>
           </div>

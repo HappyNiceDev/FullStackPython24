@@ -125,7 +125,7 @@ LOGIN_REDIRECT_URL = '/'
 LOGIN_URL = '/'
 
 # Define la URL donde se redirigen las solicitudes después de cerrar sesión
-LOGOUT_REDIRECT_URL = 'contacto'
+LOGOUT_REDIRECT_URL = '/'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
