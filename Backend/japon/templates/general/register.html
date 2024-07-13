@@ -1,35 +1,33 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block css %}<link rel="stylesheet" href="{% static 'css/login-register.css' %}">{% endblock %}
+{% block css %}<link rel="stylesheet" href="{% static 'css/form_register.css' %}">{% endblock %}
 {% block contenido %}
 
-    <div class="formulario">
-        <form action="#" method="post"  enctype="multipart/form-data" autocomplete="off">
+    <div class="cont_form">
+        <form method="post" enctype="multipart/form-data" autocomplete="off">
         {% csrf_token %}
-        <input type="text" name="usuario" placeholder="Usuario *" class="campo">
+        
+        {{ form.username }}
         <div class="error">Usuario no disponible</div>
 
-        <input type="password" name="pwd" placeholder="Contraseña *" class="campo">
+        {{ form.password1 }}
         <div class="error">Debe ingresar un apellido valido sin espacio y sin numeros.</div>
 
         <div>
-          <input type="password" name="pwd" placeholder="Contraseña *" class="campo">
+          {{ form.password2 }}
           <div class="error">Debe ingresar un apellido valido sin espacio y sin numeros.</div>
         </div>
-
-        <input type="email" name="email" placeholder="Tu Email *" class="campo">
-        <div class="error">Debe ingresar correctamente un mail.</div>
         
-
         <label for="terminos" title="Sus datos serán utilizados solo con fines estadísticos.">
             <input type="checkbox" id="terminos" name="terminos">
             Acepto los términos y condiciones *
             <span class="error"> Debe seleccionar para continuar</span>
         </label>
+
         <div class="frame"><button class="custom-btn btn-read">Registrar</button></div>
       </form>
     </div>
 
   {% endblock %}
   
-  {% block js %}<script src="{% static 'js/login-register.js' %}"></script>{% endblock %}
+  {% block js %}<script src="{% static 'js/form_register.js' %}"></script>{% endblock %}

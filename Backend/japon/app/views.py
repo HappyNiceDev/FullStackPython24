@@ -1,24 +1,20 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from .models import *
-#from .forms import UserRegisterForm, InfoCuenta
-from django.db import IntegrityError
-from django.contrib.auth import login
-import logging
+from .forms import *
 from django.db import IntegrityError, DatabaseError
+from django.contrib.auth import login, logout, authenticate
+import logging
 from django.core.exceptions import ValidationError
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-
 
 logger = logging.getLogger(__name__)
 
 # Create your views here.
 def index(request):
-    
     return render(request, 'general/index.html')
-
 
 def arquitectura(request):
     return render(request, 'secciones/arquitectura.html')
@@ -64,9 +60,54 @@ def contacto(request):
     #return render(request, 'tu_template.html')
     return render(request, 'general/contacto.html')
 
+#--------------------------------------------------------------------------------------------#
+#                                 Rigitra y logea al usuario                                 #
+#--------------------------------------------------------------------------------------------#
+def register(request):
+    if request.method == 'POST':
+        form = FormRegister(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect('home')  # Redirigir a una página de inicio o cualquier otra página
+    else:
+        form = FormRegister()
+    return render(request, 'general/register.html', {'form': form})
+
+#--------------------------------------------------------------------------------------------#
+#                                 LOGIN                                                      #
+#--------------------------------------------------------------------------------------------#
+#---login---
+#def login(request):
+#    return render(request, 'general/login.html')
+
+def login_view(request):
+    if request.method == 'POST':
+        form = FormLogin(request, data=request.POST)
+        if form.is_valid():
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password')
+            user = authenticate(username=username, password=password)
+            if user is not None:
+                login(request, user)
+                return redirect('/')  # Redirigir a una página de inicio o cualquier otra página
+    else:
+        form = FormLogin()
+    return render(request, 'general/login.html', {'form': form})
+
+#--------------------------------------------------------------------------------------------#
+#                                 LOGOUT                                                     #
+#--------------------------------------------------------------------------------------------#
+def logout_view(request):
+    logout(request)
+    return redirect('login')  # Redirigir a la página de login u otra página
+
+#--------------------------------------------------------------------------------------------#
+#               Carga cuenta-config para cambiar datos del perfil del usuario                #
+#--------------------------------------------------------------------------------------------#
 @login_required
 def cuentaconfig(request):
-   
+    '''
     if request.method == 'POST':
         form = InfoCuenta(request.POST)
         if form.is_valid():
@@ -74,12 +115,10 @@ def cuentaconfig(request):
             return redirect('cuentaconfig')  # Redirigir a la página de perfil u otra página
     else:
         form = InfoCuenta(user = request.user.username)
-    
-    return render(request, 'general/cuenta-config.html', {'form': form})
+    '''
+    return render(request, 'general/cuenta-config.html') #, {'form': form}
 
-#---login---
-def login(request):
-    return render(request, 'general/login.html')
+
 
 
 '''
@@ -114,22 +153,3 @@ def register(request):
     return render(request, 'general/register.html', {'form': form})
 
 '''
-
-
-#--------------nico----------------------#
-
-
-
-def register(request):
-    if request.method == 'POST':
-        form = UserRegisterForm(request.POST)
-        if form.is_valid():
-            form.save()
-            username = form.cleaned_data['username']
-            messages.success(request, f'Usuario {username} creado correctamente')
-            
-    else:
-        form = UserRegisterForm()
-    
-    context = {'form':form}
-    return render(request, 'general/register.html', context)

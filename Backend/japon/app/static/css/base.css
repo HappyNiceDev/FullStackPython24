@@ -10,13 +10,16 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
+header {
   width: 100%;
+  min-height: 100vh;
   background: #d5d1c5;
+  position: relative;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  align-content: space-between;
 }
+
 
 /* <!-- Termina CSS GENERALES --> */
 /* <!-- Aquí empieza el nav --> */

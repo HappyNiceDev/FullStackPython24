@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from app import views 
+from app import views
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth.views import LoginView, LogoutView
@@ -34,12 +34,13 @@ urlpatterns = [
     path('contacto/', views.contacto, name='contacto'),
 
     path('cuentaconfig/', views.cuentaconfig, name='cuentaconfig'),
-    #path('register/', views.register, name='register'),
-    path('login/', LoginView.as_view(template_name='general/login.html'), name='login'),
-    path('logout/', LogoutView.as_view(), name='logout'),
+    
+    #path('login/', LoginView.as_view(template_name='general/login.html'), name='login'),
+    #path('logout/', LogoutView.as_view(), name='logout'),
 
-    #-------------------nico----------------------------#
-
+    path('login/', views.login_view, name='login'),
+    path('logout/', views.logout_view, name='logout'),
+    
     path('register/', views.register, name='register'),
 
 
