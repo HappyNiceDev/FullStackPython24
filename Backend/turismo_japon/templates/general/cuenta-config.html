@@ -11,101 +11,85 @@
         <div><li>Rutas guardadas</li></div>
         <div><li>Planificación de viaje</li></div>
       </div>
-      <!-- Contenido de Mi Cuenta -->
       <div class="informacion">
         <form id="perfil_form" method="POST">
-          {% csrf_token %}
-        <div class="contenido-config mi-cuenta Visible">
-          <div class="info-foto">
-              <img class="FotoPerfil" src="{% static 'img/usoarquitectura.com.webp' %}" alt="foto de perfil" />
-              <div class="foto-descripcion">
-                  <h3>Personaliza tu foto</h3>
-                  <p>Tu foto de perfil será visible para todos cuando hagas comentarios en las secciones.</p>
-                  <div class="btn-foto">Cambiar foto</div>
-              </div>
-          </div>
-          <div class="info-perfil">
-            <div class="info-edit">
-                <h3>Información de Perfil</h3>
-                <!-- Botón para alternar entre modo de lectura y modo de edición -->
-                <div id="edit_button" type="button" id="btn-editar-perfil" class="btn-foto">Editar perfil</div>
-                <div type="submit" id="save_button" class="btn-foto save-button" style="display: none;">Guardar</div>
+            {% csrf_token %}
+            <div class="contenido-config mi-cuenta Visible">
+                <div class="info-foto">
+                    <img class="FotoPerfil" src="{% static 'img/usoarquitectura.com.webp' %}" alt="foto de perfil" />
+                    <div class="foto-descripcion">
+                        <h3>Personaliza tu foto</h3>
+                        <p>Tu foto de perfil será visible para todos cuando hagas comentarios en las secciones.</p>
+                        <div class="btn-foto">Cambiar foto</div>
+                    </div>
+                </div>
+                <div class="info-perfil">
+                    <div class="info-edit">
+                        <h3>Información de Perfil</h3>
+                        <div id="edit_button" class="btn-foto">Editar perfil</div>
+                        <button type="button" id="save_button" class="btn-foto save-button" style="display: none;">Guardar</button>
+                    </div>
+                    <div class="caja-info">
+                        <div class="tabla-config">
+                            <label for="id_usuario"><p>Usuario</p></label>
+                            <div id="usuario_value" class="editable-field">
+                                <p class="value-display">{{ form.usuario.value }}</p>
+                                <input type="text" id="id_usuario_input" name="usuario" value="{{ user_profile.usuario }}" style="display: none;">
+                            </div>
+                        </div>
+                        <div class="tabla-config">
+                          <label for="id_fech_nac"><p>Fecha de Nacimiento</p></label>
+                          <div id="fech_nac_value" class="editable-field">
+                              <p class="value-display">{{ form.fech_nac.value }}</p>
+                              <input type="date" id="id_fech_nac_input" name="fech_nac" value="{{ user_profile.fech_nac|date:"Y-m-d" }}" style="display: none;">
+                          </div>
+                      </div>
+                        <div class="tabla-config">
+                            <label for="id_pais"><p>Nacionalidad</p></label>
+                            <div id="pais_value" class="editable-field">
+                                <p class="value-display">{{ form.pais.value }}</p>
+                                <input type="text" id="id_pais_input" name="pais" value="{{ user_profile.pais }}" style="display: none;">
+                            </div>
+                        </div>
+                        <div class="tabla-config">
+                            <label for="id_genero"><p>Género</p></label>
+                            <div id="genero_value" class="editable-field">
+                                <p class="value-display">{{ form.genero.value }}</p>
+                                <select id="id_genero_input" name="genero" style="display: none;">
+                                    <option value="Masculino" {% if user_profile.genero == 'Masculino' %} selected {% endif %}>Masculino</option>
+                                    <option value="Femenino" {% if user_profile.genero == 'Femenino' %} selected {% endif %}>Femenino</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="info-cuenta">
+                    <div class="info-edit">
+                        <h3>Información de Cuenta</h3>
+                    </div>
+                    <div class="cuenta-campos">
+                        <div class="tabla-config">
+                            <label for="id_mail"><p>Correo electrónico</p></label>
+                            <div id="mail_value" class="editable-field">
+                                <p class="value-display">{{ form.mail.value }}</p>
+                                <input type="email" id="id_mail_input" name="mail" value="{{ user_profile.mail }}" style="display: none;">
+                            </div>
+                        </div>
+                        <div class="tabla-config">
+                            <label for="id_telefono"><p>Número de teléfono</p></label>
+                            <div id="telefono_value" class="editable-field">
+                                <p class="value-display">{{ form.telefono.value }}</p>
+                                <input type="tel" id="id_telefono_input" name="telefono" value="{{ user_profile.telefono }}" style="display: none;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="caja-info">
-                <div class="tabla-config">
-                    <label for="id_usuario"><p>Usuario</p></label>
-                    <!-- Contenedor para mostrar el valor actual del campo usuario -->
-                    <div id="usuario_value" class="editable-field">
-                        <p class="value-display">{{ form.usuario.value }}</p>
-                        <!-- Input para editar, inicialmente oculto -->
-                        <input type="text" id="id_usuario_input" name="usuario" value="{{ user_profile.usuario }}" style="display: none;">
-                    </div>
-                </div>
-            
-                <div class="tabla-config">
-                    <label for="id_fech_nac"><p>Fecha de Nacimiento</p></label>
-                    <!-- Contenedor para mostrar el valor actual del campo -->
-                    <div id="fech_nac_value" class="editable-field">
-                        <p class="value-display">{{ form.fech_nac.value }}</p>
-                        <!-- Input para editar, inicialmente oculto -->
-                        <input type="date" id="id_fech_nac_input" name="fech_nac" value="{{ user_profile.fech_nac }}" style="display: none;">
-                    </div>
-                </div>
-            
-                <div class="tabla-config">
-                    <label for="id_pais"><p>Nacionalidad</p></label>
-                    <!-- Contenedor para mostrar el valor actual del campo -->
-                    <div id="pais_value" class="editable-field">
-                        <p class="value-display">{{ form.pais.value }}</p>
-                        <!-- Input para editar, inicialmente oculto -->
-                        <input type="text" id="id_pais_input" name="pais" value="{{ user_profile.pais }}" style="display: none;">
-                    </div>
-                </div>
-            
-                <div class="tabla-config">
-                    <label for="id_genero"><p>Género</p></label>
-                    <!-- Contenedor para mostrar el valor actual del campo -->
-                    <div id="genero_value" class="editable-field">
-                        <p class="value-display">{{ form.genero.value }}</p>
-                        <!-- Input para editar, inicialmente oculto -->
-                        <select id="id_genero_input" name="genero" style="display: none;">
-                            <option value="Masculino" {% if user_profile.genero == 'Masculino' %} selected {% endif %}>Masculino</option>
-                            <option value="Femenino" {% if user_profile.genero == 'Femenino' %} selected {% endif %}>Femenino</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="info-cuenta">
-            <div class="info-edit">
-                <h3>Información de Cuenta</h3>
-            </div>
-            <div class="cuenta-campos" >
-                 <div class="tabla-config">
-                  <label for="id_mail"><p>Correo electrónico</p></label>
-                  <!-- Contenedor para mostrar el valor actual del campo -->
-                  <div id="mail_value" class="editable-field">
-                      <p class="value-display">{{ form.mail.value }}</p>
-                      <!-- Input para editar, inicialmente oculto -->
-                      <input type="email" id="id_mail_input" name="mail" value="{{ user_profile.mail }}" style="display: none;">
-                  </div>
-                </div>
-                <div class="tabla-config">
-                    <label for="id_telefono"><p>Número de teléfono</p></label>
-                    <!-- Contenedor para mostrar el valor actual del campo -->
-                    <div id="telefono_value" class="editable-field">
-                      <p class="value-display">{{ form.telefono.value }}</p>
-                      <!-- Input para editar, inicialmente oculto -->
-                      <input type="tel" id="id_telefono_input" name="telefono" value="{{ user_profile.telefono }}" style="display: none;">
-                    </div>
-                </div>
-          </div>
-        </div>
         </form>
-      </div>
-        <!-- Contenido de Favoritos -->
+    </div>
+    
 
-
+      <!-- Contenido de Favoritos -->
 
         <div class="contenido-config favoritos">
           <div class="Fav-contenido">
@@ -363,12 +347,10 @@
   </main>
 
   <script>
-    //-----Editar datos de perfil y cuenta-----//
     document.addEventListener('DOMContentLoaded', function() {
         const editButton = document.getElementById('edit_button');
         const saveButton = document.getElementById('save_button');
     
-        // Contenedores y campos para todos los campos editables del perfil
         const perfilFields = [
             {
                 display: document.querySelector('#usuario_value .value-display'),
@@ -387,8 +369,7 @@
                 input: document.getElementById('id_genero_input')
             },
         ];
-  
-        // Contenedores y campos para correo y teléfono de la cuenta
+
         const cuentaFields = {
             mail: {
                 display: document.querySelector('#mail_value .value-display'),
@@ -401,55 +382,34 @@
         };
     
         editButton.addEventListener('click', function() {
-            // Mostrar todos los campos editables del perfil
             perfilFields.forEach(field => {
                 field.display.style.display = 'none';
                 field.input.style.display = 'block';
             });
-  
-            // Mostrar campos editables de la cuenta (correo y teléfono)
+
             cuentaFields.mail.display.style.display = 'none';
             cuentaFields.mail.input.style.display = 'block';
             cuentaFields.telefono.display.style.display = 'none';
             cuentaFields.telefono.input.style.display = 'block';
-    
+
             editButton.style.display = 'none';
             saveButton.style.display = 'inline-block';
         });
-    
-        // Manejar el clic en el div "Guardar cambios"
+
         saveButton.addEventListener('click', function() {
-            document.getElementById('perfil_form').submit(); // Envía el formulario de perfil
-        });
-  
-        const editCuentaButton = document.getElementById('edit_cuenta_button');
-        const saveCambiosButton = document.getElementById('save_cambios_button');
-  
-        editCuentaButton.addEventListener('click', function() {
-            // Mostrar campos editables de la cuenta (correo y teléfono)
-            cuentaFields.mail.display.style.display = 'none';
-            cuentaFields.mail.input.style.display = 'block';
-            cuentaFields.telefono.display.style.display = 'none';
-            cuentaFields.telefono.input.style.display = 'block';
-  
-            editCuentaButton.style.display = 'none';
-            saveCambiosButton.style.display = 'inline-block';
-        });
-  
-        // Manejar el clic en el div "Guardar cambios" de la cuenta
-        saveCambiosButton.addEventListener('click', function() {
-            document.getElementById('cuenta_form').submit(); // Envía el formulario de cuenta
+            document.getElementById('perfil_form').submit(); // Envía el formulario
         });
     });
-  </script>
+</script>
+
   
   
 
   
-    
-{% endblock %}
     <script src="https://kit.fontawesome.com/01aa86eea9.js" crossorigin="anonymous"></script>
     <script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>    
+{% endblock %}
+
 
 {% block js %}<script src="{% static 'js/cuenta-config.js' %}"></script>{% endblock %}    

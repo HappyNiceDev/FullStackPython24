@@ -2,10 +2,12 @@ from django.shortcuts import render, redirect
 from .models import Contact, UserProfile
 from django.contrib.auth import login
 from .forms import RegisterForm, UserProfileForm
-from django.db import IntegrityError
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
+
+def index(request):
+    return render(request, 'general/index.html')
 
 def contacto(request):
     #Contactos form
@@ -25,7 +27,7 @@ def contacto(request):
         terminos_condiciones = request.POST.get('terminos') == 'on'
 
         # Guardar en la base de datos
-        nuevo_contacto = Contact(nombre=nombre, apellido=apellido, telefono=telefono, mail=mail,
+        nuevo_contacto = Contact(nombre=nombre, apellido=apellido, telefono=telefono, mail=mail,)
         nuevo_contacto = Contact(nombre=nombre, apellido=apellido, telefono=telefono, mail=mail,
                                 asunto=asunto, mensaje=mensaje, adjunto=adjunto_binario, terminos_condiciones=terminos_condiciones)
         nuevo_contacto.save()
@@ -70,22 +72,19 @@ def register(request):
     if request.method == 'POST':
         form = RegisterForm(request.POST)
         if form.is_valid():
-            try:
-                new_user = form.save(commit=False)
-                new_user.set_password(form.cleaned_data['password'])
-                new_user.save()
-                login(request, new_user)
-                return redirect('cuentaconfig')  # Redirige a la página de configuración
-            except IntegrityError:
-                form.add_error(None, "El nombre de usuario ya existe.")
-            except Exception as e:
-                form.add_error(None, "Ocurrió un error al crear el usuario. Por favor, inténtalo de nuevo.")
+            new_user = form.save(commit=False)
+            new_user.set_password(form.cleaned_data['password'])
+            new_user.save()
+
+            # Crear el perfil de usuario
+            UserProfile.objects.create(user=new_user)
+
+            login(request, new_user)
+            return redirect('cuentaconfig')
     else:
         form = RegisterForm()
+    
     return render(request, 'general/register.html', {'form': form})
-
-
-
 
 
 
@@ -97,9 +96,12 @@ def cuentaconfig(request):
         form = UserProfileForm(request.POST, instance=user_profile)
         if form.is_valid():
             form.save()
-            return redirect('cuentaconfig')  # Redirige a la misma página para mostrar los cambios
+            return redirect('cuentaconfig')  # Redirige después de guardar
+        else:
+            print(form.errors)  # Imprime los errores en la terminal
     else:
         form = UserProfileForm(instance=user_profile)
 
-    return render(request, 'general/cuenta-config.html', {'form': form})
+    return render(request, 'general/cuenta-config.html', {'form': form, 'user_profile': user_profile})
+
 

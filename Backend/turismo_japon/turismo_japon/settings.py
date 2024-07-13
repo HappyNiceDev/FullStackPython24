@@ -140,7 +140,7 @@ SESSION_COOKIE_SECURE = False  # Para entorno de desarrollo local
 
 STATIC_URL = 'static/'
 # Ruta base donde se almacenarán los archivos estáticos para producción
-STATIC_ROOT = os.path.join(BASE_DIR, 'Archi')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_files')
 
 
 # Default primary key field type
