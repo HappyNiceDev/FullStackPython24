@@ -11,50 +11,60 @@
         <div><li>Rutas guardadas</li></div>
         <div><li>Planificación de viaje</li></div>
       </div>
+      {% block extra1 %}
       <div class="informacion">
-        <form id="perfil_form" method="POST">
+        <form id="perfil_form" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="contenido-config mi-cuenta Visible">
                 <div class="info-foto">
-                    <img class="FotoPerfil" src="{% static 'img/usoarquitectura.com.webp' %}" alt="foto de perfil" />
+                  <img class="FotoPerfil" id="profileImage" src="{{ profile_image_url }}" alt="foto de perfil" />
                     <div class="foto-descripcion">
                         <h3>Personaliza tu foto</h3>
                         <p>Tu foto de perfil será visible para todos cuando hagas comentarios en las secciones.</p>
-                        <div class="btn-foto">Cambiar foto</div>
+                        <label for="id_avatar">Selecciona una foto</label>
+                        <input type="file" id="id_avatar" name="avatar" style="display: none;" accept="image/*">
+                        <div class="btn-foto" id="cambiarFotoBtn">Cambiar foto</div>
+                        <button type="submit" name="save_avatar" style="display: none;">Guardar Avatar</button>
                     </div>
-                </div>
-                <div class="info-perfil">
+              </div>
+          </form>
+      </div>          
+      {% endblock %}
+      {% block extra2 %}
+      <div class="info-perfil">
+          <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
                     <div class="info-edit">
                         <h3>Información de Perfil</h3>
                         <div id="edit_button" class="btn-foto">Editar perfil</div>
-                        <button type="button" id="save_button" class="btn-foto save-button" style="display: none;">Guardar</button>
+                        <button type="submit" id="save_button" name="save_profile" class="btn-foto save-button" style="display: none;">Guardar</button>
                     </div>
                     <div class="caja-info">
                         <div class="tabla-config">
                             <label for="id_usuario"><p>Usuario</p></label>
                             <div id="usuario_value" class="editable-field">
-                                <p class="value-display">{{ form.usuario.value }}</p>
+                                <p class="value-display">{{ user_profile_form.instance.usuario }}</p>
                                 <input type="text" id="id_usuario_input" name="usuario" value="{{ user_profile.usuario }}" style="display: none;">
                             </div>
                         </div>
                         <div class="tabla-config">
                           <label for="id_fech_nac"><p>Fecha de Nacimiento</p></label>
                           <div id="fech_nac_value" class="editable-field">
-                              <p class="value-display">{{ form.fech_nac.value }}</p>
+                              <p class="value-display">{{ user_profile_form.instance.fech_nac }}</p>
                               <input type="date" id="id_fech_nac_input" name="fech_nac" value="{{ user_profile.fech_nac|date:"Y-m-d" }}" style="display: none;">
                           </div>
                       </div>
                         <div class="tabla-config">
                             <label for="id_pais"><p>Nacionalidad</p></label>
                             <div id="pais_value" class="editable-field">
-                                <p class="value-display">{{ form.pais.value }}</p>
+                                <p class="value-display">{{ user_profile_form.instance.pais }}</p>
                                 <input type="text" id="id_pais_input" name="pais" value="{{ user_profile.pais }}" style="display: none;">
                             </div>
                         </div>
                         <div class="tabla-config">
                             <label for="id_genero"><p>Género</p></label>
                             <div id="genero_value" class="editable-field">
-                                <p class="value-display">{{ form.genero.value }}</p>
+                                <p class="value-display">{{ user_profile_form.instance.genero }}</p>
                                 <select id="id_genero_input" name="genero" style="display: none;">
                                     <option value="Masculino" {% if user_profile.genero == 'Masculino' %} selected {% endif %}>Masculino</option>
                                     <option value="Femenino" {% if user_profile.genero == 'Femenino' %} selected {% endif %}>Femenino</option>
@@ -71,22 +81,47 @@
                         <div class="tabla-config">
                             <label for="id_mail"><p>Correo electrónico</p></label>
                             <div id="mail_value" class="editable-field">
-                                <p class="value-display">{{ form.mail.value }}</p>
+                                <p class="value-display">{{ user_profile_form.instance.mail }}</p>
                                 <input type="email" id="id_mail_input" name="mail" value="{{ user_profile.mail }}" style="display: none;">
                             </div>
                         </div>
                         <div class="tabla-config">
                             <label for="id_telefono"><p>Número de teléfono</p></label>
                             <div id="telefono_value" class="editable-field">
-                                <p class="value-display">{{ form.telefono.value }}</p>
+                                <p class="value-display">{{ user_profile_form.instance.telefono }}</p>
                                 <input type="tel" id="id_telefono_input" name="telefono" value="{{ user_profile.telefono }}" style="display: none;">
                             </div>
                         </div>
                     </div>
                 </div>
+        </form> 
+         {% endblock %}
+        {% block extra3 %}
+        <div class="info-perfil peligro">
+          <div>
+            <h3>Zona de peligro</h3>
+          </div>
+          <div class="eliminar-cuenta">
+            <h3>Eliminar cuenta</h3>
+            <p>¿Estás seguro de que deseas eliminar tu cuenta? Esta acción es permanente y no se puede deshacer.</p>
+            <div class="btn-foto "><a href="#" id="eliminarCuentaBtn" class="btn btn-danger">Eliminar Cuenta</a></div>
+            <form method="POST" action="{% url 'eliminar_cuenta' %}">
+              {% csrf_token %}
+              <button type="submit">Confirmar Eliminación</button>
+              <a href="{% url 'cuentaconfig' %}">Cancelar</a>
+          </form>
+          </div>
+        </div>
+
+        {% endblock %}      
             </div>
-        </form>
+        
+        
     </div>
+        
+      
+      
+                
     
 
       <!-- Contenido de Favoritos -->
@@ -347,6 +382,8 @@
   </main>
 
   <script>
+
+    //Para los datos de mi cuenta (excepto avatar)
     document.addEventListener('DOMContentLoaded', function() {
         const editButton = document.getElementById('edit_button');
         const saveButton = document.getElementById('save_button');
@@ -400,6 +437,34 @@
             document.getElementById('perfil_form').submit(); // Envía el formulario
         });
     });
+
+
+    //JS del Avatar
+    
+    document.getElementById('cambiarFotoBtn').addEventListener('click', function() {
+      document.getElementById('id_avatar').click();
+  });
+  
+  document.getElementById('id_avatar').addEventListener('change', function(event) {
+      if (event.target.files && event.target.files[0]) {
+          var reader = new FileReader();
+          reader.onload = function(e) {
+              document.getElementById('profileImage').src = e.target.result;
+          };
+          reader.readAsDataURL(event.target.files[0]);
+  
+          // Enviar automáticamente el formulario
+          document.getElementById('perfil_form').submit();
+      }
+  });
+  
+//JS de la eliminación de cuenta
+
+  document.getElementById('eliminarCuentaBtn').addEventListener('click', function(event) {
+  event.preventDefault(); // Evita la acción predeterminada del enlace
+  document.getElementById('confirmacionEliminar').style.display = 'block'; // Muestra la sección de confirmación
+});
+    
 </script>
 
   

@@ -69,8 +69,17 @@
       </div>
     </div>
     <!-- Aquí termina el nav -->
+
     {% block contenido %}
     <!-- El contenido de las plantillas hijas se insertará aquí -->
+        {% block extra1 %}
+        {% endblock %}
+
+        {% block extra2 %}
+        {% endblock %}
+
+        {% block extra3 %}
+        {% endblock %}
     {% endblock %}
 
   <!-- Aquí empieza el footer -->

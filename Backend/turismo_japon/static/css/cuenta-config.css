@@ -1,0 +1,543 @@
+/*<!-- Aquí empieza contenido de configuraciones de cuenta --> */
+.contenido-config {
+  display: none;
+}
+.contenido-config.Visible {
+  display: block;
+}
+.all-content {
+  display: flex;
+}
+.secciones-cuenta {
+  margin: 2em 1em 1em 1em;
+  border-radius: 20px;
+  border: solid 3px #d4c5ae;
+  background-color: #fff;
+  width: 20%;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.secciones-cuenta li {
+  list-style: none;
+  cursor: pointer;
+  width: 18vw;
+  font-size: 1.3em;
+  margin: 10px;
+  background-color: #dfdcd6;
+  border-radius: 10px;
+  padding: 10px;
+  color: #242a20;
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+
+.informacion {
+  margin: 2em 2em 1em 0em;
+  border-radius: 20px;
+  border: solid 3px #d4c5ae;
+  background-color: #fff;
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: auto;
+}
+
+/*Mi cuenta */
+
+.info-foto {
+  display: flex;
+  width: 68vw;
+  height: 250px;
+  background-color: #f1f1f1;
+  border: solid 2px #dddad1;
+  border-radius: 10px;
+  margin: 2em 2em 2em 2em;
+}
+
+.FotoPerfil {
+  width: 150px;
+  height: 150px;
+  margin: 1.5em;
+  clip-path: circle(50% at 50% 50%);
+  border: 5px solid #d4c5ae;
+  border-radius: 50%;
+}
+
+.foto-descripcion {
+  margin: 2em;
+  color: #242a20;
+  width: 30vw;
+}
+
+.foto-descripcion h3 {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  font-family: "Bona Nova", serif;
+}
+
+.mi-cuenta p {
+  color: #242a20;
+  font-size: 1.2em;
+  margin-bottom: 25px;
+  font-family: "Playfair Display", serif;
+}
+
+.btn-foto {
+  background-color: #939179;
+  width: 130px;
+  height: 40px;
+  border-radius: 10px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-family: sans-serif;
+  letter-spacing: 1px;
+}
+
+input{
+  width: 200px;
+}
+
+select{
+  width: 200px;
+}
+.info-perfil {
+  width: 68vw;
+  height: 280px;
+  background-color: #f1f1f1;
+  border: solid 2px #dddad1;
+  border-radius: 10px;
+  margin: 2em 2em 2em 2em;
+}
+
+.info-edit {
+  display: flex;
+  justify-content: space-between;
+  margin: 1em;
+}
+
+.info-edit h3 {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  font-family: "Bona Nova", serif;
+}
+
+.caja-info {
+  width: 55vw;
+}
+
+.tabla-config {
+  margin: 0 0 0 3em;
+  display: flex;
+  justify-content: space-between;
+}
+
+.info-cuenta {
+  width: 68vw;
+  height: 250px;
+  background-color: #f1f1f1;
+  border: solid 2px #dddad1;
+  border-radius: 10px;
+  margin: 2em 2em 2em 2em;
+}
+
+
+
+/*Favoritos*/
+
+.Fav-contenido {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2.5em;
+}
+
+.Fav-contenido h2 {
+  color: #242a20;
+  letter-spacing: 3px;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  font-family: "Playball", cursive;
+  font-weight: 400;
+  font-style: normal;
+  text-decoration: underline;
+}
+
+.Fav-contenido p {
+  width: 65vw;
+  color: #242a20;
+  font-size: 1.5em;
+  margin-bottom: 25px;
+  font-family: "Playfair Display", serif;
+}
+
+.PRUEBA-IMG {
+  width: 65vw;
+}
+
+iframe {
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.btn-ruta {
+  margin-top: 20px;
+  width: 50vw;
+  font-size: 1.3em;
+  letter-spacing: 7px;
+}
+
+/*Rutas guardadas */
+.rutas-guardadas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.rutas-guardadas h2 {
+  color: #242a20;
+  letter-spacing: 3px;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  font-family: "Playball", cursive;
+  font-weight: 400;
+  font-style: normal;
+  text-decoration: underline;
+  margin-top: 40px;
+}
+
+.rutas-guardadas p {
+  width: 65vw;
+  color: #242a20;
+  font-size: 1.5em;
+  margin-bottom: 25px;
+  font-family: "Playfair Display", serif;
+}
+
+.adm-rutas {
+  width: 70vw;
+  height: 300px;
+  background-color: #e3dede;
+  border: solid 2px #c8c4b6;
+  border-radius: 10px;
+  margin: 2em 2em 2em 2em;
+  display: flex;
+  justify-content: space-between;
+  padding: 1.3em;
+}
+
+.container-rut {
+  display: flex;
+}
+
+.rut-guar-info {
+  margin: 0 2em 2em 2em;
+  color: #242a20;
+}
+
+.rut-guar-info h2 {
+  margin-bottom: 1em;
+  text-decoration: underline;
+  font-size: 1.8em;
+  font-weight: 700;
+  font-style: italic;
+  text-decoration: underline;
+}
+
+.rut-guar-info h3 {
+  margin-bottom: 0.5em;
+  font-size: 1.2em;
+  font-family: "Playfair Display", serif;
+}
+
+.rut-guar-info ul {
+  margin-left: 1.5em;
+}
+
+.rut-guar-info li {
+  margin-bottom: 0.5em;
+  font-size: 1em;
+  font-family: "Playfair Display", serif;
+}
+
+.rutas-icon {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-end;
+}
+
+.fa-solid {
+  font-size: 1.5em;
+  margin-top: 20px;
+  color: #beb19d;
+  cursor: pointer;
+}
+
+.fecha-ruta{
+  margin-top: 20px;
+}
+
+.rutas-icon p{
+  color: #242a20;
+  font-size: 0.9em;
+  font-family: "Playfair Display", serif;
+}
+
+/*Planificacion de viaje*/
+
+.planificacion {
+  padding: 2em;
+}
+
+.principal-planificacion {
+  display: flex;
+  width: 70vw;
+}
+
+.titulo-intro{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.planificacion h2 {
+  color: #242a20;
+  letter-spacing: 3px;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  font-family: "Playball", cursive;
+  font-weight: 400;
+  font-style: normal;
+  text-decoration: underline;
+}
+
+.plani-user{
+  color: #242a20;
+  font-size: 1.5em;
+  margin-bottom: 25px;
+  font-family: "Playfair Display", serif;
+}
+
+.plan-ico{
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-end;
+  height: 200px;
+  justify-content: space-between;
+}
+
+.p-fecha{
+  color: #242a20;
+  font-size: 0.9em;
+  font-family: "Playfair Display", serif;
+}
+
+
+#draggable-aside {
+  width: 20vw;
+  height: 50vh;
+  overflow-y: auto;
+  margin-left: 10px;
+  background-color: #d5d1c5;
+  padding: 2px 5px 2px 5px;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+  border: 3px solid #d4c5ae;
+  border-radius: 10px;
+}
+
+.draggable {
+  background-color: #fff;
+  margin: 5px 0;
+  border: 3px solid #d4c5ae;
+  border-radius: 10px;
+  cursor: grab;
+  width: 100%; 
+}
+
+.draggable:active {
+  cursor: grabbing;
+}
+
+#main-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+#drop-area {
+  width: 50vw;
+  flex: 1;
+  padding: 10px;
+  border: 2px dashed #ccc;
+  background-color: #fafafa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 200px;
+}
+
+#notes-area {
+  width: 50vw;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+#editor {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #ccc;
+}
+
+.draggable-copied {
+  cursor: default;
+  position: relative;
+  width: 100%;
+}
+
+.map-container {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0); /* Transparente */
+  z-index: 10;
+}
+
+.remove-btn {
+  position: absolute;
+  z-index: 20;
+  top: 5px;
+  right: 5px;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  line-height: 14px;
+}
+
+.planificacion-save{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.barra{
+  width: 30vw;
+  margin-top: 40px;
+}
+
+.planificacion-save h2{
+  margin-top: 10px;
+}
+
+.resultado-planificacion{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 68vw;
+  height: 250px;
+  background-color: #f1f1f1;
+  border: solid 2px #dddad1;
+  border-radius: 10px;
+  margin: 1em 1em 1em 1em;
+}
+
+.download-text-area{
+  width: 30vw;
+  overflow: auto;
+}
+
+.download-text-area h3{
+  font-size: 1.5em;
+  margin-bottom: 15px;
+}
+
+.download-text-area p{
+  font-size: 1em;
+}
+
+/*<!-- Aquí termina contenido de configuraciones de cuenta --> */
+/* Media Query */
+@media only screen and (max-width: 710px) {
+}
+@media only screen and (max-width: 480px) {
+  .btn-read {
+    position: static;
+  }
+
+  p {
+    font-size: 1em;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+
+  .secciones-cuenta {
+   
+  }
+
+  .secciones-cuenta li{
+    font-size: 1em;
+  }
+}
+
+@media only screen and (max-width: 600px){
+}
+
+
+@media screen and (min-width: 800px) {
+}
+
+@media only screen and (max-width: 1024px) {
+}
+
+@media only screen and (max-width: 1000px) {
+  /*empieza contenido config*/
+  .all-content{
+    flex-direction: column;
+    align-items: center;
+  }
+    
+  .secciones-cuenta {
+    width: 97%;
+    margin: 1em;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+   .secciones-cuenta li{
+    width: 180px;
+    font-size: 1em;
+  }
+
+  .informacion{
+    width: 97%;
+    margin:0;
+  }
+   /*termina contenido config*/
+}

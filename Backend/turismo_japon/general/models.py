@@ -9,7 +9,7 @@ class UserProfile(models.Model):
     genero = models.CharField(max_length=10, choices=[('Masculino', 'Masculino'), ('Femenino', 'Femenino')])
     fech_nac = models.DateField(blank=True, null=True)
     pais = models.CharField(max_length=100, blank=True, null=True)
-    # avatar = models.BinaryField(blank=True)  
+    avatar = models.ImageField(upload_to='avatars/', blank=True, null=True)
 
     class Meta:
         db_table = '_user_profile'

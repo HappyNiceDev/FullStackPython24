@@ -18,6 +18,9 @@ from django.contrib import admin
 from django.urls import path, include
 from django.contrib.auth import views as auth_views
 from general import views
+from django.conf import settings
+from django.conf.urls.static import static
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'), 
@@ -27,5 +30,8 @@ urlpatterns = [
     path('register/', views.register, name='register'),
     path('login/', auth_views.LoginView.as_view(template_name='general/login-temp.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(next_page='index'), name='logout'),
-
-]
+    path('', include('general.urls')),  # Incluye las URLs de la aplicación 'general'
+] 
+if settings.DEBUG:
+    from django.conf.urls.static import static
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

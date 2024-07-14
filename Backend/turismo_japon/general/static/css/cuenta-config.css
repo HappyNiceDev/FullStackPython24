@@ -149,7 +149,15 @@ select{
   margin: 2em 2em 2em 2em;
 }
 
+.peligro{
+  display: flex;
+  flex-direction: column;
+}
 
+.eliminar-cuenta {
+  display: flex;
+  justify-content: space-between;
+}
 
 /*Favoritos*/
 
