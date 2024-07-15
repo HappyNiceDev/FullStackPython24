@@ -24,6 +24,8 @@
               <div class="btn-foto">Cambiar foto</div>
             </div>
           </div>
+          <form id="profileForm" method="post" action="{% url 'cuentaconfig' %}">
+            {% csrf_token %}
           <div class="info-perfil">
             <div class="info-edit">
               <h3>Informacion de Perfil</h3>
@@ -32,19 +34,19 @@
             <div class="caja-info">
               <div class="tabla-config">
                 <div><p>Usuario</p></div>
-                <div><p><input value="{{ user.username }}"></imput></p></div>
+                <div><p>{{ form.username }}</p></div>
               </div>
               <div class="tabla-config">
                 <div><p>Fecha de Nacimiento</p></div>
-                <div><p>.</p></div>
+                <div><p>{{ form.fech_nac }}</p></div>
               </div>
               <div class="tabla-config">
                 <div><p>Nacionalidad</p></div>
-                <div><p>.</p></div>
+                <div><p>{{ form.pais }}</p></div>
               </div>
               <div class="tabla-config">
                 <div><p>Género</p></div>
-                <div><p>.</p></div>
+                <div><p>{{ form.genero }}</p></div>
               </div>
             </div>
           </div>
@@ -56,17 +58,13 @@
             <div class="caja-info">
               <div class="tabla-config">
                 <div><p>Correo electrónico</p></div>
-                <div><p>sucorreo@correo.com</p></div>
+                <div><p>{{ form.email }}</p></div>
               </div>
               <div class="tabla-config">
                 <div><p>Número de teléfono</p></div>
-                <div><p>01-2345-6789</p></div>
-                <form method="post">
-                  {% csrf_token %}
-                  {{ form.as_p }}
-                  <button type="submit">Save changes</button>
-              </form>
+                <div><p>{{ form.telefono }}</p></div>
               </div>
+            </form>
             </div>
           </div>
         </div>

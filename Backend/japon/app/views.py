@@ -1,13 +1,14 @@
-from django.shortcuts import render, redirect
-from django.contrib.auth.models import User
+import logging
 from .models import *
 from .forms import *
+from django.http import JsonResponse
+from django.shortcuts import render, redirect
 from django.db import IntegrityError, DatabaseError
-from django.contrib.auth import login, logout, authenticate
-import logging
-from django.core.exceptions import ValidationError
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib import messages
+from django.core.exceptions import ValidationError
+from django.contrib.auth import login, logout, authenticate
+from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.decorators import login_required
 
 logger = logging.getLogger(__name__)
@@ -69,7 +70,7 @@ def register(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect('home')  # Redirigir a una página de inicio o cualquier otra página
+            return redirect('/')  # Redirigir a una página de inicio o cualquier otra página
     else:
         form = FormRegister()
     return render(request, 'general/register.html', {'form': form})
@@ -107,21 +108,26 @@ def logout_view(request):
 #--------------------------------------------------------------------------------------------#
 @login_required
 def cuentaconfig(request):
-    '''
+    profile, created = UserProfile.objects.get_or_create(username=request.user)
+
     if request.method == 'POST':
-        form = InfoCuenta(request.POST)
+        form = FormCuentaConfig(request.POST, instance=profile)
         if form.is_valid():
             form.save()
-            return redirect('cuentaconfig')  # Redirigir a la página de perfil u otra página
+            return JsonResponse({'success': True})
+        else:
+            return FormCuentaConfig({'success': False, 'errors': form.errors})
+
     else:
-        form = InfoCuenta(user = request.user.username)
-    '''
-    return render(request, 'general/cuenta-config.html') #, {'form': form}
+        form = FormCuentaConfig(instance=profile)
+
+    return render(request, 'general/cuenta-config.html', {'form': form})
 
 
 
 
 '''
+FormCuentaConfig
 
 def register(request):
     if request.method == 'POST':

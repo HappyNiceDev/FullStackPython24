@@ -6,6 +6,18 @@
     <div class="cont_form">
         <form method="post" enctype="multipart/form-data" autocomplete="off">
         {% csrf_token %}
+
+        <!-- Mostrar errores del formulario -->
+        {% if form.errors %}
+        <div style="color: red;">
+            {% for field, errors in form.errors.items %}
+            <strong>{{ field }}</strong><br>
+            {% for error in errors %}
+            <span>{{ error }}</span><br>
+            {% endfor %}
+            {% endfor %}
+        </div>
+        {% endif %}
         
         {{ form.username }}
         <div class="error">Usuario no disponible</div>
