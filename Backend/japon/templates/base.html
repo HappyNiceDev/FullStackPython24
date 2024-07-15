@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   {% load static %}
   <meta charset="UTF-8" />
@@ -17,10 +18,11 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Bona+Nova:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
     rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playball&display=swap" rel="stylesheet">
-    
+  <link href="https://fonts.googleapis.com/css2?family=Playball&display=swap" rel="stylesheet">
+
   <title>Turismo en Japón</title>
 </head>
+
 <body>
   <header>
     <!-- Aquí empieza el nav -->
@@ -47,41 +49,43 @@
           </div>
           <div class="nav-rigth-ppal">
             <div class="nav-rigth">
-            <ul class="nav-list">
-            <li><a href="{% url 'index' %}">INICIO</a></li>
-            <li class="dropdown">
-              <a href="#!">SECCIONES</a>
-              <ul class="nav-dropdown">
-                <li><a href="{% url 'arquitectura' %}">Arquitectura</a></li>
-                <li><a href="{% url 'gastronomia' %}">Gastronomía</a></li>
-                <li><a href="{% url 'mitosyleyendas' %}">Mitos y Leyendas</a></li>
-                <li><a href="{% url 'paisajesyjardines' %}">Paisajes y Jardines</a></li>
-                <li><a href="{% url 'puntosturisticos' %}">Puntos Turísticos</a></li>
-                <li><a href="{% url 'religion' %}">Religión</a></li>
+              <ul class="nav-list">
+                <li><a href="{% url 'index' %}">INICIO</a></li>
+                <li class="dropdown">
+                  <a href="#!">SECCIONES</a>
+                  <ul class="nav-dropdown">
+                    <li><a href="{% url 'arquitectura' %}">Arquitectura</a></li>
+                    <li><a href="{% url 'gastronomia' %}">Gastronomía</a></li>
+                    <li><a href="{% url 'mitosyleyendas' %}">Mitos y Leyendas</a></li>
+                    <li><a href="{% url 'paisajesyjardines' %}">Paisajes y Jardines</a></li>
+                    <li><a href="{% url 'puntosturisticos' %}">Puntos Turísticos</a></li>
+                    <li><a href="{% url 'religion' %}">Religión</a></li>
+                  </ul>
+                </li>
+                <li><a href="{% url 'contacto' %}">CONTACTO</a></li>
+
+                {% if user.is_authenticated %}
+
+                <li>
+                  <form method="post" action="{% url 'logout' %}">
+                    {% csrf_token %}
+                    <button type="submit">LOGOUT</button>
+                  </form>
+                </li>
+
+                {% else %}
+
+                <li><a href="{% url 'login' %}">LOGIN</a></li>
+                <li><a href="{% url 'register' %}">REGISTRARCE</a></li>
+
+                {% endif %}
+
               </ul>
-            </li>
-            <li><a href="{% url 'contacto' %}">CONTACTO</a></li>
-
-            {% if user.is_authenticated %}
-
-            <li>
-              <form method="post" action="{% url 'logout' %}">
-              {% csrf_token %}
-              <button type="submit">LOGOUT</button>
-              </form>
-            </li>
-
-            {% else %}
-
-            <li><a href="{% url 'login' %}">LOGIN</a></li>
-            <li><a href="{% url 'register' %}">REGISTRARCE</a></li>
-
-            {% endif %}
-          
-          </ul>
-          {% if user.is_authenticated %}
-          </div>
-          <a href="{% url 'cuentaconfig' %}"><div class="img_login"></div></a>
+              {% if user.is_authenticated %}
+            </div>
+            <a href="{% url 'cuentaconfig' %}">
+              <div class="img_login"></div>
+            </a>
           </div>
           {% endif %}
         </nav>
@@ -89,36 +93,39 @@
     </div>
     <!-- Aquí termina el nav -->
     {% block contenido %}
+
     <!-- El contenido de las plantillas hijas se insertará aquí -->
+
     {% endblock %}
 
-  <!-- Aquí empieza el footer -->
-  <footer>
-    <div class="caja-principal">
-      <div class="caja">
-        <div class="titulo">
-          <span class="bloque"></span>
-          <h1>Turismo en Japón <span></span></h1>
-        </div>
+    <!-- Aquí empieza el footer -->
+    <footer>
+      <div class="caja-principal">
+        <div class="caja">
+          <div class="titulo">
+            <span class="bloque"></span>
+            <h1>Turismo en Japón <span></span></h1>
+          </div>
 
-        <div class="sub-titulo">
-          <div class="bloque"></div>
-          <p>Organiza tu viaje</p>
+          <div class="sub-titulo">
+            <div class="bloque"></div>
+            <p>Organiza tu viaje</p>
+          </div>
         </div>
       </div>
-    </div>
-  </footer>
-  <!-- Aquí termina el footer -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="{% static 'js/base.js' %}"></script>
-  {% block js %}{% endblock %}
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NY856QDN03"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-NY856QDN03');
-  </script>
+    </footer>
+    <!-- Aquí termina el footer -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'js/base.js' %}"></script>
+    {% block js %}{% endblock %}
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NY856QDN03"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-NY856QDN03');
+    </script>
 </body>
+
 </html>

@@ -20,7 +20,7 @@ $("#nav-toggle").click(function () {
 
 var Comprobacion = false;
 
-const Usuario = document.querySelector('input[name="usuario"]');
+const Nombre = document.querySelector('input[name="usuario"]');
 const Apellido = document.querySelector('input[name="apellido"]');
 const Mail = document.querySelector('input[type="email"]');
 const TermCond = document.querySelector('input[type="checkbox"]');

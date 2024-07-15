@@ -144,11 +144,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 //-----------------------editor de texto--------------------//
-ClassicEditor
-    .create(document.querySelector('#editor'))
-    .catch(error => {
-        console.error(error);
-    });
+// ClassicEditor
+//     .create(document.querySelector('#editor'))
+//     .catch(error => {
+//         console.error(error);
+//     });
 
 
 //--------------------------------------------------------------------------------------------//
@@ -160,26 +160,26 @@ document.addEventListener('DOMContentLoaded', function () {
     const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
 
     const saveField = (element) => {
-        const data = new FormData(form);
-        fetch(form.action, {
-            method: 'POST',
-            headers: {
-                'X-CSRFToken': csrfToken
-            },
-            body: data
+      const data = new FormData(form);
+      fetch(form.action, {
+        method: 'POST',
+        headers: {
+          'X-CSRFToken': csrfToken
+        },
+        body: data
+      })
+        .then(response => response.json())
+        .then(data => {
+          if (data.success) {
+            console.log("Saved successfully");
+          } else {
+            console.log("Errors: ", data.errors);
+          }
         })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    console.log("Saved successfully");
-                } else {
-                    console.log("Errors: ", data.errors);
-                }
-            })
-            .catch(error => console.error('Error:', error));
+        .catch(error => console.error('Error:', error));
     };
 
-    form.querySelectorAll('input, textarea').forEach(element => {
-        element.addEventListener('change', () => saveField(element));
+    form.querySelectorAll('input').forEach(element => {
+      element.addEventListener('change', () => saveField(element));
     });
-});
+  });
