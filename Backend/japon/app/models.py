@@ -15,7 +15,24 @@ class Contact(models.Model):
     adjunto = models.BinaryField(blank=True, null=True)
     terminos_condiciones = models.BooleanField(blank=True, null=True)
     user_id = models.IntegerField(blank=True, null=True)
+'''
+class ImgSaved(models.Model):
+    user_id = models.ForeignKey('UserProfile', on_delete=models.CASCADE)
+    tematic = models.TextField()
+    num_img = models.IntegerField()
+    imgurl = models.ForeignKey('ImgUrl', on_delete=models.CASCADE, to_field=['tematic', 'num_img'], db_constraint=False)
 
+
+class ImgUrl(models.Model):
+    tematic = models.TextField()
+    num_img = models.IntegerField()
+    url = models.TextField()
+
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(fields=['tematic', 'num_img'], name='UnicaCombinacionImgUrl')
+        ]
+'''
 #--------------------------------------------------------------------------------------------#
 #                                 Models propias de Django                                   #
 #--------------------------------------------------------------------------------------------#
