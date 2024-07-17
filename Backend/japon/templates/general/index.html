@@ -71,11 +71,11 @@
     </div>
     <!-- Aquí termina el slide -->
   </header>
+  <div class="bienvenidos">
   {% if user.is_authenticated %}
-  <p>Bienvenido, {{ user.username }}!</p>
-  <p>Podrás ver este mensaje solo si estas debidamente logueado</p>
+  <p>Bienvenido, {{ user.username }}!. Planifica tu viaje perfecto con nosotros y descubre la magia del País del Sol Naciente.</p>
   {% endif %}
-
+  </div>
 
   <!--
   {% if user.is_authenticated %}

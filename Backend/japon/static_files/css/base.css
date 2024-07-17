@@ -115,6 +115,11 @@ nav ul li ul li a {
   display: none;
 }
 
+button {
+  all: unset;
+  display: inline-block;
+}
+
 /* Menu hamburguesa */
 .nav-mobile {
   display: none;
