@@ -505,18 +505,49 @@ iframe {
 
 @media only screen and (max-width: 500px) {
 
-  .secciones-cuenta {
-   
+  .mi-cuenta p {
+    font-size: 0.9em;
   }
 
+
+  .FotoPerfil {
+    width: 100px;
+    height: 100px;
+  }
   .secciones-cuenta li{
     font-size: 1em;
   }
 }
 
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 750px){
+  .info-foto{
+    width: 90vw;
+  }
+
+  .info-perfil{
+    width: 90vw;
+  }
+
+  .info-cuenta{
+    width: 90vw;
+  }
+
+  .peligro{
+    width: 90vw;
+  }
+
+  .caja-info {
+    width: 90vw;
 }
 
+.foto-descripcion{
+  width: 90vw;
+}
+
+p.p-avatar {
+  margin-bottom: 0.5em;
+}
+}
 
 @media screen and (min-width: 800px) {
 }
