@@ -122,3 +122,18 @@ def cuentaconfig(request):
         form = FormCuentaConfig(instance=profile)
 
     return render(request, 'general/cuenta-config.html', {'form': form})
+
+
+#--------------------------------------------------------------------------------------------#
+#                                 ELIMINAR CUENTA                                            #
+#--------------------------------------------------------------------------------------------#
+
+@login_required
+def eliminar_cuenta(request):
+    if request.method == 'POST':
+        # Elimina la cuenta del usuario
+        request.user.delete()
+        messages.success(request, "Tu cuenta ha sido eliminada permanentemente.")
+        return redirect('index')  # Redirige a la página de inicio
+
+    return render(request, 'app/eliminar_cuenta.html')  # Muestra un template de confirmación si queremos
