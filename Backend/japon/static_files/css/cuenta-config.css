@@ -124,11 +124,11 @@
 }
 
 .caja-info {
-  width: 55vw;
+  width: 67vw;
 }
 
 .tabla-config {
-  margin: 0 0 0 3em;
+  margin: 0 3em 0 3em;
   display: flex;
   justify-content: space-between;
 }
@@ -140,6 +140,25 @@
   border: solid 2px #dddad1;
   border-radius: 10px;
   margin: 2em 2em 2em 2em;
+}
+
+.peligro{
+  width: 67vw;
+}
+
+.peligro h3 {
+  margin:1em;
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  font-family: "Bona Nova", serif;
+}
+
+.bloque-eliminar{
+  margin-top: 2em;
+}
+
+.btn-eliminar{
+  background-color: #c01e1e;
 }
 
 /*Favoritos*/
@@ -486,18 +505,49 @@ iframe {
 
 @media only screen and (max-width: 500px) {
 
-  .secciones-cuenta {
-   
+  .mi-cuenta p {
+    font-size: 0.9em;
   }
 
+
+  .FotoPerfil {
+    width: 100px;
+    height: 100px;
+  }
   .secciones-cuenta li{
     font-size: 1em;
   }
 }
 
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 750px){
+  .info-foto{
+    width: 90vw;
+  }
+
+  .info-perfil{
+    width: 90vw;
+  }
+
+  .info-cuenta{
+    width: 90vw;
+  }
+
+  .peligro{
+    width: 90vw;
+  }
+
+  .caja-info {
+    width: 90vw;
 }
 
+.foto-descripcion{
+  width: 90vw;
+}
+
+p.p-avatar {
+  margin-bottom: 0.5em;
+}
+}
 
 @media screen and (min-width: 800px) {
 }

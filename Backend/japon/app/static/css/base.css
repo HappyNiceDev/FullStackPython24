@@ -115,6 +115,11 @@ nav ul li ul li a {
   display: none;
 }
 
+button {
+  all: unset;
+  display: inline-block;
+}
+
 /* Menu hamburguesa */
 .nav-mobile {
   display: none;
@@ -393,6 +398,12 @@ footer {
 /*Termina nav*/
 }
 
+@media only screen and (max-width: 748px){
+  nav ul li a {
+  font-size: 0.8em;
+}
+}
+
 @media only screen and (max-width: 600px){
   .img-logo {
     height: 4em;
@@ -443,9 +454,7 @@ footer {
     margin: 0px;
   }
 
-  #nav-toggle{
-    left: -50px;
-  }
+  
   
   .img_login{
     background-color: #d4c5ae;
@@ -460,9 +469,13 @@ footer {
   .btn-read{
     position: static;
   }
+
+  #nav-toggle{
+    left: -50px;
+  }
 }
 
-@media only screen and (max-width: 710px){
+@media only screen and (max-width: 896px){
 
   nav .caja-principal{
   display: none;
