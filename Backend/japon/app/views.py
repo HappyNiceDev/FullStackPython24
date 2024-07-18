@@ -1,7 +1,7 @@
 import logging
 from .models import *
 from .forms import *
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.db import IntegrityError, DatabaseError
 from django.contrib import messages
@@ -16,7 +16,7 @@ logger = logging.getLogger(__name__)
 # Create your views here.
 def index(request):
     return render(request, 'general/index.html')
-
+    
 def arquitectura(request):
     return render(request, 'secciones/arquitectura.html')
 
@@ -66,11 +66,16 @@ def contacto(request):
 #--------------------------------------------------------------------------------------------#
 def register(request):
     if request.method == 'POST':
-        form = FormRegister(request.POST)
+        form = FormRegister(data=request.POST)
         if form.is_valid():
+            username = form.cleaned_data.get('username')
             user = form.save()
             login(request, user)
-            return redirect('/')  # Redirigir a una página de inicio o cualquier otra página
+            return JsonResponse({'success': True, 'mensaje': 'Gracias por registrarte ' + username})
+            #return redirect('cuentaconfig')  # Redirigir a una página de inicio o cualquier otra página
+        else:
+            return JsonResponse({'success': False, 'errors': form.errors})
+            
     else:
         form = FormRegister()
     return render(request, 'general/register.html', {'form': form})
@@ -78,9 +83,6 @@ def register(request):
 #--------------------------------------------------------------------------------------------#
 #                                 LOGIN                                                      #
 #--------------------------------------------------------------------------------------------#
-#---login---
-#def login(request):
-#    return render(request, 'general/login.html')
 
 def login_view(request):
     if request.method == 'POST':
@@ -91,7 +93,8 @@ def login_view(request):
             user = authenticate(username=username, password=password)
             if user is not None:
                 login(request, user)
-                return redirect('/')  # Redirigir a una página de inicio o cualquier otra página
+                return JsonResponse({'success': True, 'mensaje': 'Bienvenido ' + username})
+                #return redirect('/')  # Redirigir a una página de inicio o cualquier otra página
     else:
         form = FormLogin()
     return render(request, 'general/login.html', {'form': form})
@@ -101,7 +104,7 @@ def login_view(request):
 #--------------------------------------------------------------------------------------------#
 def logout_view(request):
     logout(request)
-    return redirect('login')  # Redirigir a la página de login u otra página
+    return redirect('/')  # Redirigir a la página de login u otra página
 
 #--------------------------------------------------------------------------------------------#
 #               Carga cuenta-config para cambiar datos del perfil del usuario                #

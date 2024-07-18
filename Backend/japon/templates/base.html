@@ -19,6 +19,7 @@
     href="https://fonts.googleapis.com/css2?family=Bona+Nova:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
     rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Playball&display=swap" rel="stylesheet">
+  <link href=" https://cdn.jsdelivr.net/npm/sweetalert2@11.12.2/dist/sweetalert2.min.css " rel="stylesheet">
 
   <title>Turismo en Japón</title>
 </head>
@@ -75,8 +76,8 @@
 
                 {% else %}
 
-                <li><a href="{% url 'login' %}">LOGIN</a></li>
-                <li><a href="{% url 'register' %}">REGISTRARCE</a></li>
+                <li><a id="login" href="{% url 'login' %}">LOGIN</a></li>
+                <li><a id="registrar" href="{% url 'register' %}">REGISTRARCE</a></li>
 
                 {% endif %}
 
@@ -116,6 +117,7 @@
     </footer>
     <!-- Aquí termina el footer -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src=" https://cdn.jsdelivr.net/npm/sweetalert2@11.12.2/dist/sweetalert2.all.min.js "></script>
     <script src="{% static 'js/base.js' %}"></script>
     {% block js %}{% endblock %}
     <!-- Google tag (gtag.js) -->

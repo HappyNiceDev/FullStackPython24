@@ -1,22 +1,15 @@
-{% extends 'base.html' %}
 {% load static %}
-{% block css %}<link rel="stylesheet" href="{% static 'css/form_login.css' %}">{% endblock %}
-{% block contenido %}
+<link rel="stylesheet" href="{% static 'css/form_login.css' %}">
 
-    <div class="cont_form">
-        <form method="post" enctype="multipart/form-data" autocomplete="off">
-        {% csrf_token %}
-        
-        {{ form.username }}
-        <div class="error">Usuario no disponible</div>
+<form id="Form" enctype="multipart/form-data" autocomplete="off">
+{% csrf_token %}
 
-        {{ form.password }}
-        <div class="error">Debe ingresar un apellido valido sin espacio y sin numeros.</div>
+{{ form.username }}
+<div class="error">Usuario no disponible</div>
 
-        <div class="frame"><button class="custom-btn btn-read">Registrar</button></div>
-      </form>
-    </div>
+{{ form.password }}
+<div class="error">Debe ingresar un apellido valido sin espacio y sin numeros.</div>
 
-  {% endblock %}
-  
-  {% block js %}<script src="{% static 'js/form_login.js' %}"></script>{% endblock %}
+<!--<div class="frame"><button type="submit" class="custom-btn btn-read">Registrar</button></div>-->
+</form>
+    

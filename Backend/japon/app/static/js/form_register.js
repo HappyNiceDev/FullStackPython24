@@ -1,10 +1,60 @@
 
+const form = document.querySelector('form');
 
+
+//--------------------------------------------------------------------------------------------//
+//                         Envia formulario desde el js                                       //
+//--------------------------------------------------------------------------------------------//
+
+form.addEventListener('submit', function(event) {
+
+  event.preventDefault();
+
+  const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+  var formData = new FormData(form);
+
+  fetch(form.action, {
+      method: 'POST',
+      headers: {
+          'X-CSRFToken': csrfToken
+      },
+      body: formData,
+  })
+  .then(response => {
+    if (response.redirected) {
+        window.location.href = response.url; // Redirigir manualmente
+    }
+})
+.catch(error => console.error('Error:', error));
+
+/*
+  .then(response => response.json())
+  .then(data => {
+      if (data.success) {
+        // Redirigir o hacer algo si el formulario es exitoso
+        console.log("Saved successfully");
+
+      } else {
+        console.log(data.errors);
+              
+      }
+  });*/
+});
+
+
+
+
+
+
+
+
+/*
 var Comprobacion = false;
 
 const usuario = document.querySelector('input[name="usuario"]');
 const pw1 = document.querySelector('input[name="pw1"]');
 const pw2 = document.querySelector('input[name="pw2"]');
+
 
 
 usuario.addEventListener('blur', function () {
@@ -54,6 +104,7 @@ TermCond.addEventListener('click', function () {
 
 });
 
+
 document.querySelector('form').addEventListener("submit", function (event) {
 
   event.preventDefault();
@@ -77,6 +128,8 @@ document.querySelector('form').addEventListener("submit", function (event) {
   }
 
 });
+*/
+
 
 
 

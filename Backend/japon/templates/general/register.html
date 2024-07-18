@@ -1,13 +1,11 @@
-{% extends 'base.html' %}
 {% load static %}
-{% block css %}<link rel="stylesheet" href="{% static 'css/form_register.css' %}">{% endblock %}
-{% block contenido %}
+<link rel="stylesheet" href="{% static 'css/form_register.css' %}">
 
-    <div class="cont_form">
-        <form method="post" enctype="multipart/form-data" autocomplete="off">
-        {% csrf_token %}
+<form id="Form" enctype="multipart/form-data" autocomplete="off">
+  {% csrf_token %}
 
-        <!-- Mostrar errores del formulario -->
+  <!-- Mostrar errores del formulario-->
+  <!--
         {% if form.errors %}
         <div style="color: red;">
             {% for field, errors in form.errors.items %}
@@ -18,28 +16,19 @@
             {% endfor %}
         </div>
         {% endif %}
-        
-        {{ form.username }}
-        <div class="error">Usuario no disponible</div>
+        -->
 
-        {{ form.password1 }}
-        <div class="error">Debe ingresar un apellido valido sin espacio y sin numeros.</div>
+  {{ form.username }}
+  <div class="error">Usuario no disponible</div>
+  {{ form.username.errors }}
 
-        <div>
-          {{ form.password2 }}
-          <div class="error">Debe ingresar un apellido valido sin espacio y sin numeros.</div>
-        </div>
-        
-        <label for="terminos" title="Sus datos serán utilizados solo con fines estadísticos.">
-            <input type="checkbox" id="terminos" name="terminos">
-            Acepto los términos y condiciones *
-            <span class="error"> Debe seleccionar para continuar</span>
-        </label>
+  {{ form.password1 }}
+  <div class="error">Debe ingresar un apellido valido sin espacio y sin numeros.</div>
 
-        <div class="frame"><button class="custom-btn btn-read">Registrar</button></div>
-      </form>
-    </div>
+  <div>
+    {{ form.password2 }}
+    <div class="error">Debe ingresar un apellido valido sin espacio y sin numeros.</div>
+  </div>
 
-  {% endblock %}
-  
-  {% block js %}<script src="{% static 'js/form_register.js' %}"></script>{% endblock %}
+  <!--<div class="frame"><button type="submit" class="custom-btn btn-read">Registrar</button></div>-->
+</form>

@@ -7,7 +7,7 @@ from .models import *
 #                                 Registra usuario nuevo                                     #
 #--------------------------------------------------------------------------------------------#
 class FormRegister(UserCreationForm):
-	username = forms.CharField(widget=forms.TextInput(attrs={'name': 'usuario', 'class': 'campo', 'placeholder': 'Username'}))
+	username = forms.CharField(widget=forms.TextInput(attrs={'name': 'username', 'class': 'campo', 'placeholder': 'Username'}))
 	def clean_username(self):
 		username = self.cleaned_data['username']
 		try:
@@ -15,8 +15,8 @@ class FormRegister(UserCreationForm):
 			raise forms.ValidationError('Este usuario ya existe. Por favor, elige otro nombre de usuario.')
 		except UserProfile.DoesNotExist:
 			return username
-	password1 = forms.CharField(widget=forms.PasswordInput(attrs={'name': 'pw1', 'class': 'campo', 'placeholder': 'Password'}))
-	password2 = forms.CharField(widget=forms.PasswordInput(attrs={'name': 'pw2', 'class': 'campo', 'placeholder': 'Confirm Password'}))
+	password1 = forms.CharField(widget=forms.PasswordInput(attrs={'name': 'password1', 'class': 'campo', 'placeholder': 'Password'}))
+	password2 = forms.CharField(widget=forms.PasswordInput(attrs={'name': 'password2', 'class': 'campo', 'placeholder': 'Confirm Password'}))
 
 	class Meta:
 		model = UserProfile
@@ -27,8 +27,8 @@ class FormRegister(UserCreationForm):
 #                                 Loguea un usuario ya registrado                            #    
 #--------------------------------------------------------------------------------------------#
 class FormLogin(AuthenticationForm):
-	username = forms.CharField(widget=forms.TextInput(attrs={'name': 'usuario', 'class': 'campo', 'placeholder': 'Username'}))
-	password = forms.CharField(widget=forms.PasswordInput(attrs={'name': 'pw1', 'class': 'campo', 'placeholder': 'Password'}))
+	username = forms.CharField(widget=forms.TextInput(attrs={'name': 'usuario', 'class': 'campo', 'placeholder': 'Usuario'}))
+	password = forms.CharField(widget=forms.PasswordInput(attrs={'name': 'pw1', 'class': 'campo', 'placeholder': 'Contraseña'}))
 
 	class Meta:
 		model = UserProfile
