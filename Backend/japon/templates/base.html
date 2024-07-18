@@ -53,7 +53,7 @@
               <ul class="nav-list">
                 <li><a href="{% url 'index' %}">INICIO</a></li>
                 <li class="dropdown">
-                  <a href="#!">SECCIONES</a>
+                  <a class="menu" href="#!">SECCIONES</a>
                   <ul class="nav-dropdown">
                     <li><a href="{% url 'arquitectura' %}">Arquitectura</a></li>
                     <li><a href="{% url 'gastronomia' %}">Gastronomía</a></li>
@@ -78,7 +78,7 @@
                 {% else %}
 
                 <li><a id="login" href="{% url 'login' %}">LOGIN</a></li>
-                <li><a id="registrar" href="{% url 'register' %}">REGISTRARCE</a></li>
+                <li><a id="registrar" href="{% url 'register' %}">REGISTRARSE</a></li>
 
                 {% endif %}
 

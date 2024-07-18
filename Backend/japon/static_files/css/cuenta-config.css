@@ -160,7 +160,6 @@
 .btn-eliminar{
   background-color: #c01e1e;
 }
-
 /*Favoritos*/
 
 .Fav-contenido {
@@ -505,15 +504,15 @@ iframe {
 
 @media only screen and (max-width: 500px) {
 
-  .mi-cuenta p {
-    font-size: 0.9em;
-  }
-
-
   .FotoPerfil {
     width: 100px;
     height: 100px;
   }
+
+  .mi-cuenta p {
+    font-size: 0.9em;
+  }
+
   .secciones-cuenta li{
     font-size: 1em;
   }
@@ -542,12 +541,15 @@ iframe {
 
 .foto-descripcion{
   width: 90vw;
+  margin: 2em 0em 0em 0em;
 }
 
 p.p-avatar {
   margin-bottom: 0.5em;
 }
+
 }
+
 
 @media screen and (min-width: 800px) {
 }

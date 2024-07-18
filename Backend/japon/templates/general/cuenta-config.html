@@ -106,7 +106,7 @@
         </div>
         <div class="eliminar-cuenta tabla-config">
           <p class="bloque-eliminar">Eliminar cuenta</p>
-          <form method="POST" action="{% url 'eliminar_cuenta' %}">
+          <form id="eliminar_cuenta" method="POST" action="{% url 'eliminar_cuenta' %}">
             {% csrf_token %}
             <button type="submit" class="btn-foto btn-eliminar bloque-eliminar" id="eliminarCuentaBtn">Eliminar cuenta</button>
           </form>

@@ -110,14 +110,14 @@ form label{
 }
 
 /*--------- Validacion del contnido ingresado en el formulario ---------*/
-.container-form .errorBorde{
+.errorBorde{
   border: 1px solid #ff0000;
 }
-.container-form .error{
+.error{
   display: none;
   color: #ff0000;
 }
-.container-form .errorAct{
+.errorAct{
   display: block;
 }
 

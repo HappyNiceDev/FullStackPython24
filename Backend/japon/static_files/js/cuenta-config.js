@@ -179,7 +179,7 @@ document.addEventListener('DOMContentLoaded', function () {
         .catch(error => console.error('Error:', error));
     };
 
-    form.querySelectorAll('input, textarea').forEach(element => {
+    form.querySelectorAll('input').forEach(element => {
       element.addEventListener('change', () => saveField(element));
     });
   });

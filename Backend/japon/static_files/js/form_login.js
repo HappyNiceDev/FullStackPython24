@@ -1,4 +1,52 @@
 
+const form = document.querySelector('form');
+
+//--------------------------------------------------------------------------------------------//
+//                     Configuracion auto guardado de cuenta-config                           //
+//--------------------------------------------------------------------------------------------//
+
+form.addEventListener('submit', function(event) {
+
+  event.preventDefault();
+
+  const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+  var formData = new FormData(form);
+
+  fetch('/login/', {
+      method: 'POST',
+      headers: {
+          'X-CSRFToken': csrfToken
+      },
+      body: formData,
+  })
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);/*
+    if (data.redirected) {
+      // Esperar un breve momento para asegurarse de que la respuesta se ha manejado correctamente
+      setTimeout(() => {
+        //window.location.href = response.url; // Redirigir manualmente
+      }, 4000); // 100 ms debería ser suficiente en la mayoría de los casos
+    }*/
+  })
+  //.catch(error => console.error('Error:', error));
+
+/*
+  .then(response => response.json())
+  .then(data => {
+      if (data.success) {
+        // Redirigir o hacer algo si el formulario es exitoso
+        console.log("Saved successfully");
+
+      } else {
+        console.log(data.errors);
+              
+      }
+  });*/
+});
+
+
+/*
 
 var Comprobacion = false;
 
@@ -80,9 +128,4 @@ document.querySelector('form').addEventListener("submit", function (event) {
 
 
 
-
-
-
-
-
-
+*/

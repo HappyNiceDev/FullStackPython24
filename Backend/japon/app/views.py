@@ -86,7 +86,7 @@ def register(request):
 
 def login_view(request):
     if request.method == 'POST':
-        form = FormLogin(request, data=request.POST)
+        form = FormLogin(data=request.POST)
         if form.is_valid():
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password')
@@ -136,7 +136,6 @@ def eliminar_cuenta(request):
     if request.method == 'POST':
         # Elimina la cuenta del usuario
         request.user.delete()
-        messages.success(request, "Tu cuenta ha sido eliminada permanentemente.")
-        return redirect('index')  # Redirige a la página de inicio
-
+        return JsonResponse({'success': True})
+    
     return render(request, 'app/eliminar_cuenta.html')  # Muestra un template de confirmación si queremos
