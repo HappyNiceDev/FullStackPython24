@@ -1,3 +1,17 @@
+.bienvenidos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #d5d1c5;
+}
+
+.bienvenidos p {
+  font-size: 2em;
+  margin: 0.3em;
+  text-align: center;
+}
+
+
 /* <!-- Aquí empieza el slide --> */
 
 .container {

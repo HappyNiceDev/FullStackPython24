@@ -1,23 +1,22 @@
-from django.shortcuts import render, redirect
-from django.contrib.auth.models import User
-from .models import Contact
-from .forms import RegisterForm
-from django.db import IntegrityError
-from django.contrib.auth import login
 import logging
+from .models import *
+from .forms import *
+from django.http import JsonResponse, HttpResponseRedirect
+from django.shortcuts import render, redirect
 from django.db import IntegrityError, DatabaseError
+from django.contrib import messages
 from django.core.exceptions import ValidationError
+from django.contrib.auth import login, logout, authenticate
+from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth.decorators import login_required
 
 logger = logging.getLogger(__name__)
 
 # Create your views here.
 def index(request):
-    context = {}
-    if request.user.is_authenticated:
-        context['user'] = request.user
-    return render(request, 'general/index.html', context)
-
-
+    return render(request, 'general/index.html')
+    
 def arquitectura(request):
     return render(request, 'secciones/arquitectura.html')
 
@@ -62,44 +61,82 @@ def contacto(request):
     #return render(request, 'tu_template.html')
     return render(request, 'general/contacto.html')
 
-
-def cuentaconfig(request):
-    return render(request, 'general/cuenta-config.html')
-
-#---login---
-def login(request):
-    return render(request, 'general/login-temp.html')
-
-def logout(request):
-    return render(request, 'general/logout.html')
-
-
-
+#--------------------------------------------------------------------------------------------#
+#                                 Rigitra y logea al usuario                                 #
+#--------------------------------------------------------------------------------------------#
 def register(request):
     if request.method == 'POST':
-        form = RegisterForm(request.POST)
+        form = FormRegister(data=request.POST)
         if form.is_valid():
-            username = form.cleaned_data['username']
-            password = form.cleaned_data['password']
-            try:
-                # Crear el usuario
-                new_user = User.objects.create_user(username=username, password=password, email='nico@naty')
-
-                # Autenticar al usuario y mantenerlo logueado
-                login(request, new_user)
-
-                # Redirigir a la página de configuración
-                return redirect('cuentaconfig')
-
-            except IntegrityError:
-                form.add_error(None, "El nombre de usuario ya existe.")
-            except DatabaseError:
-                form.add_error(None, "Ocurrió un error con la base de datos. Por favor, inténtalo de nuevo.")
-            except ValidationError:
-                form.add_error(None, "Los datos proporcionados no son válidos. Por favor, verifica la información.")
-            except Exception as e:
-                form.add_error(None, "Ocurrió un error al crear el usuario. Por favor, inténtalo de nuevo.")
+            username = form.cleaned_data.get('username')
+            user = form.save()
+            login(request, user)
+            return JsonResponse({'success': True, 'mensaje': 'Gracias por registrarte ' + username})
+            #return redirect('cuentaconfig')  # Redirigir a una página de inicio o cualquier otra página
+        else:
+            return JsonResponse({'success': False, 'errors': form.errors})
+            
     else:
-        form = RegisterForm()
-
+        form = FormRegister()
     return render(request, 'general/register.html', {'form': form})
+
+#--------------------------------------------------------------------------------------------#
+#                                 LOGIN                                                      #
+#--------------------------------------------------------------------------------------------#
+
+def login_view(request):
+    if request.method == 'POST':
+        form = FormLogin(request, data=request.POST)
+        if form.is_valid():
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password')
+            user = authenticate(username=username, password=password)
+            if user is not None:
+                login(request, user)
+                return JsonResponse({'success': True, 'mensaje': 'Bienvenido ' + username})
+                #return redirect('/')  # Redirigir a una página de inicio o cualquier otra página
+    else:
+        form = FormLogin()
+    return render(request, 'general/login.html', {'form': form})
+
+#--------------------------------------------------------------------------------------------#
+#                                 LOGOUT                                                     #
+#--------------------------------------------------------------------------------------------#
+def logout_view(request):
+    logout(request)
+    return redirect('/')  # Redirigir a la página de login u otra página
+
+#--------------------------------------------------------------------------------------------#
+#               Carga cuenta-config para cambiar datos del perfil del usuario                #
+#--------------------------------------------------------------------------------------------#
+@login_required
+def cuentaconfig(request):
+    profile, created = UserProfile.objects.get_or_create(username=request.user)
+
+    if request.method == 'POST':
+        form = FormCuentaConfig(request.POST, instance=profile)
+        if form.is_valid():
+            form.save()
+            return JsonResponse({'success': True})
+        else:
+            return FormCuentaConfig({'success': False, 'errors': form.errors})
+
+    else:
+        form = FormCuentaConfig(instance=profile)
+
+    return render(request, 'general/cuenta-config.html', {'form': form})
+
+
+#--------------------------------------------------------------------------------------------#
+#                                 ELIMINAR CUENTA                                            #
+#--------------------------------------------------------------------------------------------#
+
+@login_required
+def eliminar_cuenta(request):
+    if request.method == 'POST':
+        # Elimina la cuenta del usuario
+        request.user.delete()
+        messages.success(request, "Tu cuenta ha sido eliminada permanentemente.")
+        return redirect('index')  # Redirige a la página de inicio
+
+    return render(request, 'app/eliminar_cuenta.html')  # Muestra un template de confirmación si queremos

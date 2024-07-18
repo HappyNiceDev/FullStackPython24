@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}<link rel="stylesheet" href="{% static 'css/form_register.css' %}">{% endblock %}
+{% block contenido %}
+
+    <div class="cont_form">
+        <form method="post" enctype="multipart/form-data" autocomplete="off">
+        {% csrf_token %}
+
+        <!-- Mostrar errores del formulario -->
+        {% if form.errors %}
+        <div style="color: red;">
+            {% for field, errors in form.errors.items %}
+            <strong>{{ field }}</strong><br>
+            {% for error in errors %}
+            <span>{{ error }}</span><br>
+            {% endfor %}
+            {% endfor %}
+        </div>
+        {% endif %}
+        
+        {{ form.username }}
+        <div class="error">Usuario no disponible</div>
+        {{ form.username.errors }}
+
+        {{ form.password1 }}
+        <div class="error">Debe ingresar un apellido valido sin espacio y sin numeros.</div>
+
+        <div>
+          {{ form.password2 }}
+          <div class="error">Debe ingresar un apellido valido sin espacio y sin numeros.</div>
+        </div>
+        
+        <div class="frame"><button type="submit" class="custom-btn btn-read">Registrar</button></div>
+      </form>
+    </div>
+
+  {% endblock %}
+  
+  {% block js %}<script src="{% static 'js/form_register.js' %}"></script>{% endblock %}

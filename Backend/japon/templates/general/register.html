@@ -1,15 +1,34 @@
-{% extends 'base.html' %}
-{% block contenido %}
-<div>
-    <h2>Registrarse</h2>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Registrarse</button>
-    </form>
-    {% if form.non_field_errors %}
-        <p style="color: red;">{{ form.non_field_errors }}</p>
-    {% endif %}
-    <p>¿Ya tienes cuenta? <a href="{% url 'login' %}">Iniciar sesión</a></p>
-</div>
-{% endblock %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/form_register.css' %}">
+
+<form id="Form" enctype="multipart/form-data" autocomplete="off">
+  {% csrf_token %}
+
+  <!-- Mostrar errores del formulario-->
+  <!--
+        {% if form.errors %}
+        <div style="color: red;">
+            {% for field, errors in form.errors.items %}
+            <strong>{{ field }}</strong><br>
+            {% for error in errors %}
+            <span>{{ error }}</span><br>
+            {% endfor %}
+            {% endfor %}
+        </div>
+        {% endif %}
+        -->
+
+  {{ form.username }}
+  <div class="error">Usuario no disponible</div>
+  {{ form.username.errors }}
+
+  {{ form.password1 }}
+  <div class="error">Debe ingresar un apellido valido sin espacio y sin numeros.</div>
+
+  <div>
+    {{ form.password2 }}
+    <div class="error">Debe ingresar un apellido valido sin espacio y sin numeros.</div>
+  </div>
+
+  <!--<div class="frame"><button type="submit" class="custom-btn btn-read">Registrar</button></div>-->
+</form>

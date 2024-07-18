@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}<link rel="stylesheet" href="{% static 'css/form_login.css' %}">{% endblock %}
+{% block contenido %}
+
+    <div class="cont_form">
+        <form method="post" enctype="multipart/form-data" autocomplete="off">
+        {% csrf_token %}
+        
+        {{ form.username }}
+        <div class="error">Usuario no disponible</div>
+
+        {{ form.password }}
+        <div class="error">Debe ingresar un apellido valido sin espacio y sin numeros.</div>
+
+        <div class="frame"><button type="submit" class="custom-btn btn-read">Registrar</button></div>
+      </form>
+    </div>
+
+  {% endblock %}
+  
+  {% block js %}<script src="{% static 'js/form_login.js' %}"></script>{% endblock %}

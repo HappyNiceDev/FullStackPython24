@@ -88,6 +88,7 @@ DATABASES = {
     }
 }
 
+AUTH_USER_MODEL = 'app.UserProfile'
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -107,11 +108,14 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+SESSION_COOKIE_AGE = 1209600  # Dos semanas, en segundos
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+SESSION_SAVE_EVERY_REQUEST = True
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-es'
 
 TIME_ZONE = 'UTC'
 
@@ -125,7 +129,7 @@ LOGIN_REDIRECT_URL = '/'
 LOGIN_URL = '/'
 
 # Define la URL donde se redirigen las solicitudes después de cerrar sesión
-LOGOUT_REDIRECT_URL = 'contacto'
+LOGOUT_REDIRECT_URL = '/'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/

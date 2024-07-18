@@ -1,0 +1,15 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/form_login.css' %}">
+
+<form id="Form" enctype="multipart/form-data" autocomplete="off">
+{% csrf_token %}
+
+{{ form.username }}
+<div class="error">Usuario no disponible</div>
+
+{{ form.password }}
+<div class="error">Debe ingresar un apellido valido sin espacio y sin numeros.</div>
+
+<!--<div class="frame"><button type="submit" class="custom-btn btn-read">Registrar</button></div>-->
+</form>
+    
