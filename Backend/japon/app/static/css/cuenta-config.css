@@ -1,14 +1,16 @@
-
 /*<!-- Aquí empieza contenido de configuraciones de cuenta --> */
 .contenido-config {
   display: none;
 }
+
 .contenido-config.Visible {
   display: block;
 }
+
 .all-content {
   display: flex;
 }
+
 .secciones-cuenta {
   margin: 2em 1em 1em 1em;
   border-radius: 20px;
@@ -61,12 +63,31 @@
 }
 
 .FotoPerfil {
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
   margin: 1.5em;
+  background-image: url('../img/login.webp');
+  background-size: cover;
   clip-path: circle(50% at 50% 50%);
   border: 5px solid #d4c5ae;
   border-radius: 50%;
+  transition: 1s ease;
+  animation-direction: alternate;
+  overflow: hidden;
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.FotoPerfil:hover {
+  border: 5px solid #808366;
+}
+
+.FotoPerfil > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .foto-descripcion {
@@ -122,6 +143,29 @@
   margin-bottom: 15px;
   font-family: "Bona Nova", serif;
 }
+/*-------Formato de INPUTS-----------*/
+
+form .campo {
+  width: 100%;
+  padding: 2px 1px;
+  border: 2px solid #b4a58f;
+  border-radius: 3px;
+  outline: 0px;
+  resize: none;
+}
+/*-------Fin formato de INPUTS-----------*/
+/*--------- Validacion del contnido ingresado en el formulario ---------*/
+.errorBorde{
+  border: 1px solid #ff0000;
+}
+.error{
+  display: none;
+  color: #ff0000;
+}
+.errorAct{
+  display: block;
+}
+/*-------Fin validacion-----------*/
 
 .caja-info {
   width: 67vw;
@@ -142,24 +186,25 @@
   margin: 2em 2em 2em 2em;
 }
 
-.peligro{
+.peligro {
   width: 67vw;
 }
 
 .peligro h3 {
-  margin:1em;
+  margin: 1em;
   font-size: 1.5em;
   margin-bottom: 15px;
   font-family: "Bona Nova", serif;
 }
 
-.bloque-eliminar{
+.bloque-eliminar {
   margin-top: 2em;
 }
 
-.btn-eliminar{
+.btn-eliminar {
   background-color: #c01e1e;
 }
+
 /*Favoritos*/
 
 .Fav-contenido {
@@ -210,6 +255,7 @@ iframe {
   flex-direction: column;
   align-items: center;
 }
+
 .rutas-guardadas h2 {
   color: #242a20;
   letter-spacing: 3px;
@@ -289,11 +335,11 @@ iframe {
   cursor: pointer;
 }
 
-.fecha-ruta{
+.fecha-ruta {
   margin-top: 20px;
 }
 
-.rutas-icon p{
+.rutas-icon p {
   color: #242a20;
   font-size: 0.9em;
   font-family: "Playfair Display", serif;
@@ -310,7 +356,7 @@ iframe {
   width: 70vw;
 }
 
-.titulo-intro{
+.titulo-intro {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -327,14 +373,14 @@ iframe {
   text-decoration: underline;
 }
 
-.plani-user{
+.plani-user {
   color: #242a20;
   font-size: 1.5em;
   margin-bottom: 25px;
   font-family: "Playfair Display", serif;
 }
 
-.plan-ico{
+.plan-ico {
   display: flex;
   flex-direction: column-reverse;
   align-items: flex-end;
@@ -342,7 +388,7 @@ iframe {
   justify-content: space-between;
 }
 
-.p-fecha{
+.p-fecha {
   color: #242a20;
   font-size: 0.9em;
   font-family: "Playfair Display", serif;
@@ -356,7 +402,7 @@ iframe {
   margin-left: 10px;
   background-color: #d5d1c5;
   padding: 2px 5px 2px 5px;
-  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
   border: 3px solid #d4c5ae;
   border-radius: 10px;
 }
@@ -367,7 +413,7 @@ iframe {
   border: 3px solid #d4c5ae;
   border-radius: 10px;
   cursor: grab;
-  width: 100%; 
+  width: 100%;
 }
 
 .draggable:active {
@@ -418,13 +464,15 @@ iframe {
   height: 200px;
   overflow: hidden;
 }
+
 .overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0); /* Transparente */
+  background-color: rgba(255, 255, 255, 0);
+  /* Transparente */
   z-index: 10;
 }
 
@@ -447,22 +495,22 @@ iframe {
   line-height: 14px;
 }
 
-.planificacion-save{
+.planificacion-save {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.barra{
+.barra {
   width: 30vw;
   margin-top: 40px;
 }
 
-.planificacion-save h2{
+.planificacion-save h2 {
   margin-top: 10px;
 }
 
-.resultado-planificacion{
+.resultado-planificacion {
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -474,24 +522,24 @@ iframe {
   margin: 1em 1em 1em 1em;
 }
 
-.download-text-area{
+.download-text-area {
   width: 30vw;
   overflow: auto;
 }
 
-.download-text-area h3{
+.download-text-area h3 {
   font-size: 1.5em;
   margin-bottom: 15px;
 }
 
-.download-text-area p{
+.download-text-area p {
   font-size: 1em;
 }
 
 /*<!-- Aquí termina contenido de configuraciones de cuenta --> */
 /* Media Query */
-@media only screen and (max-width: 710px) {
-}
+@media only screen and (max-width: 710px) {}
+
 @media only screen and (max-width: 480px) {
   .btn-read {
     position: static;
@@ -513,57 +561,56 @@ iframe {
     font-size: 0.9em;
   }
 
-  .secciones-cuenta li{
+  .secciones-cuenta li {
     font-size: 1em;
   }
 }
 
-@media only screen and (max-width: 750px){
-  .info-foto{
+@media only screen and (max-width: 750px) {
+  .info-foto {
     width: 90vw;
   }
 
-  .info-perfil{
+  .info-perfil {
     width: 90vw;
   }
 
-  .info-cuenta{
+  .info-cuenta {
     width: 90vw;
   }
 
-  .peligro{
+  .peligro {
     width: 90vw;
   }
 
   .caja-info {
     width: 90vw;
+  }
+
+  .foto-descripcion {
+    width: 90vw;
+    margin: 2em 0em 0em 0em;
+  }
+
+  p.p-avatar {
+    margin-bottom: 0.5em;
+  }
+
 }
 
-.foto-descripcion{
-  width: 90vw;
-  margin: 2em 0em 0em 0em;
-}
 
-p.p-avatar {
-  margin-bottom: 0.5em;
-}
+@media screen and (min-width: 800px) {}
 
-}
-
-
-@media screen and (min-width: 800px) {
-}
-
-@media only screen and (max-width: 1024px) {
-}
+@media only screen and (max-width: 1024px) {}
 
 @media only screen and (max-width: 1000px) {
+
   /*empieza contenido config*/
-  .all-content{
+  .all-content {
     flex-direction: column;
     align-items: center;
   }
-    
+
   .secciones-cuenta {
     width: 97%;
     margin: 1em;
@@ -573,14 +620,15 @@ p.p-avatar {
     align-items: center;
   }
 
-   .secciones-cuenta li{
+  .secciones-cuenta li {
     width: 180px;
     font-size: 1em;
   }
 
-  .informacion{
+  .informacion {
     width: 97%;
-    margin:0;
+    margin: 0;
   }
-   /*termina contenido config*/
+
+  /*termina contenido config*/
 }

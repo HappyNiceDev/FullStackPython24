@@ -32,10 +32,15 @@ class ImgUrl(models.Model):
         constraints = [
             models.UniqueConstraint(fields=['tematic', 'num_img'], name='UnicaCombinacionImgUrl')
         ]
+
+class UserProfileAvatar(models.Model):
+    user_id = models.ForeignKey('UserProfile', on_delete=models.CASCADE)
+    avatar = models.BinaryField(blank=True, null=True)
 '''
 #--------------------------------------------------------------------------------------------#
 #                                 Models propias de Django                                   #
 #--------------------------------------------------------------------------------------------#
+
 class UserProfile(AbstractUser):
     telefono = models.BigIntegerField(blank=True, null=True)
     genero = models.TextField(blank=True, null=True)

@@ -36,16 +36,26 @@ header {
   width: 65px;
   height:65px;
   margin: 5px;
-  background-image: url('../img/usoarquitectura.com.webp');
+  background-image: url('../img/login.webp');
   background-size: cover;
   clip-path: circle(50% at 50% 50%);
   border: 4px solid #c3b299;
   border-radius: 50%;
-  transition: 2s ease;
+  transition: 1s ease;
+  animation-direction: alternate;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .img_login:hover{
   border: 4px solid #808366;
+}
 
+.img_login > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ajusta la imagen para cubrir el contenedor sin deformarla */
 }
 
 .nav-rigth-ppal{
