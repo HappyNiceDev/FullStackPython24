@@ -143,6 +143,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static_files')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+'''
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
@@ -161,4 +162,4 @@ LOGGING = {
         },
     },
 }
-
+'''
