@@ -143,43 +143,105 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-//-----------------------editor de texto--------------------//
-// ClassicEditor
-//     .create(document.querySelector('#editor'))
-//     .catch(error => {
-//         console.error(error);
-//     });
+
 
 
 //--------------------------------------------------------------------------------------------//
 //                     Configuracion auto guardado de cuenta-config                           //
 //--------------------------------------------------------------------------------------------//
 
+const Toast = Swal.mixin({
+    toast: true,
+    position: "top-end",
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.onmouseenter = Swal.stopTimer;
+      toast.onmouseleave = Swal.resumeTimer;
+    }
+  });
+
+
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('profileForm');
     const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
 
     const saveField = (element) => {
-      const data = new FormData(form);
-      fetch(form.action, {
-        method: 'POST',
-        headers: {
-          'X-CSRFToken': csrfToken
-        },
-        body: data
-      })
-        .then(response => response.json())
-        .then(data => {
-          if (data.success) {
-            console.log("Saved successfully");
-          } else {
-            console.log("Errors: ", data.errors);
-          }
+        const data = new FormData(form);
+        fetch(form.action, {
+            method: 'POST',
+            headers: {
+                'X-CSRFToken': csrfToken
+            },
+            body: data
         })
-        .catch(error => console.error('Error:', error));
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    Toast.fire({
+                        icon: "success",
+                        title: "Guardado!"
+                      });
+                    console.log("Saved successfully");
+                } else {
+                    console.log("Errors: ", data.errors);
+                }
+            })
+            .catch(error => console.error('Error:', error));
     };
 
     form.querySelectorAll('input').forEach(element => {
-      element.addEventListener('change', () => saveField(element));
+        element.addEventListener('change', () => saveField(element));
     });
-  });
+});
+
+
+//--------------------------------------------------------------------------------------------//
+//                     Configuracion auto guardado de cuenta-config                           //
+//--------------------------------------------------------------------------------------------//
+form_eliminar_cuenta = document.getElementById('eliminar_cuenta')
+form_eliminar_cuenta.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    Swal.fire({
+        title: "Esta seguro?",
+        text: "Advertencia: una vez borrada su cuenta no podra recuperar la informacion guardada.",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        cancelButtonText: "Canselar",
+        confirmButtonText: "Si, borrar!"
+    }).then((result) => {
+        console.log(result);
+        if (result.isConfirmed) {
+
+            fetch('/eliminar_cuenta/', {
+                method: 'POST',
+                headers: {
+                    'X-CSRFToken': form_eliminar_cuenta.querySelector('[name=csrfmiddlewaretoken]').value
+                },
+                body: ''
+            }).then(response => {
+                if (!response.ok) {
+                    throw new Error('Error enviando la solicitud de borrado');
+                }
+                return response.json();
+            }).then(data => {
+                if (data.success) {
+                    Swal.fire({
+                        title: "Borrado!",
+                        text: "Se ha eliminado su cuenta correctamente.",
+                        icon: "success",
+                        showConfirmButton: false,
+                        timer: 5000
+                    }).then((result) => {
+                        window.location.href = '/'; // Redirigir manualmente
+                    });
+                }
+            });
+        }
+
+    });
+});

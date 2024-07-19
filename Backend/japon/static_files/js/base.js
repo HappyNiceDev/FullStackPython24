@@ -24,12 +24,17 @@ function executeIfElementExists(selector, callback) {
     callback(element);
   }
 }
+/*
 function executeIfElementExists2(selector2, callback2) {
   const element2 = document.querySelector(selector2);
   if (element2) {
     callback2(element2);
   }
-}
+}*/
+
+//--------------------------------------------------------------------------------------------//
+//                              Abre SweetAlert2 - LOGIN                                      //
+//--------------------------------------------------------------------------------------------//
 
 executeIfElementExists('#login', boton => {
   boton.addEventListener('click', function (event) {
@@ -89,9 +94,12 @@ executeIfElementExists('#login', boton => {
 });
 
 
+//--------------------------------------------------------------------------------------------//
+//                              Abre SweetAlert2 - REGISTER                                      //
+//--------------------------------------------------------------------------------------------//
 
-executeIfElementExists2('#registrar', boton2 => {
-  boton2.addEventListener('click', function (event) {
+executeIfElementExists('#registrar', boton => {
+  boton.addEventListener('click', function (event) {
     event.preventDefault();
 
     fetch('/register/')
@@ -135,7 +143,7 @@ executeIfElementExists2('#registrar', boton2 => {
                   icon: 'error'
                 });
               }
-              //Swal.showValidationMessage(`Error: ${error}`);
+              Swal.showValidationMessage(`Error: ${error}`);
             });
           }
         });

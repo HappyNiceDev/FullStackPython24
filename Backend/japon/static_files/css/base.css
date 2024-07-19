@@ -94,7 +94,7 @@ nav ul li a:hover {
   transition: 0.4s;
 }
 
-nav ul li a:not(:only-child):after {
+.menu:not(:only-child):after {
   padding-left: 2px;
   content: "▾";
 }

@@ -50,8 +50,3 @@ class FormCuentaConfig(forms.ModelForm):
 			'email': forms.EmailInput(attrs={'name': 'email', 'class': 'campo', 'placeholder': 'Email'}),
 			'telefono': forms.TextInput(attrs={'name': 'telefono', 'class': 'campo', 'placeholder': 'Teléfono'})
         }
-
-
-#--------------------------------------------------------------------------------------------#
-#                     Imprime y guarda avatar del perfil del usuario                         #
-#--------------------------------------------------------------------------------------------#

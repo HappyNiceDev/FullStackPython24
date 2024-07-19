@@ -42,8 +42,6 @@ urlpatterns = [
     path('logout/', views.logout_view, name='logout'),
     path('eliminar_cuenta/', views.eliminar_cuenta, name='eliminar_cuenta'),
     path('register/', views.register, name='register'),
-    path('upload-avatar/', views.upload_avatar, name='upload_avatar'),
-    path('avatar_view/', views.avatar_view, name='avatar_view'),
 
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

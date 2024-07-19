@@ -5,7 +5,6 @@
 {% endblock %}
 
 {% block contenido %}
-{% csrf_token %}
 <!-- Aquí empieza contenido de configuraciones de cuenta -->
 <div id="Config" class="all-content">
   <div class="secciones-cuenta">
@@ -26,23 +25,18 @@
   <div class="informacion">
     <div class="contenido-config mi-cuenta Visible">
       <div class="info-foto">
-        <div id="FotoPerfil" class="FotoPerfil">
-          <img src="{% url 'avatar_view' %}" alt="Avatar">
-        </div>
-        <!-- Aquí puedes agregar la funcionalidad para mostrar la imagen después de subirla -->
+        <img class="FotoPerfil" src="{% static 'img/usoarquitectura.com.webp' %}" alt="foto de perfil" />
         <div class="foto-descripcion">
           <h3>Personaliza tu foto</h3>
           <p class="p-avatar">
             Tu foto de perfil será visible para todos cuando hagas
             comentarios en las secciones.
           </p>
-          <form id="form_file" enctype="multipart/form-data" autocomplete="off">
-            <input id="btn_file" type="file" accept=".jpg, .jpeg, .png" style="display: none;">
-        </form>
-        <div id="Cambiar_Foto" class="btn-foto">Cambiar Foto</div>
+          <div class="btn-foto">Cambiar foto</div>
         </div>
       </div>
       <form id="profileForm" method="post" action="{% url 'cuentaconfig' %}">
+        {% csrf_token %}
         <div class="info-perfil">
           <div class="info-edit">
             <h3>Informacion de Perfil</h3>
@@ -114,11 +108,15 @@
           <p class="bloque-eliminar">Eliminar cuenta</p>
           <form id="eliminar_cuenta" method="POST" action="{% url 'eliminar_cuenta' %}">
             {% csrf_token %}
-            <button type="submit" class="btn-foto btn-eliminar bloque-eliminar" id="eliminarCuentaBtn">Eliminar
-              cuenta</button>
+            <button type="submit" class="btn-foto btn-eliminar bloque-eliminar" id="eliminarCuentaBtn">Eliminar cuenta</button>
           </form>
         </div>
       </div>
+
+
+      <script>
+        
+      </script>
     </div>
     <!-- Contenido de Favoritos -->
     <div class="contenido-config favoritos">

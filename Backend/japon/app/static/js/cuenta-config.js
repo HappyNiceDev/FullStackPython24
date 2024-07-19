@@ -142,8 +142,12 @@ document.addEventListener('DOMContentLoaded', () => {
     startAutoScroll();
 });
 
+
+
+
+
 //--------------------------------------------------------------------------------------------//
-//                          Constantes y funciones que se repiten                             //
+//                     Configuracion auto guardado de cuenta-config                           //
 //--------------------------------------------------------------------------------------------//
 
 const Toast = Swal.mixin({
@@ -153,21 +157,15 @@ const Toast = Swal.mixin({
     timer: 3000,
     timerProgressBar: true,
     didOpen: (toast) => {
-        toast.onmouseenter = Swal.stopTimer;
-        toast.onmouseleave = Swal.resumeTimer;
+      toast.onmouseenter = Swal.stopTimer;
+      toast.onmouseleave = Swal.resumeTimer;
     }
-});
+  });
 
-const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
-
-
-//--------------------------------------------------------------------------------------------//
-//                     Configuracion auto guardado de cuenta-config                           //
-//--------------------------------------------------------------------------------------------//
 
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('profileForm');
-
+    const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
 
     const saveField = (element) => {
         const data = new FormData(form);
@@ -184,7 +182,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     Toast.fire({
                         icon: "success",
                         title: "Guardado!"
-                    });
+                      });
                     console.log("Saved successfully");
                 } else {
                     console.log("Errors: ", data.errors);
@@ -222,7 +220,7 @@ form_eliminar_cuenta.addEventListener('submit', function (event) {
             fetch('/eliminar_cuenta/', {
                 method: 'POST',
                 headers: {
-                    'X-CSRFToken': csrfToken
+                    'X-CSRFToken': form_eliminar_cuenta.querySelector('[name=csrfmiddlewaretoken]').value
                 },
                 body: ''
             }).then(response => {
@@ -247,72 +245,3 @@ form_eliminar_cuenta.addEventListener('submit', function (event) {
 
     });
 });
-
-
-//--------------------------------------------------------------------------------------------//
-//                         evento foto perfil carga de imagen                                 //
-//--------------------------------------------------------------------------------------------//
-
-const FotoPerfil = document.getElementById('FotoPerfil');
-const Cambiar_Foto = document.getElementById('Cambiar_Foto');
-const btn_file = document.getElementById('btn_file');
-const form_file = document.getElementById('form_file');
-
-
-FotoPerfil.addEventListener('click', function (event) {
-    btn_file.click();
-});
-
-Cambiar_Foto.addEventListener('click', function (event) {
-    btn_file.click();
-});
-
-btn_file.addEventListener('change', (event) => {
-
-    const formData = new FormData();
-    formData.append('avatar', btn_file.files[0]);
-
-    fetch('/upload-avatar/', {
-        method: 'POST',
-        headers: {
-            'X-CSRFToken': csrfToken
-        },
-        body: formData,
-    }).then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                Toast.fire({
-                    icon: "success",
-                    title: "Guardado!",
-                    timer: 1000
-                }).then( x => {
-                    location.reload();
-                });
-            }
-        });
-});
-
-/*
-    
-}
-    
-    
-    const fileInput = ;
-    const uploadForm = document.getElementById('form_file');
-
-    function handleDivClick() {
-        fileInput.click();
-    }
-
-    function handleFileChange(event) {
-        const formData = new FormData(form_file);
-        formData.append('file', fileInput.files[0]);
-
-        
-    }
-
-    FotoPerfil.addEventListener('click', handleDivClick);
-    Cambiar_Foto.addEventListener('click', handleDivClick);
-    fileInput.;
-});
-*/
