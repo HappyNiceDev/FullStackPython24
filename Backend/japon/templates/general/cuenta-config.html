@@ -25,14 +25,19 @@
   <div class="informacion">
     <div class="contenido-config mi-cuenta Visible">
       <div class="info-foto">
-        <img class="FotoPerfil" src="{% static 'img/usoarquitectura.com.webp' %}" alt="foto de perfil" />
+        <div id="CambiaFotoPerfil" class="CambiaFotoPerfil">
+          <img src="{% url 'avatar_view' %}">
+        </div>
         <div class="foto-descripcion">
           <h3>Personaliza tu foto</h3>
           <p class="p-avatar">
             Tu foto de perfil será visible para todos cuando hagas
             comentarios en las secciones.
           </p>
-          <div class="btn-foto">Cambiar foto</div>
+          <form id="FormInput">
+            <input id="InputAction" type="file" style="display: none;">
+          <div id="btn-foto" class="btn-foto">Cambiar foto</div>
+        </form>
         </div>
       </div>
       <form id="profileForm" method="post" action="{% url 'cuentaconfig' %}">
@@ -108,14 +113,15 @@
           <p class="bloque-eliminar">Eliminar cuenta</p>
           <form id="eliminar_cuenta" method="POST" action="{% url 'eliminar_cuenta' %}">
             {% csrf_token %}
-            <button type="submit" class="btn-foto btn-eliminar bloque-eliminar" id="eliminarCuentaBtn">Eliminar cuenta</button>
+            <button type="submit" class="btn-foto btn-eliminar bloque-eliminar" id="eliminarCuentaBtn">Eliminar
+              cuenta</button>
           </form>
         </div>
       </div>
 
 
       <script>
-        
+
       </script>
     </div>
     <!-- Contenido de Favoritos -->

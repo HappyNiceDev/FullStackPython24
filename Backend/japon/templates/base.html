@@ -71,12 +71,10 @@
                   <form method="post" action="{% url 'logout' %}">
                     {% csrf_token %}
                     <a><button type="submit">LOGOUT</button></a>
-                    
                   </form>
                 </li>
 
                 {% else %}
-
                 <li><a id="login" href="{% url 'login' %}">LOGIN</a></li>
                 <li><a id="registrar" href="{% url 'register' %}">REGISTRARSE</a></li>
 
@@ -86,7 +84,7 @@
               {% if user.is_authenticated %}
             </div>
             <a href="{% url 'cuentaconfig' %}">
-              <div class="img_login"></div>
+              <div class="img_login"><img src="{% url 'avatar_view' %}"></div>
             </a>
           </div>
           {% endif %}

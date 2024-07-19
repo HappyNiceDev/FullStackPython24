@@ -143,11 +143,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-
-
-
 //--------------------------------------------------------------------------------------------//
-//                     Configuracion auto guardado de cuenta-config                           //
+//                        Constantes que ser repiten para su uso                              //
 //--------------------------------------------------------------------------------------------//
 
 const Toast = Swal.mixin({
@@ -157,15 +154,20 @@ const Toast = Swal.mixin({
     timer: 3000,
     timerProgressBar: true,
     didOpen: (toast) => {
-      toast.onmouseenter = Swal.stopTimer;
-      toast.onmouseleave = Swal.resumeTimer;
+        toast.onmouseenter = Swal.stopTimer;
+        toast.onmouseleave = Swal.resumeTimer;
     }
-  });
+});
+
+const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+
+//--------------------------------------------------------------------------------------------//
+//                     Configuracion auto guardado de cuenta-config                           //
+//--------------------------------------------------------------------------------------------//
 
 
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('profileForm');
-    const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
 
     const saveField = (element) => {
         const data = new FormData(form);
@@ -182,7 +184,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     Toast.fire({
                         icon: "success",
                         title: "Guardado!"
-                      });
+                    });
                     console.log("Saved successfully");
                 } else {
                     console.log("Errors: ", data.errors);
@@ -198,8 +200,51 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 //--------------------------------------------------------------------------------------------//
+//                                 Cambiar foto perfil                                        //
+//--------------------------------------------------------------------------------------------//
+
+const InputAction = document.getElementById('InputAction');
+const FormInput = document.getElementById('FormInput');
+
+document.getElementById('CambiaFotoPerfil').addEventListener('click', function () {
+    InputAction.click();
+});
+document.getElementById('btn-foto').addEventListener('click', function () {
+    InputAction.click();
+});
+
+
+FormInput.addEventListener('change', (event) => {
+
+    // Crear el FormData
+    const formData = new FormData();
+    formData.append('avatar', InputAction.files[0]); // 'avatar' es el nombre del campo que esperas en el backend
+
+    // Enviar la solicitud
+    fetch('/upload-avatar/', {
+        method: 'POST',
+        headers: {
+            'X-CSRFToken': csrfToken
+        },
+        body: formData,
+    })
+        .then(response => response.json())
+        .then(data => {
+            if(data.success){
+                location.reload();
+            }
+            
+        })
+       
+});
+
+
+
+
+//--------------------------------------------------------------------------------------------//
 //                     Configuracion auto guardado de cuenta-config                           //
 //--------------------------------------------------------------------------------------------//
+
 form_eliminar_cuenta = document.getElementById('eliminar_cuenta')
 form_eliminar_cuenta.addEventListener('submit', function (event) {
     event.preventDefault();

@@ -60,13 +60,32 @@
   margin: 2em 2em 2em 2em;
 }
 
-.FotoPerfil {
-  width: 150px;
-  height: 150px;
+.CambiaFotoPerfil {
+  width: 200px;
+  height: 200px;
   margin: 1.5em;
   clip-path: circle(50% at 50% 50%);
   border: 5px solid #d4c5ae;
   border-radius: 50%;
+  background-image: url('../img/login.webp');
+  background-size: cover;
+  border-radius: 50%;
+  transition: 1s ease;
+  animation-direction: alternate;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  cursor: pointer;
+}
+.CambiaFotoPerfil:hover {
+  border: 5px solid #808366;
+
+}
+
+.CambiaFotoPerfil > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .foto-descripcion {
@@ -101,6 +120,28 @@
   font-family: sans-serif;
   letter-spacing: 1px;
 }
+/*--------Estilo de formulario----------*/
+.campo {
+  width: 100%;
+  font-size: 16px;
+  border: 2px solid #b4a58f;
+  border-radius: 3px;
+  outline: 0px;
+  resize: none;
+}
+/*--------Fin estilo de formulario----------*/
+/*--------Error en la validacion----------*/
+.errorBorde{
+  border: 1px solid #ff0000;
+}
+.error{
+  display: none;
+  color: #ff0000;
+}
+.errorAct{
+  display: block;
+}
+/*--------Fin del error----------*/
 
 .info-perfil {
   width: 68vw;

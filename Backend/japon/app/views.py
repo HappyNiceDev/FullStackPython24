@@ -1,7 +1,7 @@
 import logging
 from .models import *
 from .forms import *
-from django.http import JsonResponse, HttpResponseRedirect
+from django.http import JsonResponse, HttpResponseRedirect, HttpResponse
 from django.shortcuts import render, redirect
 from django.db import IntegrityError, DatabaseError
 from django.contrib import messages
@@ -107,8 +107,34 @@ def logout_view(request):
     return redirect('/')  # Redirigir a la página de login u otra página
 
 #--------------------------------------------------------------------------------------------#
+#                             Carga avatar del usuario                                       #
+#--------------------------------------------------------------------------------------------#
+
+@login_required
+def upload_avatar(request):
+    if request.method == 'POST':
+        if 'avatar' in request.FILES:
+            user_profile = UserProfile.objects.get(username=request.user)
+            avatar = request.FILES.get('avatar')  
+            user_profile.avatar = avatar.read() # Leer la imagen como binario
+            user_profile.save()
+            return JsonResponse({'success': True})
+
+    return render(request, 'upload_avatar.html')
+
+
+@login_required
+def avatar_view(request):
+    user_profile = UserProfile.objects.get(username=request.user)
+    if user_profile.avatar:
+        return HttpResponse(user_profile.avatar, content_type='image/jpeg')
+    return HttpResponse(status=404)  # Imagen no encontrada
+
+
+#--------------------------------------------------------------------------------------------#
 #               Carga cuenta-config para cambiar datos del perfil del usuario                #
 #--------------------------------------------------------------------------------------------#
+
 @login_required
 def cuentaconfig(request):
     profile, created = UserProfile.objects.get_or_create(username=request.user)

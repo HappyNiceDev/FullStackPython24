@@ -1,7 +1,7 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'css/form_login.css' %}">
 
-<form id="Form" enctype="multipart/form-data" autocomplete="off">
+<form id="Form" enctype="multipart/form-data" autocomplete="off" method="post" action="{% url 'login' %}">
 {% csrf_token %}
 
 {{ form.username }}
@@ -10,6 +10,6 @@
 {{ form.password }}
 <div class="error">Debe ingresar un apellido valido sin espacio y sin numeros.</div>
 
-<!--<div class="frame"><button type="submit" class="custom-btn btn-read">Registrar</button></div>-->
+<div class="frame"><button type="submit" class="custom-btn btn-read">Registrar</button></div>
 </form>
     

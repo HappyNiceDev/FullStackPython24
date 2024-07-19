@@ -24,13 +24,8 @@ function executeIfElementExists(selector, callback) {
     callback(element);
   }
 }
-/*
-function executeIfElementExists2(selector2, callback2) {
-  const element2 = document.querySelector(selector2);
-  if (element2) {
-    callback2(element2);
-  }
-}*/
+
+
 
 //--------------------------------------------------------------------------------------------//
 //                              Abre SweetAlert2 - LOGIN                                      //
@@ -49,14 +44,16 @@ executeIfElementExists('#login', boton => {
           showCancelButton: false,
           focusConfirm: true,
           preConfirm: () => {
+
             const form = document.getElementById('Form');
             const formData = new FormData(form);
+            const csrfToken = form.querySelector('[name=csrfmiddlewaretoken]').value;
 
             return fetch('/login/', {
               method: 'POST',
               body: formData,
               headers: {
-                'X-CSRFToken': form.querySelector('[name=csrfmiddlewaretoken]').value
+                'X-CSRFToken': csrfToken
               }
             }).then(response => {
               //console.log(response.mensaje);
@@ -111,14 +108,16 @@ executeIfElementExists('#registrar', boton => {
           showCancelButton: false,
           focusConfirm: true,
           preConfirm: () => {
+            
             const form = document.getElementById('Form');
             const formData = new FormData(form);
+            const csrfToken = form.querySelector('[name=csrfmiddlewaretoken]').value;
 
             return fetch('/register/', {
               method: 'POST',
               body: formData,
               headers: {
-                'X-CSRFToken': form.querySelector('[name=csrfmiddlewaretoken]').value
+                'X-CSRFToken': csrfToken
               }
             }).then(response => {
               //console.log(response.mensaje);
